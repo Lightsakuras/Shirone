@@ -57,8 +57,16 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 		// desktop 用于 >= 1024px；mobile 仅用于 < 1024px 的首页，手机非首页不显示壁纸。
 		// 数组顺序就是轮播顺序；只需要静态 Banner 时，每组保留一张图片即可。
 		src: {
-			desktop: ["assets/images/banner/desktop/1.webp"],
-			mobile: ["assets/images/banner/mobile/1.webp"],
+			// 动图放在 public/ 下以保留动画（不经过构建期格式转换）；两张按顺序轮换。
+			// desktop 为 2.5:1 宽幅裁剪版，mobile 为完整 3:4 竖版。
+			desktop: [
+				"/assets/images/banner/xinghai-desktop.webp",
+				"/assets/images/banner/leibao-desktop.webp",
+			],
+			mobile: [
+				"/assets/images/banner/xinghai-mobile.webp",
+				"/assets/images/banner/leibao-mobile.webp",
+			],
 		},
 		// 图片裁切焦点："top"、"center" 或 "bottom"。
 		position: "center",
@@ -93,11 +101,12 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 			// 是否开启多张图片自动轮播；多张图片时生效，单张图片时自动降级为静态展示。
 			enable: true,
 			// 轮播切换间隔时间（毫秒），运行时最小值限制为 3000ms。
-			interval: 6000,
+			interval: 8000,
 			// 交叉淡入淡出（Crossfade）过渡时长（毫秒，默认 1200ms）。
 			fadeDuration: 1200,
 			// 运镜呼吸动画模式："ken-burns"（默认，循环运镜）| "zoom-in"（推进）| "zoom-out"（拉远）| "pan-left"（左移）| "pan-right"（右移）| "none"（无运镜）。
-			animation: "ken-burns",
+			// 动图本身有动态内容，关闭 Ken Burns 运镜避免画面持续缩放。
+			animation: "none",
 		},
 		waves: {
 			// 在 Banner 底部渲染页面背景色水波纹；关闭后不输出波浪 DOM。
