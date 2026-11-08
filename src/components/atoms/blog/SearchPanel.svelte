@@ -12,10 +12,16 @@ export interface SearchResultItem {
 	url: string;
 	title: string;
 	excerpt: string;
+	/** Dynamic readers require a complete navigation rather than Swup fragment reuse. */
+	reload?: boolean;
 }
 
 let {
 	results = [],
+	status = "",
+	moreLabel = "",
+	loading = false,
+	onloadmore,
 	query = $bindable(""),
 	placeholder = "",
 	hideInputOnDesktop = false,
@@ -23,6 +29,10 @@ let {
 	class: className = "",
 }: {
 	results?: SearchResultItem[];
+	status?: string;
+	moreLabel?: string;
+	loading?: boolean;
+	onloadmore?: () => void;
 	query?: string;
 	placeholder?: string;
 	hideInputOnDesktop?: boolean;
@@ -31,7 +41,7 @@ let {
 } = $props();
 </script>
 
-<div class="m3-blog-searchpanel {className}" {id}>
+<div class="m3-blog-searchpanel {className}" {id} aria-busy={loading}>
 	{#if placeholder}
 		<div
 			class="m3-blog-searchpanel__input"
@@ -41,8 +51,9 @@ let {
 			<input type="search" bind:value={query} {placeholder} aria-label={placeholder} />
 		</div>
 	{/if}
+	{#if status}<p class="m3-blog-searchpanel__status" role="status">{status}</p>{/if}
 	{#each results as item, i (i)}
-		<a class="m3-blog-searchpanel__item" href={item.url}>
+		<a class="m3-blog-searchpanel__item" href={item.url} data-no-swup={item.reload || undefined}>
 			<span class="m3-blog-searchpanel__title">
 				{item.title}
 				<Icon icon="fa7-solid:chevron-right" />
@@ -50,6 +61,7 @@ let {
 			<span class="m3-blog-searchpanel__excerpt">{@html item.excerpt}</span>
 		</a>
 	{/each}
+	{#if moreLabel && onloadmore}<button class="m3-blog-searchpanel__more" disabled={loading} onclick={onloadmore}>{moreLabel}</button>{/if}
 </div>
 
 <style lang="stylus">
@@ -72,6 +84,22 @@ let {
 	overflow-y: auto
 	overflow-x: hidden
 	overscroll-behavior: contain
+
+	&__status
+		font: var(--m3e-type-body-small)
+		color: var(--on-surface-variant)
+		padding: var(--m3e-space-3)
+	&__more
+		min-height: 48px
+		font: var(--m3e-type-label-large)
+		color: var(--primary)
+		border: 1px solid var(--outline)
+		border-radius: var(--shape-corner-m)
+		margin: var(--m3e-space-2)
+		cursor: pointer
+		&:focus-visible
+			outline: 3px solid var(--primary)
+			outline-offset: 3px
 
 	/* 面板内搜索条（M3 胶囊填充式） */
 	&__input

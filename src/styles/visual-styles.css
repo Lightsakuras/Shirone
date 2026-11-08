@@ -1,0 +1,463 @@
+/* Optional composition layer. All colors inherit the visitor's HCT/light-dark palette.
+   Raw-loaded by VisualStyleHead; disabled sites emit none of these styles. */
+.visual-style-picker { position: relative; flex-shrink: 0; color: var(--on-surface); }
+.visual-style-picker__trigger { position: relative; display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: var(--shape-corner-m); cursor: pointer; list-style: none; }
+.visual-style-picker__trigger::-webkit-details-marker { display: none; }
+.visual-style-picker__trigger svg { width: 1.25rem; height: 1.25rem; }
+.visual-style-picker__trigger:focus-visible, .visual-style-picker button:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.visual-style-picker__panel { position: absolute; right: 0; top: calc(100% + var(--m3e-space-3)); width: min(26rem, calc(100vw - 2rem)); max-height: calc(100dvh - 6rem); overflow-y: auto; padding: var(--m3e-space-6); background: var(--surface-container-lowest); border: 1px solid var(--outline-variant); border-radius: var(--shape-corner-xl); box-shadow: var(--m3e-elevation-3); }
+.visual-style-picker__heading { font: var(--m3e-type-title-large); }
+.visual-style-picker__hint { margin: var(--m3e-space-2) 0 var(--m3e-space-5); font: var(--m3e-type-body-medium); color: var(--on-surface-variant); }
+.visual-style-picker__options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--m3e-space-3); }
+.visual-style-option { position: relative; display: flex; flex-direction: column; text-align: start; gap: var(--m3e-space-2); padding: var(--m3e-space-3); border: 1px solid var(--outline-variant); border-radius: var(--shape-corner-l); background: var(--surface); color: var(--on-surface); cursor: pointer; }
+.visual-style-option[aria-pressed="true"] { border-color: var(--primary); box-shadow: inset 0 0 0 1px var(--primary); background: var(--primary-container); color: var(--on-primary-container); }
+.visual-style-option strong { font: var(--m3e-type-label-large); }
+.visual-style-option__description { font: var(--m3e-type-body-small); }
+.visual-style-preview { display: grid; width: 100%; height: 4rem; padding: var(--m3e-space-2); gap: var(--m3e-space-1); border-radius: var(--shape-corner-s); background: var(--surface-container-high); grid-template-columns: 1fr 3fr; grid-template-rows: 1fr 1fr; }
+.visual-style-preview i { display: block; background: var(--primary); opacity: .3; border-radius: var(--shape-corner-xs); }
+.visual-style-preview i:first-child { grid-column: 1 / -1; background: var(--tertiary); opacity: .65; }
+.visual-style-preview--journal { grid-template-columns: 1fr 4fr; grid-template-rows: 2fr 1fr; }
+.visual-style-preview--atelier { grid-template-columns: 1fr; grid-template-rows: 1fr 1fr 1fr; padding-inline: var(--m3e-space-6); }
+.visual-style-preview--starlit { grid-template-columns: 4fr 1fr; grid-template-rows: 3fr 1fr; }
+.visual-style-picker__reset { position: relative; min-height: 3rem; margin-top: var(--m3e-space-3); padding: 0 var(--m3e-space-3); border-radius: var(--shape-corner-m); color: var(--primary); font: var(--m3e-type-label-large); cursor: pointer; }
+
+/* Shared selectors keep the exclusion in :where(), so each explicit mode can
+   override the same component without a specificity contest.
+   Composition v2: one quiet paper plane, deliberate edge rules and bounded
+   portraits. No preference is rewritten: HCT, wallpaper and texture still belong
+   to the visitor; opaque reading planes simply keep pattern out of the text. */
+
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-layout > div { max-width: 76rem; background: var(--page-bg); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-grid { gap: var(--m3e-space-6); align-items: start; padding-bottom: var(--m3e-space-6); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-content-column { background: var(--surface-container-lowest); border-radius: var(--shape-corner-l); padding: var(--m3e-space-6); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #category-bar { background: transparent; border-radius: 0; border-bottom: 1px solid var(--outline-variant); margin-bottom: var(--m3e-space-6); padding: 0 0 var(--m3e-space-3); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #post-list { display: flex; gap: var(--m3e-space-6); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #post-list .m3-blog-postcard { background: transparent; border-radius: 0; border: 0; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #post-list .m3-blog-postcard__enter { display: none; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #post-list .m3-blog-postcard__body { padding: var(--m3e-space-4) 0 var(--m3e-space-6); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #post-list .m3-blog-postcard__desc { -webkit-line-clamp: 4; font: var(--m3e-type-body-large); line-height: 1.8; max-width: 65ch; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-content-column .post-card { background: transparent; padding-inline: 0; }
+/* Use the existing outer footer copy, after supporting content. The nested
+   desktop copy previously inserted a large empty-looking interval in Atelier. */
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #content-wrapper > .footer { display: none; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-grid > .footer { display: block; grid-column: 1 / -1; grid-row: auto; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) .m3-blog-footer__divider { margin: var(--m3e-space-3) 0 var(--m3e-space-4); border-top-style: solid; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) .m3-blog-footer__inner { margin-bottom: var(--m3e-space-4); }
+
+/* The navigation is a solid plane; popup tokens cannot inherit image-white. */
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #navbar,
+.visual-style-picker__panel { --on-surface: var(--visual-on-surface, var(--mc-on-surface)); --on-surface-variant: var(--visual-on-surface-variant, var(--mc-on-surface-variant)); --primary: var(--visual-primary, var(--mc-primary)); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #navbar { background: var(--surface-container-lowest); color: var(--on-surface); backdrop-filter: none; border-bottom: 1px solid var(--outline-variant); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #navbar :is(a, button, summary) { color: var(--on-surface); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #navbar .top-app-bar__nav-link--active::after { background: var(--primary); }
+
+/* Supporting rail: identity has a human scale, widgets are sections rather
+   than an endless stack of identical filled cards. */
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar .m3-profile { background: var(--surface-container-lowest); padding: var(--m3e-space-5); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar .m3-profile__avatar-link { width: 7rem; max-width: 7rem; margin: 0 auto var(--m3e-space-4); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar .m3-profile__avatar-link .m3-avatar { max-width: 100%; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar .m3-profile__name { font: var(--m3e-type-title-medium); font-weight: 700; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar widget-layout > .m3-card { background: transparent; border-radius: 0; border-top: 1px solid var(--outline-variant); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar [data-sidebar-group] { gap: var(--m3e-space-4); }
+
+/* Journal: panoramic plate, a margin dot and a short heading rule. */
+html[data-visual-style="journal"] #post-list .m3-blog-postcard { flex-direction: column-reverse; border-top: 2px solid var(--primary); }
+html[data-visual-style="journal"] #post-list .m3-blog-postcard__title { font: var(--m3e-type-headline-large); font-weight: 600; }
+html[data-visual-style="journal"] #post-list .m3-blog-postcard__cover { position: relative; inset: auto; width: auto; height: auto; aspect-ratio: 21 / 9; margin: var(--m3e-space-4) 0 0; border-radius: var(--shape-corner-m); }
+html[data-visual-style="journal"] #category-bar { position: relative; }
+html[data-visual-style="journal"] #category-bar::after { content: ""; position: absolute; bottom: -3px; right: 0; width: 5px; height: 5px; border-radius: var(--shape-corner-full); background: var(--primary); pointer-events: none; }
+
+/* Atelier: a bookplate opening, continuous paper, and a short timeline stem
+   anchored to each real entry. No fabricated numbering or empty timeline. */
+html[data-visual-style="atelier"] #main-layout > div { max-width: 64rem; }
+html[data-visual-style="atelier"] #main-content-column { padding: var(--m3e-space-8) var(--m3e-space-10); }
+html[data-visual-style="atelier"] #post-list .m3-blog-postcard { position: relative; flex-direction: row; align-items: center; padding-left: var(--m3e-space-6); }
+html[data-visual-style="atelier"] #post-list .m3-blog-postcard::before { content: ""; position: absolute; left: 3px; top: var(--m3e-space-6); bottom: var(--m3e-space-6); border-left: 1px solid var(--outline-variant); pointer-events: none; }
+html[data-visual-style="atelier"] #post-list .m3-blog-postcard::after { content: ""; position: absolute; left: 0; top: calc(var(--m3e-space-4) + .8rem); width: 7px; height: 7px; border-radius: var(--shape-corner-full); background: var(--primary); pointer-events: none; }
+html[data-visual-style="atelier"] #post-list .m3-blog-postcard__title { font: var(--m3e-type-headline-small); font-weight: 600; }
+html[data-visual-style="atelier"] #post-list .m3-blog-postcard__cover { position: relative; inset: auto; width: 7rem; height: 7rem; margin: var(--m3e-space-4); border-radius: var(--shape-corner-m); }
+html[data-visual-style="atelier"] #post-list .m3-accent-bar { display: none; }
+html[data-visual-style="atelier"] #sidebar .m3-profile { display: grid; grid-template-columns: 6rem minmax(0,1fr); gap: var(--m3e-space-4); align-items: center; }
+html[data-visual-style="atelier"] #sidebar .m3-profile__avatar-link { width: 6rem; max-width: 6rem; margin: 0; }
+html[data-visual-style="atelier"] #sidebar :is(.m3-profile__name,.m3-profile__bio) { text-align: left; }
+html[data-visual-style="atelier"] #sidebar .m3-profile__links { justify-content: flex-start; }
+html[data-visual-style="atelier"] #sidebar .m3-profile__accent { margin-inline: 0; }
+
+/* Starlit story typography. */
+html[data-visual-style="starlit"] #main-content-column { border-top: 3px solid var(--primary); }
+html[data-visual-style="starlit"] #post-list .m3-blog-postcard { border-bottom: 1px solid var(--outline-variant); }
+html[data-visual-style="starlit"] #post-list .m3-blog-postcard__title { font: var(--m3e-type-headline-medium); font-weight: 600; }
+html[data-visual-style="starlit"] #post-list .m3-blog-postcard--cover .m3-blog-postcard__body { padding-right: calc(28% + var(--m3e-space-4)); }
+
+
+
+
+@media (min-width: 1024px) {
+ html[data-visual-style="journal"] #main-grid { grid-template-columns: 14rem minmax(0,1fr); }
+ html[data-visual-style="journal"] #main-content-column { grid-column: 2; grid-row: 1 / span 2; }
+ html[data-visual-style="journal"] #sidebar { grid-column: 1; grid-row: 1; }
+ html[data-visual-style="journal"] #sidebar-secondary { grid-column: 1; grid-row: 2; }
+ html[data-visual-style="starlit"] #main-grid { grid-template-columns: minmax(0,1fr) 15rem; }
+ html[data-visual-style="starlit"] #main-content-column { grid-column: 1; grid-row: 1 / span 2; }
+ html[data-visual-style="starlit"] #sidebar { grid-column: 2; grid-row: 1; }
+ html[data-visual-style="starlit"] #sidebar-secondary { grid-column: 2; grid-row: 2; }
+ html:is([data-visual-style="journal"],[data-visual-style="starlit"]) #main-grid { grid-template-rows: min-content 1fr auto; }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) :is(#sidebar,#sidebar-secondary) { height: auto; align-self: start; }
+ html[data-visual-style="atelier"] #main-grid { grid-template-columns: minmax(0,1fr); grid-template-rows: auto; }
+ html[data-visual-style="atelier"] #main-content-column { grid-column: 1; grid-row: 1; }
+ html[data-visual-style="atelier"] #sidebar { grid-column: 1; grid-row: 2; max-width: none; display: grid; grid-template-columns: 1.3fr 1fr; gap: var(--m3e-space-6); }
+ html[data-visual-style="atelier"] #sidebar-secondary { grid-column: 1; grid-row: 3; max-width: none; }
+ html[data-visual-style="atelier"] #sidebar-sticky { position: static; }
+ html[data-visual-style="atelier"] #sidebar [data-sidebar-group] { margin: 0; }
+}
+@media (max-width: 1023.98px) {
+ .visual-style-picker__panel { position: fixed; top: 4.5rem; right: var(--m3e-space-4); }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-grid { gap: var(--m3e-space-4); grid-template-rows: auto; }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-content-column { grid-row: 1; padding: var(--m3e-space-5); }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar { grid-row: 2; }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar-secondary { grid-row: 3; }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-grid > .footer { grid-row: 4; }
+ html[data-visual-style="journal"] #post-list .m3-blog-postcard__title { font: var(--m3e-type-headline-small); font-weight: 600; }
+ html[data-visual-style="atelier"] #post-list .m3-blog-postcard__cover { width: 4.5rem; height: 5rem; margin: var(--m3e-space-2); }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar .m3-profile { display: grid; grid-template-columns: 6rem minmax(0,1fr); gap: var(--m3e-space-4); align-items: center; }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar .m3-profile__avatar-link { width: 6rem; max-width: 6rem; margin: 0; }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar :is(.m3-profile__name,.m3-profile__bio) { text-align: left; }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar .m3-profile__links { justify-content: flex-start; }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #sidebar .m3-profile__accent { margin-inline: 0; }
+}
+@media (max-width: 479.98px) {
+ html[data-visual-style] #navbar > div > a { min-width: 0; flex: 0 1 auto; }
+ html[data-visual-style] #navbar > div > a > span:first-child { flex-shrink: 0; }
+ html[data-visual-style] #navbar > div > a > span:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+ html[data-visual-style="starlit"] #post-list .m3-blog-postcard--cover .m3-blog-postcard__body { padding-right: 0; }
+}
+/* A site with no sidebar widgets retains a full-width content column. */
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-grid:not(:has(#sidebar > [data-sidebar-group])) { grid-template-columns: minmax(0,1fr); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #main-grid:not(:has(#sidebar > [data-sidebar-group])) #main-content-column { grid-column: 1; }
+@media (prefers-reduced-motion: reduce) { html[data-visual-style] #main-grid { transition: none; } }
+@media print { .visual-style-picker { display: none; } }
+
+/* Independent homepage architecture. The legacy illustration stage remains
+   available instantly in Sakura; the other modes start in document-like space. */
+.editorial-home { display: none; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #banner-wrapper { display: none; }
+/* Persistent layout owns banner offsets in desktop/mobile attribute states.
+   Match those real states explicitly; this beats their mobile selector without !important. */
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) body[data-current-page][data-banner-layout][data-banner-has-desktop][data-banner-has-mobile] #top-row { height: auto; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) body[data-current-page][data-banner-layout][data-banner-has-desktop][data-banner-has-mobile] #main-layout { top: 6rem; }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) .editorial-home { display: grid; grid-template-columns: minmax(0,1fr); margin-bottom: var(--m3e-space-6); }
+.editorial-home__identity { min-width: 0; }
+.editorial-home__eyebrow { display: flex; align-items: center; gap: var(--m3e-space-3); margin: 0 0 var(--m3e-space-6); font: var(--m3e-type-label-large); color: var(--on-surface-variant); }
+.editorial-home__eyebrow > span { width: 6px; height: 6px; border-radius: var(--shape-corner-full); background: var(--primary); flex-shrink: 0; }
+.editorial-home h1 { font: var(--m3e-type-display-large); font-size: clamp(2.5rem, 5.5vw, 5.25rem); font-weight: 600; line-height: 1.08; letter-spacing: -.045em; margin: 0; overflow-wrap: anywhere; }
+.editorial-home__introduction { margin: var(--m3e-space-5) 0 0; font: var(--m3e-type-body-large); line-height: 1.8; color: var(--on-surface-variant); max-width: 32em; }
+.editorial-home__links { display: flex; flex-wrap: wrap; gap: var(--m3e-space-6); margin-top: var(--m3e-space-6); }
+.editorial-home__links a { display: inline-flex; align-items: center; gap: var(--m3e-space-5); min-height: 3rem; color: var(--on-surface); font: var(--m3e-type-label-large); border-bottom: 1px solid var(--outline-variant); text-decoration: none; }
+.editorial-home__links a svg { color: var(--primary); width: 1.125rem; height: 1.125rem; flex-shrink: 0; }
+.editorial-home__links a:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+.editorial-home__art { overflow: hidden; background: var(--surface-container-high); border-radius: var(--shape-corner-l); }
+.editorial-home__art img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.editorial-home__index { display: flex; align-items: center; gap: var(--m3e-space-4); grid-column: 1 / -1; margin-top: var(--m3e-space-8); color: var(--on-surface-variant); font: var(--m3e-type-label-medium); }
+.editorial-home__index-rule { flex: 1; height: 1px; background: var(--outline-variant); }
+/* Journal: title-first editorial composition, with real supporting identity. */
+html[data-visual-style="journal"] .editorial-home { padding: var(--m3e-space-5) 0 0; }
+html[data-visual-style="journal"] .editorial-home__art { display: none; }
+html[data-visual-style="journal"] #main-content-column { padding: var(--m3e-space-8); }
+html[data-visual-style="journal"] #post-list .m3-blog-postcard { border-top: 0; }
+html[data-visual-style="journal"] #post-list .m3-blog-postcard__title { font: var(--m3e-type-headline-large); font-weight: 600; }
+/* Atelier: identity and an explicitly decorative image share a studio spread.
+   This image is existing site artwork, never labeled as an authored project. */
+html[data-visual-style="atelier"] .editorial-home { grid-template-columns: minmax(0,4fr) minmax(0,5fr); gap: var(--m3e-space-6); align-items: center; }
+html[data-visual-style="atelier"] .editorial-home h1 { font-size: clamp(2.5rem,4vw,4rem); }
+html[data-visual-style="atelier"] .editorial-home__art { aspect-ratio: 4 / 5; max-height: 25rem; }
+html[data-visual-style="atelier"] .editorial-home__art img { object-position: 60% center; }
+html[data-visual-style="atelier"] .editorial-home__index { margin-top: var(--m3e-space-3); }
+/* Starlit: image first, then a separate narrative column. No text over art. */
+html[data-visual-style="starlit"] .editorial-home__art { grid-row: 1; aspect-ratio: 5 / 2; border-radius: var(--shape-corner-m); }
+html[data-visual-style="starlit"] .editorial-home__identity { grid-row: 2; padding-top: var(--m3e-space-8); }
+html[data-visual-style="starlit"] .editorial-home__index { grid-row: 3; }
+html[data-visual-style="starlit"] :is(.editorial-home__identity,.editorial-home__index,.m3e-post-list-shell) { width: min(100%,44rem); margin-inline: auto; }
+html[data-visual-style="starlit"] #main-content-column { border-top: 0; }
+html[data-visual-style="starlit"] #main-content-column .post-card { max-width: 44rem; margin-inline: auto; }
+/* Reader measures are expressed in em so Chinese isn't mistakenly given
+   an English 65-character measure; headings/code/media retain their own flow. */
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) .custom-md { max-width: 40em; margin-inline: auto; }
+@media (min-width: 1024px) {
+ html[data-visual-style="journal"] #main-grid { grid-template-columns: minmax(0,5fr) minmax(15rem,2fr); }
+ html[data-visual-style="journal"] #main-content-column { grid-column: 1; }
+ html[data-visual-style="journal"] :is(#sidebar,#sidebar-secondary) { grid-column: 2; max-width: none; }
+ html[data-visual-style="journal"] #sidebar { padding-top: var(--m3e-space-4); }
+ html[data-visual-style="starlit"] #main-grid { grid-template-columns: minmax(0,1fr); grid-template-rows: auto; }
+ html[data-visual-style="starlit"] #main-content-column { grid-column: 1; grid-row: 1; }
+ html[data-visual-style="starlit"] #sidebar { grid-column: 1; grid-row: 2; max-width: none; display: grid; grid-template-columns: 1fr 1fr; gap: var(--m3e-space-6); }
+ html[data-visual-style="starlit"] #sidebar-secondary { grid-column: 1; grid-row: 3; max-width: none; }
+ html[data-visual-style="starlit"] #sidebar-sticky { position: static; }
+ html[data-visual-style="starlit"] #sidebar .m3-profile { display: grid; grid-template-columns: 6rem minmax(0,1fr); gap: var(--m3e-space-4); align-items: center; }
+ html[data-visual-style="starlit"] #sidebar .m3-profile__avatar-link { width: 6rem; max-width: 6rem; margin: 0; }
+}
+@media (max-width: 1023.98px) {
+ html[data-visual-style="journal"] #main-content-column { padding: var(--m3e-space-5); }
+ html[data-visual-style="atelier"] .editorial-home { grid-template-columns: minmax(0,1fr); gap: var(--m3e-space-5); }
+ html[data-visual-style="atelier"] .editorial-home__art { aspect-ratio: 16 / 9; max-height: 18rem; }
+ .editorial-home h1 { font-size: clamp(2.3rem,8vw,3.8rem); }
+ html[data-visual-style="atelier"] .editorial-home h1 { font-size: clamp(2.3rem,8vw,3.8rem); }
+ html[data-visual-style="starlit"] .editorial-home__art { aspect-ratio: 4 / 3; }
+ .editorial-home__eyebrow { margin-bottom: var(--m3e-space-4); }
+ .editorial-home__index { margin-top: var(--m3e-space-6); }
+}
+/* Honor the visitor's explicit no-wallpaper choice in the new image planes. */
+html[data-wallpaper-mode="none"] .editorial-home__art { display: none; }
+html[data-wallpaper-mode="none"][data-visual-style="atelier"] .editorial-home { grid-template-columns: minmax(0,1fr); }
+html[data-wallpaper-mode="none"][data-visual-style="starlit"] .editorial-home__identity { padding-top: 0; }
+/* Miniatures describe composition, not palette. */
+.visual-style-preview--journal { grid-template-columns: 4fr 1fr; grid-template-rows: 1fr 1fr; }
+.visual-style-preview--journal i:first-child { grid-column: 1; grid-row: 1; }
+.visual-style-preview--journal i:nth-child(2) { grid-column: 1; grid-row: 2; }
+.visual-style-preview--journal i:last-child { grid-column: 2; grid-row: 1 / 3; }
+.visual-style-preview--atelier { grid-template-columns: 1fr 1fr; grid-template-rows: 2fr 1fr; padding-inline: var(--m3e-space-2); }
+.visual-style-preview--atelier i:first-child { grid-column: 2; grid-row: 1; }
+.visual-style-preview--atelier i:nth-child(2) { grid-column: 1; grid-row: 1; }
+.visual-style-preview--atelier i:last-child { grid-column: 1 / -1; grid-row: 2; }
+.visual-style-preview--starlit { grid-template-columns: 1fr; grid-template-rows: 2fr 1fr 1fr; }
+
+/* Match the original wide artwork rather than cutting its face off. */
+html[data-visual-style="starlit"] .editorial-home__art img { object-position: center top; }
+/* Studio artwork occupies its allocated column instead of shrink-wrapping to
+   max-height × aspect-ratio. The image itself remains intentionally cropped. */
+html[data-visual-style="atelier"] .editorial-home__art { width: 100%; min-width: 0; }
+/* Only an SSR-confirmed exact title match at the start of the rendered body is
+   redundant. Different headings, later H1s, encrypted content and Sakura stay. */
+/* The Markdown section plugin wraps the leading heading in a direct section.
+   Both paths stay anchored to the first body element and its first child. */
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) [data-leading-title-duplicate="true"] .custom-md > h1:first-child,
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) [data-leading-title-duplicate="true"] .custom-md > section:first-child > h1:first-child { display: none; }
+/* Local editorial typography, with no new font request or stored preference.
+   There is currently no visitor font-selector setting in DisplaySettings. */
+html:is([data-visual-style="journal"],[data-visual-style="atelier"]) {
+ --visual-editorial-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+ --m3e-font-sans: var(--visual-editorial-font-sans);
+ --font-sans: var(--visual-editorial-font-sans);
+}
+/* Markdown's max-w-none utility is an existing expansion API. Set the actual
+   reading width instead of fighting that max-width with !important; block code
+   and wide media keep their own overflow behavior inside this measured body. */
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) .post-card > .custom-md { width: min(100%, 40em); margin-inline: auto; }
+/* Atelier's original code-native geometric study. Its planes and arc centers
+   share a grid; no project label, external asset, animation or fake metric. */
+.editorial-home__study { display: none; }
+html[data-visual-style="atelier"] .editorial-home__art { aspect-ratio: 6 / 5; border: 1px solid var(--outline-variant); background: var(--surface-container-low); }
+html[data-visual-style="atelier"] .editorial-home__art img { display: none; }
+html[data-visual-style="atelier"] .editorial-home__study { display: block; width: 100%; height: 100%; }
+.editorial-home__study-ground { fill: var(--surface-container-low); }
+.editorial-home__study-guide { fill: none; stroke: var(--outline-variant); stroke-width: 1; }
+.editorial-home__study-plane { fill: var(--primary-container); }
+.editorial-home__study-foot { fill: var(--tertiary-container); }
+.editorial-home__study-disc { fill: var(--primary); }
+.editorial-home__study-arc { fill: none; stroke: var(--on-surface); stroke-width: 1; }
+.editorial-home__study-rule { fill: none; stroke: var(--outline); stroke-width: 1; }
+.editorial-home__study-point { fill: var(--on-surface); }
+html[data-visual-style="starlit"] .editorial-home__art:not(:has(img)) { display: none; }
+
+/* V3 color direction is separate from the existing hue/theme preferences. */
+.visual-style-colors { margin: var(--m3e-space-5) 0 0; padding: var(--m3e-space-4) 0 0; border: 0; border-top: 1px solid var(--outline-variant); }
+.visual-style-colors legend { padding: 0 var(--m3e-space-2) 0 0; font: var(--m3e-type-label-large); }
+.visual-style-colors p { color: var(--on-surface-variant); font: var(--m3e-type-body-small); margin: 0 0 var(--m3e-space-3); }
+.visual-style-colors__options { display: grid; grid-template-columns: 1fr 1fr; gap: var(--m3e-space-2); }
+.visual-style-colors__options button { position: relative; min-height: 3rem; padding: var(--m3e-space-2); border-radius: var(--shape-corner-m); border: 1px solid var(--outline-variant); font: var(--m3e-type-label-large); color: var(--on-surface); cursor: pointer; }
+.visual-style-colors__options button[aria-pressed="true"] { background: var(--primary-container); color: var(--on-primary-container); border-color: var(--primary); }
+/* The editorial plane uses tonal depth rather than shadows or glass. */
+html[data-visual-color="curated"][data-visual-style="journal"] #main-content-column { border: 1px solid var(--outline-variant); }
+html[data-visual-color="curated"][data-visual-style="journal"] .editorial-home__eyebrow { color: var(--primary); }
+html[data-visual-color="curated"][data-visual-style="atelier"] .editorial-home__index { color: var(--primary); }
+html[data-visual-color="curated"][data-visual-style="starlit"] .editorial-home__index { color: var(--primary); }
+html[data-visual-color="curated"][data-visual-style="starlit"] #main-content-column { border: 1px solid var(--outline-variant); }
+
+/* Restrained interaction: only small, local paint/compositor changes. Content
+   starts visible and no reveal/scroll handler is needed to read the page. */
+.editorial-home__links a { position: relative; }
+.editorial-home__links a::after { content: ""; position: absolute; inset: auto 0 -1px; height: 2px; background: var(--primary); transform: scaleX(0); transform-origin: left; transition: transform var(--m3e-duration-short) var(--m3e-easing-standard); pointer-events: none; }
+.editorial-home__links a svg { transition: transform var(--m3e-duration-short) var(--m3e-easing-standard); }
+.editorial-home__links a:focus-visible::after { transform: scaleX(1); }
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) #post-list .m3-blog-postcard__title:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+@media (hover: hover) and (pointer: fine) {
+ .editorial-home__links a:hover::after { transform: scaleX(1); }
+ .editorial-home__links a:hover svg { transform: translate(2px,-2px); }
+ html[data-visual-style="starlit"] .editorial-home__art img { transition: transform var(--m3e-duration-medium) var(--m3e-easing-standard); }
+ html[data-visual-style="starlit"] .editorial-home__art:hover img { transform: scale(1.015); }
+ .visual-style-option { transition: border-color var(--m3e-duration-short) var(--m3e-easing-standard), background-color var(--m3e-duration-short) var(--m3e-easing-standard); }
+ .visual-style-option:hover { border-color: var(--primary); }
+}
+/* Both the OS preference and Shirone's own switch disable added movement. */
+html.motion-reduced .editorial-home__links a::after,
+html.motion-reduced .editorial-home__links a svg,
+html.motion-reduced[data-visual-style="starlit"] .editorial-home__art img { transition: none; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+ .editorial-home__links a::after,
+ .editorial-home__links a svg,
+ html[data-visual-style="starlit"] .editorial-home__art img { transition: none; transform: none; }
+}
+/* Popup selections retain their paired foreground despite the navbar's chrome
+   color rule. These are component-owned states, not a global override. */
+#navbar .visual-style-option[aria-pressed="true"],
+#navbar .visual-style-colors__options button[aria-pressed="true"] { color: var(--on-primary-container); }
+#navbar .visual-style-picker__reset { color: var(--primary); }
+@media (prefers-reduced-motion: reduce) {
+ .editorial-home__links a:hover::after,
+ .editorial-home__links a:focus-visible::after,
+ .editorial-home__links a:hover svg,
+ html[data-visual-style="starlit"] .editorial-home__art:hover img { transition: none; transform: none; }
+}
+
+/* V4: color occupies architectural planes, while reading surfaces remain calm.
+   Paired HCT foregrounds follow their exact primary/container backgrounds. */
+html[data-visual-color="curated"][data-visual-style="journal"] { --page-bg: var(--secondary-container); }
+html[data-visual-color="curated"][data-visual-style="atelier"] { --page-bg: var(--primary-container); }
+html[data-visual-color="curated"][data-visual-style="starlit"] { --page-bg: var(--secondary-container); }
+html[data-visual-color="curated"]:where(:not([data-visual-style="sakura"])) body { background-color: var(--page-bg); }
+html[data-visual-color="curated"][data-visual-style="journal"] .editorial-home__identity {
+ background: var(--primary); color: var(--on-primary); padding: clamp(1.25rem, 4vw, 3rem); border-radius: var(--shape-corner-m);
+}
+html[data-visual-color="curated"][data-visual-style="journal"] .editorial-home__identity :is(h1,.editorial-home__eyebrow,.editorial-home__introduction,a,svg) { color: var(--on-primary); }
+html[data-visual-color="curated"][data-visual-style="journal"] .editorial-home__identity a { border-color: var(--on-primary); }
+html[data-visual-color="curated"][data-visual-style="journal"] .editorial-home__identity a::after,
+html[data-visual-color="curated"][data-visual-style="journal"] .editorial-home__identity .editorial-home__eyebrow > span { background: var(--on-primary); }
+html[data-visual-color="curated"][data-visual-style="journal"] .editorial-home__identity a:focus-visible { outline-color: var(--on-primary); }
+html[data-visual-color="curated"][data-visual-style="atelier"] .editorial-home h1 { color: var(--primary); }
+html[data-visual-color="curated"][data-visual-style="atelier"] .editorial-home__study-ground { fill: var(--primary-container); }
+html[data-visual-color="curated"][data-visual-style="atelier"] .editorial-home__study-plane { fill: var(--tertiary-container); }
+html[data-visual-color="curated"][data-visual-style="starlit"] .editorial-home__art { padding: var(--m3e-space-3); background: var(--primary); }
+html[data-visual-color="curated"][data-visual-style="starlit"] .editorial-home__identity { padding: var(--m3e-space-6); background: var(--primary-container); border-radius: var(--shape-corner-m); color: var(--on-primary-container); }
+html[data-visual-color="curated"][data-visual-style="starlit"] .editorial-home__identity :is(h1,.editorial-home__eyebrow,.editorial-home__introduction,a,svg) { color: var(--on-primary-container); }
+.editorial-home__color-state { color: var(--primary); }
+.editorial-home__color-state [data-color-state] { display: none; }
+html[data-visual-color="curated"] [data-color-state="curated"],
+html[data-visual-color="personal"] [data-color-state="personal"] { display: inline; }
+.editorial-home__index { flex-wrap: wrap; }
+/* Dedicated light strip: no animated paint behind prose or controls. The
+   oversize beam is composited with transform, not animated gradients/filters.
+   Eight seconds is a deliberately slow decorative cycle, not a UI duration. */
+.editorial-home__flow { --visual-flow-duration: 8s; position: relative; grid-column: 1 / -1; height: 4.5rem; overflow: hidden; isolation: isolate; border-radius: var(--shape-corner-m); background: var(--primary-container); margin-top: var(--m3e-space-5); }
+.editorial-home__light { position: absolute; inset: 0 0 auto; height: 2rem; overflow: hidden; border-bottom: 1px solid var(--primary); pointer-events: none; }
+.editorial-home__light::before { content: ""; position: absolute; inset: 0 auto 0 -60%; width: 60%; background: linear-gradient(110deg, transparent, var(--primary), var(--tertiary-container), var(--primary), transparent); animation: visual-light-flow var(--visual-flow-duration) linear infinite; }
+.editorial-home__motion { position: absolute; inset: auto var(--m3e-space-3) 0 auto; display: flex; align-items: center; gap: var(--m3e-space-2); min-height: 2.5rem; font: var(--m3e-type-label-small); color: var(--on-primary-container); cursor: pointer; }
+.editorial-home__motion input { accent-color: var(--primary); width: 1.125rem; height: 1.125rem; }
+.editorial-home__motion:has(input:focus-visible) { outline: 2px solid var(--on-primary-container); outline-offset: -2px; }
+html[data-visual-style="starlit"] .editorial-home__flow { grid-row: 2; margin-top: var(--m3e-space-3); }
+html[data-visual-style="starlit"] .editorial-home__identity { grid-row: 3; }
+html[data-visual-style="starlit"] .editorial-home__index { grid-row: 4; }
+@keyframes visual-light-flow { from { transform: translateX(0); } to { transform: translateX(270%); } }
+.editorial-home__flow:has(input:checked) .editorial-home__light::before,
+html.motion-reduced .editorial-home__light::before { animation: none; transform: translateX(130%); }
+@media (prefers-reduced-motion: reduce) { .editorial-home__light::before { animation: none; transform: translateX(130%); } }
+@media (max-width: 767.98px) { .editorial-home__flow { --visual-flow-duration: 12s; } }
+@media print { .editorial-home__flow { display: none; } }
+/* A single moving highlight takes a different path in each composition. */
+.editorial-home__flow { height: 5rem; --visual-flow-duration: 10s; }
+.editorial-home__motion { min-height: 3rem; }
+html[data-visual-style="journal"] .editorial-home__light { height: .75rem; top: .5rem; }
+html[data-visual-style="atelier"] .editorial-home__flow { background: var(--tertiary-container); }
+html[data-visual-style="atelier"] .editorial-home__light { height: 2rem; border-bottom: 0; }
+html[data-visual-style="atelier"] .editorial-home__light::before { background: linear-gradient(135deg, transparent 15%, var(--primary) 45%, var(--tertiary-container) 55%, transparent 85%); }
+html[data-visual-style="atelier"] .editorial-home__motion { color: var(--on-tertiary-container); }
+html[data-visual-style="starlit"] .editorial-home__light { border-bottom: 2px solid var(--primary); }
+html[data-visual-motion="paused"] .editorial-home__light::before { animation: none; transform: translateX(130%); }
+html[data-visual-page-hidden="true"] .editorial-home__light::before,
+html[data-visual-flow-visible="false"] .editorial-home__light::before { animation-play-state: paused; }
+/* Reuse Swup's lifecycle classes rather than intercept navigation. New content
+   remains readable with scripts unavailable; entry never starts transparent. */
+html[data-visual-style]:where(:not([data-visual-style="sakura"])) .editorial-home__identity { animation: visual-editorial-entry 450ms var(--m3e-easing-standard) both; }
+@keyframes visual-editorial-entry { from { opacity: .85; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (hover: hover) and (pointer: fine) {
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #post-list .m3-blog-postcard { transition: transform var(--m3e-duration-medium) var(--m3e-easing-standard); }
+ html[data-visual-style]:where(:not([data-visual-style="sakura"])) #post-list .m3-blog-postcard:hover { transform: translateY(-3px); }
+}
+html:is([data-visual-motion="paused"],.motion-reduced) .editorial-home__identity,
+html:is([data-visual-motion="paused"],.motion-reduced)[data-visual-style] #post-list .m3-blog-postcard { animation: none; transition: none; transform: none; }
+html:is([data-visual-motion="paused"],.motion-reduced).is-changing .transition-swup-fade,
+html:is([data-visual-motion="paused"],.motion-reduced).is-animating .transition-swup-fade { transition: none; transform: none; opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+ html[data-visual-style] .editorial-home__identity,
+ html[data-visual-style] #post-list .m3-blog-postcard { animation: none; transition: none; transform: none; }
+ html[data-visual-style].is-changing .transition-swup-fade,
+ html[data-visual-style].is-animating .transition-swup-fade { transition: none; transform: none; opacity: 1; }
+}
+@media (max-width: 767.98px) { .editorial-home__flow { --visual-flow-duration: 14s; } }
+html[data-visual-motion="paused"] .editorial-home__links a::after,
+html[data-visual-motion="paused"] .editorial-home__links a svg,
+html[data-visual-motion="paused"][data-visual-style="starlit"] .editorial-home__art img { transition: none; transform: none; }
+html:is([data-visual-motion="paused"],.motion-reduced)[data-visual-style] .onload-animation { animation: none; opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { html[data-visual-style] .onload-animation { animation: none; opacity: 1; transform: none; } }
+/* Integrate light into the actual composition, never a progress-bar-like panel.
+   Journal has a fine masthead rule; studio/gallery frame edges carry the beam. */
+.editorial-home__identity, .editorial-home__art { position: relative; }
+.editorial-home__flow { position: absolute; inset: auto 0 0; height: 3px; margin: 0; border-radius: 0; pointer-events: none; background: var(--primary-container); }
+.editorial-home__light { inset: 0; height: 100%; border: 0; }
+html[data-visual-style="journal"] .editorial-home__flow--art,
+html:is([data-visual-style="atelier"],[data-visual-style="starlit"]) .editorial-home__flow--identity { display: none; }
+html[data-visual-style="journal"] .editorial-home__light { top: 0; height: 100%; }
+html[data-visual-style="atelier"] .editorial-home__flow { inset: 0 auto 0 0; width: 4px; height: auto; background: var(--primary-container); }
+html[data-visual-style="atelier"] .editorial-home__light { height: 100%; }
+html[data-visual-style="atelier"] .editorial-home__light::before { inset: -60% 0 auto; width: 100%; height: 60%; background: linear-gradient(transparent, var(--primary), var(--tertiary-container), transparent); animation-name: visual-light-vertical; }
+@keyframes visual-light-vertical { from { transform: translateY(0); } to { transform: translateY(270%); } }
+html[data-visual-style="starlit"] .editorial-home__flow { inset: auto var(--m3e-space-3) 0; height: 4px; margin: 0; }
+html[data-visual-style="starlit"] .editorial-home__light { height: 100%; border: 0; }
+html[data-visual-style="starlit"] .editorial-home__identity { grid-row: 2; margin-top: var(--m3e-space-5); }
+html[data-visual-style="starlit"] .editorial-home__index { grid-row: 3; }
+.editorial-home__motion { position: static; min-height: 3rem; padding: 0 var(--m3e-space-3); border: 1px solid var(--outline-variant); border-radius: var(--shape-corner-full); color: var(--on-surface); background: var(--surface-container-low); }
+html[data-visual-style="atelier"] .editorial-home__motion { color: var(--on-surface); }
+html:is([data-visual-motion="paused"],.motion-reduced)[data-visual-style="atelier"] .editorial-home__light::before { animation: none; transform: translateY(130%); }
+@media (prefers-reduced-motion: reduce) { html[data-visual-style="atelier"] .editorial-home__light::before { animation: none; transform: translateY(130%); } }
+
+/* Transparent support widgets retain explicit surface ink. Place a paired
+   paper plane beneath them instead of remapping ink across unrelated cards. */
+html[data-visual-color="curated"][data-visual-style="atelier"] :is(#sidebar,#sidebar-secondary),
+html[data-visual-color="curated"][data-visual-style="atelier"] #main-grid > .footer {
+ background: var(--surface-container-lowest);
+ border-radius: var(--shape-corner-l);
+ padding: var(--m3e-space-5);
+}
+
+/* V5: actual playlist artwork and selection replace decorative geometric art.
+   This layout provides no fallback cover, track data, or Audio instance. */
+.editorial-home__music { min-width: 0; }
+html[data-visual-style="atelier"] .editorial-home__art { display: none; }
+html[data-visual-style="atelier"] .editorial-home__music {
+ --music-artwork-cover-size: 15rem;
+ --music-artwork-columns: 1fr;
+ justify-self: center; width: min(100%,20rem);
+}
+html[data-visual-style="atelier"] .editorial-home:not(:has(.editorial-home__music)) { grid-template-columns: minmax(0,1fr); }
+html[data-visual-style="journal"] .editorial-home__music {
+ --music-artwork-cover-size: 4rem;
+ --music-artwork-columns: 4rem minmax(0,1fr);
+ margin-top: var(--m3e-space-5); border-top: 1px solid var(--outline-variant); padding-top: var(--m3e-space-5);
+}
+html[data-visual-style="starlit"] .editorial-home__music {
+ --music-artwork-cover-size: 4.5rem;
+ --music-artwork-columns: 4.5rem minmax(0,1fr);
+ grid-row: 3; width: min(100%,44rem); margin: var(--m3e-space-5) auto 0;
+}
+html[data-visual-style="starlit"] .editorial-home__index { grid-row: 4; }
+/* Flow is an independent decorative UI effect, never playback feedback.
+   Explicit pause, OS/site reduced motion, offscreen and visibility rules above
+   remain authoritative. The QQ chooser has no audio or progress state. */
+@media (max-width: 1023.98px) {
+ html[data-visual-style="atelier"] .editorial-home__music { --music-artwork-cover-size: 12rem; --music-artwork-columns: 1fr; width: min(100%,20rem); }
+}
+/* Wallpaper settings affect decorative art, not an accessible music control. */
+html[data-wallpaper-mode="none"][data-visual-style="atelier"] .editorial-home:has(.editorial-home__music) { grid-template-columns: minmax(0,4fr) minmax(0,5fr); }
+@media (max-width: 1023.98px) { html[data-wallpaper-mode="none"][data-visual-style="atelier"] .editorial-home:has(.editorial-home__music) { grid-template-columns: minmax(0,1fr); } }
+/* Sakura keeps its legacy hero, but the genuine playlist remains reachable.
+   Reuse the single mounted card rather than adding a duplicate hidden player. */
+html[data-visual-style="sakura"] .editorial-home:has(.editorial-home__music) { display: block; margin-bottom: var(--m3e-space-5); }
+html[data-visual-style="sakura"] .editorial-home > :not(.editorial-home__music) { display: none; }
+html[data-visual-style="sakura"] .editorial-home__music {
+ --music-artwork-cover-size: 4rem;
+ --music-artwork-columns: 4rem minmax(0,1fr);
+ padding: var(--m3e-space-4); background: var(--surface-container-lowest); border-radius: var(--shape-corner-l);
+}
+
+/* Atelier retains its real playlist cover rather than a decorative SVG. Its
+   independent light is a narrow identity margin, clear of text and controls. */
+html[data-visual-style="atelier"] .editorial-home__identity { padding-inline-start: var(--m3e-space-5); }
+html[data-visual-style="atelier"] .editorial-home__flow--identity { display: block; width: 3px; }

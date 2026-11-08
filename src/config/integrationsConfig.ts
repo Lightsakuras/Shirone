@@ -280,6 +280,7 @@ export const prebundleSpecifiers: string[] = [
  * 所以收敛到这里。
  */
 export const MUSIC_SIDEBAR_VIRTUAL_ID = "virtual:shirone-music-sidebar";
+export const MUSIC_ARTWORK_VIRTUAL_ID = "virtual:shirone-music-artwork";
 
 /** 关掉音乐组件时，`generateBundle` 阶段要从产物里剔除的文件。 */
 export function isMusicBundleFile(fileName: string): boolean {
@@ -287,5 +288,25 @@ export function isMusicBundleFile(fileName: string): boolean {
 		fileName.includes("MusicSidebarClient") ||
 		fileName.startsWith("_astro/music.") ||
 		fileName.includes("/music.")
+	);
+}
+
+/** Material 0.4 emits extensionless internal ESM imports. Its build-time palette
+ * consumer must use Vite resolution in both source and npm-package modes. */
+export const viteServerEnvironmentsShared: NonNullable<
+	NonNullable<AstroUserConfig["vite"]>["environments"]
+> = Object.fromEntries(
+	["ssr", "astro", "prerender"].map((name) => [
+		name,
+		{ resolve: { noExternal: ["@material/material-color-utilities"] } },
+	]),
+);
+
+/** Independent QQ collection gate; these bundles never contain an audio player. */
+export function isQQPlaylistBundleFile(fileName: string): boolean {
+	return (
+		fileName.includes("MusicArtworkClient") ||
+		fileName.includes("qq-playlist-selection") ||
+		fileName.includes("qq-playlist-cover")
 	);
 }

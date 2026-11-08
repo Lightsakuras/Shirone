@@ -1,0 +1,12 @@
+---
+import { resolveCommunityOptions } from "@/config/communityConfig";
+
+interface Props {
+	target: string;
+}
+const options = resolveCommunityOptions();
+const Island = options
+	? (await import("./CommunityIsland.astro")).default
+	: null;
+---
+{options && Island && <Island config={options} mode="post" target={Astro.props.target} />}

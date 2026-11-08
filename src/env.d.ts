@@ -23,3 +23,10 @@ declare module "*scripts/anime/providers/bilibili.mjs" {
 		rawItems: unknown[];
 	}>;
 }
+
+declare module "virtual:shirone-music-artwork" {
+	const component:
+		| typeof import("@components/organisms/music/MusicArtwork.astro").default
+		| null;
+	export default component;
+}

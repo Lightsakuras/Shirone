@@ -2,7 +2,9 @@
 import Pagination from "@components/molecules/Pagination.astro";
 import PostPage from "@components/organisms/PostPage.astro";
 import type { GetStaticPaths } from "astro";
+import { resolveCommunityOptions } from "@/config/communityConfig";
 import { postListConfig } from "@/config/postListConfig";
+import { resolveVisualStyleOptions } from "@/config/siteConfig";
 import MainGridLayout from "../layouts/MainGridLayout.astro";
 import { getSortedPosts } from "../utils/content-utils";
 
@@ -15,9 +17,22 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 
 const len = page.data.length;
+const community = page.currentPage === 1 ? resolveCommunityOptions() : null;
+const CommunityHomeSection = community
+	? (await import("@components/organisms/community/CommunityHomeSection.astro"))
+			.default
+	: null;
+const staticSlugs = community
+	? (await getSortedPosts()).map((post) => post.id)
+	: [];
+const EditorialHome = resolveVisualStyleOptions().enable
+	? (await import("@components/organisms/EditorialHome.astro")).default
+	: null;
 ---
 
 <MainGridLayout page="home">
+    {EditorialHome && <EditorialHome total={page.total} />}
+    {community && CommunityHomeSection && <CommunityHomeSection apiUrl={community.apiUrl} staticSlugs={staticSlugs} />}
     <PostPage page={page}></PostPage>
     <Pagination class="mx-auto onload-animation" page={page} style={`animation-delay: calc(var(--content-delay) + ${(len)*50}ms)`}></Pagination>
 </MainGridLayout>

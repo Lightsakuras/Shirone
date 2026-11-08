@@ -1,0 +1,24 @@
+---
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import {
+	qqPlaylistConfig,
+	resolveQQPlaylistOptions,
+} from "@/config/qqPlaylistConfig";
+import MusicArtworkClient from "./MusicArtworkClient.svelte";
+
+interface Props {
+	class?: string;
+}
+const options = resolveQQPlaylistOptions(qqPlaylistConfig);
+const labels = {
+	title: i18n(I18nKey.qqPlaylistTitle),
+	choose: i18n(I18nKey.qqPlaylistChoose),
+	open: i18n(I18nKey.qqPlaylistOpen),
+	note: i18n(I18nKey.qqPlaylistExternalNote),
+	cover: i18n(I18nKey.qqPlaylistCover),
+	coverUnavailable: i18n(I18nKey.qqPlaylistCoverUnavailable),
+	selected: i18n(I18nKey.qqPlaylistSelected),
+};
+---
+{options && <MusicArtworkClient client:load {options} {labels} class={Astro.props.class} />}

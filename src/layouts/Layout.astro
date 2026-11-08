@@ -1,5 +1,6 @@
 ---
 import { Font } from "astro:assets";
+import { resolveCommunityOptions } from "@/config/communityConfig";
 import Snackbar from "@components/atoms/overlay/Snackbar.svelte";
 import ConfigCarrier from "@components/system/ConfigCarrier.astro";
 import UmamiRuntime from "@components/system/UmamiRuntime.astro";
@@ -14,6 +15,7 @@ import {
 	siteConfig,
 	umamiConfig,
 } from "@/config";
+import { resolveVisualStyleOptions } from "@/config/siteConfig";
 import type { SidebarPage } from "@/types/sidebarConfig";
 import {
 	AUTO_MODE,
@@ -32,6 +34,14 @@ import { resolvePageWidth } from "../utils/responsive-utils";
 import "../styles/main.css";
 import "../styles/font-faces.css";
 import textureStyles from "../styles/textures.css?raw";
+
+const feedApi = resolveCommunityOptions()?.apiUrl;
+const rssFeedUrl = feedApi ? `${feedApi}/v1/feeds/rss.xml` : `${Astro.site}rss.xml`;
+const atomFeedUrl = feedApi ? `${feedApi}/v1/feeds/atom.xml` : `${Astro.site}atom.xml`;
+const visualStyleOptions = resolveVisualStyleOptions();
+const VisualStyleHead = visualStyleOptions.enable
+	? (await import("@components/system/VisualStyleHead.astro")).default
+	: null;
 
 interface Props {
 	title?: string;
@@ -216,9 +226,10 @@ const hasMonoFont =
 			'page-width': resolvePageWidth(),
 		}}></style>
 
+		{VisualStyleHead && <VisualStyleHead defaultMode={visualStyleOptions.defaultMode} />}
 		<slot name="head"></slot>
-		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
-		<link rel="alternate" type="application/atom+xml" title={profileConfig.name} href={`${Astro.site}atom.xml`}/>
+		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={rssFeedUrl}/>
+		<link rel="alternate" type="application/atom+xml" title={profileConfig.name} href={atomFeedUrl}/>
 	</head>
 	<body
 		class="min-h-screen transition"

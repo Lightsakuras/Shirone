@@ -5,16 +5,29 @@
  * 站点标题（回首页）、右侧搜索/显示设置/主题切换。
  * 菜单按钮点击派发 site-drawer:toggle 事件，由 SiteNavigationDrawer 监听开合。
  */
+import { getCollection } from "astro:content";
 import IconButton from "@components/atoms/action/IconButton.svelte";
 import { resolveNavBarLinks, resolvePageKey } from "@utils/nav-utils";
 import { url } from "@utils/url-utils";
 import { Icon } from "astro-icon/components";
 import { siteConfig } from "@/config";
+import { resolveCommunityOptions } from "@/config/communityConfig";
 import { navBarConfig } from "@/config/navBarConfig";
 import DisplaySettings from "./DisplaySettings.svelte";
 import LightDarkSwitch from "./LightDarkSwitch.svelte";
 import Search from "./Search.svelte";
 
+const VisualStylePicker =
+	siteConfig.visualStyle?.enable === true
+		? (await import("./VisualStylePicker.astro")).default
+		: null;
+
+const community = resolveCommunityOptions();
+const staticSearchSlugs = community
+	? (await getCollection("posts", ({ data }) => !data.draft)).map(
+			(post) => post.id,
+		)
+	: [];
 const className = Astro.props.class;
 const links = resolveNavBarLinks(navBarConfig.links);
 const currentPageKey = resolvePageKey(Astro.url);
@@ -85,7 +98,8 @@ function isActive(link: (typeof links)[number]): boolean {
 			})}
 		</nav>
 		<div class="flex-1"></div>
-		<Search client:only="svelte"></Search>
+		{VisualStylePicker && <VisualStylePicker />}
+		<Search staticSlugs={staticSearchSlugs} client:only="svelte"></Search>
 		{!siteConfig.themeColor.fixed && (
 			<IconButton id="display-settings-switch" label="Display Settings" class="shrink-0">
 				<Icon name="material-symbols:palette-outline" class="text-[1.25rem]"></Icon>

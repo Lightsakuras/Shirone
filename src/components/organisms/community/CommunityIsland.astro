@@ -1,0 +1,106 @@
+---
+import { getCollection } from "astro:content";
+import { getPostUrl } from "@utils/url-utils";
+import type { CommunityConfig, CommunityMode } from "@/types/communityConfig";
+import CommunityApp from "./CommunityApp.svelte";
+
+interface Props {
+	config: CommunityConfig;
+	mode?: CommunityMode;
+	target?: string;
+}
+const { config, mode = "feed", target = "" } = Astro.props;
+const staticPostLinks =
+	mode === "space" || mode === "admin"
+		? Object.fromEntries(
+				(await getCollection("posts", ({ data }) => !data.draft)).map(
+					(post) => [`post:${post.id}`, getPostUrl(post)],
+				),
+			)
+		: {};
+const base = `${import.meta.env.BASE_URL.replace(/\/+$/, "")}/`;
+// Inline optional CSS is intentional: disabled pages must not pull community CSS
+// into the shared layout asset graph (docs/on-demand-loading.md L3).
+const css = `
+.community-app{color:var(--on-surface);font:var(--m3e-type-body-large);min-width:0;container-type:inline-size}
+.community-app *{box-sizing:border-box}
+.community-nav{display:flex;flex-wrap:wrap;gap:.5rem;border-bottom:1px solid var(--outline-variant);padding-bottom:1rem;margin-bottom:1.5rem}
+.community-nav a{display:inline-flex;align-items:center;min-height:48px;padding:.6rem 1rem;border-radius:var(--shape-corner-full);font:var(--m3e-type-label-large);color:var(--on-surface-variant)}
+.community-nav a:hover{background:var(--secondary-container);color:var(--on-secondary-container)}
+.community-app button{min-height:48px;border:1px solid var(--outline);border-radius:var(--shape-corner-m);padding:.6rem 1.1rem;color:var(--primary);background:var(--surface-container-low);font:var(--m3e-type-label-large);cursor:pointer;transition:background var(--m3e-duration-short2) var(--m3e-easing-standard)}
+.community-app button:hover:not(:disabled){background:var(--surface-container-high)}
+.community-app button.primary{color:var(--on-primary);background:var(--primary);border-color:var(--primary)}
+.community-app button:disabled{opacity:.5;cursor:not-allowed}
+.community-app button[aria-pressed=true],.community-app button.chosen{background:var(--secondary-container);color:var(--on-secondary-container)}
+.community-app :is(a,button,input,textarea):focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+.community-app :is(input,textarea){display:block;width:100%;padding:.9rem 1rem;margin-top:.5rem;background:var(--surface-container-lowest);color:var(--on-surface);border:1px solid var(--outline);border-radius:var(--shape-corner-m);font:var(--m3e-type-body-large)}
+.community-app textarea{resize:vertical;line-height:1.8}
+.community-app label{display:block;font:var(--m3e-type-label-large);margin:1rem 0}
+.community-app h1{font:var(--m3e-type-headline-large);margin:1rem 0}
+.community-app h2{font:var(--m3e-type-headline-small);margin:1.2rem 0 .8rem}
+.community-app h3{font:var(--m3e-type-title-large)}
+.community-app p{margin:.75rem 0;overflow-wrap:anywhere}
+.community-note,.community-notice{padding:1.2rem 1.4rem;background:var(--secondary-container);color:var(--on-secondary-container);border-radius:var(--shape-corner-l)}
+.community-error{padding:1.2rem;background:var(--error-container);color:var(--on-error-container);border-radius:var(--shape-corner-l)}
+.community-session,.community-list-row,.community-editor-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.community-session:empty{display:none}
+.community-session p{flex:1;min-width:12rem;color:var(--on-surface-variant);font:var(--m3e-type-body-medium)}
+.community-member{font:var(--m3e-type-title-medium)}
+.community-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin:2rem 0;padding:1.5rem 0;border-block:1px solid var(--outline-variant)}
+.community-stats strong{display:block;font:var(--m3e-type-headline-medium);color:var(--primary)}
+.community-stats span{font:var(--m3e-type-label-medium);color:var(--on-surface-variant)}
+.community-feed article{padding:1.8rem 0;border-bottom:1px solid var(--outline-variant)}
+.community-feed h2 a{color:var(--on-surface)}
+.community-read{display:inline-flex;align-items:center;gap:1rem;margin-top:1rem;color:var(--primary);font:var(--m3e-type-label-large)}
+.community-eyebrow{font:var(--m3e-type-label-medium);letter-spacing:.06em;color:var(--primary)}
+.community-empty{padding:2.5rem 0;color:var(--on-surface-variant);text-align:center}
+.community-muted{font:var(--m3e-type-body-small);color:var(--on-surface-variant)}
+.community-section{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--outline-variant)}
+.community-comment{padding:1.2rem 0;border-bottom:1px solid var(--outline-variant)}
+.community-comment p{white-space:pre-wrap;overflow-wrap:anywhere}
+.community-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.25rem 0}
+.community-studio{display:grid;grid-template-columns:minmax(0,1fr);gap:1.5rem;margin-top:1.5rem}
+.community-drafts{display:flex;flex-wrap:wrap;gap:.5rem;align-content:start}
+.community-drafts button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:.35rem;max-width:100%;overflow-wrap:anywhere}
+.community-editor{min-width:0;background:var(--surface-container-low);padding:clamp(1rem,3vw,2rem);border-radius:var(--shape-corner-l)}
+.community-app .community-title-input{font:var(--m3e-type-headline-small)}
+.community-app .community-body-input{font:var(--m3e-type-body-large);min-height:24rem}
+.community-preview{min-height:24rem}
+.community-deck{font:var(--m3e-type-title-medium);color:var(--on-surface-variant);line-height:1.7}
+.community-story{max-width:72ch;margin:2rem auto}
+.community-prose{line-height:1.9;overflow-wrap:anywhere}
+.community-prose p{white-space:pre-wrap;margin:1.2rem 0}
+.community-prose pre{background:var(--surface-container-high);border-radius:var(--shape-corner-m);padding:1rem;overflow:auto;white-space:pre-wrap}
+.community-prose blockquote{padding:.5rem 1.2rem;border-left:3px solid var(--primary);color:var(--on-surface-variant)}
+.community-prose ul{list-style:disc;padding-left:1.5rem}
+@container(min-width:46rem){.community-studio{grid-template-columns:10rem minmax(0,1fr)}.community-drafts{flex-direction:column}.community-drafts button{width:100%}}
+@media(max-width:480px){.community-stats{grid-template-columns:repeat(2,1fr)}.community-nav a{display:inline-flex;align-items:center;min-height:48px;padding:.6rem .7rem}.community-session button{width:100%}}
+/* Community composition follows the same four styles as the static journal.
+   All visual values stay semantic, so HCT and light/dark changes remain live. */
+.community-heading{padding-block:var(--m3e-space-4) var(--m3e-space-6);margin-bottom:var(--m3e-space-4)}
+.community-heading h1{margin:0;max-width:24ch;text-wrap:balance}
+.community-heading p{max-width:58ch;color:var(--on-surface-variant);font:var(--m3e-type-body-large)}
+.community-nav a[aria-current=page]{background:var(--primary-container);color:var(--on-primary-container);font-weight:600}
+.community-app :is(button,a,input,textarea){max-width:100%}
+.community-list-row>a{min-width:0;overflow-wrap:anywhere}
+.community-editor-top>div{min-width:0}
+.community-drafts small{color:var(--on-surface-variant)}
+html[data-visual-style="sakura"] .community-heading{padding:var(--m3e-space-6);background:var(--primary-container);color:var(--on-primary-container);border-radius:var(--shape-corner-xl)}
+html[data-visual-style="sakura"] .community-heading p{color:var(--on-primary-container)}
+html[data-visual-style="journal"] .community-heading{border-bottom:1px solid var(--outline-variant)}
+html[data-visual-style="journal"] .community-heading h1{border-inline-start:3px solid var(--primary);padding-inline-start:var(--m3e-space-4)}
+html[data-visual-style="journal"] .community-editor{border:1px solid var(--outline-variant);background:var(--surface-container-lowest)}
+html[data-visual-style="atelier"] .community-heading{max-width:64ch;margin-inline:auto;text-align:center;border-bottom:1px solid var(--outline-variant)}
+html[data-visual-style="atelier"] .community-heading :is(h1,p){margin-inline:auto}
+html[data-visual-style="atelier"] .community-nav{justify-content:center}
+html[data-visual-style="atelier"] .community-editor{background:var(--surface-container-lowest);border-block:1px solid var(--outline-variant);border-radius:var(--shape-corner-s)}
+html[data-visual-style="atelier"] .community-feed article{border-inline-start:1px solid var(--outline-variant);padding-inline-start:var(--m3e-space-6)}
+html[data-visual-style="starlit"] .community-heading{border-top:3px solid var(--primary);padding-inline-start:var(--m3e-space-4)}
+html[data-visual-style="starlit"] .community-editor{border-inline-start:3px solid var(--primary);background:var(--surface-container-low)}
+html[data-visual-style="starlit"] .community-nav a[aria-current=page]{border-radius:var(--shape-corner-s)}
+@container(max-width:30rem){.community-actions>button{flex:1 1 9rem}.community-editor-top{align-items:flex-start}.community-app .community-title-input{font:var(--m3e-type-title-large)}.community-stats{gap:var(--m3e-space-4)}.community-heading{padding:var(--m3e-space-4)}}
+@media(prefers-reduced-motion:reduce){.community-app button{transition:none}}
+`;
+---
+<style is:inline set:html={css}></style>
+<CommunityApp config={config} mode={mode} target={target} base={base} staticPostLinks={staticPostLinks} client:load />

@@ -2,6 +2,130 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const tr: Translation = {
+	[Key.communityAllStories]: "All online stories",
+	[Key.communityHomeOffline]:
+		"Online stories are temporarily unavailable. The local journal below is still available.",
+	[Key.communityNoOnlineStories]:
+		"No additional online stories yet. Continue with the journal below.",
+	[Key.communitySearchPartial]:
+		"Some search sources are unavailable. Results from available sources are shown.",
+	[Key.communitySearchEmpty]: "No matching stories. Try another search.",
+
+	[Key.visualStyleColors]: "Renk yaklaşımı",
+	[Key.visualStyleColorsHint]:
+		"Tasarım renkleri düzene uyar. Kaydettiğiniz renkler korunur; Sakura özgün paletini kullanır.",
+	[Key.visualStyleColorsCurated]: "Tasarım renkleri",
+	[Key.visualStyleColorsPersonal]: "Renklerim",
+
+	[Key.communityConfirmSignOut]:
+		"Sign out and clear your private draft recovery copy? Export any unpublished changes first.",
+	[Key.communityReservedSlug]:
+		"A local article already uses this slug. Choose a different one.",
+	[Key.communityConfirmUnpublish]:
+		"Return this published story to draft? It will no longer be publicly visible.",
+	[Key.communityConfirmSwitch]:
+		"Switch stories and discard unsaved changes? Export your work first if you want to keep it.",
+	[Key.communitySlugHelp]:
+		"Use lowercase letters, numbers, and single hyphens between words.",
+
+	[Key.communityTitle]: "Ortak oda",
+	[Key.communityIntro]:
+		"Stories, conversations, and a little corner of your own.",
+	[Key.communityFeed]: "Günlük",
+	[Key.communityGuestbook]: "Ziyaretçi defteri",
+	[Key.communitySpace]: "Alanım",
+	[Key.communityAdmin]: "Yazı stüdyosu",
+	[Key.communityLogin]: "Giriş yap",
+	[Key.communityLogout]: "Çıkış yap",
+	[Key.communityUnconfigured]:
+		"The community service is not connected yet. Reading local posts and drafting here still work. Publishing, accounts, and conversations will become available after setup.",
+	[Key.communityLoading]: "Loading…",
+	[Key.communityError]:
+		"The service could not complete this request. Please try again.",
+	[Key.communityRetry]: "Try again",
+	[Key.communitySignInHint]:
+		"Sign in to join the conversation, like stories, and keep your reading list.",
+	[Key.communityEmpty]: "A quiet beginning. Nothing here yet.",
+	[Key.communityRead]: "Read story",
+	[Key.communityTitleLabel]: "Title",
+	[Key.communitySlug]: "URL slug",
+	[Key.communityExcerpt]: "Short introduction",
+	[Key.communityBody]: "Story · Markdown",
+	[Key.communityPreview]: "Önizleme",
+	[Key.communityEdit]: "Yaz",
+	[Key.communityDraft]: "Taslağı kaydet",
+	[Key.communityPublish]: "Yayımla",
+	[Key.communityPublished]: "Published",
+	[Key.communityDraftStatus]: "Draft",
+	[Key.communityExport]: "Markdown dışa aktar",
+	[Key.communityNew]: "New story",
+	[Key.communitySaved]: "Saved.",
+	[Key.communityPending]: "Thank you. Your message is waiting for moderation.",
+	[Key.communitySend]: "Leave a message",
+	[Key.communityMessage]: "Your message",
+	[Key.communityModerationNote]:
+		"Messages appear after approval. Please be kind and avoid sharing private information.",
+	[Key.communityLike]: "Like",
+	[Key.communityBookmark]: "Save for later",
+	[Key.communityBookmarked]: "Saved for later",
+	[Key.communityComments]: "Conversations",
+	[Key.communityViews]: "Reads",
+	[Key.communityLikes]: "Likes",
+	[Key.communityPosts]: "Stories",
+	[Key.communityProfile]: "Your profile",
+	[Key.communityDisplayName]: "Display name",
+	[Key.communityBio]: "A few words about you",
+	[Key.communitySaveProfile]: "Save profile",
+	[Key.communityBookmarks]: "Reading list",
+	[Key.communityMyComments]: "Your messages",
+	[Key.communityDelete]: "Delete",
+	[Key.communityModeration]: "Moderation queue",
+	[Key.communityApprove]: "Approve",
+	[Key.communityReject]: "Reject",
+	[Key.communityOwnerOnly]:
+		"This studio is for the site owner. Sign in with an authorized owner account.",
+	[Key.communityLocalDraft]:
+		"Private local draft. Stored in this browser only; export a copy to keep it safe.",
+	[Key.communityLocalSaved]: "Draft saved in this browser.",
+	[Key.communityUnsaved]: "Unsaved changes",
+	[Key.communityConfirmPublish]: "Publish this story for everyone to read?",
+	[Key.communityConfirmDelete]: "Delete this message?",
+	[Key.communityAuthError]:
+		"Sign-in could not be completed. Check the provider configuration and try again.",
+	[Key.communityConflict]:
+		"This story changed elsewhere. Export your work before reloading the latest version.",
+	[Key.communityNoAuth]: "Sign-in is not configured yet.",
+	[Key.communityMarkdownHelp]:
+		"Use # headings, blank lines, and - lists. HTML is shown as text for safety.",
+	[Key.communityMore]: "Load more",
+	[Key.communityStats]: "Around the journal",
+	[Key.communityReadMissing]:
+		"Choose a story from the journal to start reading.",
+	[Key.communityGuest]: "Reader",
+	[Key.communityDraftStorageError]:
+		"This browser could not save the draft. Export a copy before leaving.",
+	[Key.communityPublishNeedsService]:
+		"Publishing requires a connected service and an authorized owner account.",
+	[Key.communityBack]: "Back to journal",
+	[Key.communitySessionExpired]:
+		"Your session expired. Sign in again to continue.",
+	[Key.communityRejected]: "Not published",
+	[Key.communityPendingStatus]: "Awaiting review",
+
+	[Key.visualStyle]: "Görünüm seç",
+	[Key.visualStyleHint]: "Aynı hikâyeler, farklı bir bakış.",
+	[Key.visualStyleSakura]: "Sakura",
+	[Key.visualStyleJournal]: "Günlük",
+	[Key.visualStyleAtelier]: "Atölye",
+	[Key.visualStyleStarlit]: "Yıldızlar",
+	[Key.visualStyleSakuraDescription]: "Özgün, yumuşak çizimli ana sayfa.",
+	[Key.visualStyleJournalDescription]: "Metin odaklı editoryal bir günlük.",
+	[Key.visualStyleAtelierDescription]:
+		"Kimlik, görsel ve yazıyı birleştiren stüdyo düzeni.",
+	[Key.visualStyleStarlitDescription]:
+		"Sakin bir okuma sütununa açılan görsel deneme.",
+	[Key.visualStyleReset]: "Site varsayılanı",
+
 	[Key.home]: "Anasayfa",
 	[Key.about]: "Hakkında",
 	[Key.archive]: "Arşiv",
@@ -242,6 +366,13 @@ export const tr: Translation = {
 	[Key.musicLoading]: "Müzik yükleniyor...",
 	[Key.musicNotRequested]: "Henüz istenmedi",
 	[Key.musicNowPlaying]: "Şimdi çalıyor: {title}",
+	[Key.qqPlaylistTitle]: "QQ Music çalma listeleri",
+	[Key.qqPlaylistChoose]: "Çalma listesi seç",
+	[Key.qqPlaylistOpen]: "QQ Music’te aç",
+	[Key.qqPlaylistExternalNote]: "QQ Music’te açılır. Bu sitede ses çalınmaz.",
+	[Key.qqPlaylistCover]: "Çalma listesi kapağı: {title}",
+	[Key.qqPlaylistCoverUnavailable]: "Çalma listesi kapağı yok",
+	[Key.qqPlaylistSelected]: "Seçilen çalma listesi: {title}",
 	[Key.musicErrorEmptyPlaylist]: "Çalma listesi boş.",
 	[Key.musicErrorSourceUnavailable]: "Bu parça kullanılamıyor.",
 	[Key.musicErrorAutoplayBlocked]:

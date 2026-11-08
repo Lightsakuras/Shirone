@@ -14,6 +14,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 	base: "/",
 	title: "Lightsakura",
 	subtitle: "飞升",
+	visualStyle: { enable: true, defaultMode: "journal" },
 	// 电脑端顶栏标题与导航内容区域："left" 左对齐，"center" 居中。
 	topAppBar: {
 		contentAlign: "center",
@@ -207,5 +208,21 @@ export function resolveDisplaySettings(): {
 		layoutMode: cfg?.layoutMode ?? true,
 		reduceMotion: cfg?.reduceMotion ?? true,
 		texture: textureOpts.enable && (cfg?.texture ?? true),
+	};
+}
+
+/** Resolve the optional composition feature without changing color or reading preferences. */
+export function resolveVisualStyleOptions(): {
+	enable: boolean;
+	defaultMode: import("@/types/config").VisualStyleMode;
+} {
+	const config = siteConfig.visualStyle;
+	const modes = ["sakura", "journal", "atelier", "starlit"];
+	return {
+		enable: config?.enable === true,
+		defaultMode:
+			config?.defaultMode && modes.includes(config.defaultMode)
+				? config.defaultMode
+				: "sakura",
 	};
 }

@@ -8,6 +8,8 @@ import {
 	IMAGE_ENDPOINT_ROUTE,
 	iconInclude,
 	isMusicBundleFile,
+	isQQPlaylistBundleFile,
+	MUSIC_ARTWORK_VIRTUAL_ID,
 	MUSIC_SIDEBAR_VIRTUAL_ID,
 	mdxOptions,
 	prebundleSpecifiers,
@@ -16,6 +18,7 @@ import {
 	swupOptions,
 	TRAILING_SLASH,
 	viteBuildShared,
+	viteServerEnvironmentsShared,
 } from "../config/integrationsConfig.ts";
 import { buildFontDeclarations } from "./fonts.ts";
 import {
@@ -51,6 +54,7 @@ export type {
 // This ensures Astro's typegen works correctly in both source and package modes.
 
 const RESOLVED_MUSIC_VIRTUAL_ID = `\0${MUSIC_SIDEBAR_VIRTUAL_ID}`;
+const RESOLVED_MUSIC_ARTWORK_VIRTUAL_ID = `\0${MUSIC_ARTWORK_VIRTUAL_ID}`;
 
 /**
  * Vite aliases mapping the theme's TypeScript path aliases onto the installed
@@ -109,7 +113,12 @@ function createAliases(paths: ResolvedShironesPaths) {
 function createMusicSidebarPlugin(
 	paths: ResolvedShironesPaths,
 	enabled: boolean,
+	qqEnabled: boolean,
 ) {
+	const artworkPath = join(
+		paths.packageSrc,
+		"components/organisms/music/MusicArtwork.astro",
+	);
 	const sidebarPath = join(
 		paths.packageSrc,
 		"components/organisms/music/MusicSidebar.astro",
@@ -119,20 +128,27 @@ function createMusicSidebarPlugin(
 		name: "shirones:optional-music-sidebar",
 		enforce: "pre" as const,
 		resolveId(source: string) {
-			return source === MUSIC_SIDEBAR_VIRTUAL_ID
-				? RESOLVED_MUSIC_VIRTUAL_ID
-				: null;
+			if (source === MUSIC_SIDEBAR_VIRTUAL_ID) return RESOLVED_MUSIC_VIRTUAL_ID;
+			if (source === MUSIC_ARTWORK_VIRTUAL_ID)
+				return RESOLVED_MUSIC_ARTWORK_VIRTUAL_ID;
+			return null;
 		},
 		load(id: string) {
+			if (id === RESOLVED_MUSIC_ARTWORK_VIRTUAL_ID)
+				return qqEnabled
+					? `export { default } from ${JSON.stringify(artworkPath)};`
+					: "export default null;";
 			if (id !== RESOLVED_MUSIC_VIRTUAL_ID) return null;
 			return enabled
 				? `export { default } from ${JSON.stringify(sidebarPath)};`
 				: "export default null;";
 		},
 		generateBundle(_options: unknown, bundle: Record<string, unknown>) {
-			if (enabled) return;
 			for (const fileName of Object.keys(bundle)) {
-				if (isMusicBundleFile(fileName)) {
+				if (
+					(!enabled && isMusicBundleFile(fileName)) ||
+					(!qqEnabled && isQQPlaylistBundleFile(fileName))
+				) {
 					delete bundle[fileName];
 				}
 			}
@@ -252,6 +268,16 @@ export function shirones(options: ShironesOptions = {}): AstroIntegration {
 					registryRef,
 				);
 				const musicConfig = musicModule.musicConfig;
+				const qqModule = await loadConfigModule(
+					paths,
+					"qqPlaylistConfig",
+					registryRef,
+				);
+				const resolveQQPlaylistOptions = qqModule.resolveQQPlaylistOptions as (
+					config: unknown,
+				) => unknown;
+				const qqEnabled =
+					resolveQQPlaylistOptions(qqModule.qqPlaylistConfig) !== null;
 				const resolveMusicOptions = musicModule.resolveMusicOptions as (
 					c: unknown,
 				) => unknown;
@@ -334,6 +360,7 @@ export function shirones(options: ShironesOptions = {}): AstroIntegration {
 					integrations,
 					markdown: { processor: processor as never },
 					vite: {
+						environments: viteServerEnvironmentsShared,
 						resolve: { alias: createAliases(paths) },
 						plugins: [
 							// The overlay rewriter redirects user files onto package
@@ -352,7 +379,7 @@ export function shirones(options: ShironesOptions = {}): AstroIntegration {
 							shironesIconRegeneration(paths, logger),
 							shironesThumbnailsRegeneration(paths),
 							shironesSsrNodeShims(),
-							createMusicSidebarPlugin(paths, musicEnabled),
+							createMusicSidebarPlugin(paths, musicEnabled, qqEnabled),
 							(await import("@tailwindcss/vite")).default(),
 						],
 						optimizeDeps: {

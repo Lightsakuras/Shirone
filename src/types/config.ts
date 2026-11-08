@@ -75,7 +75,11 @@ export type BannerConfig = {
 	};
 };
 
+export type VisualStyleMode = "sakura" | "journal" | "atelier" | "starlit";
+
 export type SiteConfig = {
+	/** Optional composition picker. Omitted/disabled preserves the original theme with no runtime or CSS. */
+	visualStyle?: { enable?: boolean; defaultMode?: VisualStyleMode };
 	site: string;
 	base?: string;
 	title: string;

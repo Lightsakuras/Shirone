@@ -30,6 +30,7 @@ export const GENERATED_CONFIG_FILE = "src/user/user-config.ts";
 
 /** @type {readonly ConfigDomain[]} */
 export const CONFIG_DOMAINS = Object.freeze([
+	{ key: "community", file: "community", type: "CommunityConfig", module: "@/types/communityConfig" },
 	{ key: "site", file: "site", type: "SiteConfig", module: "@/types/config" },
 	{
 		key: "permalink",
@@ -133,6 +134,12 @@ export const CONFIG_DOMAINS = Object.freeze([
 		file: "games",
 		type: "GamesConfig",
 		module: "@/types/gamesConfig",
+	},
+	{
+		key: "qqPlaylist",
+		file: "qq-playlist",
+		type: "QQPlaylistConfig",
+		module: "@/types/qqPlaylistConfig",
 	},
 	{
 		key: "music",

@@ -3,6 +3,7 @@ import { i18n } from "@i18n/translation";
 import { aboutConfig } from "@/config/aboutConfig";
 import { albumsConfig } from "@/config/albumsConfig";
 import { animeConfig } from "@/config/animeConfig";
+import { communityConfig } from "@/config/communityConfig";
 import { compassConfig } from "@/config/compassConfig";
 import { devicesConfig } from "@/config/devicesConfig";
 import { friendsConfig } from "@/config/friendsConfig";
@@ -128,6 +129,31 @@ export const LinkPresets: Record<string, NavBarLink> = {
 		icon: "material-symbols:info-outline-rounded",
 		pageKey: "about",
 	},
+	Community: {
+		name: i18n(I18nKey.communityTitle),
+		url: "/community/",
+		icon: "material-symbols:forum-outline-rounded",
+		pageKey: "community",
+	},
+	Guestbook: {
+		name: i18n(I18nKey.communityGuestbook),
+		url: "/guestbook/",
+		icon: "material-symbols:edit-note-rounded",
+		pageKey: "community",
+	},
+	Space: {
+		name: i18n(I18nKey.communitySpace),
+		url: "/space/",
+		icon: "material-symbols:account-circle-outline-rounded",
+		pageKey: "community",
+	},
+	Writing: {
+		name: i18n(I18nKey.communityAdmin),
+		url: "/admin/",
+		icon: "material-symbols:edit-document-outline-rounded",
+		pageKey: "community",
+	},
+
 	GitHub: {
 		name: "GitHub",
 		url: "https://github.com/LyraVoid/Shirone",
@@ -141,6 +167,7 @@ const defaultNavBarConfig: NavBarConfig = {
 	links: [
 		LinkPresets.Home,
 		LinkPresets.Archive,
+		LinkPresets.Community,
 		LinkPresets.Friends,
 		LinkPresets.Moments,
 		LinkPresets.Anime,
@@ -159,6 +186,9 @@ const defaultNavBarConfig: NavBarConfig = {
 				// 需要时取消注释即可
 				// LinkPresets.Categories,
 				// LinkPresets.Tags,
+				LinkPresets.Guestbook,
+				LinkPresets.Space,
+				LinkPresets.Writing,
 				LinkPresets.About,
 				LinkPresets.GitHub,
 			],
@@ -183,6 +213,9 @@ function resolveName(name: string): string {
  * 关闭判定只看配置，与导航结构无关，因此默认结构与内容仓声明式条目共用同一张表。
  */
 const unavailableFeatureRoutes: ReadonlySet<string> = new Set([
+	...(communityConfig.enable
+		? []
+		: ["/community", "/guestbook", "/space", "/admin", "/auth/callback"]),
 	...(friendsConfig.enable ? [] : ["/friends"]),
 	...(momentsConfig.enable ? [] : ["/moments"]),
 	...(animeConfig.enable ? [] : ["/anime"]),

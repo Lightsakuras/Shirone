@@ -1,0 +1,14 @@
+---
+import { buildVisualPaletteStyles } from "@utils/visual-style-palettes";
+import styles from "@/styles/visual-styles.css?raw";
+import type { VisualStyleMode } from "@/types/config";
+import runtime from "@/utils/visual-style-runtime.js?raw";
+
+interface Props {
+	defaultMode: VisualStyleMode;
+}
+const { defaultMode } = Astro.props;
+---
+<!-- Raw imports deliberately keep this optional feature out of shared CSS/JS. -->
+<style is:inline set:html={styles + "\n" + buildVisualPaletteStyles()}></style>
+<script is:inline data-visual-style-default={defaultMode} set:html={runtime}></script>

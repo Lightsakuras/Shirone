@@ -1,0 +1,20 @@
+---
+import CommunityHome from "./CommunityHome.svelte";
+
+interface Props {
+	apiUrl: string;
+	staticSlugs: string[];
+}
+const base = `${import.meta.env.BASE_URL.replace(/\/+$/, "")}/`;
+const css = `
+.community-home{margin-block:var(--m3e-space-6);padding:var(--m3e-space-6);border:1px solid var(--outline-variant);border-radius:var(--shape-corner-l);background:var(--surface-container-lowest);color:var(--on-surface)}
+.community-home header{display:flex;justify-content:space-between;align-items:center;gap:var(--m3e-space-4);flex-wrap:wrap;border-bottom:1px solid var(--outline-variant);padding-bottom:var(--m3e-space-4)}
+.community-home h2{font:var(--m3e-type-title-large)}.community-home header a{font:var(--m3e-type-label-large);color:var(--primary);min-height:48px;display:inline-flex;align-items:center}
+.community-home__story{padding-block:var(--m3e-space-5);border-bottom:1px solid var(--outline-variant);overflow-wrap:anywhere}.community-home__story h3{font:var(--m3e-type-headline-small);margin-block:var(--m3e-space-2)}.community-home__story p{font:var(--m3e-type-body-large);line-height:1.8;max-width:65ch}.community-home__story time,.community-home__status{font:var(--m3e-type-body-small);color:var(--on-surface-variant)}.community-home__status{margin-block:var(--m3e-space-4)}
+.community-home button{min-height:48px;padding:var(--m3e-space-3) var(--m3e-space-4);margin-top:var(--m3e-space-3);border:1px solid var(--outline);border-radius:var(--shape-corner-m);font:var(--m3e-type-label-large);color:var(--primary);background:var(--surface-container-low)}.community-home :is(a,button):focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+html[data-visual-style="atelier"] .community-home{border-inline:0;border-radius:var(--shape-corner-s)}html[data-visual-style="journal"] .community-home header{border-inline-start:3px solid var(--primary);padding-inline-start:var(--m3e-space-4)}html[data-visual-style="starlit"] .community-home{border-top:3px solid var(--primary)}
+@media(max-width:480px){.community-home{padding:var(--m3e-space-4)}.community-home__story h3{font:var(--m3e-type-title-large)}}
+`;
+---
+<style is:inline set:html={css}></style>
+<CommunityHome {...Astro.props} base={base} client:visible />

@@ -1,0 +1,22 @@
+name = "shirone-community-api"
+main = "src/worker.mjs"
+compatibility_date = "2026-01-01"
+workers_dev = false
+# Copy and configure locally. No database or credentials are provisioned by this file.
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "shirone-community"
+# database_id = "YOUR_DATABASE_ID"
+# migrations_dir = "migrations"
+[vars]
+ENABLED = "false"
+ALLOWED_ORIGINS = ""
+OIDC_ISSUER = ""
+OIDC_AUDIENCE = ""
+OIDC_JWKS_URL = ""
+OWNER_SUBJECTS = ""
+# Canonical website root including base path and trailing slash; feeds fail closed when unset.
+PUBLIC_SITE_URL = ""
+# Required secret: RATE_LIMIT_SALT (random >=32 characters, via wrangler secret put).
+[triggers]
+crons = ["17 3 * * *"]

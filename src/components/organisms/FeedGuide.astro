@@ -12,6 +12,7 @@ import { formatDateToYYYYMMDD } from "@utils/date-utils";
 import { getPostUrl, url } from "@utils/url-utils";
 import { Icon } from "astro-icon/components";
 import { siteConfig } from "@/config";
+import { resolveCommunityOptions } from "@/config/communityConfig";
 
 interface Props {
 	type: "rss" | "atom";
@@ -22,7 +23,8 @@ const isRss = type === "rss";
 const title = i18n(isRss ? I18nKey.rss : I18nKey.atom);
 const subtitle = i18n(isRss ? I18nKey.rssSubtitle : I18nKey.atomSubtitle);
 const feedPath = isRss ? "rss.xml" : "atom.xml";
-const feedUrl = url(feedPath);
+const feedApi = resolveCommunityOptions()?.apiUrl;
+const feedUrl = feedApi ? `${feedApi}/v1/feeds/${feedPath}` : url(feedPath);
 const siteBase = Astro.site ? Astro.site.href : siteConfig.site;
 const feedAbsoluteUrl = new URL(feedUrl, siteBase).href;
 

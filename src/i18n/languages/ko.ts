@@ -2,6 +2,130 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const ko: Translation = {
+	[Key.communityAllStories]: "All online stories",
+	[Key.communityHomeOffline]:
+		"Online stories are temporarily unavailable. The local journal below is still available.",
+	[Key.communityNoOnlineStories]:
+		"No additional online stories yet. Continue with the journal below.",
+	[Key.communitySearchPartial]:
+		"Some search sources are unavailable. Results from available sources are shown.",
+	[Key.communitySearchEmpty]: "No matching stories. Try another search.",
+
+	[Key.visualStyleColors]: "색상 방향",
+	[Key.visualStyleColorsHint]:
+		"디자인 색상은 레이아웃에 맞춰 바뀝니다. 저장한 색상은 유지되며 벚꽃은 원래 색상을 사용합니다.",
+	[Key.visualStyleColorsCurated]: "디자인 색상",
+	[Key.visualStyleColorsPersonal]: "내 색상",
+
+	[Key.communityConfirmSignOut]:
+		"Sign out and clear your private draft recovery copy? Export any unpublished changes first.",
+	[Key.communityReservedSlug]:
+		"A local article already uses this slug. Choose a different one.",
+	[Key.communityConfirmUnpublish]:
+		"Return this published story to draft? It will no longer be publicly visible.",
+	[Key.communityConfirmSwitch]:
+		"Switch stories and discard unsaved changes? Export your work first if you want to keep it.",
+	[Key.communitySlugHelp]:
+		"Use lowercase letters, numbers, and single hyphens between words.",
+
+	[Key.communityTitle]: "커뮤니티 라운지",
+	[Key.communityIntro]:
+		"Stories, conversations, and a little corner of your own.",
+	[Key.communityFeed]: "일기",
+	[Key.communityGuestbook]: "방명록",
+	[Key.communitySpace]: "내 공간",
+	[Key.communityAdmin]: "글쓰기 스튜디오",
+	[Key.communityLogin]: "로그인",
+	[Key.communityLogout]: "로그아웃",
+	[Key.communityUnconfigured]:
+		"The community service is not connected yet. Reading local posts and drafting here still work. Publishing, accounts, and conversations will become available after setup.",
+	[Key.communityLoading]: "Loading…",
+	[Key.communityError]:
+		"The service could not complete this request. Please try again.",
+	[Key.communityRetry]: "Try again",
+	[Key.communitySignInHint]:
+		"Sign in to join the conversation, like stories, and keep your reading list.",
+	[Key.communityEmpty]: "A quiet beginning. Nothing here yet.",
+	[Key.communityRead]: "Read story",
+	[Key.communityTitleLabel]: "Title",
+	[Key.communitySlug]: "URL slug",
+	[Key.communityExcerpt]: "Short introduction",
+	[Key.communityBody]: "Story · Markdown",
+	[Key.communityPreview]: "미리보기",
+	[Key.communityEdit]: "작성",
+	[Key.communityDraft]: "초안 저장",
+	[Key.communityPublish]: "게시",
+	[Key.communityPublished]: "Published",
+	[Key.communityDraftStatus]: "Draft",
+	[Key.communityExport]: "Markdown 내보내기",
+	[Key.communityNew]: "New story",
+	[Key.communitySaved]: "Saved.",
+	[Key.communityPending]: "Thank you. Your message is waiting for moderation.",
+	[Key.communitySend]: "Leave a message",
+	[Key.communityMessage]: "Your message",
+	[Key.communityModerationNote]:
+		"Messages appear after approval. Please be kind and avoid sharing private information.",
+	[Key.communityLike]: "Like",
+	[Key.communityBookmark]: "Save for later",
+	[Key.communityBookmarked]: "Saved for later",
+	[Key.communityComments]: "Conversations",
+	[Key.communityViews]: "Reads",
+	[Key.communityLikes]: "Likes",
+	[Key.communityPosts]: "Stories",
+	[Key.communityProfile]: "Your profile",
+	[Key.communityDisplayName]: "Display name",
+	[Key.communityBio]: "A few words about you",
+	[Key.communitySaveProfile]: "Save profile",
+	[Key.communityBookmarks]: "Reading list",
+	[Key.communityMyComments]: "Your messages",
+	[Key.communityDelete]: "Delete",
+	[Key.communityModeration]: "Moderation queue",
+	[Key.communityApprove]: "Approve",
+	[Key.communityReject]: "Reject",
+	[Key.communityOwnerOnly]:
+		"This studio is for the site owner. Sign in with an authorized owner account.",
+	[Key.communityLocalDraft]:
+		"Private local draft. Stored in this browser only; export a copy to keep it safe.",
+	[Key.communityLocalSaved]: "Draft saved in this browser.",
+	[Key.communityUnsaved]: "Unsaved changes",
+	[Key.communityConfirmPublish]: "Publish this story for everyone to read?",
+	[Key.communityConfirmDelete]: "Delete this message?",
+	[Key.communityAuthError]:
+		"Sign-in could not be completed. Check the provider configuration and try again.",
+	[Key.communityConflict]:
+		"This story changed elsewhere. Export your work before reloading the latest version.",
+	[Key.communityNoAuth]: "Sign-in is not configured yet.",
+	[Key.communityMarkdownHelp]:
+		"Use # headings, blank lines, and - lists. HTML is shown as text for safety.",
+	[Key.communityMore]: "Load more",
+	[Key.communityStats]: "Around the journal",
+	[Key.communityReadMissing]:
+		"Choose a story from the journal to start reading.",
+	[Key.communityGuest]: "Reader",
+	[Key.communityDraftStorageError]:
+		"This browser could not save the draft. Export a copy before leaving.",
+	[Key.communityPublishNeedsService]:
+		"Publishing requires a connected service and an authorized owner account.",
+	[Key.communityBack]: "Back to journal",
+	[Key.communitySessionExpired]:
+		"Your session expired. Sign in again to continue.",
+	[Key.communityRejected]: "Not published",
+	[Key.communityPendingStatus]: "Awaiting review",
+
+	[Key.visualStyle]: "스타일 선택",
+	[Key.visualStyleHint]: "같은 이야기, 새로운 시선.",
+	[Key.visualStyleSakura]: "벚꽃",
+	[Key.visualStyleJournal]: "저널",
+	[Key.visualStyleAtelier]: "아틀리에",
+	[Key.visualStyleStarlit]: "별빛",
+	[Key.visualStyleSakuraDescription]: "부드러운 일러스트의 기본 홈.",
+	[Key.visualStyleJournalDescription]: "글과 명확한 위계가 중심인 저널.",
+	[Key.visualStyleAtelierDescription]:
+		"소개와 이미지, 글을 담은 스튜디오 지면.",
+	[Key.visualStyleStarlitDescription]:
+		"이미지에서 조용한 글로 이어지는 에세이.",
+	[Key.visualStyleReset]: "사이트 기본값",
+
 	[Key.home]: "홈",
 	[Key.about]: "소개",
 	[Key.archive]: "아카이브",
@@ -239,6 +363,14 @@ export const ko: Translation = {
 	[Key.musicLoading]: "음악을 불러오는 중...",
 	[Key.musicNotRequested]: "아직 요청되지 않음",
 	[Key.musicNowPlaying]: "지금 재생 중: {title}",
+	[Key.qqPlaylistTitle]: "QQ Music 재생목록",
+	[Key.qqPlaylistChoose]: "재생목록 선택",
+	[Key.qqPlaylistOpen]: "QQ Music에서 열기",
+	[Key.qqPlaylistExternalNote]:
+		"QQ Music에서 열립니다. 이 사이트에서는 오디오가 재생되지 않습니다.",
+	[Key.qqPlaylistCover]: "재생목록 커버: {title}",
+	[Key.qqPlaylistCoverUnavailable]: "재생목록 커버 없음",
+	[Key.qqPlaylistSelected]: "선택한 재생목록: {title}",
 	[Key.musicErrorEmptyPlaylist]: "재생 목록이 비어 있습니다.",
 	[Key.musicErrorSourceUnavailable]: "이 곡을 재생할 수 없습니다.",
 	[Key.musicErrorAutoplayBlocked]:

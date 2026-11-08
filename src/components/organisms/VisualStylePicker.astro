@@ -1,0 +1,53 @@
+---
+import Key from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import { Icon } from "astro-icon/components";
+
+const modes = [
+	{
+		id: "sakura",
+		label: Key.visualStyleSakura,
+		description: Key.visualStyleSakuraDescription,
+	},
+	{
+		id: "journal",
+		label: Key.visualStyleJournal,
+		description: Key.visualStyleJournalDescription,
+	},
+	{
+		id: "atelier",
+		label: Key.visualStyleAtelier,
+		description: Key.visualStyleAtelierDescription,
+	},
+	{
+		id: "starlit",
+		label: Key.visualStyleStarlit,
+		description: Key.visualStyleStarlitDescription,
+	},
+];
+---
+<details class="visual-style-picker" data-visual-style-picker>
+	<summary class="visual-style-picker__trigger m3-state-layer" aria-label={i18n(Key.visualStyle)} title={i18n(Key.visualStyle)}>
+		<Icon name="material-symbols:dashboard-customize-rounded" />
+	</summary>
+	<section class="visual-style-picker__panel" aria-label={i18n(Key.visualStyle)}>
+		<div class="visual-style-picker__heading">{i18n(Key.visualStyle)}</div>
+		<p class="visual-style-picker__hint">{i18n(Key.visualStyleHint)}</p>
+		<div class="visual-style-picker__options">
+			{modes.map(mode => <button type="button" class="visual-style-option m3-state-layer" data-visual-style={mode.id} aria-pressed="false">
+				<span class:list={["visual-style-preview", `visual-style-preview--${mode.id}`]} aria-hidden="true"><i></i><i></i><i></i></span>
+				<strong>{i18n(mode.label)}</strong>
+				<span class="visual-style-option__description">{i18n(mode.description)}</span>
+			</button>)}
+		</div>
+		<fieldset class="visual-style-colors">
+			<legend>{i18n(Key.visualStyleColors)}</legend>
+			<p>{i18n(Key.visualStyleColorsHint)}</p>
+			<div class="visual-style-colors__options">
+				<button type="button" class="m3-state-layer" data-visual-color="curated" aria-pressed="false">{i18n(Key.visualStyleColorsCurated)}</button>
+				<button type="button" class="m3-state-layer" data-visual-color="personal" aria-pressed="false">{i18n(Key.visualStyleColorsPersonal)}</button>
+			</div>
+		</fieldset>
+		<button type="button" class="visual-style-picker__reset m3-state-layer" data-visual-style-reset>{i18n(Key.visualStyleReset)}</button>
+	</section>
+</details>

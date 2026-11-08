@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon/components";
+import MusicArtwork from "virtual:shirone-music-artwork";
+import { qqPlaylistConfig, resolveQQPlaylistOptions } from "@/config/qqPlaylistConfig";
+import { profileConfig } from "@/config/profileConfig";
+import { siteConfig } from "@/config/siteConfig";
+import Key from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import { resolveAsset } from "@utils/asset-utils";
+import { url } from "@utils/url-utils";
+interface Props { total: number }
+const { total } = Astro.props;
+const hasQQPlaylists = resolveQQPlaylistOptions(qqPlaylistConfig) !== null;
+const source = siteConfig.banner.src.desktop;
+const imagePath = Array.isArray(source) ? source[0] : source.light[0] || source.dark[0];
+const artwork = imagePath ? await resolveAsset(imagePath) : "";
+const artworkUrl = artwork.startsWith("/") ? url(artwork) : artwork;
+const introduction = Array.isArray(siteConfig.banner.homeText.subtitle)
+	? siteConfig.banner.homeText.subtitle[0]
+	: siteConfig.banner.homeText.subtitle;
+---
+<!-- Real author/configuration content, not a fabricated project or portfolio.
+     This entire component is conditional on visualStyle.enable at the page. -->
+<section class="editorial-home" aria-labelledby="editorial-home-title">
+	<div class="editorial-home__identity">
+		<p class="editorial-home__eyebrow"><span aria-hidden="true"></span>{profileConfig.name}</p>
+		<h1 id="editorial-home-title">{siteConfig.title}</h1>
+		<p class="editorial-home__introduction">{introduction || profileConfig.bio || siteConfig.subtitle}</p>
+		<nav class="editorial-home__links" aria-label={i18n(Key.about)}>
+			<a href={url("/archive/")}>{i18n(Key.archive)}<Icon name="material-symbols:arrow-outward-rounded" aria-hidden="true" /></a>
+			<a href={url("/about/")}>{i18n(Key.about)}<Icon name="material-symbols:arrow-outward-rounded" aria-hidden="true" /></a>
+		</nav>
+		<div class="editorial-home__flow editorial-home__flow--identity" aria-hidden="true"><span class="editorial-home__light"></span></div>
+	</div>
+	<div class="editorial-home__art" aria-hidden="true">
+		{artwork && <img src={artworkUrl} alt="" width="1600" height="640" loading="lazy" decoding="async" />}
+		<div class="editorial-home__flow editorial-home__flow--art" aria-hidden="true"><span class="editorial-home__light"></span></div>
+	</div>
+	{hasQQPlaylists && MusicArtwork && <div class="editorial-home__music"><MusicArtwork /></div>}
+	<div class="editorial-home__index">
+		<label class="editorial-home__motion"><input type="checkbox" data-visual-flow-pause />{i18n(Key.reduceMotion)}</label>
+		<span class="editorial-home__color-state"><span data-color-state="curated">{i18n(Key.visualStyleColorsCurated)}</span><span data-color-state="personal">{i18n(Key.visualStyleColorsPersonal)}</span></span>
+		<span>{total} {i18n(total === 1 ? Key.postCount : Key.postsCount)}</span>
+		<span class="editorial-home__index-rule" aria-hidden="true"></span>
+		<span>{siteConfig.subtitle}</span>
+	</div>
+</section>
