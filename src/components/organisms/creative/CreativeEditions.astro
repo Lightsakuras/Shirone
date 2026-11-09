@@ -1,0 +1,11 @@
+---
+import Key from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+---
+<div class="creative-editions" aria-label={i18n(Key.creativeEdition)}>
+ <span class="creative-kicker">{i18n(Key.creativeEdition)}</span>
+ <div class="creative-editions__options">
+ {[['blossom',Key.creativeSoft],['reverie',Key.creativeDream],['nocturne',Key.creativeNight]].map(([id,key])=><button type="button" data-creative-edition={id} aria-pressed={id==='blossom'}>{i18n(key as Key)}</button>)}
+ </div>
+ <label class="creative-motion"><input type="checkbox" data-creative-motion />{i18n(Key.creativeMotion)}</label>
+</div>

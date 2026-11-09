@@ -1,0 +1,13 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import CreativeStory from "@components/organisms/creative/CreativeStory.astro";
+import data from "../../../public/assets/creative/projects.json";
+export function getStaticPaths() {
+	return data.sections.map((section) => ({
+		params: { world: section.id },
+		props: { section },
+	}));
+}
+const { section } = Astro.props;
+---
+<MainGridLayout title={section.title} description={section.description} page="projects"><CreativeStory id={section.id} /></MainGridLayout>

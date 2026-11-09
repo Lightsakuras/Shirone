@@ -1,4 +1,6 @@
 ---
+import CreativeAtmosphere from "@components/system/CreativeAtmosphere.astro";
+import CreativeAudio from "@components/organisms/CreativeAudio.astro";
 import { Font } from "astro:assets";
 import { resolveCommunityOptions } from "@/config/communityConfig";
 import Snackbar from "@components/atoms/overlay/Snackbar.svelte";
@@ -36,8 +38,12 @@ import "../styles/font-faces.css";
 import textureStyles from "../styles/textures.css?raw";
 
 const feedApi = resolveCommunityOptions()?.apiUrl;
-const rssFeedUrl = feedApi ? `${feedApi}/v1/feeds/rss.xml` : `${Astro.site}rss.xml`;
-const atomFeedUrl = feedApi ? `${feedApi}/v1/feeds/atom.xml` : `${Astro.site}atom.xml`;
+const rssFeedUrl = feedApi
+	? `${feedApi}/v1/feeds/rss.xml`
+	: `${Astro.site}rss.xml`;
+const atomFeedUrl = feedApi
+	? `${feedApi}/v1/feeds/atom.xml`
+	: `${Astro.site}atom.xml`;
 const visualStyleOptions = resolveVisualStyleOptions();
 const VisualStyleHead = visualStyleOptions.enable
 	? (await import("@components/system/VisualStyleHead.astro")).default
@@ -240,6 +246,7 @@ const hasMonoFont =
 		data-banner-has-desktop={String(hasDesktopBanner)}
 		data-banner-has-mobile={String(hasMobileBanner)}
 	>
+		<CreativeAtmosphere />
 		<ConfigCarrier></ConfigCarrier>
 		{umamiOptions && <UmamiRuntime />}
 		{textureEnabled && (
@@ -249,6 +256,7 @@ const hasMonoFont =
 				aria-hidden="true"
 			></div>
 		)}
+		<CreativeAudio />
 		<Snackbar client:only="svelte"></Snackbar>
 		<slot />
 		<div id="page-height-extend" class="hidden h-[300vh]"></div>

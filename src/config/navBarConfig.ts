@@ -165,6 +165,11 @@ export const LinkPresets: Record<string, NavBarLink> = {
 
 const defaultNavBarConfig: NavBarConfig = {
 	links: [
+		{
+			name: i18n(I18nKey.creativeWorks),
+			url: "/worlds/",
+			icon: "material-symbols:auto-awesome-rounded",
+		},
 		LinkPresets.Home,
 		LinkPresets.Archive,
 		LinkPresets.Community,

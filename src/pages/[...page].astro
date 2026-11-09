@@ -1,4 +1,5 @@
 ---
+import CreativeHome from "@components/organisms/creative/CreativeHome.astro";
 import Pagination from "@components/molecules/Pagination.astro";
 import PostPage from "@components/organisms/PostPage.astro";
 import type { GetStaticPaths } from "astro";
@@ -31,6 +32,7 @@ const EditorialHome = resolveVisualStyleOptions().enable
 ---
 
 <MainGridLayout page="home">
+    {page.currentPage === 1 && <CreativeHome />}
     {EditorialHome && <EditorialHome total={page.total} />}
     {community && CommunityHomeSection && <CommunityHomeSection apiUrl={community.apiUrl} staticSlugs={staticSlugs} />}
     <PostPage page={page}></PostPage>

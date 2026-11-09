@@ -2,6 +2,40 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const th: Translation = {
+	[Key.creativeAudioTitle]: "วิทยุกลีบดอกไม้",
+	[Key.creativeAudioPlay]: "เล่นเพลง",
+	[Key.creativeAudioPause]: "หยุดเพลงชั่วคราว",
+	[Key.creativeAudioNext]: "เพลงถัดไป",
+	[Key.creativeAudioTrack]: "เลือกเพลง",
+	[Key.creativeAudioVolume]: "ระดับเสียง",
+	[Key.creativeAudioNote]: "ดนตรีสังเคราะห์ต้นฉบับชั่วคราว · ไม่ใช่เพลย์ลิสต์ QQ",
+	[Key.creativeAudioError]: "เล่นไม่สำเร็จ โปรดลองอีกครั้ง",
+	[Key.creativeAudioPlaying]: "กำลังเล่น",
+	[Key.creativeAudioPaused]: "หยุดชั่วคราว",
+
+	[Key.creativeTitle]: "Stories keep growing here.",
+	[Key.creativeEyebrow]: "LIGHTSAKURA · CREATIVE WORLDS",
+	[Key.creativeIntro]:
+		"From a comic panel to a lost city. Imagined worlds, stories and journeys.",
+	[Key.creativeExplore]: "Explore the worlds",
+	[Key.creativeEdition]: "Sakura · Art editions",
+	[Key.creativeSoft]: "01 Blossom · gentle",
+	[Key.creativeDream]: "02 Reverie · cinematic",
+	[Key.creativeNight]: "03 Nocturne · experimental",
+	[Key.creativeWorlds]: "Three worlds. Three rhythms.",
+	[Key.creativeWorldsIntro]:
+		"Not a pile of images. Choose a doorway into a story.",
+	[Key.creativeOpen]: "Open the story",
+	[Key.creativeGameIntro]:
+		"My cultivation game. Leave the everyday behind for a little while.",
+	[Key.creativeGameEnter]: "Begin · Open the game",
+	[Key.creativeGameNote]: "Opens the Coze game in a new tab",
+	[Key.creativeGameLabel]: "PLAYABLE WORLD",
+	[Key.creativeBack]: "Back to the worlds",
+	[Key.creativeChapters]: "Follow the story",
+	[Key.creativeMotion]: "Pause decorative motion",
+	[Key.creativeWorks]: "Creative worlds",
+	[Key.creativeViewImage]: "View full artwork",
 	[Key.communityAllStories]: "All online stories",
 	[Key.communityHomeOffline]:
 		"Online stories are temporarily unavailable. The local journal below is still available.",

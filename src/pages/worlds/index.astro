@@ -1,0 +1,7 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import CreativeHome from "@components/organisms/creative/CreativeHome.astro";
+import Key from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+---
+<MainGridLayout title={i18n(Key.creativeWorks)} description={i18n(Key.creativeIntro)} page="projects"><CreativeHome /></MainGridLayout>

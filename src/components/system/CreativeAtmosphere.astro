@@ -1,0 +1,16 @@
+---
+import "@/styles/creative-worlds.css";
+---
+<div class="creative-atmosphere" aria-hidden="true"><div class="creative-atmosphere__wash"></div><div class="creative-atmosphere__wash"></div>{Array.from({length:16},(_,i)=><i class="creative-petal" style={`--x:${i*6.4}%;--size:${7+i%5*2}px;--fall:${16+i%7*3}s;--delay:-${i*2.7}s`}></i>)}</div>
+<script is:inline>
+(()=>{const root=document.documentElement;const valid=['blossom','reverie','nocturne'];const read=k=>{try{return localStorage.getItem(k)}catch{return null}};const write=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
+ const setEdition=value=>{root.dataset.creativeEdition=valid.includes(value)?value:'blossom';document.querySelectorAll('button[data-creative-edition]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.creativeEdition===root.dataset.creativeEdition)))};
+ const setMotion=value=>{root.dataset.creativePaused=String(value);document.querySelectorAll('[data-creative-motion]').forEach(el=>el.checked=value)};
+ if(!read('sakura-creative-v8')){write('shirone-visual-style','sakura');write('sakura-creative-v8','1');root.dataset.visualStyle='sakura'}
+ setEdition(read('sakura-creative-edition'));setMotion(read('sakura-creative-paused')==='true');
+ if(window.__creativeWorldBound)return;window.__creativeWorldBound=true;
+ document.addEventListener('click',e=>{const el=e.target.closest('button[data-creative-edition]');if(el){setEdition(el.dataset.creativeEdition);write('sakura-creative-edition',root.dataset.creativeEdition)}});
+ document.addEventListener('change',e=>{if(e.target.matches('[data-creative-motion]')){setMotion(e.target.checked);write('sakura-creative-paused',String(e.target.checked))}});
+ const sync=()=>{setEdition(root.dataset.creativeEdition);setMotion(root.dataset.creativePaused==='true')};document.addEventListener('DOMContentLoaded',sync);document.addEventListener('swup:page:view',sync);document.addEventListener('astro:page-load',sync);
+})();
+</script>

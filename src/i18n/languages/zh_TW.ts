@@ -2,6 +2,40 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const zh_TW: Translation = {
+	[Key.creativeAudioTitle]: "花間電台",
+	[Key.creativeAudioPlay]: "開啟音樂",
+	[Key.creativeAudioPause]: "暫停音樂",
+	[Key.creativeAudioNext]: "下一首",
+	[Key.creativeAudioTrack]: "選擇曲目",
+	[Key.creativeAudioVolume]: "音量",
+	[Key.creativeAudioNote]: "暫時原創合成配樂 · 非 QQ 歌單",
+	[Key.creativeAudioError]: "播放失敗，請重試",
+	[Key.creativeAudioPlaying]: "正在播放",
+	[Key.creativeAudioPaused]: "已暫停",
+
+	[Key.creativeTitle]: "故事在这里，继续生长。",
+	[Key.creativeEyebrow]: "LIGHTSAKURA · 创作宇宙",
+	[Key.creativeIntro]:
+		"从一格漫画，到一座失落之城。把想象写成故事，把故事走成旅途。",
+	[Key.creativeExplore]: "进入创作宇宙",
+	[Key.creativeEdition]: "樱花原作 · 艺术版本",
+	[Key.creativeSoft]: "01 轻樱 · 温柔日常",
+	[Key.creativeDream]: "02 幻境 · 叙事剧场",
+	[Key.creativeNight]: "03 夜航 · 实验艺术",
+	[Key.creativeWorlds]: "三个世界，三种心跳。",
+	[Key.creativeWorldsIntro]:
+		"不是图片的堆叠，是正在发生的故事。选择一道入口，慢慢看。",
+	[Key.creativeOpen]: "展开故事",
+	[Key.creativeGameIntro]:
+		"这是我做的修仙小游戏。暂时放下现实，去另一边走一程。",
+	[Key.creativeGameEnter]: "启程 · 进入小游戏",
+	[Key.creativeGameNote]: "在新窗口打开 Coze 游戏站点",
+	[Key.creativeGameLabel]: "可游玩的想象 / PLAYABLE WORLD",
+	[Key.creativeBack]: "返回创作宇宙",
+	[Key.creativeChapters]: "沿着故事走",
+	[Key.creativeMotion]: "暂停装饰动效",
+	[Key.creativeWorks]: "创作宇宙",
+	[Key.creativeViewImage]: "查看完整画面",
 	[Key.communityAllStories]: "全部在线文章",
 	[Key.communityHomeOffline]: "在线文章暂时无法加载，下方本地文章仍可阅读。",
 	[Key.communityNoOnlineStories]: "暂无额外的在线文章，请继续阅读下方手记。",

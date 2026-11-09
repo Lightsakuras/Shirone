@@ -1,0 +1,10 @@
+---
+import { creativeGame } from "@/data/creative-worlds";
+import Key from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+---
+<section class="game-portal" aria-labelledby="game-portal-title">
+ <div class="game-portal__landscape" aria-hidden="true"><div class="game-orbit"></div><div class="game-moon"></div></div>
+ <div class="game-portal__copy"><p class="creative-kicker">{i18n(Key.creativeGameLabel)}</p><h2 id="game-portal-title">{creativeGame.title}</h2><p>{i18n(Key.creativeGameIntro)}</p>
+ <a class="creative-button" href={creativeGame.url} target="_blank" rel="noopener noreferrer" data-no-swup>{i18n(Key.creativeGameEnter)} <span aria-hidden="true">↗</span></a><small>{i18n(Key.creativeGameNote)}</small></div>
+</section>

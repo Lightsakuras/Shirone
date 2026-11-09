@@ -1,0 +1,8 @@
+Lightsakura temporary original ambient score — composed 2026-11-08; restored 2026-11-09
+Sakura After Rain / 雨后樱庭 — 107.05 s
+Tidal Observatory / 潮汐观测站 — 126 s
+Starlit Walk / 星灯漫步 — 93.27 s
+
+These tracks were procedurally composed and synthesized specifically for this blog by the assistant on the user's redesign request. Note sequences and synthesis are authored in scripts/audio/compose.py. No third-party recording, sample pack, song melody, lyrics, voice or impulse response is used. They are not QQ Music songs or the user's playlists.
+Reproduce with Python 3 + numpy + ffmpeg: python scripts/audio/compose.py. Stereo 32 kHz MP3, 128 kbps. Source uses sine partials, envelopes, stereo panning and low-density delay.
+Replace these temporary tracks when the user supplies approved audio. UI labels them as temporary original synthesized music. Initial playback requires a visitor click. QQ playlists remain separate external links.

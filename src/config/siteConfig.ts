@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = withUserConfig("site", {
 	base: "/",
 	title: "Lightsakura",
 	subtitle: "飞升",
-	visualStyle: { enable: true, defaultMode: "journal" },
+	visualStyle: { enable: true, defaultMode: "sakura" },
 	// 电脑端顶栏标题与导航内容区域："left" 左对齐，"center" 居中。
 	topAppBar: {
 		contentAlign: "center",

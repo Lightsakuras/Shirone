@@ -1,0 +1,647 @@
+{
+  "title": "创作宇宙",
+  "description": "在漫画、原创世界与未知巨物之间，慢慢把想象变成可以进入的地方。",
+  "sections": [
+    {
+      "id": "comics",
+      "title": "AI娘漫画",
+      "eyebrow": "STORIES / 01",
+      "subtitle": "方舟生存历险记 · 孤岛篇",
+      "description": "猫娘、白龙娘与大肥鱼误入方舟，从慌忙逃跑，到把 Boss 打成了新玩伴。",
+      "cover": "ark-01-01",
+      "chapters": [
+        {
+          "id": "ark-01",
+          "title": "别跑了，你也是龙",
+          "summary": "从被霸王龙追赶，到突然想起自己的真实身份。",
+          "pages": [
+            {
+              "id": "ark-01-01",
+              "section": "comics",
+              "title": "别跑了，你也是龙 · 第1页",
+              "caption": "从被霸王龙追赶，到突然想起自己的真实身份。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-01-01.webp",
+              "thumbnail": "/assets/creative/ark-01-01-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "id": "ark-01-02",
+              "section": "comics",
+              "title": "别跑了，你也是龙 · 第2页",
+              "caption": "从被霸王龙追赶，到突然想起自己的真实身份。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-01-02.webp",
+              "thumbnail": "/assets/creative/ark-01-02-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "id": "ark-01-03",
+              "section": "comics",
+              "title": "别跑了，你也是龙 · 第3页",
+              "caption": "从被霸王龙追赶，到突然想起自己的真实身份。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-01-03.webp",
+              "thumbnail": "/assets/creative/ark-01-03-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-02",
+          "title": "海里那个更大",
+          "summary": "大肥鱼下海，食物链的顺序需要重新排一下。",
+          "pages": [
+            {
+              "id": "ark-02-01",
+              "section": "comics",
+              "title": "海里那个更大 · 第1页",
+              "caption": "大肥鱼下海，食物链的顺序需要重新排一下。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-02-01.webp",
+              "thumbnail": "/assets/creative/ark-02-01-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "id": "ark-02-02",
+              "section": "comics",
+              "title": "海里那个更大 · 第2页",
+              "caption": "大肥鱼下海，食物链的顺序需要重新排一下。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-02-02.webp",
+              "thumbnail": "/assets/creative/ark-02-02-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-03",
+          "title": "驯龙教学",
+          "summary": "别人驯龙靠准备，她们驯龙靠自我介绍。",
+          "pages": [
+            {
+              "id": "ark-03-01",
+              "section": "comics",
+              "title": "驯龙教学 · 第1页",
+              "caption": "别人驯龙靠准备，她们驯龙靠自我介绍。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-03-01.webp",
+              "thumbnail": "/assets/creative/ark-03-01-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "id": "ark-03-02",
+              "section": "comics",
+              "title": "驯龙教学 · 第2页",
+              "caption": "别人驯龙靠准备，她们驯龙靠自我介绍。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-03-02.webp",
+              "thumbnail": "/assets/creative/ark-03-02-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-04",
+          "title": "孕母蜘蛛",
+          "summary": "孤岛 Boss 战的第一站。",
+          "pages": [
+            {
+              "id": "ark-04-01",
+              "section": "comics",
+              "title": "孕母蜘蛛 · 第1页",
+              "caption": "孤岛 Boss 战的第一站。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-04-01.webp",
+              "thumbnail": "/assets/creative/ark-04-01-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "id": "ark-04-02",
+              "section": "comics",
+              "title": "孕母蜘蛛 · 第2页",
+              "caption": "孤岛 Boss 战的第一站。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-04-02.webp",
+              "thumbnail": "/assets/creative/ark-04-02-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-05",
+          "title": "喷火龙",
+          "summary": "巨龙之间，总有更直接的交流方式。",
+          "pages": [
+            {
+              "id": "ark-05-01",
+              "section": "comics",
+              "title": "喷火龙 · 第1页",
+              "caption": "巨龙之间，总有更直接的交流方式。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-05-01.webp",
+              "thumbnail": "/assets/creative/ark-05-01-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-06",
+          "title": "巨猿",
+          "summary": "体型不是胜负的唯一标准。",
+          "pages": [
+            {
+              "id": "ark-06-01",
+              "section": "comics",
+              "title": "巨猿 · 第1页",
+              "caption": "体型不是胜负的唯一标准。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-06-01.webp",
+              "thumbnail": "/assets/creative/ark-06-01-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-07",
+          "title": "战后玩伴",
+          "summary": "刚刚还在打 Boss，转眼就多了几个玩伴。",
+          "pages": [
+            {
+              "id": "ark-07-01",
+              "section": "comics",
+              "title": "战后玩伴 · 第1页",
+              "caption": "刚刚还在打 Boss，转眼就多了几个玩伴。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-07-01.webp",
+              "thumbnail": "/assets/creative/ark-07-01-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-08",
+          "title": "监管者最终篇",
+          "summary": "孤岛的终点，是一场 AI 与 AI 的见面。",
+          "pages": [
+            {
+              "id": "ark-08-01",
+              "section": "comics",
+              "title": "监管者最终篇 · 第1页",
+              "caption": "孤岛的终点，是一场 AI 与 AI 的见面。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-08-01.webp",
+              "thumbnail": "/assets/creative/ark-08-01-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "id": "ark-08-02",
+              "section": "comics",
+              "title": "监管者最终篇 · 第2页",
+              "caption": "孤岛的终点，是一场 AI 与 AI 的见面。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-08-02.webp",
+              "thumbnail": "/assets/creative/ark-08-02-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "id": "ark-08-03",
+              "section": "comics",
+              "title": "监管者最终篇 · 第3页",
+              "caption": "孤岛的终点，是一场 AI 与 AI 的见面。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-08-03.webp",
+              "thumbnail": "/assets/creative/ark-08-03-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "id": "ark-08-04",
+              "section": "comics",
+              "title": "监管者最终篇 · 第4页",
+              "caption": "孤岛的终点，是一场 AI 与 AI 的见面。",
+              "status": "已生成作品",
+              "src": "/assets/creative/ark-08-04.webp",
+              "thumbnail": "/assets/creative/ark-08-04-thumb.webp",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "yigou",
+      "title": "遗构潮汐",
+      "eyebrow": "WORLD / 02",
+      "subtitle": "废土巨构 · 双女主原创企划",
+      "description": "东方尸修与金发血族，两个独行的顶级强者，在工业遗迹与废土赛博联邦之间相遇。世界仍在生长，她们的故事也才刚刚开始。",
+      "cover": "yigou-bridge",
+      "items": [
+        {
+          "id": "yigou-bridge",
+          "section": "yigou",
+          "title": "断脊桥",
+          "caption": "工业巨构横贯峡谷，废墟中的人居尺度让遗迹真正变得巨大。",
+          "status": "概念工作稿",
+          "src": "/assets/creative/yigou-bridge.webp",
+          "thumbnail": "/assets/creative/yigou-bridge-thumb.webp",
+          "width": 1536,
+          "height": 1024
+        },
+        {
+          "id": "yigou-corpse",
+          "section": "yigou",
+          "title": "东方尸修",
+          "caption": "双女主之一。独行的世界顶级强者，东方尸修方向的人物探索。",
+          "status": "概念工作稿",
+          "src": "/assets/creative/yigou-corpse.webp",
+          "thumbnail": "/assets/creative/yigou-corpse-thumb.webp",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "id": "yigou-vampire",
+          "section": "yigou",
+          "title": "血族旅人",
+          "caption": "双女主之一。金发吸血鬼方向的人物探索，与另一位主角拥有深度羁绊。",
+          "status": "概念工作稿",
+          "src": "/assets/creative/yigou-vampire.webp",
+          "thumbnail": "/assets/creative/yigou-vampire-thumb.webp",
+          "width": 1024,
+          "height": 1536
+        }
+      ],
+      "note": "角色与场景为概念工作稿，尚非最终设定。"
+    },
+    {
+      "id": "fear",
+      "title": "巨物与未知",
+      "eyebrow": "UNKNOWN / 03",
+      "subtitle": "恐惧感视觉实验",
+      "description": "恐惧不只来自一张巨大的脸。桥梁、道路、探照灯与正在逃离的人，让我们意识到自己究竟有多小。",
+      "cover": "fear-sea",
+      "items": [
+        {
+          "id": "fear-abyss",
+          "section": "fear",
+          "title": "深海设施之外",
+          "caption": "探照灯、潜航器与海底设施，把未知生命的尺度一点点照出来。",
+          "status": "已生成作品",
+          "src": "/assets/creative/fear-abyss.webp",
+          "thumbnail": "/assets/creative/fear-abyss-thumb.webp",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "id": "fear-city",
+          "section": "fear",
+          "title": "它走进了这座城",
+          "caption": "街道仍然是熟悉的街道，楼群之外却出现了不属于日常的轮廓。",
+          "status": "已生成作品",
+          "src": "/assets/creative/fear-city.webp",
+          "thumbnail": "/assets/creative/fear-city-thumb.webp",
+          "width": 1024,
+          "height": 1536
+        },
+        {
+          "id": "fear-plain",
+          "section": "fear",
+          "title": "公路尽头",
+          "caption": "车灯还在前进，远处的地平线已经不再安稳。",
+          "status": "已生成作品",
+          "src": "/assets/creative/fear-plain.webp",
+          "thumbnail": "/assets/creative/fear-plain-thumb.webp",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "id": "fear-bridge",
+          "section": "fear",
+          "title": "断桥之后",
+          "caption": "交通线、山谷与奔逃的人群，共同勾勒出巨物经过后的痕迹。",
+          "status": "已生成作品",
+          "src": "/assets/creative/fear-bridge.webp",
+          "thumbnail": "/assets/creative/fear-bridge-thumb.webp",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "id": "fear-sea",
+          "section": "fear",
+          "title": "红色信号",
+          "caption": "海浪吞没了尺度，甲板与红色警示灯成了最后的参照。",
+          "status": "已生成作品",
+          "src": "/assets/creative/fear-sea.webp",
+          "thumbnail": "/assets/creative/fear-sea-thumb.webp",
+          "width": 1672,
+          "height": 941
+        },
+        {
+          "id": "fear-field",
+          "section": "fear",
+          "title": "牧场外的来客",
+          "caption": "远处的房屋、电线与田野，把静默的庞然身影衬得更加不真实。",
+          "status": "已生成作品",
+          "src": "/assets/creative/fear-field.webp",
+          "thumbnail": "/assets/creative/fear-field-thumb.webp",
+          "width": 1536,
+          "height": 1024
+        }
+      ],
+      "note": "虚构场景与 AI 辅助创作，非真实事件影像。"
+    }
+  ],
+  "items": [
+    {
+      "id": "ark-01-01",
+      "section": "comics",
+      "title": "别跑了，你也是龙 · 第1页",
+      "caption": "从被霸王龙追赶，到突然想起自己的真实身份。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-01-01.webp",
+      "thumbnail": "/assets/creative/ark-01-01-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-01-02",
+      "section": "comics",
+      "title": "别跑了，你也是龙 · 第2页",
+      "caption": "从被霸王龙追赶，到突然想起自己的真实身份。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-01-02.webp",
+      "thumbnail": "/assets/creative/ark-01-02-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-01-03",
+      "section": "comics",
+      "title": "别跑了，你也是龙 · 第3页",
+      "caption": "从被霸王龙追赶，到突然想起自己的真实身份。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-01-03.webp",
+      "thumbnail": "/assets/creative/ark-01-03-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-02-01",
+      "section": "comics",
+      "title": "海里那个更大 · 第1页",
+      "caption": "大肥鱼下海，食物链的顺序需要重新排一下。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-02-01.webp",
+      "thumbnail": "/assets/creative/ark-02-01-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-02-02",
+      "section": "comics",
+      "title": "海里那个更大 · 第2页",
+      "caption": "大肥鱼下海，食物链的顺序需要重新排一下。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-02-02.webp",
+      "thumbnail": "/assets/creative/ark-02-02-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-03-01",
+      "section": "comics",
+      "title": "驯龙教学 · 第1页",
+      "caption": "别人驯龙靠准备，她们驯龙靠自我介绍。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-03-01.webp",
+      "thumbnail": "/assets/creative/ark-03-01-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-03-02",
+      "section": "comics",
+      "title": "驯龙教学 · 第2页",
+      "caption": "别人驯龙靠准备，她们驯龙靠自我介绍。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-03-02.webp",
+      "thumbnail": "/assets/creative/ark-03-02-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-04-01",
+      "section": "comics",
+      "title": "孕母蜘蛛 · 第1页",
+      "caption": "孤岛 Boss 战的第一站。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-04-01.webp",
+      "thumbnail": "/assets/creative/ark-04-01-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-04-02",
+      "section": "comics",
+      "title": "孕母蜘蛛 · 第2页",
+      "caption": "孤岛 Boss 战的第一站。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-04-02.webp",
+      "thumbnail": "/assets/creative/ark-04-02-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-05-01",
+      "section": "comics",
+      "title": "喷火龙 · 第1页",
+      "caption": "巨龙之间，总有更直接的交流方式。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-05-01.webp",
+      "thumbnail": "/assets/creative/ark-05-01-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-06-01",
+      "section": "comics",
+      "title": "巨猿 · 第1页",
+      "caption": "体型不是胜负的唯一标准。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-06-01.webp",
+      "thumbnail": "/assets/creative/ark-06-01-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-07-01",
+      "section": "comics",
+      "title": "战后玩伴 · 第1页",
+      "caption": "刚刚还在打 Boss，转眼就多了几个玩伴。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-07-01.webp",
+      "thumbnail": "/assets/creative/ark-07-01-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-08-01",
+      "section": "comics",
+      "title": "监管者最终篇 · 第1页",
+      "caption": "孤岛的终点，是一场 AI 与 AI 的见面。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-08-01.webp",
+      "thumbnail": "/assets/creative/ark-08-01-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-08-02",
+      "section": "comics",
+      "title": "监管者最终篇 · 第2页",
+      "caption": "孤岛的终点，是一场 AI 与 AI 的见面。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-08-02.webp",
+      "thumbnail": "/assets/creative/ark-08-02-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-08-03",
+      "section": "comics",
+      "title": "监管者最终篇 · 第3页",
+      "caption": "孤岛的终点，是一场 AI 与 AI 的见面。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-08-03.webp",
+      "thumbnail": "/assets/creative/ark-08-03-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "ark-08-04",
+      "section": "comics",
+      "title": "监管者最终篇 · 第4页",
+      "caption": "孤岛的终点，是一场 AI 与 AI 的见面。",
+      "status": "已生成作品",
+      "src": "/assets/creative/ark-08-04.webp",
+      "thumbnail": "/assets/creative/ark-08-04-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "yigou-bridge",
+      "section": "yigou",
+      "title": "断脊桥",
+      "caption": "工业巨构横贯峡谷，废墟中的人居尺度让遗迹真正变得巨大。",
+      "status": "概念工作稿",
+      "src": "/assets/creative/yigou-bridge.webp",
+      "thumbnail": "/assets/creative/yigou-bridge-thumb.webp",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "yigou-corpse",
+      "section": "yigou",
+      "title": "东方尸修",
+      "caption": "双女主之一。独行的世界顶级强者，东方尸修方向的人物探索。",
+      "status": "概念工作稿",
+      "src": "/assets/creative/yigou-corpse.webp",
+      "thumbnail": "/assets/creative/yigou-corpse-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "yigou-vampire",
+      "section": "yigou",
+      "title": "血族旅人",
+      "caption": "双女主之一。金发吸血鬼方向的人物探索，与另一位主角拥有深度羁绊。",
+      "status": "概念工作稿",
+      "src": "/assets/creative/yigou-vampire.webp",
+      "thumbnail": "/assets/creative/yigou-vampire-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "fear-abyss",
+      "section": "fear",
+      "title": "深海设施之外",
+      "caption": "探照灯、潜航器与海底设施，把未知生命的尺度一点点照出来。",
+      "status": "已生成作品",
+      "src": "/assets/creative/fear-abyss.webp",
+      "thumbnail": "/assets/creative/fear-abyss-thumb.webp",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "fear-city",
+      "section": "fear",
+      "title": "它走进了这座城",
+      "caption": "街道仍然是熟悉的街道，楼群之外却出现了不属于日常的轮廓。",
+      "status": "已生成作品",
+      "src": "/assets/creative/fear-city.webp",
+      "thumbnail": "/assets/creative/fear-city-thumb.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "id": "fear-plain",
+      "section": "fear",
+      "title": "公路尽头",
+      "caption": "车灯还在前进，远处的地平线已经不再安稳。",
+      "status": "已生成作品",
+      "src": "/assets/creative/fear-plain.webp",
+      "thumbnail": "/assets/creative/fear-plain-thumb.webp",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "fear-bridge",
+      "section": "fear",
+      "title": "断桥之后",
+      "caption": "交通线、山谷与奔逃的人群，共同勾勒出巨物经过后的痕迹。",
+      "status": "已生成作品",
+      "src": "/assets/creative/fear-bridge.webp",
+      "thumbnail": "/assets/creative/fear-bridge-thumb.webp",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "fear-sea",
+      "section": "fear",
+      "title": "红色信号",
+      "caption": "海浪吞没了尺度，甲板与红色警示灯成了最后的参照。",
+      "status": "已生成作品",
+      "src": "/assets/creative/fear-sea.webp",
+      "thumbnail": "/assets/creative/fear-sea-thumb.webp",
+      "width": 1672,
+      "height": 941
+    },
+    {
+      "id": "fear-field",
+      "section": "fear",
+      "title": "牧场外的来客",
+      "caption": "远处的房屋、电线与田野，把静默的庞然身影衬得更加不真实。",
+      "status": "已生成作品",
+      "src": "/assets/creative/fear-field.webp",
+      "thumbnail": "/assets/creative/fear-field-thumb.webp",
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "credits": "Sakura × 梦绯 · AI 辅助创作。AI 娘及方舟题材为非官方同人，与相关品牌及游戏官方无隶属关系。"
+}
