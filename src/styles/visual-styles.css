@@ -472,3 +472,6 @@ html[data-visual-style="atelier"] .editorial-home__flow--identity { display: blo
 .version-art-preview--reverie { grid-template-columns:1fr;grid-template-rows:3fr 1fr 1fr; }
 .version-art-preview--nocturne { background:var(--inverse-surface);grid-template-columns:2fr 1fr;transform:skew(-4deg); }
 @media(max-width:480px){.visual-style-picker__trigger{padding-inline:var(--m3e-space-2);gap:var(--m3e-space-1)}.visual-style-picker__trigger svg{width:1rem}.visual-style-picker__panel{position:fixed;top:4.5rem;left:1rem;right:1rem;width:auto;max-height:calc(100dvh - 5.5rem)}}
+/* Header overlays use light foreground; the opaque menu owns its own contrast. */
+#navbar .visual-style-picker__panel { color:var(--on-surface); }
+#navbar .visual-style-picker__heading { color:var(--on-surface);font:var(--m3e-type-title-medium);margin:0; }
