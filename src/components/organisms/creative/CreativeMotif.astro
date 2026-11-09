@@ -1,0 +1,13 @@
+---
+/** Content-free ornament owned by the creative-worlds composition. */
+interface Props { kind?: 'flower' | 'star'; large?: boolean }
+const {kind='flower',large=false}=Astro.props;
+---
+<span class:list={['creative-motif',`creative-motif--${kind}`,{'creative-motif--large':large}]} aria-hidden="true">
+<svg viewBox="0 0 100 100" fill="none" focusable="false">
+{kind==='flower' ? <>
+ {Array.from({length:5},(_,i)=><ellipse cx="50" cy="30" rx="12" ry="23" transform={`rotate(${i*72} 50 50)`} />)}
+ <circle class="creative-motif__center" cx="50" cy="50" r="7"/>
+</> : <><path d="M50 4C53 34 66 47 96 50C66 53 53 66 50 96C47 66 34 53 4 50C34 47 47 34 50 4Z"/><path class="creative-motif__core" d="M50 28L56 44L72 50L56 56L50 72L44 56L28 50L44 44Z"/></>}
+</svg>
+</span>

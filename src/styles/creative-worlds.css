@@ -71,6 +71,32 @@ html.motion-reduced .creative-arrived,html.motion-reduced .creative-intro:after{
 /* Pause controls must also stop decorative card transforms, not only loops. */
 html[data-creative-paused=true] :is(.comic-shelf-card,.comic-series-card,.world-feature),html.motion-reduced :is(.comic-shelf-card,.comic-series-card,.world-feature){transition:none;transform:none}
 html[data-creative-paused=true] :is(.comic-shelf-card,.comic-series-card,.world-feature) img,html.motion-reduced :is(.comic-shelf-card,.comic-series-card,.world-feature) img{transition:none;transform:none}
+
+/* V11 — frosted vellum, botanical seals and cut-glass stars.
+   Static microtexture uses gradients rather than filters/images. Glass is
+   limited to small control/heading surfaces; artwork readers remain opaque. */
+:root{--creative-frost:color-mix(in srgb,var(--creative-paper) 87%,transparent);--creative-grain:color-mix(in srgb,var(--creative-ink) 6%,transparent);--creative-glint:color-mix(in srgb,var(--primary-container) 48%,var(--creative-paper))}
+.creative-motif{display:inline-grid;place-items:center;width:3.4rem;height:3.4rem;flex:0 0 auto;color:var(--creative-accent);pointer-events:none;vertical-align:middle}
+.creative-motif svg{width:100%;height:100%;overflow:visible;stroke:currentColor;stroke-width:1;vector-effect:non-scaling-stroke}.creative-motif--flower ellipse{fill:color-mix(in srgb,var(--creative-accent) 6%,transparent)}.creative-motif__center{fill:currentColor;stroke:none}.creative-motif__core{fill:color-mix(in srgb,var(--creative-accent) 14%,transparent);stroke-width:.5}
+.creative-motif--large{width:clamp(7rem,18vw,15rem);height:clamp(7rem,18vw,15rem)}
+.creative-intro__ornament{position:absolute;right:3%;top:5%;display:flex;align-items:flex-start;gap:.6rem;opacity:.16;z-index:-1;transform:rotate(-12deg);pointer-events:none}
+.creative-intro__ornament .creative-motif--star{margin-top:1.6rem;width:2.5rem;height:2.5rem}
+.creative-intro{background-image:radial-gradient(var(--creative-grain) .55px,transparent .7px),linear-gradient(135deg,var(--creative-paper),color-mix(in srgb,var(--primary-container) 30%,var(--creative-paper)));background-size:4px 4px,100% 100%;box-shadow:inset 0 1px 0 var(--creative-glint),0 14px 36px color-mix(in srgb,var(--shadow) 9%,transparent)}
+.creative-editions{background:var(--creative-frost);backdrop-filter:blur(14px) saturate(1.1);-webkit-backdrop-filter:blur(14px) saturate(1.1);box-shadow:inset 0 1px 0 var(--creative-glint),0 8px 24px color-mix(in srgb,var(--shadow) 7%,transparent);border-color:color-mix(in srgb,var(--outline-variant) 45%,transparent)}
+.creative-editions button[aria-pressed=true]{box-shadow:inset 0 1px 0 var(--creative-glint),0 3px 8px color-mix(in srgb,var(--primary) 10%,transparent)}
+.comic-library__heading,.creative-material-heading{position:relative;padding:1.4rem 1.6rem;border-radius:var(--shape-corner-xl);background:linear-gradient(120deg,color-mix(in srgb,var(--primary-container) 28%,transparent),transparent 80%);border-inline-start:1px solid var(--creative-line)}
+.comic-library__heading>.creative-motif,.creative-material-heading>.creative-motif{float:right;margin:.1rem 0 1rem 1rem;opacity:.55}.comic-library__heading h1,.creative-material-heading h1{margin-top:.7rem}
+.comic-shelf-card__copy,.comic-series-card__copy{background-image:radial-gradient(var(--creative-grain) .5px,transparent .8px);background-size:5px 5px}
+.comic-shelf-card__art>span,.comic-series-card__art>span{backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3)}
+.comic-story-pagination a{background-image:linear-gradient(135deg,color-mix(in srgb,var(--primary-container) 20%,transparent),transparent);box-shadow:inset 0 1px 0 var(--creative-glint)}
+.creative-section-heading{position:relative}.creative-section-heading:after{content:'';flex:1;min-width:1rem;height:1px;background:linear-gradient(90deg,var(--creative-line),transparent);margin-inline-start:.4rem}
+html[data-creative-edition=reverie] .creative-intro__ornament{right:-2%;top:-9%;opacity:.22;transform:rotate(14deg)}
+html[data-creative-edition=nocturne] .creative-intro{background-image:radial-gradient(var(--creative-grain) .55px,transparent .8px);background-size:5px 5px;box-shadow:none}
+html[data-creative-edition=nocturne] .comic-library__heading,html[data-creative-edition=nocturne] .creative-material-heading{background:linear-gradient(120deg,color-mix(in srgb,var(--creative-accent) 9%,transparent),transparent 80%)}
+html[data-creative-edition=nocturne] .comic-reader-tools{background:var(--surface-container-lowest)}
+@supports not (backdrop-filter:blur(1px)){.creative-editions{background:var(--creative-paper)}}
+@media(max-width:700px){.creative-editions{backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}.creative-intro__ornament{right:-3%;top:1%;opacity:.12}.comic-library__heading,.creative-material-heading{padding:1rem}.creative-motif{width:2.6rem;height:2.6rem}.creative-section-heading{gap:.75rem}.creative-section-heading:after{display:none}}
+@media(prefers-contrast:more){.creative-editions{background:var(--creative-paper);backdrop-filter:none}.creative-intro,.comic-shelf-card__copy,.comic-series-card__copy{background-image:none}.creative-motif{opacity:.7}}
 /* Reader-only overflow ownership: the grid normally clips long post content,
    but that creates a non-scrolling sticky ancestor. Readers contain responsive
    images and may expose overflow so their page navigator sticks to viewport. */

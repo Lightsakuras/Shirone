@@ -42,3 +42,12 @@ test('reader controls track page, resume locally, and navigate chapters',async({
  await page.locator('[data-comic-select]').selectOption('2');
  await expect(page.locator('.comic-page-index a[aria-current="page"]')).toHaveText('02');
 });
+
+test('material motifs are decorative and reading artwork remains opaque',async({page})=>{
+ await page.goto('/');
+ await expect(page.locator('.creative-intro__ornament .creative-motif')).toHaveCount(2);
+ await expect(page.locator('.creative-intro__ornament .creative-motif').first()).toHaveAttribute('aria-hidden','true');
+ await page.goto('/worlds/comics/daily/pudding/');
+ await expect(page.locator('.comic-library__heading .creative-motif')).toHaveCount(1);
+ expect(await page.locator('.comic-library').evaluate(el=>getComputedStyle(el).backgroundColor)).not.toBe('rgba(0, 0, 0, 0)');
+});

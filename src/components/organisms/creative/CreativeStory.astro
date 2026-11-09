@@ -1,4 +1,5 @@
 ---
+import CreativeMotif from "./CreativeMotif.astro";
 import Key from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import data from "../../../../public/assets/creative/projects.json";
@@ -13,7 +14,7 @@ const cover = chapters.length ? chapters[0].pages[0] : items[0];
 ---
 <article class="creative-story">
  <a class="creative-text-link" href="/worlds/">← {i18n(Key.creativeBack)}</a>
- <header><p class="creative-kicker">{section.eyebrow}</p><h1>{section.title}</h1><p class="creative-story__intro">{section.description}</p></header>
+ <header class="creative-material-heading"><CreativeMotif kind="flower" /><p class="creative-kicker">{section.eyebrow}</p><h1>{section.title}</h1><p class="creative-story__intro">{section.description}</p></header>
  {cover && <img class="creative-story__cover" src={cover.src} alt={section.subtitle} width={cover.width} height={cover.height} decoding="async" />}
  <nav class="creative-chapter-nav" aria-label={i18n(Key.creativeChapters)}>{chapters.map((c,i)=><a href={`#${c.id}`}>{String(i+1).padStart(2,'0')} · {c.title}</a>)}{items.map((item,i)=><a href={`#${item.id}`}>{String(i+1).padStart(2,'0')} · {item.title}</a>)}</nav>
  {chapters.map((chapter,i)=><section class="creative-chapter" id={chapter.id}><header><span class="creative-kicker">{String(i+1).padStart(2,'0')}</span><div><h2>{chapter.title}</h2><p>{chapter.summary}</p></div></header><div class="comic-pages">{chapter.pages.map(page=><figure><a href={page.src} target="_blank" rel="noopener" aria-label={`${i18n(Key.creativeViewImage)} · ${page.title}`} data-no-swup><img src={page.src} alt={page.title} width={page.width} height={page.height} loading="lazy" decoding="async" /></a><figcaption>{page.title}</figcaption></figure>)}</div></section>)}

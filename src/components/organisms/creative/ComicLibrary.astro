@@ -2,6 +2,7 @@
 import { comicCategories, comicHref } from "@/data/comic-library";
 import Key from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
+import CreativeMotif from "./CreativeMotif.astro";
 import CreativeEditions from "./CreativeEditions.astro";
 interface Props {
 	categoryId?: string;
@@ -25,7 +26,7 @@ const previous = series
 ---
 <article class="creative-story comic-library" data-comic-reader={series ? `${categoryId}/${seriesId}` : undefined}>
  <a class="creative-text-link" href={previous}>← {i18n(category ? Key.comicBackShelf : Key.creativeBack)}</a>
- <header class="comic-library__heading"><p class="creative-kicker">{i18n(Key.comicLibraryTitle)}</p><h1>{title}</h1><p class="creative-story__intro">{description}</p></header>
+ <header class="comic-library__heading"><CreativeMotif kind="star" /><p class="creative-kicker">{i18n(Key.comicLibraryTitle)}</p><h1>{title}</h1><p class="creative-story__intro">{description}</p></header>
  <CreativeEditions />
  <nav class="comic-category-nav" aria-label={i18n(Key.comicCategories)}>{comicCategories.map(c=><a class="comic-chip" href={comicHref(c.id)} aria-current={categoryId===c.id?'page':undefined}>{c.title}</a>)}</nav>
  {series ? <>

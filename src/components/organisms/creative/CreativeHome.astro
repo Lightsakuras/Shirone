@@ -3,12 +3,13 @@ import Key from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import { creativeWorlds } from "@/data/creative-worlds";
 import CreativeEditions from "./CreativeEditions.astro";
+import CreativeMotif from "./CreativeMotif.astro";
 import GamePortal from "./GamePortal.astro";
 ---
 <section class="creative-home">
  <CreativeEditions />
- <div class="creative-intro"><div><p class="creative-kicker">{i18n(Key.creativeEyebrow)}</p><h1>{i18n(Key.creativeTitle)}</h1></div><p>{i18n(Key.creativeIntro)}</p><a class="creative-text-link" href="#creative-worlds">{i18n(Key.creativeExplore)} <span aria-hidden="true">↓</span></a></div>
- <div class="creative-section-heading" id="creative-worlds"><span class="creative-serial" aria-hidden="true">✳</span><div><h2>{i18n(Key.creativeWorlds)}</h2><p>{i18n(Key.creativeWorldsIntro)}</p></div></div>
+ <div class="creative-intro"><div class="creative-intro__ornament"><CreativeMotif kind="flower" large /><CreativeMotif kind="star" /></div><div><p class="creative-kicker">{i18n(Key.creativeEyebrow)}</p><h1>{i18n(Key.creativeTitle)}</h1></div><p>{i18n(Key.creativeIntro)}</p><a class="creative-text-link" href="#creative-worlds">{i18n(Key.creativeExplore)} <span aria-hidden="true">↓</span></a></div>
+ <div class="creative-section-heading" id="creative-worlds"><CreativeMotif kind="flower" /><div><h2>{i18n(Key.creativeWorlds)}</h2><p>{i18n(Key.creativeWorldsIntro)}</p></div></div>
  <div class="creative-world-list">
  {creativeWorlds.map((world)=><a class:list={['world-feature',`world-feature--${world.accent}`]} href={`/worlds/${world.id}/`}>
  <div class="world-feature__art"><img src={world.cover} alt={world.shortTitle} width="1200" height="800" loading="lazy" decoding="async" /><span class="world-feature__number" aria-hidden="true">{world.number}</span><span class="world-feature__category">{world.category}</span></div>
