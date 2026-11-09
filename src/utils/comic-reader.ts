@@ -34,7 +34,7 @@ function initReader(): void {
  const prevClick=()=>go(current-1),nextClick=()=>go(current+1),selectChange=()=>go(Number(select.value)-1);
  const userScroll=()=>{hasUserScroll=true;};
  const keyboardScroll=(event:KeyboardEvent)=>{if(['ArrowDown','ArrowUp','PageDown','PageUp','Home','End',' '].includes(event.key)&&!['INPUT','SELECT','TEXTAREA'].includes((event.target as HTMLElement)?.tagName))hasUserScroll=true;};
- const anchorClick=(event:MouseEvent)=>{const a=(event.target as Element).closest<HTMLAnchorElement>('.comic-page-index a,[data-comic-resume]');if(a){const number=Number(a.hash.replace('#page-',''));if(number>=1&&number<=pages.length){hasUserScroll=false;save(number);}}};
+ const anchorClick=(event:MouseEvent)=>{const a=(event.target as Element).closest<HTMLAnchorElement>('.comic-page-index a,[data-comic-resume]');if(a){const number=Number(a.hash.replace('#page-',''));if(number>=1&&number<=pages.length){event.preventDefault();event.stopPropagation();go(number-1);}}};
  addEventListener('wheel',userScroll,{passive:true});addEventListener('touchmove',userScroll,{passive:true});addEventListener('keydown',keyboardScroll);reader.addEventListener('click',anchorClick);
  previous.addEventListener('click',prevClick);next.addEventListener('click',nextClick);select.addEventListener('change',selectChange);
  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);update();
