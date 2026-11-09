@@ -71,3 +71,7 @@ html.motion-reduced .creative-arrived,html.motion-reduced .creative-intro:after{
 /* Pause controls must also stop decorative card transforms, not only loops. */
 html[data-creative-paused=true] :is(.comic-shelf-card,.comic-series-card,.world-feature),html.motion-reduced :is(.comic-shelf-card,.comic-series-card,.world-feature){transition:none;transform:none}
 html[data-creative-paused=true] :is(.comic-shelf-card,.comic-series-card,.world-feature) img,html.motion-reduced :is(.comic-shelf-card,.comic-series-card,.world-feature) img{transition:none;transform:none}
+/* Reader-only overflow ownership: the grid normally clips long post content,
+   but that creates a non-scrolling sticky ancestor. Readers contain responsive
+   images and may expose overflow so their page navigator sticks to viewport. */
+#main-content-column:has([data-comic-reader]){overflow:visible}

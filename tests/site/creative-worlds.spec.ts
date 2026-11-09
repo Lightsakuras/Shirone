@@ -26,6 +26,9 @@ test('reader controls track page, resume locally, and navigate chapters',async({
  await expect(page.locator('[data-comic-prev]')).toBeDisabled();
  await page.locator('[data-comic-select]').selectOption('3');
  await expect(page.locator('[data-comic-next]')).toBeDisabled();
+ const toolbar=await page.locator('[data-comic-tools]').boundingBox();
+ expect(toolbar?.y).toBeGreaterThanOrEqual(0);
+ expect(toolbar?.y).toBeLessThan(120);
  await expect(page.locator('.comic-page-index a[aria-current="page"]')).toHaveText('03');
  await page.reload();
  await expect(page.locator('[data-comic-resume]')).toBeVisible();
