@@ -1,6 +1,9 @@
 ---
 import MainGridLayout from "@layouts/MainGridLayout.astro";
 import CreativeStory from "@components/organisms/creative/CreativeStory.astro";
+import ComicLibrary from "@components/organisms/creative/ComicLibrary.astro";
+import Key from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
 import data from "../../../public/assets/creative/projects.json";
 export function getStaticPaths() {
 	return data.sections.map((section) => ({
@@ -10,4 +13,4 @@ export function getStaticPaths() {
 }
 const { section } = Astro.props;
 ---
-<MainGridLayout title={section.title} description={section.description} page="projects"><CreativeStory id={section.id} /></MainGridLayout>
+<MainGridLayout title={section.id === "comics" ? i18n(Key.comicLibraryTitle) : section.title} description={section.id === "comics" ? i18n(Key.comicLibraryIntro) : section.description} page="projects">{section.id === "comics" ? <ComicLibrary /> : <CreativeStory id={section.id} />}</MainGridLayout>

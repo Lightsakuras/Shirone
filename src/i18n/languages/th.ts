@@ -2,6 +2,13 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const th: Translation = {
+	[Key.comicLibraryTitle]: "หนังสือเรื่องราวสาว AI",
+	[Key.comicLibraryIntro]: "การเดินทาง การผจญภัย และชีวิตประจำวัน เลือกโลกแล้วอ่านเรื่องราวของพวกเธอ",
+	[Key.comicCategories]: "หมวดเรื่องราว",
+	[Key.comicImageCount]: "{count} ภาพ",
+	[Key.comicPage]: "หน้า {page}",
+	[Key.comicCredits]: "ผลงานแฟนเมดไม่เป็นทางการที่ใช้ AI ช่วยสร้าง แบ่งตามชุดและบท",
+
 	[Key.creativeAudioTitle]: "วิทยุกลีบดอกไม้",
 	[Key.creativeAudioPlay]: "เล่นเพลง",
 	[Key.creativeAudioPause]: "หยุดเพลงชั่วคราว",

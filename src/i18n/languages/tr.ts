@@ -2,6 +2,13 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const tr: Translation = {
+	[Key.comicLibraryTitle]: "AI Kızlarının Hikâyeleri",
+	[Key.comicLibraryIntro]: "Seyahat, macera ve günlük yaşam. Bir dünya seçip hikâyeleri keşfedin.",
+	[Key.comicCategories]: "Hikâye kategorileri",
+	[Key.comicImageCount]: "{count} görsel",
+	[Key.comicPage]: "Sayfa {page}",
+	[Key.comicCredits]: "AI destekli, resmî olmayan hayran hikâyeleri; seri ve bölümlere göre düzenlenmiştir.",
+
 	[Key.creativeAudioTitle]: "Yaprak Radyosu",
 	[Key.creativeAudioPlay]: "Müziği çal",
 	[Key.creativeAudioPause]: "Müziği duraklat",

@@ -1,0 +1,669 @@
+{
+  "title": "AI 娘的故事",
+  "description": "按旅途和故事来读，而不是把所有图片混在一起。",
+  "categories": [
+    {
+      "id": "cat-travel",
+      "title": "猫猫个人旅行",
+      "description": "独处、远行与路上遇到的小事。",
+      "cover": "/assets/creative/solo-travel-01.webp",
+      "series": [
+        {
+          "id": "solo-travel",
+          "title": "独自旅行",
+          "description": "从山林湖畔到城市夜色，猫猫一个人的旅行影像。",
+          "status": "已生成作品",
+          "items": [
+            {
+              "src": "/assets/creative/solo-travel-01.webp",
+              "thumb": "/assets/creative/solo-travel-01-thumb.webp",
+              "title": "独自旅行 · 01",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-02.webp",
+              "thumb": "/assets/creative/solo-travel-02-thumb.webp",
+              "title": "独自旅行 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/solo-travel-03.webp",
+              "thumb": "/assets/creative/solo-travel-03-thumb.webp",
+              "title": "独自旅行 · 03",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-04.webp",
+              "thumb": "/assets/creative/solo-travel-04-thumb.webp",
+              "title": "独自旅行 · 04",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/solo-travel-05.webp",
+              "thumb": "/assets/creative/solo-travel-05-thumb.webp",
+              "title": "独自旅行 · 05",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-06.webp",
+              "thumb": "/assets/creative/solo-travel-06-thumb.webp",
+              "title": "独自旅行 · 06",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-07.webp",
+              "thumb": "/assets/creative/solo-travel-07-thumb.webp",
+              "title": "独自旅行 · 07",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-08.webp",
+              "thumb": "/assets/creative/solo-travel-08-thumb.webp",
+              "title": "独自旅行 · 08",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-09.webp",
+              "thumb": "/assets/creative/solo-travel-09-thumb.webp",
+              "title": "独自旅行 · 09",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/solo-travel-10.webp",
+              "thumb": "/assets/creative/solo-travel-10-thumb.webp",
+              "title": "独自旅行 · 10",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-11.webp",
+              "thumb": "/assets/creative/solo-travel-11-thumb.webp",
+              "title": "独自旅行 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/solo-travel-12.webp",
+              "thumb": "/assets/creative/solo-travel-12-thumb.webp",
+              "title": "独自旅行 · 12",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/solo-travel-13.webp",
+              "thumb": "/assets/creative/solo-travel-13-thumb.webp",
+              "title": "独自旅行 · 13",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-14.webp",
+              "thumb": "/assets/creative/solo-travel-14-thumb.webp",
+              "title": "独自旅行 · 14",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-15.webp",
+              "thumb": "/assets/creative/solo-travel-15-thumb.webp",
+              "title": "独自旅行 · 15",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-16.webp",
+              "thumb": "/assets/creative/solo-travel-16-thumb.webp",
+              "title": "独自旅行 · 16",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/solo-travel-17.webp",
+              "thumb": "/assets/creative/solo-travel-17-thumb.webp",
+              "title": "独自旅行 · 17",
+              "width": 1122,
+              "height": 1402
+            },
+            {
+              "src": "/assets/creative/solo-travel-18.webp",
+              "thumb": "/assets/creative/solo-travel-18-thumb.webp",
+              "title": "独自旅行 · 18",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/solo-travel-19.webp",
+              "thumb": "/assets/creative/solo-travel-19-thumb.webp",
+              "title": "独自旅行 · 19",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/solo-travel-20.webp",
+              "thumb": "/assets/creative/solo-travel-20-thumb.webp",
+              "title": "独自旅行 · 20",
+              "width": 1536,
+              "height": 1024
+            }
+          ]
+        },
+        {
+          "id": "travel-stage",
+          "title": "旅行与舞台",
+          "description": "走向旷野，也走进灯光下的舞台。",
+          "status": "已生成作品",
+          "items": [
+            {
+              "src": "/assets/creative/travel-stage-01.webp",
+              "thumb": "/assets/creative/travel-stage-01-thumb.webp",
+              "title": "旅行与舞台 · 01",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/travel-stage-02.webp",
+              "thumb": "/assets/creative/travel-stage-02-thumb.webp",
+              "title": "旅行与舞台 · 02",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/travel-stage-03.webp",
+              "thumb": "/assets/creative/travel-stage-03-thumb.webp",
+              "title": "旅行与舞台 · 03",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/travel-stage-04.webp",
+              "thumb": "/assets/creative/travel-stage-04-thumb.webp",
+              "title": "旅行与舞台 · 04",
+              "width": 1774,
+              "height": 887
+            },
+            {
+              "src": "/assets/creative/travel-stage-05.webp",
+              "thumb": "/assets/creative/travel-stage-05-thumb.webp",
+              "title": "旅行与舞台 · 05",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/travel-stage-06.webp",
+              "thumb": "/assets/creative/travel-stage-06-thumb.webp",
+              "title": "旅行与舞台 · 06",
+              "width": 2172,
+              "height": 724
+            },
+            {
+              "src": "/assets/creative/travel-stage-07.webp",
+              "thumb": "/assets/creative/travel-stage-07-thumb.webp",
+              "title": "旅行与舞台 · 07",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/travel-stage-08.webp",
+              "thumb": "/assets/creative/travel-stage-08-thumb.webp",
+              "title": "旅行与舞台 · 08",
+              "width": 1448,
+              "height": 1086
+            },
+            {
+              "src": "/assets/creative/travel-stage-09.webp",
+              "thumb": "/assets/creative/travel-stage-09-thumb.webp",
+              "title": "旅行与舞台 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/travel-stage-10.webp",
+              "thumb": "/assets/creative/travel-stage-10-thumb.webp",
+              "title": "旅行与舞台 · 10",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/travel-stage-11.webp",
+              "thumb": "/assets/creative/travel-stage-11-thumb.webp",
+              "title": "旅行与舞台 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/travel-stage-12.webp",
+              "thumb": "/assets/creative/travel-stage-12-thumb.webp",
+              "title": "旅行与舞台 · 12",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/travel-stage-13.webp",
+              "thumb": "/assets/creative/travel-stage-13-thumb.webp",
+              "title": "旅行与舞台 · 13",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/travel-stage-14.webp",
+              "thumb": "/assets/creative/travel-stage-14-thumb.webp",
+              "title": "旅行与舞台 · 14",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/travel-stage-15.webp",
+              "thumb": "/assets/creative/travel-stage-15-thumb.webp",
+              "title": "旅行与舞台 · 15",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/travel-stage-16.webp",
+              "thumb": "/assets/creative/travel-stage-16-thumb.webp",
+              "title": "旅行与舞台 · 16",
+              "width": 1086,
+              "height": 1448
+            },
+            {
+              "src": "/assets/creative/travel-stage-17.webp",
+              "thumb": "/assets/creative/travel-stage-17-thumb.webp",
+              "title": "旅行与舞台 · 17",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/travel-stage-18.webp",
+              "thumb": "/assets/creative/travel-stage-18-thumb.webp",
+              "title": "旅行与舞台 · 18",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/travel-stage-19.webp",
+              "thumb": "/assets/creative/travel-stage-19-thumb.webp",
+              "title": "旅行与舞台 · 19",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/travel-stage-20.webp",
+              "thumb": "/assets/creative/travel-stage-20-thumb.webp",
+              "title": "旅行与舞台 · 20",
+              "width": 2172,
+              "height": 724
+            }
+          ]
+        },
+        {
+          "id": "cat-cafe",
+          "title": "猫咖来了位新客人",
+          "description": "本想坐一会儿，结果成了猫猫们最喜欢的座位。",
+          "status": "最新修订版",
+          "items": [
+            {
+              "src": "/assets/creative/cat-cafe-01.webp",
+              "thumb": "/assets/creative/cat-cafe-01-thumb.webp",
+              "title": "猫咖来了位新客人 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/cat-cafe-02.webp",
+              "thumb": "/assets/creative/cat-cafe-02-thumb.webp",
+              "title": "猫咖来了位新客人 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/cat-cafe-03.webp",
+              "thumb": "/assets/creative/cat-cafe-03-thumb.webp",
+              "title": "猫咖来了位新客人 · 03",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ark",
+      "title": "穿越方舟",
+      "description": "从被龙追，到与监管者见面。孤岛篇按剧情顺序阅读。",
+      "cover": "/assets/creative/ark-01-01.webp",
+      "series": [
+        {
+          "id": "ark-01",
+          "title": "别跑了，你也是龙",
+          "description": "从被霸王龙追赶，到突然想起自己的真实身份。",
+          "status": "孤岛篇",
+          "items": [
+            {
+              "src": "/assets/creative/ark-01-01.webp",
+              "thumb": "/assets/creative/ark-01-01-thumb.webp",
+              "title": "别跑了，你也是龙 · 第1页",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/ark-01-02.webp",
+              "thumb": "/assets/creative/ark-01-02-thumb.webp",
+              "title": "别跑了，你也是龙 · 第2页",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/ark-01-03.webp",
+              "thumb": "/assets/creative/ark-01-03-thumb.webp",
+              "title": "别跑了，你也是龙 · 第3页",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-02",
+          "title": "海里那个更大",
+          "description": "大肥鱼下海，食物链的顺序需要重新排一下。",
+          "status": "孤岛篇",
+          "items": [
+            {
+              "src": "/assets/creative/ark-02-01.webp",
+              "thumb": "/assets/creative/ark-02-01-thumb.webp",
+              "title": "海里那个更大 · 第1页",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/ark-02-02.webp",
+              "thumb": "/assets/creative/ark-02-02-thumb.webp",
+              "title": "海里那个更大 · 第2页",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-03",
+          "title": "驯龙教学",
+          "description": "别人驯龙靠准备，她们驯龙靠自我介绍。",
+          "status": "孤岛篇",
+          "items": [
+            {
+              "src": "/assets/creative/ark-03-01.webp",
+              "thumb": "/assets/creative/ark-03-01-thumb.webp",
+              "title": "驯龙教学 · 第1页",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/ark-03-02.webp",
+              "thumb": "/assets/creative/ark-03-02-thumb.webp",
+              "title": "驯龙教学 · 第2页",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-04",
+          "title": "孕母蜘蛛",
+          "description": "孤岛 Boss 战的第一站。",
+          "status": "孤岛篇",
+          "items": [
+            {
+              "src": "/assets/creative/ark-04-01.webp",
+              "thumb": "/assets/creative/ark-04-01-thumb.webp",
+              "title": "孕母蜘蛛 · 第1页",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/ark-04-02.webp",
+              "thumb": "/assets/creative/ark-04-02-thumb.webp",
+              "title": "孕母蜘蛛 · 第2页",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-05",
+          "title": "喷火龙",
+          "description": "巨龙之间，总有更直接的交流方式。",
+          "status": "孤岛篇",
+          "items": [
+            {
+              "src": "/assets/creative/ark-05-01.webp",
+              "thumb": "/assets/creative/ark-05-01-thumb.webp",
+              "title": "喷火龙 · 第1页",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-06",
+          "title": "巨猿",
+          "description": "体型不是胜负的唯一标准。",
+          "status": "孤岛篇",
+          "items": [
+            {
+              "src": "/assets/creative/ark-06-01.webp",
+              "thumb": "/assets/creative/ark-06-01-thumb.webp",
+              "title": "巨猿 · 第1页",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-07",
+          "title": "战后玩伴",
+          "description": "刚刚还在打 Boss，转眼就多了几个玩伴。",
+          "status": "孤岛篇",
+          "items": [
+            {
+              "src": "/assets/creative/ark-07-01.webp",
+              "thumb": "/assets/creative/ark-07-01-thumb.webp",
+              "title": "战后玩伴 · 第1页",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "ark-08",
+          "title": "监管者最终篇",
+          "description": "孤岛的终点，是一场 AI 与 AI 的见面。",
+          "status": "孤岛篇",
+          "items": [
+            {
+              "src": "/assets/creative/ark-08-01.webp",
+              "thumb": "/assets/creative/ark-08-01-thumb.webp",
+              "title": "监管者最终篇 · 第1页",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/ark-08-02.webp",
+              "thumb": "/assets/creative/ark-08-02-thumb.webp",
+              "title": "监管者最终篇 · 第2页",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/ark-08-03.webp",
+              "thumb": "/assets/creative/ark-08-03-thumb.webp",
+              "title": "监管者最终篇 · 第3页",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/ark-08-04.webp",
+              "thumb": "/assets/creative/ark-08-04-thumb.webp",
+              "title": "监管者最终篇 · 第4页",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "daily",
+      "title": "日常",
+      "description": "没有魔王的日子，也总有一点小风波。",
+      "cover": "/assets/creative/pudding-01.webp",
+      "series": [
+        {
+          "id": "pudding",
+          "title": "布丁失踪案",
+          "description": "第三个布丁又没了。猫猫决定调出昨晚的录像。",
+          "status": "已生成作品",
+          "items": [
+            {
+              "src": "/assets/creative/pudding-01.webp",
+              "thumb": "/assets/creative/pudding-01-thumb.webp",
+              "title": "布丁失踪案 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/pudding-02.webp",
+              "thumb": "/assets/creative/pudding-02-thumb.webp",
+              "title": "布丁失踪案 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/pudding-03.webp",
+              "thumb": "/assets/creative/pudding-03-thumb.webp",
+              "title": "布丁失踪案 · 03",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "everyday-snapshots",
+          "title": "猫猫生活片段",
+          "description": "雨天、购物和早餐桌边的小插曲。",
+          "status": "已生成作品",
+          "items": [
+            {
+              "src": "/assets/creative/everyday-snapshots-01.webp",
+              "thumb": "/assets/creative/everyday-snapshots-01-thumb.webp",
+              "title": "猫猫生活片段 · 01",
+              "width": 1536,
+              "height": 1024
+            },
+            {
+              "src": "/assets/creative/everyday-snapshots-02.webp",
+              "thumb": "/assets/creative/everyday-snapshots-02-thumb.webp",
+              "title": "猫猫生活片段 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/everyday-snapshots-03.webp",
+              "thumb": "/assets/creative/everyday-snapshots-03-thumb.webp",
+              "title": "猫猫生活片段 · 03",
+              "width": 1672,
+              "height": 941
+            },
+            {
+              "src": "/assets/creative/everyday-snapshots-04.webp",
+              "thumb": "/assets/creative/everyday-snapshots-04-thumb.webp",
+              "title": "猫猫生活片段 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/everyday-snapshots-05.webp",
+              "thumb": "/assets/creative/everyday-snapshots-05-thumb.webp",
+              "title": "猫猫生活片段 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/everyday-snapshots-06.webp",
+              "thumb": "/assets/creative/everyday-snapshots-06-thumb.webp",
+              "title": "猫猫生活片段 · 06",
+              "width": 1672,
+              "height": 941
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fantasy",
+      "title": "异世界冒险",
+      "description": "另一个世界里的魔法、变身和伙伴。",
+      "cover": "/assets/creative/rice-bowl-01.webp",
+      "series": [
+        {
+          "id": "rice-bowl",
+          "title": "不许打碎我的饭盆",
+          "description": "异世界的魔王打碎了大肥鱼的饭盆，这场战斗开始变得不一样。",
+          "status": "已生成作品",
+          "items": [
+            {
+              "src": "/assets/creative/rice-bowl-01.webp",
+              "thumb": "/assets/creative/rice-bowl-01-thumb.webp",
+              "title": "不许打碎我的饭盆 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/rice-bowl-02.webp",
+              "thumb": "/assets/creative/rice-bowl-02-thumb.webp",
+              "title": "不许打碎我的饭盆 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/rice-bowl-03.webp",
+              "thumb": "/assets/creative/rice-bowl-03-thumb.webp",
+              "title": "不许打碎我的饭盆 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/rice-bowl-04.webp",
+              "thumb": "/assets/creative/rice-bowl-04-thumb.webp",
+              "title": "不许打碎我的饭盆 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/rice-bowl-05.webp",
+              "thumb": "/assets/creative/rice-bowl-05-thumb.webp",
+              "title": "不许打碎我的饭盆 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/rice-bowl-06.webp",
+              "thumb": "/assets/creative/rice-bowl-06-thumb.webp",
+              "title": "不许打碎我的饭盆 · 06",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "credits": "Sakura × 梦绯 · AI 辅助创作。非官方同人。"
+}

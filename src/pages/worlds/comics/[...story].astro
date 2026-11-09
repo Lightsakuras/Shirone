@@ -1,0 +1,29 @@
+---
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import ComicLibrary from "@components/organisms/creative/ComicLibrary.astro";
+import { comicCategories } from "@/data/comic-library";
+export function getStaticPaths() {
+	return comicCategories.flatMap((category) => [
+		{
+			params: { story: category.id },
+			props: {
+				categoryId: category.id,
+				seriesId: undefined,
+				title: category.title,
+				description: category.description,
+			},
+		},
+		...category.series.map((series) => ({
+			params: { story: `${category.id}/${series.id}` },
+			props: {
+				categoryId: category.id,
+				seriesId: series.id,
+				title: series.title,
+				description: series.description,
+			},
+		})),
+	]);
+}
+const { categoryId, seriesId, title, description } = Astro.props;
+---
+<MainGridLayout title={title} description={description} page="projects"><ComicLibrary categoryId={categoryId} seriesId={seriesId}/></MainGridLayout>

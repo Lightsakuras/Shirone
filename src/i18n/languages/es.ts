@@ -2,6 +2,13 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const es: Translation = {
+	[Key.comicLibraryTitle]: "Historias de chicas IA",
+	[Key.comicLibraryIntro]: "Viajes, aventuras y vida cotidiana. Elige un mundo y descubre sus historias.",
+	[Key.comicCategories]: "Categorías",
+	[Key.comicImageCount]: "{count} imágenes",
+	[Key.comicPage]: "Página {page}",
+	[Key.comicCredits]: "Historias no oficiales de fans con ayuda de IA, organizadas por series y capítulos.",
+
 	[Key.creativeAudioTitle]: "Radio de pétalos",
 	[Key.creativeAudioPlay]: "Reproducir música",
 	[Key.creativeAudioPause]: "Pausar música",

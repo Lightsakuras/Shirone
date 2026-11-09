@@ -2,6 +2,9 @@
 import "@/styles/creative-worlds.css";
 ---
 <div class="creative-atmosphere" aria-hidden="true"><div class="creative-atmosphere__wash"></div><div class="creative-atmosphere__wash"></div>{Array.from({length:16},(_,i)=><i class="creative-petal" style={`--x:${i*6.4}%;--size:${7+i%5*2}px;--fall:${16+i%7*3}s;--delay:-${i*2.7}s`}></i>)}</div>
+<div class="creative-reading-progress" aria-hidden="true"></div>
+<div class="creative-cursor-light" aria-hidden="true"></div>
+<svg class="creative-light-ribbons" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path d="M-200 760C320 80 700 1100 1640 50"/><path d="M-200 790C400 70 800 1020 1640 120"/><path d="M-200 810C500 100 850 980 1640 160"/></svg>
 <script is:inline>
 (()=>{const root=document.documentElement;const valid=['blossom','reverie','nocturne'];const read=k=>{try{return localStorage.getItem(k)}catch{return null}};const write=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
  const setEdition=value=>{root.dataset.creativeEdition=valid.includes(value)?value:'blossom';document.querySelectorAll('button[data-creative-edition]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.creativeEdition===root.dataset.creativeEdition)))};
@@ -12,5 +15,19 @@ import "@/styles/creative-worlds.css";
  document.addEventListener('click',e=>{const el=e.target.closest('button[data-creative-edition]');if(el){setEdition(el.dataset.creativeEdition);write('sakura-creative-edition',root.dataset.creativeEdition)}});
  document.addEventListener('change',e=>{if(e.target.matches('[data-creative-motion]')){setMotion(e.target.checked);write('sakura-creative-paused',String(e.target.checked))}});
  const sync=()=>{setEdition(root.dataset.creativeEdition);setMotion(root.dataset.creativePaused==='true')};document.addEventListener('DOMContentLoaded',sync);document.addEventListener('swup:page:view',sync);document.addEventListener('astro:page-load',sync);
+})();
+</script>
+
+<script is:inline>
+(()=>{
+ if(window.__creativeMotionV9)return;window.__creativeMotionV9=true;
+ const root=document.documentElement;const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const allowed=()=>!reduced.matches&&!root.classList.contains('motion-reduced')&&root.dataset.creativePaused!=='true'&&!document.hidden;
+ let observer;const reveal=()=>{observer?.disconnect();if(!allowed())return;observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('creative-arrived');observer.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.world-feature,.comic-shelf-card,.comic-series-card,.creative-chapter>header').forEach(el=>observer.observe(el));};
+ const restore=()=>{document.querySelectorAll('.creative-arrived').forEach(el=>el.classList.remove('creative-arrived'));reveal()};
+ document.addEventListener('DOMContentLoaded',reveal);document.addEventListener('swup:page:view',restore);document.addEventListener('astro:page-load',restore);reveal();
+ let frame=false;addEventListener('scroll',()=>{if(frame)return;frame=true;requestAnimationFrame(()=>{frame=false;const range=document.documentElement.scrollHeight-innerHeight;root.style.setProperty('--creative-progress',String(range>0?scrollY/range:0))})},{passive:true});
+ const fine=matchMedia('(pointer:fine)');let pointerFrame=false;document.addEventListener('pointermove',e=>{if(!fine.matches||!allowed()||pointerFrame)return;pointerFrame=true;requestAnimationFrame(()=>{pointerFrame=false;root.style.setProperty('--creative-pointer-x',e.clientX+'px');root.style.setProperty('--creative-pointer-y',e.clientY+'px')})},{passive:true});
+ document.addEventListener('visibilitychange',()=>root.dataset.creativeHidden=String(document.hidden));
 })();
 </script>

@@ -1,4 +1,11 @@
 enum I18nKey {
+	comicLibraryTitle = "comicLibraryTitle",
+	comicLibraryIntro = "comicLibraryIntro",
+	comicCategories = "comicCategories",
+	comicImageCount = "comicImageCount",
+	comicPage = "comicPage",
+	comicCredits = "comicCredits",
+
 	creativeAudioTitle = "creativeAudioTitle",
 	creativeAudioPlay = "creativeAudioPlay",
 	creativeAudioPause = "creativeAudioPause",

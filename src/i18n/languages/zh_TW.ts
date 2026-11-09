@@ -2,6 +2,13 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const zh_TW: Translation = {
+	[Key.comicLibraryTitle]: "AI 娘故事書",
+	[Key.comicLibraryIntro]: "旅行、冒險與日常，各自成章。先選一個世界，再慢慢翻閱她們的故事。",
+	[Key.comicCategories]: "故事分類",
+	[Key.comicImageCount]: "{count} 張",
+	[Key.comicPage]: "第 {page} 頁",
+	[Key.comicCredits]: "AI 輔助創作的非官方同人故事；按系列與章節整理。",
+
 	[Key.creativeAudioTitle]: "花間電台",
 	[Key.creativeAudioPlay]: "開啟音樂",
 	[Key.creativeAudioPause]: "暫停音樂",

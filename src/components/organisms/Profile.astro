@@ -59,10 +59,6 @@ if (typeof avatarAsset !== "string") {
 	<Card color="var(--card-bg)" radius="l" class="m3-profile p-3">
     <a aria-label="Go to About Page" href={url('/about/')}
        class="m3-profile__avatar-link group">
-        <div class="m3-profile__avatar-overlay">
-            <Icon name="fa7-solid:address-card"
-                  class="m3-profile__avatar-icon" />
-        </div>
         <Avatar
             src={avatarUrl}
 			srcset={avatarSrcset}
@@ -73,7 +69,7 @@ if (typeof avatarAsset !== "string") {
 			fetchPriority={priority ? "high" : undefined}
             alt="Profile Image of the Author"
             size={176}
-            shape="rounded"
+            shape="circle"
             class="mx-auto lg:!w-full"
         />
     </a>
@@ -107,7 +103,7 @@ if (typeof avatarAsset !== "string") {
 		position: relative
 		margin: var(--m3e-space-1) auto var(--m3e-space-3)
 		max-width: 12rem
-		border-radius: var(--shape-corner-m)
+		border-radius: var(--shape-corner-full)
 		overflow: hidden
 		transition:
 			transform var(--m3e-duration-short) var(--m3e-easing-standard),

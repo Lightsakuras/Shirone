@@ -2,6 +2,13 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const ja: Translation = {
+	[Key.comicLibraryTitle]: "AI 少女の物語集",
+	[Key.comicLibraryIntro]: "旅、冒険、日常。それぞれの世界を選んで、物語を読み進めましょう。",
+	[Key.comicCategories]: "物語の分類",
+	[Key.comicImageCount]: "{count} 枚",
+	[Key.comicPage]: "{page} ページ",
+	[Key.comicCredits]: "AI を用いた非公式ファン作品。シリーズと章ごとに掲載。",
+
 	[Key.creativeAudioTitle]: "花のラジオ",
 	[Key.creativeAudioPlay]: "音楽を再生",
 	[Key.creativeAudioPause]: "一時停止",

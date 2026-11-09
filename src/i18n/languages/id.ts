@@ -2,6 +2,13 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const id: Translation = {
+	[Key.comicLibraryTitle]: "Buku cerita gadis AI",
+	[Key.comicLibraryIntro]: "Perjalanan, petualangan, dan keseharian. Pilih dunia dan jelajahi ceritanya.",
+	[Key.comicCategories]: "Kategori cerita",
+	[Key.comicImageCount]: "{count} gambar",
+	[Key.comicPage]: "Halaman {page}",
+	[Key.comicCredits]: "Cerita penggemar tidak resmi berbantuan AI, disusun menurut seri dan bab.",
+
 	[Key.creativeAudioTitle]: "Radio Kelopak",
 	[Key.creativeAudioPlay]: "Putar musik",
 	[Key.creativeAudioPause]: "Jeda musik",

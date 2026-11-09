@@ -2,6 +2,13 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const vi: Translation = {
+	[Key.comicLibraryTitle]: "Tập truyện các cô gái AI",
+	[Key.comicLibraryIntro]: "Du lịch, phiêu lưu và đời thường. Chọn một thế giới và khám phá câu chuyện.",
+	[Key.comicCategories]: "Danh mục truyện",
+	[Key.comicImageCount]: "{count} hình",
+	[Key.comicPage]: "Trang {page}",
+	[Key.comicCredits]: "Tác phẩm người hâm mộ không chính thức có AI hỗ trợ, sắp xếp theo bộ và chương.",
+
 	[Key.creativeAudioTitle]: "Radio cánh hoa",
 	[Key.creativeAudioPlay]: "Phát nhạc",
 	[Key.creativeAudioPause]: "Tạm dừng nhạc",

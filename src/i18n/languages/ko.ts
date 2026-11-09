@@ -2,6 +2,13 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const ko: Translation = {
+	[Key.comicLibraryTitle]: "AI 소녀 이야기책",
+	[Key.comicLibraryIntro]: "여행, 모험, 일상. 세계를 선택하고 이야기를 읽어 보세요.",
+	[Key.comicCategories]: "이야기 분류",
+	[Key.comicImageCount]: "이미지 {count}장",
+	[Key.comicPage]: "{page}페이지",
+	[Key.comicCredits]: "AI 보조 비공식 팬 작품으로, 시리즈와 장별로 구성됩니다.",
+
 	[Key.creativeAudioTitle]: "꽃잎 라디오",
 	[Key.creativeAudioPlay]: "음악 재생",
 	[Key.creativeAudioPause]: "음악 일시정지",

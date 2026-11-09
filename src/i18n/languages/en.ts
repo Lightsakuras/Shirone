@@ -2,6 +2,13 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const en: Translation = {
+	[Key.comicLibraryTitle]: "AI Girls Storybook",
+	[Key.comicLibraryIntro]: "Travel, adventure, and everyday life, each with its own chapter. Choose a world and explore its stories.",
+	[Key.comicCategories]: "Story categories",
+	[Key.comicImageCount]: "{count} images",
+	[Key.comicPage]: "Page {page}",
+	[Key.comicCredits]: "Unofficial AI-assisted fan stories, organized by series and chapter.",
+
 	[Key.creativeAudioTitle]: "Petal Radio",
 	[Key.creativeAudioPlay]: "Play music",
 	[Key.creativeAudioPause]: "Pause music",
