@@ -21,7 +21,7 @@ function initReader(): void {
  tools.hidden=false;
  const update=()=>{
   frame=0;
-  const checkpoint=Math.min(innerHeight*.35,240);
+  const checkpoint=Math.max(Math.min(innerHeight*.35,240),parseFloat(getComputedStyle(pages[0]).scrollMarginTop)+2);
   let active=0;
   for(let i=0;i<pages.length;i++){if(pages[i].getBoundingClientRect().top<=checkpoint)active=i;else break;}
   current=active;select.value=String(active+1);previous.disabled=active===0;next.disabled=active===pages.length-1;

@@ -33,7 +33,7 @@ const previous = series
   <p class="comic-progress-note">{i18n(Key.comicLocalProgress)} <a data-comic-resume hidden class="creative-text-link">{i18n(Key.comicResume)} →</a></p>
   <div class="comic-reader-tools" data-comic-tools hidden>
    <button type="button" data-comic-prev aria-label={i18n(Key.comicPrevPage)}>←</button>
-   <label><span>{i18n(Key.comicJumpPage)}</span><select data-comic-select>{series.items.map((_,index)=><option value={index+1}>{i18n(Key.comicPage).replace('{page}',String(index+1))} / {series.items.length}</option>)}</select></label>
+   <label><span>{i18n(Key.comicJumpPage)}</span><select data-comic-select aria-label={i18n(Key.comicJumpPage)}>{series.items.map((_,index)=><option value={index+1}>{i18n(Key.comicPage).replace('{page}',String(index+1))} / {series.items.length}</option>)}</select></label>
    <button type="button" data-comic-next aria-label={i18n(Key.comicNextPage)}>→</button>
   </div>
   <nav class="comic-page-index" aria-label={i18n(Key.creativeChapters)}>{series.items.map((_,index)=><a href={`#page-${index+1}`} aria-label={i18n(Key.comicPage).replace('{page}',String(index+1))}>{String(index+1).padStart(2,'0')}</a>)}</nav>
