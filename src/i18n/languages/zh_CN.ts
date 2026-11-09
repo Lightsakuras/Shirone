@@ -2,6 +2,8 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const zh_CN: Translation = {
+	[Key.versionMenu]: "版本",
+	[Key.versionMenuHint]: "三种樱花艺术版式在这里切换；下方为原有全站风格。",
 	[Key.comicBackShelf]: "返回书架",
 	[Key.comicPrevSeries]: "上一篇",
 	[Key.comicNextSeries]: "下一篇",

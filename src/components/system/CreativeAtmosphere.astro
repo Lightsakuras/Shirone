@@ -7,7 +7,7 @@ import "@/styles/creative-worlds.css";
 <svg class="creative-light-ribbons" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true"><path d="M-200 760C320 80 700 1100 1640 50"/><path d="M-200 790C400 70 800 1020 1640 120"/><path d="M-200 810C500 100 850 980 1640 160"/></svg>
 <script is:inline>
 (()=>{const root=document.documentElement;const valid=['blossom','reverie','nocturne'];const read=k=>{try{return localStorage.getItem(k)}catch{return null}};const write=(k,v)=>{try{localStorage.setItem(k,v)}catch{}};
- const setEdition=value=>{root.dataset.creativeEdition=valid.includes(value)?value:'blossom';document.querySelectorAll('button[data-creative-edition]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.creativeEdition===root.dataset.creativeEdition)))};
+ const setEdition=value=>{root.dataset.creativeEdition=valid.includes(value)?value:'blossom';document.querySelectorAll('button[data-creative-edition]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.creativeEdition===root.dataset.creativeEdition&&(!el.dataset.visualStyle||root.dataset.visualStyle==='sakura'))))};
  const setMotion=value=>{root.dataset.creativePaused=String(value);document.querySelectorAll('[data-creative-motion]').forEach(el=>el.checked=value)};
  if(!read('sakura-creative-v8')){write('shirone-visual-style','sakura');write('sakura-creative-v8','1');root.dataset.visualStyle='sakura'}
  setEdition(read('sakura-creative-edition'));setMotion(read('sakura-creative-paused')==='true');

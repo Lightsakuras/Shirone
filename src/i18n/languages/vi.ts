@@ -2,6 +2,8 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const vi: Translation = {
+	[Key.versionMenu]: "Phiên bản",
+	[Key.versionMenuHint]: "Chọn ba phiên bản nghệ thuật Sakura; kiểu trang gốc ở bên dưới.",
 	[Key.comicBackShelf]: "Trở về kệ sách",
 	[Key.comicPrevSeries]: "Truyện trước",
 	[Key.comicNextSeries]: "Truyện tiếp theo",

@@ -2,6 +2,8 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const th: Translation = {
+	[Key.versionMenu]: "เวอร์ชัน",
+	[Key.versionMenuHint]: "เลือกเวอร์ชันศิลปะซากุระ 3 แบบได้ที่นี่ รูปแบบเดิมอยู่ด้านล่าง",
 	[Key.comicBackShelf]: "กลับไปชั้นหนังสือ",
 	[Key.comicPrevSeries]: "เรื่องก่อนหน้า",
 	[Key.comicNextSeries]: "เรื่องถัดไป",

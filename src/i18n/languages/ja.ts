@@ -2,6 +2,8 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const ja: Translation = {
+	[Key.versionMenu]: "バージョン",
+	[Key.versionMenuHint]: "3つの桜アート版を切り替えます。従来のサイトスタイルは下にあります。",
 	[Key.comicBackShelf]: "本棚に戻る",
 	[Key.comicPrevSeries]: "前の物語",
 	[Key.comicNextSeries]: "次の物語",

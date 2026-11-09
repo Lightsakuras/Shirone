@@ -461,3 +461,14 @@ html[data-visual-style="sakura"] .editorial-home__music {
    independent light is a narrow identity margin, clear of text and controls. */
 html[data-visual-style="atelier"] .editorial-home__identity { padding-inline-start: var(--m3e-space-5); }
 html[data-visual-style="atelier"] .editorial-home__flow--identity { display: block; width: 3px; }
+
+/* One visible version gateway for both new art editions and legacy styles. */
+.visual-style-picker__trigger { display:flex; gap:var(--m3e-space-2); width:auto; padding-inline:var(--m3e-space-3); font:var(--m3e-type-label-large); background:var(--primary-container); color:var(--on-primary-container); }
+.version-art-options { display:grid; gap:var(--m3e-space-2); margin-block:var(--m3e-space-3) var(--m3e-space-6); }
+.version-art-options .visual-style-option { display:grid;grid-template-columns:5rem minmax(0,1fr);align-items:center; }
+.version-art-preview { display:grid;grid-template-columns:1fr 1.4fr;gap:3px;height:3rem;padding:4px;background:var(--surface-container-high);border-radius:var(--shape-corner-s); }
+.version-art-preview i { background:var(--primary);opacity:.4;border-radius:var(--shape-corner-xs); }
+.version-art-preview i:first-child { grid-column:1/-1;opacity:.7; }
+.version-art-preview--reverie { grid-template-columns:1fr;grid-template-rows:3fr 1fr 1fr; }
+.version-art-preview--nocturne { background:var(--inverse-surface);grid-template-columns:2fr 1fr;transform:skew(-4deg); }
+@media(max-width:480px){.visual-style-picker__trigger{padding-inline:var(--m3e-space-2);gap:var(--m3e-space-1)}.visual-style-picker__trigger svg{width:1rem}.visual-style-picker__panel{position:fixed;top:4.5rem;left:1rem;right:1rem;width:auto;max-height:calc(100dvh - 5.5rem)}}

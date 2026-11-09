@@ -2,6 +2,8 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const tr: Translation = {
+	[Key.versionMenu]: "Sürümler",
+	[Key.versionMenuHint]: "Üç Sakura sanat sürümünü seçin; özgün site stilleri aşağıdadır.",
 	[Key.comicBackShelf]: "Kitaplığa dön",
 	[Key.comicPrevSeries]: "Önceki hikâye",
 	[Key.comicNextSeries]: "Sonraki hikâye",

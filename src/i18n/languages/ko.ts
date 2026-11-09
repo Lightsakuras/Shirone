@@ -2,6 +2,8 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const ko: Translation = {
+	[Key.versionMenu]: "버전",
+	[Key.versionMenuHint]: "세 가지 벚꽃 아트 버전을 선택하세요. 기존 사이트 스타일은 아래에 있습니다.",
 	[Key.comicBackShelf]: "서가로 돌아가기",
 	[Key.comicPrevSeries]: "이전 이야기",
 	[Key.comicNextSeries]: "다음 이야기",

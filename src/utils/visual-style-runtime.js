@@ -60,7 +60,7 @@
 		document.querySelectorAll("button[data-visual-style]").forEach((button) => {
 			button.setAttribute(
 				"aria-pressed",
-				String(button.dataset.visualStyle === root.dataset.visualStyle),
+				String(button.dataset.visualStyle === root.dataset.visualStyle && (!button.dataset.creativeEdition || button.dataset.creativeEdition === root.dataset.creativeEdition)),
 			);
 		});
 	};

@@ -2,6 +2,8 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const id: Translation = {
+	[Key.versionMenu]: "Versi",
+	[Key.versionMenuHint]: "Pilih tiga edisi seni Sakura; gaya situs asli tersedia di bawah.",
 	[Key.comicBackShelf]: "Kembali ke rak",
 	[Key.comicPrevSeries]: "Cerita sebelumnya",
 	[Key.comicNextSeries]: "Cerita berikutnya",

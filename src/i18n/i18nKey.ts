@@ -1,4 +1,6 @@
 enum I18nKey {
+	versionMenu = "versionMenu",
+	versionMenuHint = "versionMenuHint",
 	comicBackShelf = "comicBackShelf",
 	comicPrevSeries = "comicPrevSeries",
 	comicNextSeries = "comicNextSeries",
