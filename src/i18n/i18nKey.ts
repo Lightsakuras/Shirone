@@ -1,4 +1,13 @@
 enum I18nKey {
+	comicBackShelf = "comicBackShelf",
+	comicPrevSeries = "comicPrevSeries",
+	comicNextSeries = "comicNextSeries",
+	comicResume = "comicResume",
+	comicLocalProgress = "comicLocalProgress",
+	comicJumpPage = "comicJumpPage",
+	comicPrevPage = "comicPrevPage",
+	comicNextPage = "comicNextPage",
+
 	comicLibraryTitle = "comicLibraryTitle",
 	comicLibraryIntro = "comicLibraryIntro",
 	comicCategories = "comicCategories",

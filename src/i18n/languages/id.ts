@@ -2,6 +2,15 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const id: Translation = {
+	[Key.comicBackShelf]: "Kembali ke rak",
+	[Key.comicPrevSeries]: "Cerita sebelumnya",
+	[Key.comicNextSeries]: "Cerita berikutnya",
+	[Key.comicResume]: "Lanjut membaca",
+	[Key.comicLocalProgress]: "Posisi bacaan hanya disimpan di browser ini",
+	[Key.comicJumpPage]: "Buka halaman",
+	[Key.comicPrevPage]: "Halaman sebelumnya",
+	[Key.comicNextPage]: "Halaman berikutnya",
+
 	[Key.comicLibraryTitle]: "Buku cerita gadis AI",
 	[Key.comicLibraryIntro]: "Perjalanan, petualangan, dan keseharian. Pilih dunia dan jelajahi ceritanya.",
 	[Key.comicCategories]: "Kategori cerita",

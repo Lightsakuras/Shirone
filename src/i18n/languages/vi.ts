@@ -2,6 +2,15 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const vi: Translation = {
+	[Key.comicBackShelf]: "Trở về kệ sách",
+	[Key.comicPrevSeries]: "Truyện trước",
+	[Key.comicNextSeries]: "Truyện tiếp theo",
+	[Key.comicResume]: "Đọc tiếp",
+	[Key.comicLocalProgress]: "Vị trí đọc chỉ được lưu trong trình duyệt này",
+	[Key.comicJumpPage]: "Đến trang",
+	[Key.comicPrevPage]: "Trang trước",
+	[Key.comicNextPage]: "Trang sau",
+
 	[Key.comicLibraryTitle]: "Tập truyện các cô gái AI",
 	[Key.comicLibraryIntro]: "Du lịch, phiêu lưu và đời thường. Chọn một thế giới và khám phá câu chuyện.",
 	[Key.comicCategories]: "Danh mục truyện",

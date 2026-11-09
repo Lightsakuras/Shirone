@@ -2,6 +2,15 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const zh_CN: Translation = {
+	[Key.comicBackShelf]: "返回书架",
+	[Key.comicPrevSeries]: "上一篇",
+	[Key.comicNextSeries]: "下一篇",
+	[Key.comicResume]: "继续上次阅读",
+	[Key.comicLocalProgress]: "阅读位置仅保存在此浏览器",
+	[Key.comicJumpPage]: "跳转页码",
+	[Key.comicPrevPage]: "上一页",
+	[Key.comicNextPage]: "下一页",
+
 	[Key.comicLibraryTitle]: "AI 娘故事书",
 	[Key.comicLibraryIntro]: "旅行、冒险与日常，各自成章。先选一个世界，再慢慢翻阅她们的故事。",
 	[Key.comicCategories]: "故事分类",

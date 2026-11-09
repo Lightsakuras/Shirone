@@ -2,6 +2,15 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const es: Translation = {
+	[Key.comicBackShelf]: "Volver a la biblioteca",
+	[Key.comicPrevSeries]: "Historia anterior",
+	[Key.comicNextSeries]: "Siguiente historia",
+	[Key.comicResume]: "Continuar leyendo",
+	[Key.comicLocalProgress]: "La posición se guarda solo en este navegador",
+	[Key.comicJumpPage]: "Ir a la página",
+	[Key.comicPrevPage]: "Página anterior",
+	[Key.comicNextPage]: "Página siguiente",
+
 	[Key.comicLibraryTitle]: "Historias de chicas IA",
 	[Key.comicLibraryIntro]: "Viajes, aventuras y vida cotidiana. Elige un mundo y descubre sus historias.",
 	[Key.comicCategories]: "Categorías",

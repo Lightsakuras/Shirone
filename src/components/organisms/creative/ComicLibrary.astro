@@ -14,22 +14,39 @@ const categories = category ? [category] : comicCategories;
 const title = series?.title || category?.title || i18n(Key.comicLibraryTitle);
 const description =
 	series?.description || category?.description || i18n(Key.comicLibraryIntro);
+const seriesIndex = category?.series.findIndex((s) => s.id === seriesId) ?? -1;
+const previousSeries = category && seriesIndex > 0 ? category.series[seriesIndex - 1] : undefined;
+const nextSeries = category?.series[seriesIndex + 1];
 const previous = series
 	? comicHref(category!.id)
 	: category
 		? "/worlds/comics/"
 		: "/worlds/";
 ---
-<article class="creative-story comic-library">
- <a class="creative-text-link" href={previous}>← {i18n(Key.creativeBack)}</a>
+<article class="creative-story comic-library" data-comic-reader={series ? `${categoryId}/${seriesId}` : undefined}>
+ <a class="creative-text-link" href={previous}>← {i18n(category ? Key.comicBackShelf : Key.creativeBack)}</a>
  <header class="comic-library__heading"><p class="creative-kicker">{i18n(Key.comicLibraryTitle)}</p><h1>{title}</h1><p class="creative-story__intro">{description}</p></header>
  <CreativeEditions />
  <nav class="comic-category-nav" aria-label={i18n(Key.comicCategories)}>{comicCategories.map(c=><a class="comic-chip" href={comicHref(c.id)} aria-current={categoryId===c.id?'page':undefined}>{c.title}</a>)}</nav>
  {series ? <>
   <div class="comic-reader-meta"><span>{i18n(Key.comicImageCount).replace('{count}',String(series.items.length))}</span>{series.status&&<span>{series.status}</span>}</div>
+  <p class="comic-progress-note">{i18n(Key.comicLocalProgress)} <a data-comic-resume hidden class="creative-text-link">{i18n(Key.comicResume)} →</a></p>
+  <div class="comic-reader-tools" data-comic-tools hidden>
+   <button type="button" data-comic-prev aria-label={i18n(Key.comicPrevPage)}>←</button>
+   <label><span>{i18n(Key.comicJumpPage)}</span><select data-comic-select>{series.items.map((_,index)=><option value={index+1}>{i18n(Key.comicPage).replace('{page}',String(index+1))} / {series.items.length}</option>)}</select></label>
+   <button type="button" data-comic-next aria-label={i18n(Key.comicNextPage)}>→</button>
+  </div>
   <nav class="comic-page-index" aria-label={i18n(Key.creativeChapters)}>{series.items.map((_,index)=><a href={`#page-${index+1}`} aria-label={i18n(Key.comicPage).replace('{page}',String(index+1))}>{String(index+1).padStart(2,'0')}</a>)}</nav>
-  <div class="comic-reader">{series.items.map((item,index)=><figure id={`page-${index+1}`}><a href={item.src} target="_blank" rel="noopener" data-no-swup aria-label={`${i18n(Key.creativeViewImage)} · ${item.title||series.title}`}><img src={item.src} alt={item.title||`${series.title} ${index+1}`} width={item.width||1024} height={item.height||1536} loading="lazy" decoding="async" /></a><figcaption><span>{String(index+1).padStart(2,'0')}</span>{item.title}</figcaption></figure>)}</div>
+  <div class="comic-reader">{series.items.map((item,index)=><figure id={`page-${index+1}`}><a href={item.src} target="_blank" rel="noopener" data-no-swup aria-label={`${i18n(Key.creativeViewImage)} · ${item.title||series.title}`}><img src={item.src} alt={item.title||`${series.title} ${index+1}`} width={item.width||1024} height={item.height||1536} loading={index===0?"eager":"lazy"} decoding="async" /></a><figcaption><span>{String(index+1).padStart(2,'0')}</span>{item.title}</figcaption></figure>)}</div>
+  <nav class="comic-story-pagination" aria-label={i18n(Key.creativeChapters)}>
+   {previousSeries&&<a href={comicHref(category!.id,previousSeries.id)}><small>← {i18n(Key.comicPrevSeries)}</small><strong>{previousSeries.title}</strong></a>}
+   {nextSeries&&<a href={comicHref(category!.id,nextSeries.id)}><small>{i18n(Key.comicNextSeries)} →</small><strong>{nextSeries.title}</strong></a>}
+  </nav>
   <a class="creative-button" href={comicHref(category!.id)}>← {category!.title}</a>
  </> : !category ? <div class="comic-shelves">{categories.map((c,i)=>{const first=c.series.flatMap(s=>s.items)[0];return <a class="comic-shelf-card" href={comicHref(c.id)}><div class="comic-shelf-card__art"><img src={c.cover||first?.thumb||first?.src} alt={c.title} width="800" height="600" loading="lazy"/><span>{String(i+1).padStart(2,'0')}</span></div><div class="comic-shelf-card__copy"><h2>{c.title}</h2><p>{c.description}</p><ul>{c.series.map(s=><li>{s.title}</li>)}</ul><span class="creative-text-link">{i18n(Key.creativeOpen)} ↗</span></div></a>})}</div> : <div class="comic-series-grid">{category.series.map((s,i)=>{const first=s.items[0];return <a class="comic-series-card" href={comicHref(category.id,s.id)}><div class="comic-series-card__art">{first&&<img src={first.thumb||first.src} alt={s.title} width="800" height="600" loading="lazy"/>}<span>{String(i+1).padStart(2,'0')}</span></div><div class="comic-series-card__copy"><h2>{s.title}</h2><p>{s.description}</p><small>{i18n(Key.comicImageCount).replace('{count}',String(s.items.length))}{s.status&&` · ${s.status}`}</small><span class="creative-text-link">{i18n(Key.creativeOpen)} ↗</span></div></a>})}</div>}
  <p class="creative-footer-note">{i18n(Key.comicCredits)}</p>
 </article>
+
+<script>
+import "@/utils/comic-reader";
+</script>

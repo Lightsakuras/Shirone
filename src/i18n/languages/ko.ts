@@ -2,6 +2,15 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const ko: Translation = {
+	[Key.comicBackShelf]: "서가로 돌아가기",
+	[Key.comicPrevSeries]: "이전 이야기",
+	[Key.comicNextSeries]: "다음 이야기",
+	[Key.comicResume]: "이어 읽기",
+	[Key.comicLocalProgress]: "읽은 위치는 이 브라우저에만 저장됩니다",
+	[Key.comicJumpPage]: "페이지 이동",
+	[Key.comicPrevPage]: "이전 페이지",
+	[Key.comicNextPage]: "다음 페이지",
+
 	[Key.comicLibraryTitle]: "AI 소녀 이야기책",
 	[Key.comicLibraryIntro]: "여행, 모험, 일상. 세계를 선택하고 이야기를 읽어 보세요.",
 	[Key.comicCategories]: "이야기 분류",

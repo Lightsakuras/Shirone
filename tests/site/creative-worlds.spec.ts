@@ -18,3 +18,24 @@ test('comic categories lead to ordered readers and avatar stays empty',async({pa
  await page.goto('/');await expect(page.locator('.m3-profile__avatar-link img').first()).toHaveAttribute('src',/avatar-black.svg/);await expect(page.locator('.m3-profile__avatar-overlay')).toHaveCount(0);
  await page.locator('[data-creative-motion]').check();expect(await page.locator('.creative-light-ribbons path').first().evaluate(el=>getComputedStyle(el).animationPlayState)).toBe('paused');
 });
+
+test('reader controls track page, resume locally, and navigate chapters',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.goto('/worlds/comics/daily/pudding/');
+ await expect(page.locator('[data-comic-tools]')).toBeVisible();
+ await expect(page.locator('[data-comic-prev]')).toBeDisabled();
+ await page.locator('[data-comic-select]').selectOption('3');
+ await expect(page.locator('[data-comic-next]')).toBeDisabled();
+ await expect(page.locator('.comic-page-index a[aria-current="page"]')).toHaveText('03');
+ await page.reload();
+ await expect(page.locator('[data-comic-resume]')).toBeVisible();
+ await expect(page.locator('[data-comic-resume]')).toHaveAttribute('href','#page-3');
+ await page.locator('[data-comic-resume]').click();
+ await expect(page.locator('[data-comic-select]')).toHaveValue('3');
+ await page.locator('.comic-story-pagination a').last().click();
+ await expect(page.locator('[data-comic-reader]')).not.toHaveAttribute('data-comic-reader','daily/pudding');
+ await page.goBack();
+ await expect(page.locator('[data-comic-tools]')).toBeVisible();
+ await page.locator('[data-comic-select]').selectOption('2');
+ await expect(page.locator('.comic-page-index a[aria-current="page"]')).toHaveText('02');
+});

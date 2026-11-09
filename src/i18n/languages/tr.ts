@@ -2,6 +2,15 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const tr: Translation = {
+	[Key.comicBackShelf]: "Kitaplığa dön",
+	[Key.comicPrevSeries]: "Önceki hikâye",
+	[Key.comicNextSeries]: "Sonraki hikâye",
+	[Key.comicResume]: "Okumaya devam et",
+	[Key.comicLocalProgress]: "Okuma konumu yalnızca bu tarayıcıda saklanır",
+	[Key.comicJumpPage]: "Sayfaya git",
+	[Key.comicPrevPage]: "Önceki sayfa",
+	[Key.comicNextPage]: "Sonraki sayfa",
+
 	[Key.comicLibraryTitle]: "AI Kızlarının Hikâyeleri",
 	[Key.comicLibraryIntro]: "Seyahat, macera ve günlük yaşam. Bir dünya seçip hikâyeleri keşfedin.",
 	[Key.comicCategories]: "Hikâye kategorileri",
