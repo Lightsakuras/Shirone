@@ -85,8 +85,8 @@ import { i18n } from "@/i18n/translation";
   .audio-controls { display: flex; gap: .5rem; margin: .7rem 0; }
   button { flex: 1; min-height: 44px; border-radius: var(--shape-corner-m); border: 0; background: var(--primary-container); color: var(--on-primary-container); cursor: pointer; font: inherit; font-size: .85rem; }
   button:hover { background: var(--secondary-container); color: var(--on-secondary-container); }
-  .audio-volume { display: flex; gap: .8rem; align-items: center; font-size: .8rem; }
-  input { width: 100%; min-width: 0; min-height: 32px; accent-color: var(--primary); }
+  .audio-volume { display: flex; gap: .8rem; align-items: center; font-size: .8rem; white-space: nowrap; }
+  input { flex: 1; width: 100%; min-width: 0; min-height: 32px; accent-color: var(--primary); }
   .audio-status { margin: .4rem 0 0; color: var(--on-surface-variant); font-size: .75rem; }
   @keyframes audio-pulse { to { height: 17px; } }
   @media (prefers-reduced-motion: reduce) { [data-playing="true"] .audio-bars i { animation: none; height: 12px; } }
