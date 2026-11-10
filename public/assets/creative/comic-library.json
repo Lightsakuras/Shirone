@@ -663,6 +663,1002 @@
           ]
         }
       ]
+    },
+    {
+      "id": "namer",
+      "title": "命名者",
+      "description": "旧篇 28 页＋新续篇第 1–10 话，连载中。共 148 页，按剧情顺序阅读。语言崩坏的末世，林昭与白龙穿行其中。",
+      "credits": "《命名者》原创漫画 · AI 辅助创作。当前收录旧篇与新续篇 01—10。",
+      "cover": "/assets/creative/namer/original-01-0fa5366def68-thumb.webp",
+      "series": [
+        {
+          "id": "original",
+          "title": "旧篇 · 从裂隙到门外",
+          "description": "开篇 A、B、C → 第 2—6 页 → 旧续篇 01—20。共 28 页，按故事顺序阅读。",
+          "status": "28 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/original-01-0fa5366def68.webp",
+              "title": "旧篇 · 01 · 没吃上的晚饭",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/original-01-0fa5366def68-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/original-02-0bf94d5f41e4.webp",
+              "title": "旧篇 · 02 · 裂隙之间",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-03-383b7f3c6858.webp",
+              "title": "旧篇 · 03 · 陌生街道",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-04-5b27df0e3bcf.webp",
+              "title": "旧篇 · 04 · 召唤白龙",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-05-972aaa6bc787.webp",
+              "title": "旧篇 · 05 · 首次施术",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-06-8098fe27fe32.webp",
+              "title": "旧篇 · 06 · 失语灾变",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-07-61b6b9574fc5.webp",
+              "title": "旧篇 · 07 · 错误体与命名",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-08-6736d0d33038.webp",
+              "title": "旧篇 · 08 · 系统与第一笔交易",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-09-cbeeb74fdbe0.webp",
+              "title": "旧篇 · 09 · 先看路",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-10-9b74f77abd2e.webp",
+              "title": "旧篇 · 10 · 换个条件",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-11-f5b382f6dc05.webp",
+              "title": "旧篇 · 11 · 她说得完整",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-12-f55f2b07b609.webp",
+              "title": "旧篇 · 12 · 离开便利店",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-13-d50f52c7e485.webp",
+              "title": "旧篇 · 13 · 地图不是保证",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-14-e4a1ca1a1dda.webp",
+              "title": "旧篇 · 14 · 声音在招人",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-15-e22d2e139ccc.webp",
+              "title": "旧篇 · 15 · 不急着进去",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-16-5d1ad97cf47d.webp",
+              "title": "旧篇 · 16 · 先看价钱",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-17-2bd972a6500b.webp",
+              "title": "旧篇 · 17 · 出来",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-18-ab7d1f3e8f30.webp",
+              "title": "旧篇 · 18 · 打散不够",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-19-0bda068b2fea.webp",
+              "title": "旧篇 · 19 · 同一条路",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-20-9fce7590a0f0.webp",
+              "title": "旧篇 · 20 · 核心证据",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-21-1de72e2c1e5c.webp",
+              "title": "旧篇 · 21 · 命名",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-22-babcb5df2b56.webp",
+              "title": "旧篇 · 22 · 先别算奖励",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-23-a02d40bd1596.webp",
+              "title": "旧篇 · 23 · 剩下的东西",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-24-fe9c6da03fb3.webp",
+              "title": "旧篇 · 24 · 这才叫成交",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-25-2591f15b29c0.webp",
+              "title": "旧篇 · 25 · 不是收留",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-26-e733ffcd1e8e.webp",
+              "title": "旧篇 · 26 · 第一个落脚处",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-27-d16eda570655.webp",
+              "title": "旧篇 · 27 · 别人已经知道了",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/original-28-e1799e3a5214.webp",
+              "title": "旧篇 · 28 · 门外的新脚印",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-01",
+          "title": "新续篇 01 · 门外的报价",
+          "description": "《门外的报价》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-01-01-d9b1832d3d8d.webp",
+              "title": "新续篇 01 · 门外的报价 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-01-01-d9b1832d3d8d-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-02-a6eae50529a6.webp",
+              "title": "新续篇 01 · 门外的报价 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-03-eafd35c0d23a.webp",
+              "title": "新续篇 01 · 门外的报价 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-04-ba8c9170ca1f.webp",
+              "title": "新续篇 01 · 门外的报价 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-05-74a59e92096c.webp",
+              "title": "新续篇 01 · 门外的报价 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-06-f9b488ef3805.webp",
+              "title": "新续篇 01 · 门外的报价 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-07-098323e08909.webp",
+              "title": "新续篇 01 · 门外的报价 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-08-cc7466e36bf8.webp",
+              "title": "新续篇 01 · 门外的报价 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-09-66dbfe49c8fb.webp",
+              "title": "新续篇 01 · 门外的报价 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-10-b97ab8790e1a.webp",
+              "title": "新续篇 01 · 门外的报价 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-11-f6c5921e51ea.webp",
+              "title": "新续篇 01 · 门外的报价 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-01-12-916611ccdf52.webp",
+              "title": "新续篇 01 · 门外的报价 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-02",
+          "title": "新续篇 02 · 修好再收费",
+          "description": "《修好再收费》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-02-01-3be4af6b01f6.webp",
+              "title": "新续篇 02 · 修好再收费 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-02-01-3be4af6b01f6-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-02-04a69aebb5bc.webp",
+              "title": "新续篇 02 · 修好再收费 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-03-225806035b4f.webp",
+              "title": "新续篇 02 · 修好再收费 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-04-383253f2a44b.webp",
+              "title": "新续篇 02 · 修好再收费 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-05-bca08e6dc4c7.webp",
+              "title": "新续篇 02 · 修好再收费 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-06-29e95291cb27.webp",
+              "title": "新续篇 02 · 修好再收费 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-07-59fdc381b92c.webp",
+              "title": "新续篇 02 · 修好再收费 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-08-232ed3d9fa96.webp",
+              "title": "新续篇 02 · 修好再收费 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-09-00886363dbcb.webp",
+              "title": "新续篇 02 · 修好再收费 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-10-e58288b7c81a.webp",
+              "title": "新续篇 02 · 修好再收费 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-11-56a47f2caad1.webp",
+              "title": "新续篇 02 · 修好再收费 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-02-12-cb9836ded2bc.webp",
+              "title": "新续篇 02 · 修好再收费 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-03",
+          "title": "新续篇 03 · 保证不值一条命",
+          "description": "《保证不值一条命》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-03-01-f9b0f5906e8e.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-03-01-f9b0f5906e8e-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-02-e353501f9494.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-03-a5d64030e299.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-04-fab65afec87f.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-05-0028cb74c668.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-06-a26b9ed857a6.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-07-3bd7b439222a.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-08-92a6bb98ca11.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-09-388cd2c70d9d.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-10-0efa442df7d1.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-11-2b85b5d0b1da.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-03-12-f94de117a1c9.webp",
+              "title": "新续篇 03 · 保证不值一条命 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-04",
+          "title": "新续篇 04 · 六四写清楚",
+          "description": "《六四写清楚》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-04-01-e01eb56eae52.webp",
+              "title": "新续篇 04 · 六四写清楚 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-04-01-e01eb56eae52-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-02-3c3edb3be4a0.webp",
+              "title": "新续篇 04 · 六四写清楚 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-03-de767e723b78.webp",
+              "title": "新续篇 04 · 六四写清楚 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-04-28b1214b38aa.webp",
+              "title": "新续篇 04 · 六四写清楚 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-05-a6aa3356cce3.webp",
+              "title": "新续篇 04 · 六四写清楚 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-06-211764e06481.webp",
+              "title": "新续篇 04 · 六四写清楚 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-07-f18ca8f97b63.webp",
+              "title": "新续篇 04 · 六四写清楚 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-08-a16fb67830ed.webp",
+              "title": "新续篇 04 · 六四写清楚 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-09-9926ae9b8631.webp",
+              "title": "新续篇 04 · 六四写清楚 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-10-d164cfcc6cbb.webp",
+              "title": "新续篇 04 · 六四写清楚 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-11-b1b7aba53867.webp",
+              "title": "新续篇 04 · 六四写清楚 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-04-12-e12cb1ae6fbd.webp",
+              "title": "新续篇 04 · 六四写清楚 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-05",
+          "title": "新续篇 05 · 借你一双手",
+          "description": "《借你一双手》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-05-01-797ea6324df9.webp",
+              "title": "新续篇 05 · 借你一双手 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-05-01-797ea6324df9-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-02-f8ae40b4b17d.webp",
+              "title": "新续篇 05 · 借你一双手 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-03-b508f5f515e3.webp",
+              "title": "新续篇 05 · 借你一双手 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-04-d1eaf16d91ea.webp",
+              "title": "新续篇 05 · 借你一双手 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-05-4fdf35ac4ef7.webp",
+              "title": "新续篇 05 · 借你一双手 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-06-5db5f8cbb1b4.webp",
+              "title": "新续篇 05 · 借你一双手 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-07-eb2d0664357c.webp",
+              "title": "新续篇 05 · 借你一双手 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-08-4dc93c6c1e43.webp",
+              "title": "新续篇 05 · 借你一双手 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-09-f04d05dec3d5.webp",
+              "title": "新续篇 05 · 借你一双手 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-10-633da12084e3.webp",
+              "title": "新续篇 05 · 借你一双手 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-11-4f038d0a543c.webp",
+              "title": "新续篇 05 · 借你一双手 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-05-12-2919c1ecb686.webp",
+              "title": "新续篇 05 · 借你一双手 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-06",
+          "title": "新续篇 06 · 责任不能转走",
+          "description": "《责任不能转走》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-06-01-6175cc249e01.webp",
+              "title": "新续篇 06 · 责任不能转走 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-06-01-6175cc249e01-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-02-0c5b43dd8ae7.webp",
+              "title": "新续篇 06 · 责任不能转走 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-03-7098c1ed49d8.webp",
+              "title": "新续篇 06 · 责任不能转走 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-04-569c577de621.webp",
+              "title": "新续篇 06 · 责任不能转走 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-05-0ba9203a6723.webp",
+              "title": "新续篇 06 · 责任不能转走 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-06-a2802747986f.webp",
+              "title": "新续篇 06 · 责任不能转走 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-07-8ef40cbea857.webp",
+              "title": "新续篇 06 · 责任不能转走 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-08-f84362ccbd1e.webp",
+              "title": "新续篇 06 · 责任不能转走 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-09-1b3e2f703a71.webp",
+              "title": "新续篇 06 · 责任不能转走 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-10-fa9b56537039.webp",
+              "title": "新续篇 06 · 责任不能转走 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-11-d9f204c0b9d6.webp",
+              "title": "新续篇 06 · 责任不能转走 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-06-12-f31509d84851.webp",
+              "title": "新续篇 06 · 责任不能转走 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-07",
+          "title": "新续篇 07 · 谁的东西",
+          "description": "《谁的东西》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-07-01-0164655f6ff4.webp",
+              "title": "新续篇 07 · 谁的东西 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-07-01-0164655f6ff4-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-02-91c70f9896c0.webp",
+              "title": "新续篇 07 · 谁的东西 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-03-09c3928e272c.webp",
+              "title": "新续篇 07 · 谁的东西 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-04-0137236a43f7.webp",
+              "title": "新续篇 07 · 谁的东西 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-05-b21045678978.webp",
+              "title": "新续篇 07 · 谁的东西 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-06-a7d8d80f413d.webp",
+              "title": "新续篇 07 · 谁的东西 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-07-d42c48997c8b.webp",
+              "title": "新续篇 07 · 谁的东西 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-08-565eefea4060.webp",
+              "title": "新续篇 07 · 谁的东西 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-09-fa297cb87ead.webp",
+              "title": "新续篇 07 · 谁的东西 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-10-a5ee3954c047.webp",
+              "title": "新续篇 07 · 谁的东西 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-11-bb7f962d59a3.webp",
+              "title": "新续篇 07 · 谁的东西 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-07-12-70b6904ac1ce.webp",
+              "title": "新续篇 07 · 谁的东西 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-08",
+          "title": "新续篇 08 · 不算领过",
+          "description": "《不算领过》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-08-01-d8a33cfbddfc.webp",
+              "title": "新续篇 08 · 不算领过 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-08-01-d8a33cfbddfc-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-02-0e482d963e12.webp",
+              "title": "新续篇 08 · 不算领过 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-03-ff922625c300.webp",
+              "title": "新续篇 08 · 不算领过 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-04-3bae8e4dd5a9.webp",
+              "title": "新续篇 08 · 不算领过 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-05-1aa308b5f92c.webp",
+              "title": "新续篇 08 · 不算领过 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-06-26d1d6e48f53.webp",
+              "title": "新续篇 08 · 不算领过 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-07-6f554265c57f.webp",
+              "title": "新续篇 08 · 不算领过 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-08-446b657efef5.webp",
+              "title": "新续篇 08 · 不算领过 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-09-0f7b1970daee.webp",
+              "title": "新续篇 08 · 不算领过 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-10-c306117be0d1.webp",
+              "title": "新续篇 08 · 不算领过 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-11-f79156535617.webp",
+              "title": "新续篇 08 · 不算领过 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-08-12-b9eeaf48fe5b.webp",
+              "title": "新续篇 08 · 不算领过 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-09",
+          "title": "新续篇 09 · 把账翻过来",
+          "description": "《把账翻过来》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-09-01-46705a833e81.webp",
+              "title": "新续篇 09 · 把账翻过来 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-09-01-46705a833e81-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-02-17dc62b75445.webp",
+              "title": "新续篇 09 · 把账翻过来 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-03-fa38d4af44dc.webp",
+              "title": "新续篇 09 · 把账翻过来 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-04-29924640ff22.webp",
+              "title": "新续篇 09 · 把账翻过来 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-05-73e81c6bdf1f.webp",
+              "title": "新续篇 09 · 把账翻过来 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-06-66e9311ca377.webp",
+              "title": "新续篇 09 · 把账翻过来 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-07-c264b60dc4db.webp",
+              "title": "新续篇 09 · 把账翻过来 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-08-f5250716ba40.webp",
+              "title": "新续篇 09 · 把账翻过来 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-09-23bf677e792b.webp",
+              "title": "新续篇 09 · 把账翻过来 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-10-1c230bfdab8f.webp",
+              "title": "新续篇 09 · 把账翻过来 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-11-d4a5fa1bb0bb.webp",
+              "title": "新续篇 09 · 把账翻过来 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-09-12-95cf60ba70f8.webp",
+              "title": "新续篇 09 · 把账翻过来 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        },
+        {
+          "id": "episode-10",
+          "title": "新续篇 10 · 不收空头人情",
+          "description": "《不收空头人情》共 12 页，P01—P12。接续上一章阅读。",
+          "status": "12 页 · 已整理",
+          "items": [
+            {
+              "src": "/assets/creative/namer/episode-10-01-3241aa201688.webp",
+              "title": "新续篇 10 · 不收空头人情 · P01",
+              "width": 1024,
+              "height": 1536,
+              "thumb": "/assets/creative/namer/episode-10-01-3241aa201688-thumb.webp"
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-02-7402802f6100.webp",
+              "title": "新续篇 10 · 不收空头人情 · P02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-03-22d731bdcd96.webp",
+              "title": "新续篇 10 · 不收空头人情 · P03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-04-91f4962ceb93.webp",
+              "title": "新续篇 10 · 不收空头人情 · P04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-05-af71e1d839ae.webp",
+              "title": "新续篇 10 · 不收空头人情 · P05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-06-753e80dcbf0b.webp",
+              "title": "新续篇 10 · 不收空头人情 · P06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-07-002af2407bd8.webp",
+              "title": "新续篇 10 · 不收空头人情 · P07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-08-8fc06795d876.webp",
+              "title": "新续篇 10 · 不收空头人情 · P08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-09-1e45ded475a6.webp",
+              "title": "新续篇 10 · 不收空头人情 · P09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-10-e58c4b655178.webp",
+              "title": "新续篇 10 · 不收空头人情 · P10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-11-bbdfd3cd3ea2.webp",
+              "title": "新续篇 10 · 不收空头人情 · P11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer/episode-10-12-c876ecffd601.webp",
+              "title": "新续篇 10 · 不收空头人情 · P12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
+        }
+      ]
     }
   ],
   "credits": "Sakura × 梦绯 · AI 辅助创作。非官方同人。"

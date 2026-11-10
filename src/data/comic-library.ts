@@ -14,6 +14,8 @@ export interface ComicSeries {
 	items: ComicImage[];
 }
 export interface ComicCategory {
+	/** Author-owned attribution for an original series; existing shelves keep the default. */
+	credits?: string;
 	id: string;
 	title: string;
 	description: string;

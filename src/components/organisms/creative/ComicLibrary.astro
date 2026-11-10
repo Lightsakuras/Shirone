@@ -16,7 +16,8 @@ const title = series?.title || category?.title || i18n(Key.comicLibraryTitle);
 const description =
 	series?.description || category?.description || i18n(Key.comicLibraryIntro);
 const seriesIndex = category?.series.findIndex((s) => s.id === seriesId) ?? -1;
-const previousSeries = category && seriesIndex > 0 ? category.series[seriesIndex - 1] : undefined;
+const previousSeries =
+	category && seriesIndex > 0 ? category.series[seriesIndex - 1] : undefined;
 const nextSeries = category?.series[seriesIndex + 1];
 const previous = series
 	? comicHref(category!.id)
@@ -45,7 +46,7 @@ const previous = series
   </nav>
   <a class="creative-button" href={comicHref(category!.id)}>← {category!.title}</a>
  </> : !category ? <div class="comic-shelves">{categories.map((c,i)=>{const first=c.series.flatMap(s=>s.items)[0];return <a class="comic-shelf-card" href={comicHref(c.id)}><div class="comic-shelf-card__art"><img src={c.cover||first?.thumb||first?.src} alt={c.title} width="800" height="600" loading="lazy"/><span>{String(i+1).padStart(2,'0')}</span></div><div class="comic-shelf-card__copy"><h2>{c.title}</h2><p>{c.description}</p><ul>{c.series.map(s=><li>{s.title}</li>)}</ul><span class="creative-text-link">{i18n(Key.creativeOpen)} ↗</span></div></a>})}</div> : <div class="comic-series-grid">{category.series.map((s,i)=>{const first=s.items[0];return <a class="comic-series-card" href={comicHref(category.id,s.id)}><div class="comic-series-card__art">{first&&<img src={first.thumb||first.src} alt={s.title} width="800" height="600" loading="lazy"/>}<span>{String(i+1).padStart(2,'0')}</span></div><div class="comic-series-card__copy"><h2>{s.title}</h2><p>{s.description}</p><small>{i18n(Key.comicImageCount).replace('{count}',String(s.items.length))}{s.status&&` · ${s.status}`}</small><span class="creative-text-link">{i18n(Key.creativeOpen)} ↗</span></div></a>})}</div>}
- <p class="creative-footer-note">{i18n(Key.comicCredits)}</p>
+ <p class="creative-footer-note">{category?.credits || i18n(Key.comicCredits)}</p>
 </article>
 
 <script>
