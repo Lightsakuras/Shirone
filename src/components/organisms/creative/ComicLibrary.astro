@@ -25,12 +25,12 @@ const previous = series
 		? "/worlds/comics/"
 		: "/worlds/";
 ---
-<article class="creative-story comic-library" data-comic-reader={series ? `${categoryId}/${seriesId}` : undefined}>
+<article class="creative-story comic-library" data-comic-reader={series?.items.length ? `${categoryId}/${seriesId}` : undefined}>
  <a class="creative-text-link" href={previous}>← {i18n(category ? Key.comicBackShelf : Key.creativeBack)}</a>
  <header class="comic-library__heading"><CreativeMotif kind="star" /><p class="creative-kicker">{i18n(Key.comicLibraryTitle)}</p><h1>{title}</h1><p class="creative-story__intro">{description}</p></header>
  <CreativeEditions />
  <nav class="comic-category-nav" aria-label={i18n(Key.comicCategories)}>{comicCategories.map(c=><a class="comic-chip" href={comicHref(c.id)} aria-current={categoryId===c.id?'page':undefined}>{c.title}</a>)}</nav>
- {series ? <>
+ {series && !series.items.length ? <><div class="comic-reader-meta" role="status"><span>{series.status}</span></div><a class="creative-button" href={comicHref(category!.id)}>← {category!.title}</a></> : series ? <>
   <div class="comic-reader-meta"><span>{i18n(Key.comicImageCount).replace('{count}',String(series.items.length))}</span>{series.status&&<span>{series.status}</span>}</div>
   <p class="comic-progress-note">{i18n(Key.comicLocalProgress)} <a data-comic-resume hidden class="creative-text-link">{i18n(Key.comicResume)} →</a></p>
   <div class="comic-reader-tools" data-comic-tools hidden>
