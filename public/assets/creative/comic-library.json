@@ -667,15 +667,15 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "按话查看目录。仅逐页核验通过的修订页开放阅读；目前可读旧篇开篇第 1–8 页，其余各话标明待核验或未完成。",
+      "description": "按话查看目录。仅逐页核验通过的修订页开放阅读；目前可读旧篇第 1–27 页，第 28 页待修，其余各话标明待核验或未完成。",
       "credits": "《命名者》原创漫画 · AI 辅助创作。修订核验中。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
           "id": "original",
           "title": "旧篇 · 开篇（逐页恢复）",
-          "description": "目前仅公开已逐页核验的开篇第 1–8 页，按原顺序阅读；后续页面待核，故事尚未完结。",
-          "status": "已核验 · 开放 8 页",
+          "description": "目前公开已逐页核验的旧篇第 1–27 页，按原顺序阅读。第 28 页因画面衔接问题待修，暂不公开；故事待续，并未完结。",
+          "status": "已核验 · 开放 27 页",
           "items": [
             {
               "src": "/assets/creative/namer-reviewed/original-01-0fa5366def68.webp",
@@ -722,6 +722,120 @@
             {
               "src": "/assets/creative/namer-reviewed/original-08-6736d0d33038.webp",
               "title": "旧篇 · 08 · 系统与第一笔交易",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-09-cbeeb74fdbe0.webp",
+              "title": "旧篇 · 09 · 先看路",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-10-9b74f77abd2e.webp",
+              "title": "旧篇 · 10 · 换个条件",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-11-f5b382f6dc05.webp",
+              "title": "旧篇 · 11 · 她说得完整",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-12-f55f2b07b609.webp",
+              "title": "旧篇 · 12 · 离开便利店",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-13-d50f52c7e485.webp",
+              "title": "旧篇 · 13 · 地图不是保证",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-14-e4a1ca1a1dda.webp",
+              "title": "旧篇 · 14 · 声音在招人",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-15-e22d2e139ccc.webp",
+              "title": "旧篇 · 15 · 不急着进去",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-16-5d1ad97cf47d.webp",
+              "title": "旧篇 · 16 · 先看价钱",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-17-2bd972a6500b.webp",
+              "title": "旧篇 · 17 · 出来",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-18-ab7d1f3e8f30.webp",
+              "title": "旧篇 · 18 · 打散不够",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-19-0bda068b2fea.webp",
+              "title": "旧篇 · 19 · 同一条路",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-20-9fce7590a0f0.webp",
+              "title": "旧篇 · 20 · 核心证据",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-21-1de72e2c1e5c.webp",
+              "title": "旧篇 · 21 · 命名",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-22-babcb5df2b56.webp",
+              "title": "旧篇 · 22 · 先别算奖励",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-23-a02d40bd1596.webp",
+              "title": "旧篇 · 23 · 剩下的东西",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-24-fe9c6da03fb3.webp",
+              "title": "旧篇 · 24 · 这才叫成交",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-25-2591f15b29c0.webp",
+              "title": "旧篇 · 25 · 不是收留",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-26-e733ffcd1e8e.webp",
+              "title": "旧篇 · 26 · 第一个落脚处",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-27-d16eda570655.webp",
+              "title": "旧篇 · 27 · 别人已经知道了",
               "width": 1024,
               "height": 1536
             }
