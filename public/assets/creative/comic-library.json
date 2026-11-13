@@ -667,15 +667,15 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "按话查看目录。仅逐页核验通过的修订页开放阅读；目前可读旧篇第 1–27 页，第 28 页待修，其余各话标明待核验或未完成。",
+      "description": "按话查看目录。仅逐页核验通过的修订页开放阅读；目前可读旧篇第 1–28 页，其余各话标明待核验或未完成。",
       "credits": "《命名者》原创漫画 · AI 辅助创作。修订核验中。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
           "id": "original",
-          "title": "旧篇 · 开篇（逐页恢复）",
-          "description": "目前公开已逐页核验的旧篇第 1–27 页，按原顺序阅读。第 28 页因画面衔接问题待修，暂不公开；故事待续，并未完结。",
-          "status": "已核验 · 开放 27 页",
+          "title": "旧篇 · 从裂隙到门外",
+          "description": "旧篇第 1–28 页已逐页核验，第 28 页使用最新修订版。按原顺序阅读；后续新续篇仍在审核，故事尚未完结。",
+          "status": "已核验 · 开放 28 页",
           "items": [
             {
               "src": "/assets/creative/namer-reviewed/original-01-0fa5366def68.webp",
@@ -836,6 +836,12 @@
             {
               "src": "/assets/creative/namer-reviewed/original-27-d16eda570655.webp",
               "title": "旧篇 · 27 · 别人已经知道了",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-28-reviewed-v1-5679c8f11ba6.webp",
+              "title": "旧篇 · 28 · 门外的新脚印（修订版）",
               "width": 1024,
               "height": 1536
             }
