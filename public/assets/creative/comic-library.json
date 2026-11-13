@@ -667,16 +667,65 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "按话查看目录。仅审核通过的修订页会开放阅读；当前各话仍在逐页核验，未完成或待核内容暂不公开。",
+      "description": "按话查看目录。仅逐页核验通过的修订页开放阅读；目前可读旧篇开篇第 1–8 页，其余各话标明待核验或未完成。",
       "credits": "《命名者》原创漫画 · AI 辅助创作。修订核验中。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
           "id": "original",
-          "title": "旧篇 · 从裂隙到门外",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "title": "旧篇 · 开篇（逐页恢复）",
+          "description": "目前仅公开已逐页核验的开篇第 1–8 页，按原顺序阅读；后续页面待核，故事尚未完结。",
+          "status": "已核验 · 开放 8 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-reviewed/original-01-0fa5366def68.webp",
+              "title": "旧篇 · 01 · 没吃上的晚饭",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-02-0bf94d5f41e4.webp",
+              "title": "旧篇 · 02 · 裂隙之间",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-03-383b7f3c6858.webp",
+              "title": "旧篇 · 03 · 陌生街道",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-04-5b27df0e3bcf.webp",
+              "title": "旧篇 · 04 · 召唤白龙",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-05-972aaa6bc787.webp",
+              "title": "旧篇 · 05 · 首次施术",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-06-8098fe27fe32.webp",
+              "title": "旧篇 · 06 · 失语灾变",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-07-61b6b9574fc5.webp",
+              "title": "旧篇 · 07 · 错误体与命名",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-reviewed/original-08-6736d0d33038.webp",
+              "title": "旧篇 · 08 · 系统与第一笔交易",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-01",
