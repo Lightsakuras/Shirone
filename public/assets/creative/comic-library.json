@@ -667,14 +667,14 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "按话查看目录。旧篇 28 页、新续篇第 1 话 12 页开放阅读。第 2–3 话暂时撤下修订，其余各话仍待核验或未完成。",
+      "description": "按话查看目录。目前仅旧篇 28 页开放阅读；新续篇第 1–3 话已暂时撤下修订，其余各话仍待核验或未完成。",
       "credits": "《命名者》原创漫画 · AI 辅助创作。修订核验中。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
           "id": "original",
           "title": "旧篇 · 从裂隙到门外",
-          "description": "旧篇第 1–28 页已逐页核验，第 28 页使用最新修订版。读完可继续新续篇第 1 话；故事尚未完结。",
+          "description": "旧篇第 1–28 页开放阅读，第 28 页使用最新修订版。新续篇暂时撤下复核，故事尚未完结。",
           "status": "已核验 · 开放 28 页",
           "items": [
             {
@@ -850,82 +850,9 @@
         {
           "id": "episode-01",
           "title": "新续篇 01 · 门外的报价",
-          "description": "本话 12 页已逐页核验，按页序阅读。",
-          "status": "已核验 · 开放 12 页",
-          "items": [
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-01-f84a86e351dc.webp",
-              "title": "新续篇 01 · 01",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-02-a763688ce8db.webp",
-              "title": "新续篇 01 · 02",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-03-1f351c7bacc4.webp",
-              "title": "新续篇 01 · 03",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-04-9eee23529d3c.webp",
-              "title": "新续篇 01 · 04",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-05-366096671491.webp",
-              "title": "新续篇 01 · 05",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-06-031ddff54d77.webp",
-              "title": "新续篇 01 · 06",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-07-e80bd2f84f5b.webp",
-              "title": "新续篇 01 · 07",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-08-313b5631582b.webp",
-              "title": "新续篇 01 · 08",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-09-dc1531cb9436.webp",
-              "title": "新续篇 01 · 09",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-10-e0e2b3594c80.webp",
-              "title": "新续篇 01 · 10",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-11-f5a394da6fb5.webp",
-              "title": "新续篇 01 · 11",
-              "width": 1024,
-              "height": 1536
-            },
-            {
-              "src": "/assets/creative/namer-reviewed/episode-01-12-e70d9587b440.webp",
-              "title": "新续篇 01 · 12",
-              "width": 1024,
-              "height": 1536
-            }
-          ]
+          "description": "本话因人物形象连续性问题暂时撤下，修订并逐页复核后再恢复。",
+          "status": "待修复核 · 暂未开放",
+          "items": []
         },
         {
           "id": "episode-02",
