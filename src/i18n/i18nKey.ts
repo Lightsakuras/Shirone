@@ -1,4 +1,13 @@
 enum I18nKey {
+	comicChapterDirectory = "comicChapterDirectory",
+	comicChapterNumber = "comicChapterNumber",
+	comicChapterPending = "comicChapterPending",
+	comicChapterAvailable = "comicChapterAvailable",
+	comicPageDirectory = "comicPageDirectory",
+	comicPreviousChapter = "comicPreviousChapter",
+	comicNextChapter = "comicNextChapter",
+	comicAllChapters = "comicAllChapters",
+
 	versionMenu = "versionMenu",
 	versionMenuHint = "versionMenuHint",
 	comicBackShelf = "comicBackShelf",

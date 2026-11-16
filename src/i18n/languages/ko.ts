@@ -2,8 +2,18 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const ko: Translation = {
+	[Key.comicChapterDirectory]: "회차 목차",
+	[Key.comicChapterNumber]: "제{chapter}화",
+	[Key.comicChapterPending]: "미공개",
+	[Key.comicChapterAvailable]: "{count}화 공개",
+	[Key.comicPageDirectory]: "이 회차의 페이지",
+	[Key.comicPreviousChapter]: "이전 화",
+	[Key.comicNextChapter]: "다음 화",
+	[Key.comicAllChapters]: "전체 회차",
+
 	[Key.versionMenu]: "버전",
-	[Key.versionMenuHint]: "세 가지 벚꽃 아트 버전을 선택하세요. 기존 사이트 스타일은 아래에 있습니다.",
+	[Key.versionMenuHint]:
+		"세 가지 벚꽃 아트 버전을 선택하세요. 기존 사이트 스타일은 아래에 있습니다.",
 	[Key.comicBackShelf]: "서가로 돌아가기",
 	[Key.comicPrevSeries]: "이전 이야기",
 	[Key.comicNextSeries]: "다음 이야기",
@@ -14,7 +24,8 @@ export const ko: Translation = {
 	[Key.comicNextPage]: "다음 페이지",
 
 	[Key.comicLibraryTitle]: "AI 소녀 이야기책",
-	[Key.comicLibraryIntro]: "여행, 모험, 일상. 세계를 선택하고 이야기를 읽어 보세요.",
+	[Key.comicLibraryIntro]:
+		"여행, 모험, 일상. 세계를 선택하고 이야기를 읽어 보세요.",
 	[Key.comicCategories]: "이야기 분류",
 	[Key.comicImageCount]: "이미지 {count}장",
 	[Key.comicPage]: "{page}페이지",

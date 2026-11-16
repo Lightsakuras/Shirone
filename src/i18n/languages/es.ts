@@ -2,8 +2,18 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const es: Translation = {
+	[Key.comicChapterDirectory]: "Índice de capítulos",
+	[Key.comicChapterNumber]: "Capítulo {chapter}",
+	[Key.comicChapterPending]: "Sin publicar",
+	[Key.comicChapterAvailable]: "{count} capítulos disponibles",
+	[Key.comicPageDirectory]: "Páginas del capítulo",
+	[Key.comicPreviousChapter]: "Capítulo anterior",
+	[Key.comicNextChapter]: "Capítulo siguiente",
+	[Key.comicAllChapters]: "Todos los capítulos",
+
 	[Key.versionMenu]: "Versiones",
-	[Key.versionMenuHint]: "Elige entre tres ediciones Sakura; los estilos originales están debajo.",
+	[Key.versionMenuHint]:
+		"Elige entre tres ediciones Sakura; los estilos originales están debajo.",
 	[Key.comicBackShelf]: "Volver a la biblioteca",
 	[Key.comicPrevSeries]: "Historia anterior",
 	[Key.comicNextSeries]: "Siguiente historia",
@@ -14,11 +24,13 @@ export const es: Translation = {
 	[Key.comicNextPage]: "Página siguiente",
 
 	[Key.comicLibraryTitle]: "Historias de chicas IA",
-	[Key.comicLibraryIntro]: "Viajes, aventuras y vida cotidiana. Elige un mundo y descubre sus historias.",
+	[Key.comicLibraryIntro]:
+		"Viajes, aventuras y vida cotidiana. Elige un mundo y descubre sus historias.",
 	[Key.comicCategories]: "Categorías",
 	[Key.comicImageCount]: "{count} imágenes",
 	[Key.comicPage]: "Página {page}",
-	[Key.comicCredits]: "Historias no oficiales de fans con ayuda de IA, organizadas por series y capítulos.",
+	[Key.comicCredits]:
+		"Historias no oficiales de fans con ayuda de IA, organizadas por series y capítulos.",
 
 	[Key.creativeAudioTitle]: "Radio de pétalos",
 	[Key.creativeAudioPlay]: "Reproducir música",

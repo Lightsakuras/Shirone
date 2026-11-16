@@ -2,8 +2,18 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const vi: Translation = {
+	[Key.comicChapterDirectory]: "Mục lục chương",
+	[Key.comicChapterNumber]: "Chương {chapter}",
+	[Key.comicChapterPending]: "Chưa xuất bản",
+	[Key.comicChapterAvailable]: "Đã có {count} chương",
+	[Key.comicPageDirectory]: "Các trang trong chương",
+	[Key.comicPreviousChapter]: "Chương trước",
+	[Key.comicNextChapter]: "Chương sau",
+	[Key.comicAllChapters]: "Tất cả chương",
+
 	[Key.versionMenu]: "Phiên bản",
-	[Key.versionMenuHint]: "Chọn ba phiên bản nghệ thuật Sakura; kiểu trang gốc ở bên dưới.",
+	[Key.versionMenuHint]:
+		"Chọn ba phiên bản nghệ thuật Sakura; kiểu trang gốc ở bên dưới.",
 	[Key.comicBackShelf]: "Trở về kệ sách",
 	[Key.comicPrevSeries]: "Truyện trước",
 	[Key.comicNextSeries]: "Truyện tiếp theo",
@@ -14,11 +24,13 @@ export const vi: Translation = {
 	[Key.comicNextPage]: "Trang sau",
 
 	[Key.comicLibraryTitle]: "Tập truyện các cô gái AI",
-	[Key.comicLibraryIntro]: "Du lịch, phiêu lưu và đời thường. Chọn một thế giới và khám phá câu chuyện.",
+	[Key.comicLibraryIntro]:
+		"Du lịch, phiêu lưu và đời thường. Chọn một thế giới và khám phá câu chuyện.",
 	[Key.comicCategories]: "Danh mục truyện",
 	[Key.comicImageCount]: "{count} hình",
 	[Key.comicPage]: "Trang {page}",
-	[Key.comicCredits]: "Tác phẩm người hâm mộ không chính thức có AI hỗ trợ, sắp xếp theo bộ và chương.",
+	[Key.comicCredits]:
+		"Tác phẩm người hâm mộ không chính thức có AI hỗ trợ, sắp xếp theo bộ và chương.",
 
 	[Key.creativeAudioTitle]: "Radio cánh hoa",
 	[Key.creativeAudioPlay]: "Phát nhạc",

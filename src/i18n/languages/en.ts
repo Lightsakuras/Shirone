@@ -2,8 +2,18 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const en: Translation = {
+	[Key.comicChapterDirectory]: "Chapter directory",
+	[Key.comicChapterNumber]: "Chapter {chapter}",
+	[Key.comicChapterPending]: "Not published",
+	[Key.comicChapterAvailable]: "{count} chapters available",
+	[Key.comicPageDirectory]: "Pages in this chapter",
+	[Key.comicPreviousChapter]: "Previous chapter",
+	[Key.comicNextChapter]: "Next chapter",
+	[Key.comicAllChapters]: "All chapters",
+
 	[Key.versionMenu]: "Versions",
-	[Key.versionMenuHint]: "Switch between three Sakura art editions here; original site styles are below.",
+	[Key.versionMenuHint]:
+		"Switch between three Sakura art editions here; original site styles are below.",
 	[Key.comicBackShelf]: "Back to shelf",
 	[Key.comicPrevSeries]: "Previous story",
 	[Key.comicNextSeries]: "Next story",
@@ -14,11 +24,13 @@ export const en: Translation = {
 	[Key.comicNextPage]: "Next page",
 
 	[Key.comicLibraryTitle]: "AI Girls Storybook",
-	[Key.comicLibraryIntro]: "Travel, adventure, and everyday life, each with its own chapter. Choose a world and explore its stories.",
+	[Key.comicLibraryIntro]:
+		"Travel, adventure, and everyday life, each with its own chapter. Choose a world and explore its stories.",
 	[Key.comicCategories]: "Story categories",
 	[Key.comicImageCount]: "{count} images",
 	[Key.comicPage]: "Page {page}",
-	[Key.comicCredits]: "Unofficial AI-assisted fan stories, organized by series and chapter.",
+	[Key.comicCredits]:
+		"Unofficial AI-assisted fan stories, organized by series and chapter.",
 
 	[Key.creativeAudioTitle]: "Petal Radio",
 	[Key.creativeAudioPlay]: "Play music",

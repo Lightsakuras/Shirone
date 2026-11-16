@@ -2,8 +2,18 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const ja: Translation = {
+	[Key.comicChapterDirectory]: "各話の目次",
+	[Key.comicChapterNumber]: "第{chapter}話",
+	[Key.comicChapterPending]: "未公開",
+	[Key.comicChapterAvailable]: "{count}話公開中",
+	[Key.comicPageDirectory]: "この話のページ",
+	[Key.comicPreviousChapter]: "前の話",
+	[Key.comicNextChapter]: "次の話",
+	[Key.comicAllChapters]: "各話の目次へ",
+
 	[Key.versionMenu]: "バージョン",
-	[Key.versionMenuHint]: "3つの桜アート版を切り替えます。従来のサイトスタイルは下にあります。",
+	[Key.versionMenuHint]:
+		"3つの桜アート版を切り替えます。従来のサイトスタイルは下にあります。",
 	[Key.comicBackShelf]: "本棚に戻る",
 	[Key.comicPrevSeries]: "前の物語",
 	[Key.comicNextSeries]: "次の物語",
@@ -14,7 +24,8 @@ export const ja: Translation = {
 	[Key.comicNextPage]: "次のページ",
 
 	[Key.comicLibraryTitle]: "AI 少女の物語集",
-	[Key.comicLibraryIntro]: "旅、冒険、日常。それぞれの世界を選んで、物語を読み進めましょう。",
+	[Key.comicLibraryIntro]:
+		"旅、冒険、日常。それぞれの世界を選んで、物語を読み進めましょう。",
 	[Key.comicCategories]: "物語の分類",
 	[Key.comicImageCount]: "{count} 枚",
 	[Key.comicPage]: "{page} ページ",

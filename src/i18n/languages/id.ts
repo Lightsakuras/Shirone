@@ -2,8 +2,18 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const id: Translation = {
+	[Key.comicChapterDirectory]: "Daftar bab",
+	[Key.comicChapterNumber]: "Bab {chapter}",
+	[Key.comicChapterPending]: "Belum terbit",
+	[Key.comicChapterAvailable]: "{count} bab tersedia",
+	[Key.comicPageDirectory]: "Halaman bab ini",
+	[Key.comicPreviousChapter]: "Bab sebelumnya",
+	[Key.comicNextChapter]: "Bab berikutnya",
+	[Key.comicAllChapters]: "Semua bab",
+
 	[Key.versionMenu]: "Versi",
-	[Key.versionMenuHint]: "Pilih tiga edisi seni Sakura; gaya situs asli tersedia di bawah.",
+	[Key.versionMenuHint]:
+		"Pilih tiga edisi seni Sakura; gaya situs asli tersedia di bawah.",
 	[Key.comicBackShelf]: "Kembali ke rak",
 	[Key.comicPrevSeries]: "Cerita sebelumnya",
 	[Key.comicNextSeries]: "Cerita berikutnya",
@@ -14,11 +24,13 @@ export const id: Translation = {
 	[Key.comicNextPage]: "Halaman berikutnya",
 
 	[Key.comicLibraryTitle]: "Buku cerita gadis AI",
-	[Key.comicLibraryIntro]: "Perjalanan, petualangan, dan keseharian. Pilih dunia dan jelajahi ceritanya.",
+	[Key.comicLibraryIntro]:
+		"Perjalanan, petualangan, dan keseharian. Pilih dunia dan jelajahi ceritanya.",
 	[Key.comicCategories]: "Kategori cerita",
 	[Key.comicImageCount]: "{count} gambar",
 	[Key.comicPage]: "Halaman {page}",
-	[Key.comicCredits]: "Cerita penggemar tidak resmi berbantuan AI, disusun menurut seri dan bab.",
+	[Key.comicCredits]:
+		"Cerita penggemar tidak resmi berbantuan AI, disusun menurut seri dan bab.",
 
 	[Key.creativeAudioTitle]: "Radio Kelopak",
 	[Key.creativeAudioPlay]: "Putar musik",

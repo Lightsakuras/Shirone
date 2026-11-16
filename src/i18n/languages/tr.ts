@@ -2,8 +2,18 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const tr: Translation = {
+	[Key.comicChapterDirectory]: "Bölüm dizini",
+	[Key.comicChapterNumber]: "Bölüm {chapter}",
+	[Key.comicChapterPending]: "Yayımlanmadı",
+	[Key.comicChapterAvailable]: "{count} bölüm mevcut",
+	[Key.comicPageDirectory]: "Bu bölümün sayfaları",
+	[Key.comicPreviousChapter]: "Önceki bölüm",
+	[Key.comicNextChapter]: "Sonraki bölüm",
+	[Key.comicAllChapters]: "Tüm bölümler",
+
 	[Key.versionMenu]: "Sürümler",
-	[Key.versionMenuHint]: "Üç Sakura sanat sürümünü seçin; özgün site stilleri aşağıdadır.",
+	[Key.versionMenuHint]:
+		"Üç Sakura sanat sürümünü seçin; özgün site stilleri aşağıdadır.",
 	[Key.comicBackShelf]: "Kitaplığa dön",
 	[Key.comicPrevSeries]: "Önceki hikâye",
 	[Key.comicNextSeries]: "Sonraki hikâye",
@@ -14,11 +24,13 @@ export const tr: Translation = {
 	[Key.comicNextPage]: "Sonraki sayfa",
 
 	[Key.comicLibraryTitle]: "AI Kızlarının Hikâyeleri",
-	[Key.comicLibraryIntro]: "Seyahat, macera ve günlük yaşam. Bir dünya seçip hikâyeleri keşfedin.",
+	[Key.comicLibraryIntro]:
+		"Seyahat, macera ve günlük yaşam. Bir dünya seçip hikâyeleri keşfedin.",
 	[Key.comicCategories]: "Hikâye kategorileri",
 	[Key.comicImageCount]: "{count} görsel",
 	[Key.comicPage]: "Sayfa {page}",
-	[Key.comicCredits]: "AI destekli, resmî olmayan hayran hikâyeleri; seri ve bölümlere göre düzenlenmiştir.",
+	[Key.comicCredits]:
+		"AI destekli, resmî olmayan hayran hikâyeleri; seri ve bölümlere göre düzenlenmiştir.",
 
 	[Key.creativeAudioTitle]: "Yaprak Radyosu",
 	[Key.creativeAudioPlay]: "Müziği çal",

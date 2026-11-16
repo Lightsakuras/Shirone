@@ -1,0 +1,21 @@
+---
+import { comicHref, type ComicCategory } from "@/data/comic-library";
+import Key from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+interface Props { category: ComicCategory; current?: string; }
+const { category, current } = Astro.props;
+const available = category.series.filter(s => s.items.length);
+const label = (id: string, index: number) => category.id === "namer" && id === "original"
+ ? category.series[index].title
+ : i18n(Key.comicChapterNumber).replace("{chapter}", String(Number(id.match(/(?:episode|ark)-(\d+)$/)?.[1] || index + 1)));
+---
+<section class="chapter-directory" id="chapter-directory" aria-labelledby="chapter-directory-title">
+ <header><h2 id="chapter-directory-title">{i18n(Key.comicChapterDirectory)}</h2><p>{i18n(Key.comicChapterAvailable).replace("{count}", String(available.length))}</p></header>
+ <nav aria-label={i18n(Key.comicChapterDirectory)}><ol>{category.series.map((s,index) => <li>{s.items.length ? <a href={comicHref(category.id,s.id)} aria-current={s.id===current ? "page" : undefined} class="m3-state-layer"><strong>{label(s.id,index)}</strong><span>{s.title}</span><small>{i18n(Key.comicImageCount).replace("{count}",String(s.items.length))} →</small></a> : <div class="chapter-pending" aria-disabled="true"><strong>{label(s.id,index)}</strong><span>{s.title}</span><small>{i18n(Key.comicChapterPending)}</small></div>}</li>)}</ol></nav>
+</section>
+<style>
+.chapter-directory {padding:1.1rem;border:1px solid var(--outline-variant);border-radius:var(--shape-corner-l);background:var(--surface-container-low);scroll-margin-top:6rem;margin-block:1rem 1.5rem;color:var(--on-surface)}
+header {display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem} h2 {font-size:var(--m3e-type-title-lg-size,1.375rem);font-weight:700} header p,small {color:var(--on-surface-variant)}
+ol {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;list-style:none;padding:0;margin:0} li {min-width:0} a,.chapter-pending {position:relative;display:flex;flex-direction:column;gap:.35rem;min-height:5rem;padding:.85rem;border-radius:var(--shape-corner-m);border:1px solid var(--outline-variant);background:var(--surface-container);text-decoration:none;overflow-wrap:anywhere} a strong {color:var(--primary)} a[aria-current="page"] {background:var(--primary-container);border-color:var(--primary);color:var(--on-primary-container)} a:focus-visible {outline:3px solid var(--primary);outline-offset:2px} span {font-size:var(--m3e-type-body-md-size,.875rem)} .chapter-pending {background:var(--surface);color:var(--on-surface-variant);border-style:dashed}
+@media(max-width:480px){ol{grid-template-columns:1fr} .chapter-directory{padding:.8rem} a,.chapter-pending{min-height:44px}}
+</style>

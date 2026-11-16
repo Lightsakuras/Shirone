@@ -2,6 +2,15 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const zh_CN: Translation = {
+	[Key.comicChapterDirectory]: "每话目录",
+	[Key.comicChapterNumber]: "第 {chapter} 话",
+	[Key.comicChapterPending]: "待上线",
+	[Key.comicChapterAvailable]: "已上线 {count} 话",
+	[Key.comicPageDirectory]: "本话页码",
+	[Key.comicPreviousChapter]: "上一话",
+	[Key.comicNextChapter]: "下一话",
+	[Key.comicAllChapters]: "返回每话目录",
+
 	[Key.versionMenu]: "版本",
 	[Key.versionMenuHint]: "三种樱花艺术版式在这里切换；下方为原有全站风格。",
 	[Key.comicBackShelf]: "返回书架",
@@ -14,7 +23,8 @@ export const zh_CN: Translation = {
 	[Key.comicNextPage]: "下一页",
 
 	[Key.comicLibraryTitle]: "AI 娘故事书",
-	[Key.comicLibraryIntro]: "旅行、冒险与日常，各自成章。先选一个世界，再慢慢翻阅她们的故事。",
+	[Key.comicLibraryIntro]:
+		"旅行、冒险与日常，各自成章。先选一个世界，再慢慢翻阅她们的故事。",
 	[Key.comicCategories]: "故事分类",
 	[Key.comicImageCount]: "{count} 张",
 	[Key.comicPage]: "第 {page} 页",

@@ -2,6 +2,15 @@ import Key from "../i18nKey-runtime.mjs";
 import type { Translation } from "../translation.ts";
 
 export const th: Translation = {
+	[Key.comicChapterDirectory]: "สารบัญตอน",
+	[Key.comicChapterNumber]: "ตอนที่ {chapter}",
+	[Key.comicChapterPending]: "ยังไม่เผยแพร่",
+	[Key.comicChapterAvailable]: "เผยแพร่แล้ว {count} ตอน",
+	[Key.comicPageDirectory]: "หน้าในตอนนี้",
+	[Key.comicPreviousChapter]: "ตอนก่อนหน้า",
+	[Key.comicNextChapter]: "ตอนถัดไป",
+	[Key.comicAllChapters]: "ทุกตอน",
+
 	[Key.versionMenu]: "เวอร์ชัน",
 	[Key.versionMenuHint]: "เลือกเวอร์ชันศิลปะซากุระ 3 แบบได้ที่นี่ รูปแบบเดิมอยู่ด้านล่าง",
 	[Key.comicBackShelf]: "กลับไปชั้นหนังสือ",
@@ -14,7 +23,8 @@ export const th: Translation = {
 	[Key.comicNextPage]: "หน้าถัดไป",
 
 	[Key.comicLibraryTitle]: "หนังสือเรื่องราวสาว AI",
-	[Key.comicLibraryIntro]: "การเดินทาง การผจญภัย และชีวิตประจำวัน เลือกโลกแล้วอ่านเรื่องราวของพวกเธอ",
+	[Key.comicLibraryIntro]:
+		"การเดินทาง การผจญภัย และชีวิตประจำวัน เลือกโลกแล้วอ่านเรื่องราวของพวกเธอ",
 	[Key.comicCategories]: "หมวดเรื่องราว",
 	[Key.comicImageCount]: "{count} ภาพ",
 	[Key.comicPage]: "หน้า {page}",

@@ -2,6 +2,7 @@
 import { comicCategories, comicHref } from "@/data/comic-library";
 import Key from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
+import ComicChapterDirectory from "./ComicChapterDirectory.astro";
 import CreativeMotif from "./CreativeMotif.astro";
 import CreativeEditions from "./CreativeEditions.astro";
 interface Props {
@@ -17,8 +18,8 @@ const description =
 	series?.description || category?.description || i18n(Key.comicLibraryIntro);
 const seriesIndex = category?.series.findIndex((s) => s.id === seriesId) ?? -1;
 const previousSeries =
-	category && seriesIndex > 0 ? category.series[seriesIndex - 1] : undefined;
-const nextSeries = category?.series[seriesIndex + 1];
+	category && seriesIndex > 0 ? category.series.slice(0, seriesIndex).filter(s => s.items.length).at(-1) : undefined;
+const nextSeries = category?.series.slice(seriesIndex + 1).find(s => s.items.length);
 const previous = series
 	? comicHref(category!.id)
 	: category
@@ -28,6 +29,13 @@ const previous = series
 <article class="creative-story comic-library" data-comic-reader={series?.items.length ? `${categoryId}/${seriesId}` : undefined}>
  <a class="creative-text-link" href={previous}>← {i18n(category ? Key.comicBackShelf : Key.creativeBack)}</a>
  <header class="comic-library__heading"><CreativeMotif kind="star" /><p class="creative-kicker">{i18n(Key.comicLibraryTitle)}</p><h1>{title}</h1><p class="creative-story__intro">{description}</p></header>
+ {category && <nav class="comic-chapter-shortcuts" aria-label={i18n(Key.comicChapterDirectory)}>
+  {series && previousSeries && <a class="comic-chip" href={comicHref(category.id,previousSeries.id)}>← {i18n(Key.comicPreviousChapter)}</a>}
+  <a class="creative-button" href={series ? `${comicHref(category.id)}#chapter-directory` : "#chapter-directory"}>{i18n(Key.comicChapterDirectory)}</a>
+  {series && nextSeries && <a class="comic-chip" href={comicHref(category.id,nextSeries.id)}>{i18n(Key.comicNextChapter)} →</a>}
+ </nav>}
+ {category && !series && <ComicChapterDirectory category={category} />}
+ {category && series && <details class="comic-chapter-expand"><summary>{i18n(Key.comicAllChapters)}</summary><ComicChapterDirectory category={category} current={series.id} /></details>}
  <CreativeEditions />
  <nav class="comic-category-nav" aria-label={i18n(Key.comicCategories)}>{comicCategories.map(c=><a class="comic-chip" href={comicHref(c.id)} aria-current={categoryId===c.id?'page':undefined}>{c.title}</a>)}</nav>
  {series && !series.items.length ? <><div class="comic-reader-meta" role="status"><span>{series.status}</span></div><a class="creative-button" href={comicHref(category!.id)}>← {category!.title}</a></> : series ? <>
@@ -38,17 +46,22 @@ const previous = series
    <label><span>{i18n(Key.comicJumpPage)}</span><select data-comic-select aria-label={i18n(Key.comicJumpPage)}>{series.items.map((_,index)=><option value={index+1}>{i18n(Key.comicPage).replace('{page}',String(index+1))} / {series.items.length}</option>)}</select></label>
    <button type="button" data-comic-next aria-label={i18n(Key.comicNextPage)}>→</button>
   </div>
-  <nav class="comic-page-index" aria-label={i18n(Key.creativeChapters)}>{series.items.map((_,index)=><a href={`#page-${index+1}`} aria-label={i18n(Key.comicPage).replace('{page}',String(index+1))}>{String(index+1).padStart(2,'0')}</a>)}</nav>
+  <h2 class="comic-page-heading">{i18n(Key.comicPageDirectory)}</h2>
+  <nav class="comic-page-index" aria-label={i18n(Key.comicPageDirectory)}>{series.items.map((_,index)=><a href={`#page-${index+1}`} aria-label={i18n(Key.comicPage).replace('{page}',String(index+1))}>{String(index+1).padStart(2,'0')}</a>)}</nav>
   <div class="comic-reader">{series.items.map((item,index)=><figure id={`page-${index+1}`}><a href={item.src} target="_blank" rel="noopener" data-no-swup aria-label={`${i18n(Key.creativeViewImage)} · ${item.title||series.title}`}><img src={item.src} alt={item.title||`${series.title} ${index+1}`} width={item.width||1024} height={item.height||1536} loading={index===0?"eager":"lazy"} decoding="async" /></a><figcaption><span>{String(index+1).padStart(2,'0')}</span>{item.title}</figcaption></figure>)}</div>
   <nav class="comic-story-pagination" aria-label={i18n(Key.creativeChapters)}>
-   {previousSeries&&<a href={comicHref(category!.id,previousSeries.id)}><small>← {i18n(Key.comicPrevSeries)}</small><strong>{previousSeries.title}</strong></a>}
-   {nextSeries&&<a href={comicHref(category!.id,nextSeries.id)}><small>{i18n(Key.comicNextSeries)} →</small><strong>{nextSeries.title}</strong></a>}
+   {previousSeries&&<a href={comicHref(category!.id,previousSeries.id)}><small>← {i18n(Key.comicPreviousChapter)}</small><strong>{previousSeries.title}</strong></a>}
+   {nextSeries&&<a href={comicHref(category!.id,nextSeries.id)}><small>{i18n(Key.comicNextChapter)} →</small><strong>{nextSeries.title}</strong></a>}
   </nav>
   <a class="creative-button" href={comicHref(category!.id)}>← {category!.title}</a>
- </> : !category ? <div class="comic-shelves">{categories.map((c,i)=>{const first=c.series.flatMap(s=>s.items)[0];return <a class="comic-shelf-card" href={comicHref(c.id)}><div class="comic-shelf-card__art"><img src={c.cover||first?.thumb||first?.src} alt={c.title} width="800" height="600" loading="lazy"/><span>{String(i+1).padStart(2,'0')}</span></div><div class="comic-shelf-card__copy"><h2>{c.title}</h2><p>{c.description}</p><ul>{c.series.map(s=><li>{s.title}</li>)}</ul><span class="creative-text-link">{i18n(Key.creativeOpen)} ↗</span></div></a>})}</div> : <div class="comic-series-grid">{category.series.map((s,i)=>{const first=s.items[0];return <a class="comic-series-card" href={comicHref(category.id,s.id)}><div class="comic-series-card__art">{first&&<img src={first.thumb||first.src} alt={s.title} width="800" height="600" loading="lazy"/>}<span>{String(i+1).padStart(2,'0')}</span></div><div class="comic-series-card__copy"><h2>{s.title}</h2><p>{s.description}</p><small>{i18n(Key.comicImageCount).replace('{count}',String(s.items.length))}{s.status&&` · ${s.status}`}</small><span class="creative-text-link">{i18n(Key.creativeOpen)} ↗</span></div></a>})}</div>}
+ </> : !category ? <div class="comic-shelves">{categories.map((c,i)=>{const first=c.series.flatMap(s=>s.items)[0];return <a class="comic-shelf-card" href={comicHref(c.id)}><div class="comic-shelf-card__art"><img src={c.cover||first?.thumb||first?.src} alt={c.title} width="800" height="600" loading="lazy"/><span>{String(i+1).padStart(2,'0')}</span></div><div class="comic-shelf-card__copy"><h2>{c.title}</h2><p>{c.description}</p><ul>{c.series.map(s=><li>{s.title}</li>)}</ul><span class="creative-text-link">{i18n(Key.creativeOpen)} ↗</span></div></a>})}</div> : <div class="comic-series-grid">{category.series.map((s,i)=>{const first=s.items[0];const Tag = first ? "a" : "div";return <Tag class="comic-series-card" href={first ? comicHref(category.id,s.id) : undefined} aria-disabled={first ? undefined : "true"}><div class="comic-series-card__art">{first&&<img src={first.thumb||first.src} alt={s.title} width="800" height="600" loading="lazy"/>}<span>{category.id === "namer" ? (s.id === "original" ? s.title : i18n(Key.comicChapterNumber).replace("{chapter}",String(Number(s.id.replace("episode-",""))))) : i18n(Key.comicChapterNumber).replace("{chapter}",String(i+1))}</span></div><div class="comic-series-card__copy"><h2>{s.title}</h2><p>{s.description}</p><small>{i18n(Key.comicImageCount).replace('{count}',String(s.items.length))}{s.status&&` · ${s.status}`}</small><span class="creative-text-link">{i18n(first ? Key.creativeOpen : Key.comicChapterPending)}{first ? " ↗" : ""}</span></div></Tag>})}</div>}
  <p class="creative-footer-note">{category?.credits || i18n(Key.comicCredits)}</p>
 </article>
 
 <script>
 import "@/utils/comic-reader";
 </script>
+
+<style>
+.comic-chapter-shortcuts{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem;margin-block:1rem}.comic-chapter-expand{margin-block:1rem}.comic-chapter-expand summary{cursor:pointer;padding:.8rem;border-radius:var(--shape-corner-m);background:var(--surface-container-high);color:var(--on-surface);font-weight:700}.comic-page-heading{font-size:var(--m3e-type-title-md-size,1rem);margin-top:1rem}
+</style>
