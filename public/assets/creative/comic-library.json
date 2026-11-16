@@ -667,8 +667,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "旧篇28页、新续篇第1–12话及第14–21话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–21话连续。",
-      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–21已修订复核；13待修隔离。",
+      "description": "旧篇28页、新续篇第1–12话及第14–22话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–22话连续。",
+      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–22已修订复核；13待修隔离。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -2457,9 +2457,82 @@
         {
           "id": "episode-22",
           "title": "第 22 话 · 期限到了",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-22-01-e7d83a940bba.png",
+              "title": "新续篇 22 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-02-1076dd25b5a6.png",
+              "title": "新续篇 22 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-03-0148b93ee974.png",
+              "title": "新续篇 22 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-04-f3da4cae33f9.png",
+              "title": "新续篇 22 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-05-c5f7ffc12eb5.png",
+              "title": "新续篇 22 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-06-ab4a197abf90.png",
+              "title": "新续篇 22 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-07-e78cc06ab34f.png",
+              "title": "新续篇 22 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-08-97a497d77959.png",
+              "title": "新续篇 22 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-09-f189356fe1ea.png",
+              "title": "新续篇 22 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-10-168b34f073d7.png",
+              "title": "新续篇 22 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-11-bf783a819479.png",
+              "title": "新续篇 22 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-22-12-419968b9a5bb.png",
+              "title": "新续篇 22 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-23",
