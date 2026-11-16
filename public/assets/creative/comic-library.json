@@ -667,8 +667,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "旧篇28页、新续篇第1–12话及第14–15话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–15话连续。",
-      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–15已修订复核；13待修隔离。",
+      "description": "旧篇28页、新续篇第1–12话及第14–16话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–16话连续。",
+      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–16已修订复核；13待修隔离。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -1977,9 +1977,82 @@
         {
           "id": "episode-16",
           "title": "第 16 话 · 先把饭煮熟",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-16-01-4ac9cb3158b1.png",
+              "title": "新续篇 16 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-02-9cb0c810ed61.png",
+              "title": "新续篇 16 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-03-35cfaced2290.png",
+              "title": "新续篇 16 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-04-e0c1a7a28d52.png",
+              "title": "新续篇 16 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-05-baf3e5a46fca.png",
+              "title": "新续篇 16 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-06-090d743bd891.png",
+              "title": "新续篇 16 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-07-56f1242568f8.png",
+              "title": "新续篇 16 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-08-35d6143cdae0.png",
+              "title": "新续篇 16 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-09-aa85d9070e90.png",
+              "title": "新续篇 16 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-10-e899b1fe076d.png",
+              "title": "新续篇 16 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-11-8c6b4609534a.png",
+              "title": "新续篇 16 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-16-12-1161bf811e33.png",
+              "title": "新续篇 16 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-17",
