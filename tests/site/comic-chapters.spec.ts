@@ -1,4 +1,5 @@
 import { expect, test } from "@playwright/test";
+import library from "../../public/assets/creative/comic-library.json";
 
 test("chapter directory distinguishes available chapters from page navigation", async ({
 	page,
@@ -10,7 +11,11 @@ test("chapter directory distinguishes available chapters from page navigation", 
 		directory.getByRole("heading", { name: "每话目录" }),
 	).toBeVisible();
 	await expect(directory.locator('a[href$="episode-08/"]')).toBeVisible();
-	await expect(directory.locator('a[href$="episode-09/"]')).toHaveCount(0);
+	const pending = library.categories
+		.find((c) => c.id === "namer")
+		?.series.find((s) => s.items.length === 0);
+	if (pending)
+		await expect(directory.locator(`a[href$="${pending.id}/"]`)).toHaveCount(0);
 	await directory.locator('a[href$="episode-02/"]').click();
 	await expect(page).toHaveURL(/episode-02/);
 	await expect(

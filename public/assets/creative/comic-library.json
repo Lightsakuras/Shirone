@@ -667,8 +667,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "按话查看目录。旧篇 28 页、新续篇第 1–8 话修订版 96 页开放阅读；后续各话仍待核验或未完成。",
-      "credits": "《命名者》原创漫画 · AI 辅助创作。新续篇 01–08 已修订复核。",
+      "description": "按话查看目录。旧篇 28 页、新续篇第 1–9 话修订版 108 页开放阅读；后续各话仍待核验或未完成。",
+      "credits": "《命名者》原创漫画 · AI 辅助创作。新续篇 01–09 已修订复核。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -1490,9 +1490,82 @@
         {
           "id": "episode-09",
           "title": "新续篇 09 · 把账翻过来",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-09-01-f036b67ebba1.png",
+              "title": "新续篇 09 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-02-c39ca5e32643.png",
+              "title": "新续篇 09 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-03-45141f453e30.png",
+              "title": "新续篇 09 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-04-c3f666930758.png",
+              "title": "新续篇 09 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-05-b109d638a92e.png",
+              "title": "新续篇 09 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-06-df620e939ec1.png",
+              "title": "新续篇 09 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-07-db5e1648c2a7.png",
+              "title": "新续篇 09 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-08-a2a3cfd7631c.png",
+              "title": "新续篇 09 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-09-23078c51d0ae.png",
+              "title": "新续篇 09 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-10-ed845be73133.png",
+              "title": "新续篇 09 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-11-c5499de17c61.png",
+              "title": "新续篇 09 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-09-12-95cf60ba70f8.png",
+              "title": "新续篇 09 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-10",

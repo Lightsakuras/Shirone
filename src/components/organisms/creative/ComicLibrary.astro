@@ -31,7 +31,7 @@ const previous = series
  <header class="comic-library__heading"><CreativeMotif kind="star" /><p class="creative-kicker">{i18n(Key.comicLibraryTitle)}</p><h1>{title}</h1><p class="creative-story__intro">{description}</p></header>
  {category && <nav class="comic-chapter-shortcuts" aria-label={i18n(Key.comicChapterDirectory)}>
   {series && previousSeries && <a class="comic-chip" href={comicHref(category.id,previousSeries.id)}>← {i18n(Key.comicPreviousChapter)}</a>}
-  <a class="creative-button" href={series ? `${comicHref(category.id)}#chapter-directory` : "#chapter-directory"}>{i18n(Key.comicChapterDirectory)}</a>
+  <a class="creative-button" data-no-swup={series ? true : undefined} href={series ? `${comicHref(category.id)}#chapter-directory` : "#chapter-directory"}>{i18n(Key.comicChapterDirectory)}</a>
   {series && nextSeries && <a class="comic-chip" href={comicHref(category.id,nextSeries.id)}>{i18n(Key.comicNextChapter)} →</a>}
  </nav>}
  {category && !series && <ComicChapterDirectory category={category} />}

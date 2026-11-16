@@ -4,7 +4,7 @@ import Key from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 interface Props { category: ComicCategory; current?: string; }
 const { category, current } = Astro.props;
-const available = category.series.filter(s => s.items.length);
+const available = category.series.filter(s => s.items.length && !(category.id === "namer" && s.id === "original"));
 const label = (id: string, index: number) => category.id === "namer" && id === "original"
  ? category.series[index].title
  : i18n(Key.comicChapterNumber).replace("{chapter}", String(Number(id.match(/(?:episode|ark)-(\d+)$/)?.[1] || index + 1)));
