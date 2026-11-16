@@ -667,8 +667,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "旧篇28页、新续篇第1–12话及第14话修订版开放阅读。注意：第13话仍待修，暂不开放；第14话单独上架，与第12话之间存在剧情缺口，请勿当作连续章节阅读。",
-      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14已修订复核；13待修隔离。",
+      "description": "旧篇28页、新续篇第1–12话及第14–15话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–15话连续。",
+      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–15已修订复核；13待修隔离。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -1897,9 +1897,82 @@
         {
           "id": "episode-15",
           "title": "第 15 话 · 这句由我改",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-15-01-f429f56bb5f8.png",
+              "title": "新续篇 15 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-02-d40738cfa22e.png",
+              "title": "新续篇 15 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-03-d7a47fc96086.png",
+              "title": "新续篇 15 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-04-5feba63c42be.png",
+              "title": "新续篇 15 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-05-c668e6cfaf31.png",
+              "title": "新续篇 15 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-06-0135d759675f.png",
+              "title": "新续篇 15 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-07-b556ea9c86c7.png",
+              "title": "新续篇 15 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-08-b42097bb81be.png",
+              "title": "新续篇 15 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-09-dcb95fcffa35.png",
+              "title": "新续篇 15 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-10-8f042a909a30.png",
+              "title": "新续篇 15 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-11-de054b397ae4.png",
+              "title": "新续篇 15 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-15-12-7773fe20c3f7.png",
+              "title": "新续篇 15 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-16",
