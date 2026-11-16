@@ -667,8 +667,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "旧篇28页、新续篇第1–12话及第14–17话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–17话连续。",
-      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–17已修订复核；13待修隔离。",
+      "description": "旧篇28页、新续篇第1–12话及第14–18话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–18话连续。",
+      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–18已修订复核；13待修隔离。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -2137,9 +2137,82 @@
         {
           "id": "episode-18",
           "title": "第 18 话 · 一碗也要记账",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-18-01-c10d61f19478.png",
+              "title": "新续篇 18 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-02-1e44a70a4315.png",
+              "title": "新续篇 18 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-03-8eb46d5a33dd.png",
+              "title": "新续篇 18 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-04-38e5ef8dc5d1.png",
+              "title": "新续篇 18 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-05-8d1aae1422b6.png",
+              "title": "新续篇 18 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-06-e642bb437c39.png",
+              "title": "新续篇 18 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-07-871ebc868a8e.png",
+              "title": "新续篇 18 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-08-f26c667e6eb3.png",
+              "title": "新续篇 18 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-09-c8e904e115a8.png",
+              "title": "新续篇 18 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-10-3c29d47df73f.png",
+              "title": "新续篇 18 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-11-30706f7249d6.png",
+              "title": "新续篇 18 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-18-12-52f6530ab330.png",
+              "title": "新续篇 18 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-19",
