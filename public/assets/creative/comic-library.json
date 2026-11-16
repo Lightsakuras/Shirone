@@ -667,14 +667,14 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "按话查看目录。旧篇 28 页、新续篇第 1–10 话修订版 120 页开放阅读；后续各话仍待核验或未完成。",
-      "credits": "《命名者》原创漫画 · AI 辅助创作。新续篇 01–10 已修订复核。",
+      "description": "按话查看目录。旧篇 28 页、新续篇第 1–11 话修订版 132 页开放阅读；后续各话仍待核验或未完成。",
+      "credits": "《命名者》原创漫画 · AI 辅助创作。新续篇 01–11 已修订复核。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
           "id": "original",
           "title": "旧篇 · 从裂隙到门外",
-          "description": "旧篇第 1–28 页开放阅读，第 28 页使用最新修订版。读完可继续新续篇第 1–3 话；故事尚未完结。",
+          "description": "旧篇第 1–28 页开放阅读，第 28 页使用最新修订版。读完可继续新续篇；故事尚未完结。",
           "status": "已核验 · 开放 28 页",
           "items": [
             {
@@ -1650,9 +1650,82 @@
         {
           "id": "episode-11",
           "title": "第 11 话 · 封门的人",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-11-01-4a0bb11c64f0.png",
+              "title": "新续篇 11 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-02-ae1f7233835d.png",
+              "title": "新续篇 11 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-03-d14a39277788.png",
+              "title": "新续篇 11 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-04-b1cd87c55b64.png",
+              "title": "新续篇 11 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-05-7db26029c15f.png",
+              "title": "新续篇 11 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-06-25a4e0dc44c3.png",
+              "title": "新续篇 11 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-07-d4d78900c9ff.png",
+              "title": "新续篇 11 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-08-d014a03d4fb9.png",
+              "title": "新续篇 11 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-09-b3e6f41bbcc3.png",
+              "title": "新续篇 11 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-10-2b33cb275039.png",
+              "title": "新续篇 11 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-11-7d72cf963fd7.png",
+              "title": "新续篇 11 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-11-12-a72a35096abe.png",
+              "title": "新续篇 11 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-12",
