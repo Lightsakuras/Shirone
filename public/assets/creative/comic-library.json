@@ -667,8 +667,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "旧篇28页、新续篇第1–12话及第14–20话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–20话连续。",
-      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–20已修订复核；13待修隔离。",
+      "description": "旧篇28页、新续篇第1–12话及第14–21话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–21话连续。",
+      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–21已修订复核；13待修隔离。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -2377,9 +2377,82 @@
         {
           "id": "episode-21",
           "title": "第 21 话 · 先吃这碗饭",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-21-01-cfabdf94fbca.png",
+              "title": "新续篇 21 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-02-85d1572145e2.png",
+              "title": "新续篇 21 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-03-586d15e78619.png",
+              "title": "新续篇 21 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-04-c7208977d11e.png",
+              "title": "新续篇 21 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-05-083fdaa4bea1.png",
+              "title": "新续篇 21 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-06-8b5321ae7de6.png",
+              "title": "新续篇 21 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-07-8fb95d3b24b7.png",
+              "title": "新续篇 21 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-08-194fd457f2f5.png",
+              "title": "新续篇 21 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-09-f8cfaac55213.png",
+              "title": "新续篇 21 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-10-07875cef1520.png",
+              "title": "新续篇 21 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-11-f2ae4b309489.png",
+              "title": "新续篇 21 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-21-12-27f94e2895a4.png",
+              "title": "新续篇 21 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-22",
