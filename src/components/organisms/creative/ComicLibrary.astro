@@ -18,8 +18,8 @@ const description =
 	series?.description || category?.description || i18n(Key.comicLibraryIntro);
 const seriesIndex = category?.series.findIndex((s) => s.id === seriesId) ?? -1;
 const previousSeries =
-	category && seriesIndex > 0 ? category.series.slice(0, seriesIndex).filter(s => s.items.length).at(-1) : undefined;
-const nextSeries = category?.series.slice(seriesIndex + 1).find(s => s.items.length);
+	category && seriesIndex > 0 ? (category.series[seriesIndex - 1]?.items.length ? category.series[seriesIndex - 1] : undefined) : undefined;
+const nextSeries = category?.series[seriesIndex + 1]?.items.length ? category.series[seriesIndex + 1] : undefined;
 const previous = series
 	? comicHref(category!.id)
 	: category
