@@ -667,8 +667,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "旧篇28页、新续篇第1–12话及第14–16话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–16话连续。",
-      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–16已修订复核；13待修隔离。",
+      "description": "旧篇28页、新续篇第1–12话及第14–17话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–17话连续。",
+      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–17已修订复核；13待修隔离。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -2057,9 +2057,82 @@
         {
           "id": "episode-17",
           "title": "第 17 话 · 米袋后面的字",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-17-01-07605272ed4f.png",
+              "title": "新续篇 17 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-02-80e5b9896a8f.png",
+              "title": "新续篇 17 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-03-58fe3a944b63.png",
+              "title": "新续篇 17 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-04-a7c2c898955b.png",
+              "title": "新续篇 17 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-05-e8d9b3bf4493.png",
+              "title": "新续篇 17 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-06-24f7f02e3bfc.png",
+              "title": "新续篇 17 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-07-522c43025117.png",
+              "title": "新续篇 17 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-08-2ae1ea2a1775.png",
+              "title": "新续篇 17 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-09-03e83b2872aa.png",
+              "title": "新续篇 17 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-10-61d823f6ef4e.png",
+              "title": "新续篇 17 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-11-12742ff98d38.png",
+              "title": "新续篇 17 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-17-12-629fedae52ca.png",
+              "title": "新续篇 17 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-18",
