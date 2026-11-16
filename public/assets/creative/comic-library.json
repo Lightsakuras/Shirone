@@ -667,8 +667,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "旧篇28页、新续篇第1–12话及第14–18话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–18话连续。",
-      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–18已修订复核；13待修隔离。",
+      "description": "旧篇28页、新续篇第1–12话及第14–19话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–19话连续。",
+      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–19已修订复核；13待修隔离。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -2217,9 +2217,82 @@
         {
           "id": "episode-19",
           "title": "第 19 话 · 白龙不是耗材",
-          "description": "本话待逐页复核，暂未开放阅读。人物、结构、对白与剧情衔接确认后才会恢复。",
-          "status": "待核验 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-19-01-77f2e734f38a.png",
+              "title": "新续篇 19 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-02-c6f4e12c9469.png",
+              "title": "新续篇 19 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-03-2a49289eec07.png",
+              "title": "新续篇 19 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-04-8cc4f53d2ef9.png",
+              "title": "新续篇 19 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-05-05cb8ecfe1ae.png",
+              "title": "新续篇 19 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-06-dcaf321e3f4b.png",
+              "title": "新续篇 19 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-07-4a1bbb3db5ca.png",
+              "title": "新续篇 19 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-08-ec9b7cb7f122.png",
+              "title": "新续篇 19 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-09-6eb0b310b78a.png",
+              "title": "新续篇 19 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-10-279c681e580f.png",
+              "title": "新续篇 19 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-11-3d2cbd80ff2a.png",
+              "title": "新续篇 19 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-19-12-500f07e33956.png",
+              "title": "新续篇 19 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-20",
