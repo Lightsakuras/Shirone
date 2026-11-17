@@ -603,6 +603,38 @@
               "height": 941
             }
           ]
+        },
+        {
+          "id": "relay-substitute",
+          "title": "中转站的替身",
+          "description": "选的是 Claude，接单的却是 DeepSeek。一次身份确认，揭开中转站的替身生意。",
+          "status": "独立短篇 · 4页修订版",
+          "items": [
+            {
+              "src": "/assets/creative/relay-final/page-01-6a52d58f9555.png",
+              "title": "中转站的替身 · 第1页",
+              "width": 1199,
+              "height": 1312
+            },
+            {
+              "src": "/assets/creative/relay-final/page-02-6fa05df4f6b3.png",
+              "title": "中转站的替身 · 第2页",
+              "width": 1199,
+              "height": 1312
+            },
+            {
+              "src": "/assets/creative/relay-final/page-03-f111c7e700c6.png",
+              "title": "中转站的替身 · 第3页",
+              "width": 1199,
+              "height": 1312
+            },
+            {
+              "src": "/assets/creative/relay-final/page-04-d16ccbcd7534.png",
+              "title": "中转站的替身 · 第4页",
+              "width": 1199,
+              "height": 1312
+            }
+          ]
         }
       ]
     },
