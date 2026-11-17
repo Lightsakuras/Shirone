@@ -667,8 +667,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "旧篇28页、新续篇第1–12话及第14–25话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–25话连续。",
-      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–25已修订复核；13待修隔离。",
+      "description": "旧篇28页、新续篇第1–12话及第14–26话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–26话连续。",
+      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–26已修订复核；13待修隔离。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -2777,9 +2777,82 @@
         {
           "id": "episode-26",
           "title": "第 26 话 · 先亮这一盏",
-          "description": "本话尚未完成，续段仍在修订；暂未开放阅读。",
-          "status": "未完成 · 暂未开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-26-01-d4cec4f18ae1.png",
+              "title": "新续篇 26 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-02-4584453d6be4.png",
+              "title": "新续篇 26 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-03-079c6fded3a8.png",
+              "title": "新续篇 26 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-04-0ba7aba78f46.png",
+              "title": "新续篇 26 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-05-aa99f27f8c67.png",
+              "title": "新续篇 26 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-06-918f7a1364a9.png",
+              "title": "新续篇 26 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-07-abdd2bb2fe7d.png",
+              "title": "新续篇 26 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-08-02016d1aba5b.png",
+              "title": "新续篇 26 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-09-3918ce7008d0.png",
+              "title": "新续篇 26 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-10-f45d58cf0f68.png",
+              "title": "新续篇 26 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-11-5a3d1eaeb819.png",
+              "title": "新续篇 26 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-26-12-a50665ec7268.png",
+              "title": "新续篇 26 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         }
       ]
     }
