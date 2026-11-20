@@ -699,8 +699,8 @@
     {
       "id": "namer",
       "title": "命名者",
-      "description": "旧篇28页、新续篇第1–12话及第14–26话修订版开放阅读。第13话仍待修、暂不开放：第12与14话间存在剧情缺口，请勿当作连续章节阅读；第14–26话连续。",
-      "credits": "《命名者》原创漫画 · AI辅助创作。新续篇01–12、14–26已修订复核；13待修隔离。",
+      "description": "旧篇 28 页可读，新续篇第 1–26 话可按顺序阅读。",
+      "credits": "《命名者》原创漫画 · AI 辅助创作。",
       "cover": "/assets/creative/namer-review-cover.svg",
       "series": [
         {
@@ -1842,15 +1842,88 @@
         {
           "id": "episode-13",
           "title": "第 13 话 · 违约就到这里",
-          "description": "第13话尚未完成修订，暂不开放。第12话与第14话之间存在剧情缺口。",
-          "status": "待修 · 暂不开放",
-          "items": []
+          "description": "本话 12 页已完成修订并逐页复核，按页序阅读。",
+          "status": "修订复核 · 开放 12 页",
+          "items": [
+            {
+              "src": "/assets/creative/namer-final/episode-13-01-3c390f0ddd36.png",
+              "title": "新续篇 13 · 01",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-02-bf5d8785fdd8.png",
+              "title": "新续篇 13 · 02",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-03-1ba92824c2c3.png",
+              "title": "新续篇 13 · 03",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-04-7dbca5275531.png",
+              "title": "新续篇 13 · 04",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-05-3a21cb9eb334.png",
+              "title": "新续篇 13 · 05",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-06-2e246422bcc9.png",
+              "title": "新续篇 13 · 06",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-07-8c4a08472498.png",
+              "title": "新续篇 13 · 07",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-08-f8090015f58d.png",
+              "title": "新续篇 13 · 08",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-09-5fb685da69e4.png",
+              "title": "新续篇 13 · 09",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-10-362e0e8667c5.png",
+              "title": "新续篇 13 · 10",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-11-1e947b8a75d4.png",
+              "title": "新续篇 13 · 11",
+              "width": 1024,
+              "height": 1536
+            },
+            {
+              "src": "/assets/creative/namer-final/episode-13-12-8218a4d9e897.png",
+              "title": "新续篇 13 · 12",
+              "width": 1024,
+              "height": 1536
+            }
+          ]
         },
         {
           "id": "episode-14",
           "title": "第 14 话 · 刀停在半空",
-          "description": "阅读提醒：第13话仍待修、暂未上线。本话为单独开放的第14话，与第12话不是连续阅读；建议等第13话补齐后按顺序阅读。本话12页已独立修订复核。",
-          "status": "已复核12页 · 前一话13待修，剧情有缺口",
+          "description": "本话 12 页，接续第 13 话《违约就到这里》。",
+          "status": "修订复核 · 开放 12 页",
           "items": [
             {
               "src": "/assets/creative/namer-final/episode-14-01-8aa349fdd46e.png",
@@ -2653,7 +2726,7 @@
           "status": "修订复核 · 开放 12 页",
           "items": [
             {
-              "src": "/assets/creative/namer-final/episode-24-01-cd12580ca85d.png",
+              "src": "/assets/creative/namer-final/episode-24-01-4fbf9719db17.png",
               "title": "新续篇 24 · 01",
               "width": 1024,
               "height": 1536
