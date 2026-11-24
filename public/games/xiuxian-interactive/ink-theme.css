@@ -1,6 +1,6 @@
 /* KIMI approved palette, adapted to the real game. No prototype state or scene. */
-@font-face{font-family:"Ma Shan Zheng";src:url("assets/fonts/MaShanZheng-Regular.ttf") format("truetype");font-display:swap}
-@font-face{font-family:"Noto Sans SC";src:url("assets/fonts/NotoSansSC-Variable.ttf") format("truetype");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Ma Shan Zheng";src:url("/games/xiuxian-interactive/assets/fonts/MaShanZheng-Regular.woff2") format("woff2");font-display:swap}
+@font-face{font-family:"Noto Sans SC";src:url("/games/xiuxian-interactive/assets/fonts/NotoSansSC-Variable.woff2") format("woff2");font-weight:100 900;font-display:swap}
 :root{
   --ink-950:#071713;--ink-900:#0c2420;--ink-800:#153a32;--ink-700:#245448;--ink-600:#397363;
   --paper-50:#fbf4df;--paper-100:#f1e7ca;--paper-200:#ddcda5;--paper-300:#b9a67c;
