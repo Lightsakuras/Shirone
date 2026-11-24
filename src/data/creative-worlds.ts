@@ -51,5 +51,5 @@ export const creativeWorlds: CreativeWorld[] = [
 export const creativeGame = {
 	title: "修仙命运录",
 	subtitle: "一念之差，仙魔殊途",
-	url: "https://yf2cstg3fy.page.coze.site",
+	url: "/games/xiuxian/",
 };

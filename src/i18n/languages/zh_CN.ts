@@ -57,7 +57,7 @@ export const zh_CN: Translation = {
 	[Key.creativeGameIntro]:
 		"这是我做的修仙小游戏。暂时放下现实，去另一边走一程。",
 	[Key.creativeGameEnter]: "启程 · 进入小游戏",
-	[Key.creativeGameNote]: "在新窗口打开 Coze 游戏站点",
+	[Key.creativeGameNote]: "在新标签页游玩文字原版",
 	[Key.creativeGameLabel]: "可游玩的想象 / PLAYABLE WORLD",
 	[Key.creativeBack]: "返回创作宇宙",
 	[Key.creativeChapters]: "沿着故事走",

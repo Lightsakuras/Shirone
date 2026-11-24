@@ -60,7 +60,7 @@ export const es: Translation = {
 	[Key.creativeGameIntro]:
 		"My cultivation game. Leave the everyday behind for a little while.",
 	[Key.creativeGameEnter]: "Begin · Open the game",
-	[Key.creativeGameNote]: "Opens the Coze game in a new tab",
+	[Key.creativeGameNote]: "Juega a la aventura de texto original en una pestaña nueva",
 	[Key.creativeGameLabel]: "PLAYABLE WORLD",
 	[Key.creativeBack]: "Back to the worlds",
 	[Key.creativeChapters]: "Follow the story",

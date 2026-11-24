@@ -58,7 +58,7 @@ export const ko: Translation = {
 	[Key.creativeGameIntro]:
 		"My cultivation game. Leave the everyday behind for a little while.",
 	[Key.creativeGameEnter]: "Begin · Open the game",
-	[Key.creativeGameNote]: "Opens the Coze game in a new tab",
+	[Key.creativeGameNote]: "새 탭에서 원작 텍스트 게임 플레이",
 	[Key.creativeGameLabel]: "PLAYABLE WORLD",
 	[Key.creativeBack]: "Back to the worlds",
 	[Key.creativeChapters]: "Follow the story",
