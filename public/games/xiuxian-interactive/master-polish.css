@@ -1,0 +1,148 @@
+.music-control {display:inline-flex; align-items:center; flex-wrap:wrap; gap:5px; padding:4px 7px; background:#172d31; border:1px solid #ad965f; border-radius:6px;color:#fff2cb;font:13px/1.4 system-ui}
+.music-control button,.loot-shell .music-control button {color:#fff1cc;background:#30464a;border:1px solid #a28e64; padding:4px 7px;font:inherit;min-height:26px}
+#scroll-entries .music-control{display:flex}
+
+.item-illustration{display:block;flex:none;width:64px;height:64px}
+html #modal .gear-icon,html #modal .rogue-shell .rogue-mark{width:auto;height:auto;background:none;border:0}
+.gear-icon .item-illustration,.gear-doll .item-illustration{width:36px;height:36px}
+.gear-list [data-preview]{display:flex;gap:10px;align-items:center;text-align:left}
+.gear-list [data-preview] .item-illustration{width:40px;height:40px}
+.gear-detail>.item-illustration{float:right;margin-left:8px}
+html #modal .rogue-paper{grid-template-columns:auto minmax(0,1fr);background:#22363b;color:#fff3d4}
+html #modal .rogue-paper :is(h3,p,small){color:#fff3d4}
+.mini-wear{display:grid;place-items:center;width:76px;height:92px;border:1px solid #bea273;border-radius:6px;background:radial-gradient(ellipse at 48% 67%,#50675c,#202e3b 70%)}
+.mini-wear canvas{width:76px;height:92px}
+html #modal .rogue-paper:has(.mini-wear) .rogue-mark{grid-row:span 2}
+html #modal .rogue-shell .rogue-offer{background:#22363b;color:#fff1cf}
+html #modal .rogue-shell .rogue-offer :is(strong,small,em,span){color:inherit}
+html #modal .rogue-shell .rogue-offer.evolution{background:#503638;color:#fff0c2}
+html #modal .loot-shell button:disabled{opacity:1;color:#e3ded0;background:#444c4e;border-color:#798380}
+#play .trial-links{display:flex;align-items:center;gap:8px;flex:none}
+#play .trial-links a{display:inline-flex;align-items:center;position:relative;gap:5px;padding:4px 8px;border-radius:5px;border:1px solid #af9669;background:#29403c;color:#fff2c9;font:600 13px/1.3 system-ui;text-decoration:none;white-space:nowrap}
+#play .trial-links #abyss-open{background:#403352}
+#play .trial-links #rogue-open{background:#503632;font-size:13px}
+.trial-links .item-illustration{width:24px;height:24px}
+#play .trial-links .available:after{content:"";position:absolute;right:-2px;top:-2px;width:7px;height:7px;background:#ff6963;box-shadow:0 0 0 1px #ffe1b2;border-radius:50%}
+#play .ink-rail{max-height:calc(100dvh - 110px);overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#8f886d #202c30}
+#play .ink-rail .rail-link{display:grid;place-items:center;min-height:35px;padding:4px 0;border-top:1px solid #566663;color:#fff1cf;text-decoration:none;font:600 13px/1.3 system-ui}
+#play .ink-rail button{flex:none}
+.mode-picker .mode-tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:5px}
+.mode-tags i{font:600 11px/1.4 system-ui;color:#fff1ce;padding:1px 5px;border:1px solid #849881;border-radius:4px}
+#creation-mode small,#settings-mode small{white-space:normal;color:#fff4d8}
+@media(max-width:950px){#play .game-topline{height:auto;flex-wrap:wrap}}
+
+html #modal:is([data-mode=bounty],[data-mode=homestead],[data-mode=bounty-battle]){width:min(1150px,94vw);background:#182a30;color:#f9edd5}
+html #modal :is(.hunt-board,.home-shell) :is(h2,h3,h4,p,small,span,label){color:#f9edd5}
+.hunt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,370px),1fr));gap:12px}
+.hunt-card,.garden-bed,.display-stand{border:1px solid #958566;border-radius:6px;background:linear-gradient(120deg,#304541,#202f37);padding:12px}
+.hunt-card{display:grid;grid-template-columns:64px minmax(0,1fr);gap:8px 12px;align-items:start}
+.hunt-card button{grid-column:2;justify-self:start}
+html #modal .hunt-card h3,html #modal .garden-bed h4{margin:3px 0;font-size:20px}
+html #modal .hunt-card p,html #modal .garden-bed p{margin:5px 0}
+html #modal .hunt-card .hunt-prize{color:#ffe3a4}
+.display-row,.beds{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}
+.display-stand{display:grid;justify-items:center;gap:7px;min-width:0}
+.display-stand select{width:100%;color:#fff4d9;background:#263b3b}
+.garden-bed{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+html #modal .home-shell .harvest-actions{display:flex;gap:12px;align-items:center;background:#203237;color:#ffe9b4;padding:12px}
+html #modal #abyss-choices:has(.fate-door){display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+html #modal .fate-door{display:flex;gap:8px;align-items:center;text-align:left;background:#304341;color:#ffefcb;border:1px solid #ba9964}
+.fate-door .item-illustration{height:34px;width:34px}
+.fate-door small,.fate-door strong{display:block}
+html #modal .fate-door[data-door=double]{background:#533135}
+@media(min-width:951px) and (max-height:800px){
+#play .ink-rail{gap:1px;padding-block:2px;max-height:calc(100dvh - 118px)}
+#play .ink-rail button{height:42px;grid-template-rows:26px 14px}
+#play .ink-rail button::before{width:25px;height:25px;line-height:22px}
+#play .ink-rail .rail-link{min-height:26px;padding:2px 0}
+}
+
+@media(min-width:1200px){
+#play .game-topline{display:grid;grid-template-columns:max-content minmax(110px,1fr) max-content max-content max-content;column-gap:clamp(7px,1vw,18px);align-items:center}
+#play .location{flex-direction:column;gap:1px;min-width:0}
+#play .location h1{font-size:clamp(16px,1.4vw,23px);letter-spacing:.05em;margin:0;line-height:1.15}
+#play .location #storyline-stage{font-size:12px;padding:2px 6px;line-height:1.15}
+#play .location #sect-location:not([hidden]){position:static;font-size:11px;line-height:1}
+#play .player-status{min-width:0;gap:7px}
+#play .meter-line{gap:5px}#play .meter{width:clamp(50px,5vw,92px)}
+#play .ink-resources{gap:7px}#play .game-actions{gap:5px}
+}
+html #modal .rogue-shell button.rogue-offer,html #modal .gear-detail{background:#243a3b;color:#fff1d4}
+html #modal .rogue-shell button.rogue-offer.evolution{background:#4e323c;color:#fff1cb}
+html #modal .rogue-shell button.rogue-offer :is(em,strong,span,small){color:inherit}
+html #modal .gear-detail :is(h3,p,small,h4,dt,dd,strong,em){color:#fff1d4}
+html #modal .gear-detail .gear-score{background:#1d3030;color:#f6dc9e}
+.home-shell .harvest-actions,.board-pages{margin-top:12px;display:flex;align-items:center;gap:12px}
+@media(min-width:951px) and (max-height:780px){
+#intro .creation-right{gap:4px}
+#intro .creation-right .hero-portrait{min-height:65px;height:65px}
+#intro .creation-start{gap:4px}
+#intro .creation-right .origins{gap:3px}
+#intro .creation-right .origin{padding-block:5px}
+}
+html #modal .gear-detail .gear-delta.up{color:#a5eac2}html #modal .gear-detail .gear-delta.down{color:#ffb3a5}
+.art-icon>svg{max-width:100%;max-height:100%}
+
+#play .field-sidebar .hotbar kbd{background:#193037;color:#fff1c9;border-color:#a69064;opacity:1}
+
+@media(min-width:761px) and (max-width:1199px){
+  #play{grid-template-rows:94px 44px auto}
+  #play .game-topline{display:grid;height:94px;grid-template-columns:max-content minmax(100px,1fr) max-content max-content;grid-template-rows:49px 34px;gap:3px 10px}
+  #play .game-topline .player-status{min-width:0;gap:5px}
+  #play .game-topline .meter{width:54px}
+  #play .game-topline .location{flex-direction:column;gap:0}
+  #play .game-topline .location h1{font-size:17px;line-height:20px;margin:0}
+  #play .game-topline .location #storyline-stage{font-size:12px;line-height:15px}
+  #play .game-topline .game-actions{grid-column:4;grid-row:1}
+  #play .game-topline .trial-links{grid-column:1/-1;grid-row:2;justify-self:end}
+  #play .ink-rail{max-height:calc(100dvh - 155px)}
+}
+
+#play .field-sidebar .hotbar kbd{z-index:3}
+@media(min-width:951px) and (max-height:780px){
+  #intro .creation-right .origin{padding-block:3px}
+  #intro .creation-start .begin-row button{padding-block:5px}
+  #intro .creation-right .character-choice-summary{margin-block:2px}
+}
+
+/* Nine Heavens: enamel panels, brass tooling and the selected avatar's portrait. */
+.trial-gate{border:1px solid #9c855b;background:#172e31}
+.trial-intro{padding:16px 24px;background:linear-gradient(90deg,#112827 8%,#132d2bd6 48%,#172b2a30),url("assets/art-v10/bamboo-court.webp") 50% 45%/cover}
+html #modal .trial-intro h3{color:#fff0cb;font:700 clamp(28px,3.2vw,46px)/1.12 KaiTi,serif;margin:5px 0}
+.trial-intro small,.trial-archive small,.trial-seals{color:#f1d395}.trial-intro p,.trial-hero p{margin:5px 0}
+.trial-faces{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;padding:12px}
+html #modal .trial-face{display:grid;justify-items:stretch;overflow:hidden;padding:0 0 7px;gap:3px;text-align:center;background:#24353c;color:#fff0cd;border:1px solid #7f795f;border-radius:3px}
+.trial-face :is(img,svg){display:block;width:100%;height:clamp(83px,15vh,156px);object-fit:cover;object-position:50% 4%;background:radial-gradient(ellipse at 50% 90%,#796c59,#293638)}
+.trial-face.demon img{filter:sepia(.65) hue-rotate(290deg) contrast(1.2)}html #modal .trial-face[aria-pressed=true]{border:2px solid #f8d88d;background:#494332;box-shadow:0 0 12px #e0be6940}
+.trial-hero,.trial-scrolls,.trial-pager{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px}
+.trial-hero{border-top:1px solid #6b6856;background:#213330}.trial-hero h3{margin:0}.trial-hero b{color:#ffe6ae}
+.trial-pager{justify-content:center;padding:3px}.trial-archive{display:grid;grid-template-columns:1fr 2fr;gap:18px}
+.trial-archive nav{display:grid;gap:4px}.trial-archive article{border:1px solid #9a835a;background:#23383a;color:#fff4d9;padding:clamp(16px,3vw,48px);font:20px/1.9 KaiTi,serif}
+.trial-scrolls{flex-wrap:wrap}.trial-scrolls b{margin-right:auto}
+html #modal .rogue-shell :is(.rogue-paper,button.rogue-offer){border:1px solid #aa9063;border-top:3px solid #d6bb80;border-radius:6px;background:#22343a linear-gradient(135deg,#37514f 0%,#213238 45%,#243139 80%,#38443f);color:#fff0ce;box-shadow:inset 0 0 0 2px #16282e,inset 0 0 0 3px #98815370,0 4px 7px #0a161b80}
+html #modal .rogue-shell button.rogue-offer.evolution{background:#4a3239 linear-gradient(125deg,#6c4144,#342734 65%,#634448);border-color:#f1bf72}
+html #modal .rogue-shell :is(.rogue-paper,.rogue-offer) .item-illustration{width:64px;height:64px}
+html #modal .rogue-shell .rogue-offer:disabled,html #modal .rogue-shell button:disabled{opacity:1;color:#ece7db;background-color:#354047}
+html #modal .rogue-shell .rogue-offer:hover:enabled{outline:2px solid #f0ce82;transform:translateY(-2px)}
+.trial-recipe{display:block;border-top:1px solid #71867c;padding:4px 0;font:12px/1.35 "Microsoft YaHei",sans-serif;color:#d2edde}
+.trial-bonds i{font:11px/1.2 sans-serif;color:#f1dbbb}.trial-bonds i.lit,#rogue-links{color:#9ef1ce}
+.trial-market{display:grid;grid-template-columns:minmax(0,1fr) 104px;align-items:center;gap:8px}.trial-market aside{font-size:12px;padding:5px;text-align:left;border-left:1px solid #ae936d}
+html #modal .trial-market .shop{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin:5px 0}
+html #modal .trial-market .shop button.rogue-offer{width:100%;padding:7px;gap:3px}
+html #modal .trial-market .shop strong{font-size:17px}html #modal .trial-market .shop :is(span,em){font-size:12px;line-height:1.3}
+html #modal .rogue-shell button.rogue-offer .trial-gain{color:#acecca}html #modal .rogue-shell button.rogue-offer .trial-cost{color:#ffc1a1}
+#rogue-boss:not([hidden]){position:absolute;top:9px;left:22%;right:22%;display:grid;justify-items:center;gap:3px;background:#281d27ed;color:#fff0c6;border:1px solid #d8b174;padding:4px 10px;border-radius:4px;pointer-events:none}
+#rogue-boss progress{width:100%;height:10px;accent-color:#e68b66}
+.rogue-shell footer>div{flex:1;min-width:0}.rogue-shell footer strong,.rogue-shell footer #rogue-links{display:block;font-size:12px}.rogue-shell footer label{white-space:nowrap}.rogue-shell footer progress{width:50px;accent-color:#9ee2d3}
+html #modal #rogue-ult{border-radius:25px;border:2px solid #938561;background:#35434b;color:#fff0ca;padding:7px 14px}
+html #modal #rogue-ult.charged{background:#4e452c;border-color:#e9cb80;animation:trial-pulse 1.65s ease-in-out infinite alternate}
+@keyframes trial-pulse{to{box-shadow:inset 0 0 8px #ffe6a842,0 0 10px #eec6758a}}
+@media(prefers-reduced-motion:reduce){html #modal #rogue-ult.charged{animation:none}}
+@media(max-height:780px){html #modal .trial-market .shop .rogue-mark svg{width:64px;height:64px}.rogue-dialog:has(.trial-market){padding:8px}.trial-market aside p{margin:4px 0}.trial-hero p{font-size:13px}}
+
+html #modal .rogue-shell .trial-intro{background:linear-gradient(90deg,#122b2b 0%,#142c2ccc 43%,#172a3040),#162d2c url('assets/art-v10/bamboo-court.webp') center 46%/cover}
+html #modal .trial-face img{object-position:center 3%}
+
+html #modal[data-mode='rogue-battle'] .rogue-shell footer{display:flex}
+
+#rogue-links span{display:inline-block;border:1px solid #608f80;border-radius:8px;padding:1px 5px;margin:0 3px 2px 0;background:#18392e;color:#b9f7d9;box-shadow:0 0 5px #65d8aa46;font-size:11px;line-height:1.25}

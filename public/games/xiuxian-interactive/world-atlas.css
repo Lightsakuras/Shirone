@@ -1,0 +1,68 @@
+.modal-layer>section:has(.world-atlas){width:min(1210px,100%);padding:23px 26px}
+.world-atlas{color:#eee7d3;font:14px/1.6 var(--sans)}
+.world-atlas-heading{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.world-atlas-heading .eyebrow{margin:0;font-size:11px}
+.world-atlas-heading h2{margin:1px 0 3px;font:28px/1.4 var(--serif);letter-spacing:5px}
+.world-atlas-counter{color:#ecdcaa;font-size:13px;padding:7px 12px;background:#142e25;border:1px solid #9ca37666;border-radius:4px;white-space:nowrap}
+.world-atlas-subtitle{margin:2px 0 11px;color:#c6d1bd;font-size:12px}
+.world-atlas-legend{display:flex;gap:15px;flex-wrap:wrap;margin:7px 0 12px;font-size:12px;color:#e5e7d5;align-items:center}
+.world-atlas-legend>span{display:flex;align-items:center;gap:6px}
+.world-atlas-legend>small{color:#c2ccb6;font-size:11px;margin-left:auto}
+.world-atlas-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;background:#d6c08a;border:1px solid #edf2d7}
+.world-atlas-legend .atlas-legend-current{background:#e9d692;box-shadow:0 0 0 3px #d8c27b40}
+.world-atlas-legend .atlas-legend-known{background:transparent;border-style:dashed}
+.world-atlas-legend .atlas-legend-fog{background:#839581;border-color:#a7b09c}
+.world-atlas-layout{display:grid;grid-template-columns:minmax(0,1fr) 258px;gap:17px;align-items:start}
+.world-atlas-map-pane{min-width:0}
+.world-atlas-scroll{overflow:auto;border:1px solid #b6b18b95;border-radius:7px;background:#435c48;scrollbar-color:#a1a77c #21372e}
+.world-atlas-map{position:relative;min-width:0;width:100%;height:clamp(350px,53vh,520px);isolation:isolate;background:#73846a}
+.world-atlas-background,.world-atlas-lines{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none}
+.world-atlas-background{z-index:-2;filter:saturate(.82) brightness(.95)}
+.world-atlas-lines{z-index:-1;overflow:visible}
+.world-atlas-lines>path{fill:none;stroke:#f2ddb1;stroke-width:2.4;stroke-linecap:round;opacity:.9}
+.world-atlas-lines>path.is-remembered{stroke:#b6b99b;stroke-dasharray:7 6;opacity:.7}
+.world-atlas-fog{fill:#6d8170;opacity:.7}
+.world-atlas-point{position:absolute;transform:translate(-50%,-50%);display:grid;justify-items:center;gap:2px;background:transparent;border:0;padding:4px 3px;min-height:38px;color:#f3edd6;white-space:nowrap;font:600 12px/1.2 var(--serif);text-shadow:0 1px 2px #091d18;z-index:2}
+.world-atlas-point>i{display:block;width:11px;height:11px;border:2px solid #f0e3ba;border-radius:50%;background:#6e856a;box-shadow:0 1px 7px #10271e}
+.world-atlas-point>span{padding:3px 5px;background:#18372df0;border:1px solid #bcc09a85;border-radius:3px;letter-spacing:.5px}
+.world-atlas-point.is-known>i{background:#233e35;border-style:dashed}
+/* Keep the two crowded tower-route labels readable at the fitted map scale. */
+#modal .world-atlas-point[data-atlas-point="tower-duty"]>span{transform:translateY(8px)}
+#modal .world-atlas-point[data-atlas-point="beihuang-retreat"]>span{transform:translateY(-8px)}
+.world-atlas-point.is-known>span{color:#e5e6d3;background:#294737f5}
+.world-atlas-point.is-current>i{background:#ead698;box-shadow:0 0 0 4px #ead69838,0 0 15px #ead69875}
+.world-atlas-point.is-current>span{background:#dac994;color:#173329;text-shadow:none;border-color:#f0dfae}
+.world-atlas-point:hover,.world-atlas-point.is-selected{background:#d9cf9b20}
+.world-atlas-point:focus-visible{outline:2px solid #fff1b7;outline-offset:2px;border-radius:4px}
+.world-atlas-fog-caption{position:absolute;right:3%;bottom:2%;color:#e1e5d2;letter-spacing:3px;font:12px var(--serif);text-shadow:0 1px 3px #1c3525;pointer-events:none}
+.world-atlas-beyond{position:absolute;right:1%;top:1%;width:17%;height:22%;border:1px dashed #c5ceb480;border-radius:48% 40% 45% 35%;background:#16362965;pointer-events:none}
+.world-atlas-beyond>span{position:absolute;bottom:2px;left:0;right:0;text-align:center;font-size:10px;color:#e0e5ca}
+.world-atlas-note{color:#cbd2bd;font-size:11px;line-height:1.5;margin:7px 0 0}
+.world-atlas-aside{display:flex;flex-direction:column;gap:12px;max-height:calc(53vh + 39px);overflow:auto;scrollbar-color:#a1a77c #21372e}
+.world-atlas-detail{padding:15px;background:linear-gradient(135deg,#17372c,#132c23);border:1px solid #a7b08188;border-radius:7px}
+.world-atlas-kicker{font-size:11px;color:#d4ca96!important;margin:0 0 4px!important}
+.world-atlas-detail h3{margin:0 0 9px;color:#f4e7b9;font:21px/1.5 var(--serif)}
+.world-atlas-detail p{margin:0;color:#d4deca;font-size:12px;line-height:1.7}
+.world-atlas-current-goal{margin:12px 0;padding:9px 10px;background:#10291f;border-left:2px solid #b3b97d;font-size:12px}
+.world-atlas-current-goal>b{color:#eadca7;font-size:11px}
+.world-atlas-detail-actions{display:flex;flex-direction:column;gap:8px;align-items:stretch;margin-top:13px}
+.world-atlas-detail-actions button{font-size:12px;padding:9px 8px}
+.world-atlas-detail-actions small{font-size:11px;color:#c5d0ba}
+.world-atlas-feedback{margin-top:10px!important;color:#e8d39c!important}
+.world-atlas-factions{padding:13px 14px;background:#173126;border:1px solid #91a07670;border-radius:7px;color:#cbd4bd}
+.world-atlas-factions h3{margin:0 0 9px;font-size:13px;color:#e9e0b6}
+.world-atlas-factions p{font-size:11px;margin:8px 0 0;line-height:1.6}
+.world-atlas-factions summary{cursor:pointer;font-size:11px;color:#cad1b7;margin-top:9px}
+.world-atlas-factions>div{display:flex;gap:6px;flex-wrap:wrap}
+.world-atlas-factions>div>span{padding:2px 8px;border:1px solid #9bac7b66;border-radius:3px;color:#ece1b3;font-size:12px}
+.world-atlas-footer{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}
+.world-atlas-footer>small{font-size:11px;color:#c3cdb6}
+.world-atlas-footer>button{font-size:12px;padding:7px 13px}
+@media(max-width:1040px){.world-atlas-layout{grid-template-columns:1fr}.world-atlas-aside{display:grid;grid-template-columns:1.3fr 1fr;max-height:none;overflow:visible}.world-atlas-map{height:auto;aspect-ratio:1000/680;min-height:360px}.world-atlas-legend>small{margin-left:0}.world-atlas-point{font-size:12px}}
+@media(max-width:650px){.modal-layer>section:has(.world-atlas){padding:18px}.world-atlas-heading{gap:8px}.world-atlas-heading h2{font-size:24px}.world-atlas-counter{padding:5px 7px;font-size:11px}.world-atlas-legend{gap:10px}.world-atlas-aside{display:flex}.world-atlas-map{min-width:720px}.world-atlas-footer{align-items:flex-start}.world-atlas-footer>small{max-width:60%}}
+.world-atlas-reveal{animation:atlas-reveal 1.2s ease-out both}
+.world-atlas-point.is-newly-discovered i{animation:atlas-discovery 1.2s ease-out}
+@keyframes atlas-reveal{from{r:40px}to{r:105px}}
+@keyframes atlas-discovery{0%{box-shadow:0 0 0 0 #e9c77688}100%{box-shadow:0 0 0 24px #e9c77600}}
+.reduced-motion .world-atlas *{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){.world-atlas *{animation:none!important;transition:none!important}}

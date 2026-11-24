@@ -56,8 +56,9 @@ export const zh_CN: Translation = {
 	[Key.creativeOpen]: "展开故事",
 	[Key.creativeGameIntro]:
 		"这是我做的修仙小游戏。暂时放下现实，去另一边走一程。",
-	[Key.creativeGameEnter]: "启程 · 进入小游戏",
-	[Key.creativeGameNote]: "在新标签页游玩文字原版",
+	[Key.creativeGameEnter]: "地图战斗互动版",
+	[Key.creativeGameOriginal]: "对话文字原版",
+	[Key.creativeGameNote]: "地图战斗推荐使用电脑键盘和鼠标。",
 	[Key.creativeGameLabel]: "可游玩的想象 / PLAYABLE WORLD",
 	[Key.creativeBack]: "返回创作宇宙",
 	[Key.creativeChapters]: "沿着故事走",

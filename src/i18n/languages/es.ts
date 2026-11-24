@@ -59,8 +59,9 @@ export const es: Translation = {
 	[Key.creativeOpen]: "Open the story",
 	[Key.creativeGameIntro]:
 		"My cultivation game. Leave the everyday behind for a little while.",
-	[Key.creativeGameEnter]: "Begin · Open the game",
-	[Key.creativeGameNote]: "Juega a la aventura de texto original en una pestaña nueva",
+	[Key.creativeGameEnter]: "Exploración y combate",
+	[Key.creativeGameOriginal]: "Aventura de texto original",
+	[Key.creativeGameNote]: "Recomendamos usar teclado y ratón para explorar y combatir.",
 	[Key.creativeGameLabel]: "PLAYABLE WORLD",
 	[Key.creativeBack]: "Back to the worlds",
 	[Key.creativeChapters]: "Follow the story",

@@ -1,0 +1,31 @@
+.research-banner{position:relative;overflow:hidden;padding:23px 25px 20px;border:1px solid #ac985b66;background:linear-gradient(90deg,#132c25f5,#18352ced 54%,#1c352875),url("assets/scenes/zhuji_lingwei_bamboo.webp") 70% 47%/cover}
+.research-banner:after{content:"录";position:absolute;right:31px;top:20px;writing-mode:vertical-rl;font:70px var(--serif);color:#d9c28a24;border:1px solid #c2ac7250;padding:9px 1px;pointer-events:none}
+.research-banner h2{margin:11px 0 13px!important;font:35px var(--serif)!important;letter-spacing:7px;color:#efdcad}
+.research-intro{font:14px/1.9 var(--serif);letter-spacing:1px;color:#d0d3b6;max-width:85%}
+.research-tally{display:flex;gap:24px;margin-top:16px;font-size:11px;color:#c5c9a9;letter-spacing:1px}
+.research-tally b{font:22px var(--serif);color:#e7ce8f;margin-right:3px}
+.research-guidance{padding:15px 1px 8px;color:#bcc6ae;font-size:12px;line-height:1.9}
+.research-guidance p+p{color:#9faf99;margin-top:4px}
+.research-location{margin-bottom:16px;font-size:12px;color:#ddc98f;line-height:1.8;padding-left:11px;border-left:2px solid #b19b5c}
+.research-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;align-items:stretch}
+.research-card{display:flex;flex-direction:column;min-width:0;padding:17px 18px 13px;border:1px solid #8595694d;background:linear-gradient(145deg,#324234e6,#1c3028);position:relative}
+.research-card.research-ready{border-color:#bfa36399;background:linear-gradient(145deg,#454a32bd,#1f352b)}
+.research-card.research-claimed{border-color:#8d9e6e66;background:linear-gradient(145deg,#2f4030,#1c3028)}
+.research-card-heading{display:flex;align-items:center;gap:10px;position:relative;min-height:65px;padding-bottom:12px;border-bottom:1px solid #acb08a26}
+.research-plate{height:55px;width:55px;flex:0 0 55px;display:grid;place-items:center;background:#152d236b;border:1px solid #9d9d6933}
+.research-plate .art-icon{width:48px;height:48px}
+.research-title{min-width:0;flex:1}.research-index{display:block;color:#9fae93;font-size:9px;letter-spacing:2px;margin-bottom:7px}
+.research-title h3{font:22px var(--serif);letter-spacing:2px;color:#e6d3a2;white-space:nowrap}
+.research-stamp{color:#9eaf97;border:1px solid #879b6f61;font:11px/1.5 var(--serif);padding:5px 4px;letter-spacing:2px;writing-mode:vertical-rl;flex:0 0 auto}
+.research-ready .research-stamp{color:#e2c17b;border-color:#c1a4678c}.research-claimed .research-stamp{color:#b5c49c;border-color:#95a97580}
+.research-purpose{font-size:12px;line-height:1.9;color:#c0cbb0;margin-top:12px}
+.research-progress{list-style:none;margin:10px 0 14px;padding:0;font-size:12px;line-height:1.8}
+.research-progress li{display:flex;gap:6px;align-items:flex-start;padding:5px 0;color:#b4c2a8}.research-progress li>span:nth-child(2){flex:1;min-width:0}
+.research-progress li.is-done{color:#d1d6b0}.research-check{flex:0 0 15px;line-height:19px;text-align:center;color:#869b7b}.is-done .research-check{color:#d2bd78}.research-progress small{white-space:nowrap;color:#92a68b;font-size:9px;padding-top:1px}.research-progress .is-done small{color:#c3cba1}
+.research-hint{font-size:10px;line-height:1.9;color:#a5b59c;margin:-5px 0 13px}
+.research-reward{display:flex;flex-wrap:wrap;gap:5px 12px;border-block:1px solid #a1ab7940;padding:10px 0;margin-top:auto;min-height:49px;align-items:center;font-size:11px;color:#d2ceab}
+.research-spirit{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}.research-spirit i{font:13px var(--serif);font-style:normal;color:#ddc17c;border:1px solid #a58b5099;padding:2px;margin-right:2px}.research-spirit b{font-weight:400;color:#e6d198}
+.research-item{display:inline-flex;align-items:center;gap:3px}.research-item .art-icon{height:23px;width:23px;flex:0 0 23px}.research-item b{font-weight:400;color:#d9d4b0}
+.research-card-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:12px}.research-count{font-size:11px;color:#9eb095;white-space:nowrap}.research-card-bottom button{font-size:12px;padding:9px 13px;letter-spacing:1px;min-width:111px}
+.research-reason{font-size:10px;color:#d3ba89;line-height:1.8;margin-top:9px}.research-footer{display:flex;align-items:center;gap:22px;margin-top:19px;padding-top:17px;border-top:1px solid #9eab7840}.research-footer p{flex:1;color:#9fb193;font-size:11px;line-height:1.9}.research-footer button{flex:0 0 auto;font-size:12px}
+@media(max-width:760px){.research-banner{padding:21px 17px}.research-banner:after{right:14px;font-size:55px}.research-intro{max-width:86%;font-size:12px}.research-grid{grid-template-columns:1fr}.research-tally{gap:15px}.research-footer{align-items:flex-start;flex-direction:column;gap:13px}.research-footer button{align-self:flex-end}}

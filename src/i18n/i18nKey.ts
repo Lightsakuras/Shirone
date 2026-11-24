@@ -50,6 +50,7 @@ enum I18nKey {
 	creativeOpen = "creativeOpen",
 	creativeGameIntro = "creativeGameIntro",
 	creativeGameEnter = "creativeGameEnter",
+	creativeGameOriginal = "creativeGameOriginal",
 	creativeGameNote = "creativeGameNote",
 	creativeGameLabel = "creativeGameLabel",
 	creativeBack = "creativeBack",

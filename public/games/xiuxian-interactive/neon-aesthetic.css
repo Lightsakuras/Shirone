@@ -1,0 +1,2098 @@
+/* ==========================================================================
+   《修仙命运录》首席美学与微交互动效层（neon-aesthetic.css）
+   美学体系：玄漆 · 绢帛 · 鎏金 · 玉瓷 · 朱砂
+   纯离线零外链实现 | 严格 GPU 合成动效 | WCAG >= 4.5:1 | 支持 reduced-motion
+   ========================================================================== */
+
+:root {
+  /* 核心玄漆与夜墨 */
+  --na-obsidian: #0c0f14;
+  --na-lacquer-deep: #141922;
+  --na-lacquer: #161c28;
+  --na-lacquer-lift: #1e2636;
+  --na-lacquer-hover: #273144;
+  /* 暖宣纸与象牙绢帛 */
+  --na-paper-bright: #fcf7ea;
+  --na-paper: #f4ebd6;
+  --na-paper-warm: #e8d6b4;
+  --na-paper-edge: #c7ad81;
+  --na-ink-on-paper: #1d1a15;
+  --na-ink-muted-paper: #564a3a;
+  /* 鎏金、玉瓷、朱砂 */
+  --na-gold-bright: #fff0c2;
+  --na-gold-light: #f6dc97;
+  --na-gold: #dcb159;
+  --na-gold-deep: #a97b2c;
+  --na-gold-line: rgba(214, 174, 100, 0.42);
+  --na-gold-line-soft: rgba(214, 174, 100, 0.22);
+  --na-jade: #66c2a5;
+  --na-jade-deep: #245c4f;
+  --na-cinnabar: #c84736;
+  --na-cinnabar-bright: #ea6f58;
+  --na-amethyst: #a888e0;
+  --na-text: #f3ecde;
+  --na-text-sub: #b5bfd0;
+  /* 离线 SVG 数据纹饰（传统鎏金回纹角饰 & 宣纸微肌理） */
+  --na-corner-tl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M1 21V1h20M5 17V5h12M9 11V9h2' stroke='%23e2bc72' stroke-opacity='.58' stroke-width='1.1'/%3E%3C/svg%3E");
+  --na-corner-tr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M21 21V1H1M17 17V5H5M13 11V9h-2' stroke='%23e2bc72' stroke-opacity='.58' stroke-width='1.1'/%3E%3C/svg%3E");
+  --na-corner-bl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M1 1v20h20M5 5v12h12M9 11v2h2' stroke='%23e2bc72' stroke-opacity='.42' stroke-width='1.1'/%3E%3C/svg%3E");
+  --na-corner-br: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22' fill='none'%3E%3Cpath d='M21 1v20H1M17 5v12H5M13 11v2h-2' stroke='%23e2bc72' stroke-opacity='.42' stroke-width='1.1'/%3E%3C/svg%3E");
+  --na-paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 24c28 3 44-4 72 0s36 4 48 0M0 64c22-3 50 4 78 0s28-3 42 1M0 102c30 2 52-3 84 0s24 3 36-1' stroke='%238c6e42' stroke-opacity='.055' stroke-width='.9' fill='none'/%3E%3Ccircle cx='28' cy='42' r='.9' fill='%238c6e42' fill-opacity='.08'/%3E%3Ccircle cx='88' cy='82' r='1.1' fill='%238c6e42' fill-opacity='.07'/%3E%3Ccircle cx='62' cy='18' r='.8' fill='%238c6e42' fill-opacity='.06'/%3E%3C/svg%3E");
+  --na-lacquer-cloud: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cpath d='M-10 46c26-10 42 6 68 0 24-6 44 10 72 2 22-6 36 2 60-4M-10 132c30 8 52-8 82-2 28 6 50-10 80-2 18 5 26 2 38-2' stroke='%23e2bc72' stroke-opacity='.045' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
+}
+
+/* ==========================================================================
+   1. 全局基底、滚动条与优雅焦点
+   ========================================================================== */
+body,
+main {
+  background-color: var(--na-obsidian);
+  background-image:
+    radial-gradient(ellipse 85% 48% at 50% -6%, rgba(212, 166, 86, 0.085), transparent 64%),
+    radial-gradient(ellipse 60% 45% at 88% 100%, rgba(58, 96, 118, 0.09), transparent 60%);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 14, 21, 0.72);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(212, 174, 102, 0.45), rgba(145, 115, 62, 0.42));
+  border-radius: 6px;
+  border: 1px solid rgba(15, 20, 30, 0.6);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(235, 198, 122, 0.72), rgba(176, 138, 72, 0.65));
+}
+
+:focus-visible {
+  outline: 2px solid #f4d284;
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   2. 全站鎏金主按钮、玉雕次按钮、页签与禁用态精雕
+   ========================================================================== */
+html body :is(#intro, #play, #modal-layer, #term-help-dialog) button.primary:enabled,
+html body button.primary:enabled,
+html #modal .rogue-shell button.rogue-gold:enabled,
+html #modal .loot-shell :is([data-act="equip"], [data-act="enhance"], [data-act="apply"], #abyss-enter, #abyss-collect, #home-harvest, [data-hunt]):enabled {
+  position: relative;
+  overflow: hidden;
+  background-color: #dfba66 !important;
+  background-image: linear-gradient(180deg, #f7df99 0%, #e4b556 48%, #c0872c 100%) !important;
+  color: #1a1206 !important;
+  font-weight: 700;
+  border: 1px solid #c8953d !important;
+  border-top-color: #fff4cf !important;
+  border-radius: 6px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 252, 232, 0.84),
+    inset 0 -2px 0 rgba(108, 66, 12, 0.42),
+    0 3px 12px rgba(0, 0, 0, 0.36);
+  text-shadow: 0 1px 0 rgba(255, 248, 224, 0.38);
+  letter-spacing: 0.04em;
+}
+
+html body :is(#intro, #play, #modal-layer, #term-help-dialog) button.primary:enabled:hover,
+html body button.primary:enabled:hover,
+html #modal .rogue-shell button.rogue-gold:enabled:hover,
+html #modal .loot-shell :is([data-act="equip"], [data-act="enhance"], [data-act="apply"], #abyss-enter, #abyss-collect, #home-harvest, [data-hunt]):enabled:hover {
+  background-color: #dfba66 !important;
+  background-image: linear-gradient(180deg, #fff0be 0%, #efc469 52%, #ce9736 100%) !important;
+  border-color: #f4d68c !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 242, 0.92),
+    inset 0 -2px 0 rgba(120, 74, 14, 0.38),
+    0 5px 18px rgba(224, 173, 72, 0.34);
+  color: #1a1206 !important;
+  outline: none;
+}
+
+html body button.primary:enabled:active,
+html #modal .rogue-shell button.rogue-gold:enabled:active,
+html #modal .loot-shell :is([data-act="equip"], [data-act="enhance"], [data-act="apply"], #abyss-enter, #abyss-collect, #home-harvest, [data-hunt]):enabled:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 1px 3px rgba(92, 56, 10, 0.45),
+    0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* 次按钮统一玄漆玉雕质感 */
+html body :is(#intro, #play, #modal-layer) button:is(.secondary, .quiet):enabled,
+html #modal .loot-shell button:enabled:not(.primary):not(.rogue-gold):not(.rogue-offer):not(.trial-face):not(.gear-row):not([data-slot]):not([data-tab]):not([data-rogue^="tab-"]):not([data-act="equip"]):not([data-act="enhance"]):not([data-act="apply"]):not(#abyss-enter):not(#abyss-collect):not(#home-harvest):not([data-hunt]):not(.fate-door) {
+  background-color: #1f2736;
+  background-image: linear-gradient(180deg, #273143 0%, #1b2230 100%);
+  color: var(--na-text);
+  border: 1px solid rgba(188, 156, 100, 0.36);
+  border-radius: 6px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 206, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+html body :is(#intro, #play, #modal-layer) button:is(.secondary, .quiet):enabled:hover,
+html #modal .loot-shell button:enabled:not(.primary):not(.rogue-gold):not(.rogue-offer):not(.trial-face):not(.gear-row):not([data-slot]):not([data-tab]):not([data-rogue^="tab-"]):not([data-act="equip"]):not([data-act="enhance"]):not([data-act="apply"]):not(#abyss-enter):not(#abyss-collect):not(#home-harvest):not([data-hunt]):not(.fate-door):hover {
+  background-color: #2a3548;
+  background-image: linear-gradient(180deg, #323f56 0%, #222c3d 100%);
+  border-color: rgba(235, 196, 120, 0.72);
+  color: #fff6e2;
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 242, 208, 0.16),
+    0 4px 12px rgba(0, 0, 0, 0.32);
+}
+
+/* 禁用态严格保证清晰对比度 (>= 4.8:1) 且绝不发糊 */
+html body button:disabled,
+html body :is(#intro, #play, #modal-layer, #coach) button:disabled,
+html #modal .loot-shell button:disabled,
+html #modal .rogue-shell button:disabled {
+  background-color: #262c34 !important;
+  background-image: none !important;
+  color: #9aa4b0 !important;
+  border: 1px solid #3d4652 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  cursor: not-allowed;
+  text-shadow: none !important;
+}
+
+/* 弹窗页签栏（国风书签/玉牌风格） */
+html #modal .loot-tabs {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  margin: 10px 0 12px;
+  padding: 0 2px 8px;
+  border-bottom: 1px solid var(--na-gold-line-soft);
+}
+
+html #modal .loot-tabs button {
+  position: relative;
+  padding: 7px 16px;
+  border-radius: 6px 6px 4px 4px;
+  background: linear-gradient(180deg, #212938 0%, #171d29 100%);
+  color: #c8d0dc;
+  border: 1px solid rgba(162, 138, 94, 0.28);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 204, 0.06);
+}
+
+html #modal .loot-tabs button:hover:not([aria-pressed="true"]) {
+  background: linear-gradient(180deg, #2b3648 0%, #1e2736 100%);
+  color: var(--na-gold-bright);
+  border-color: rgba(218, 180, 108, 0.56);
+  outline: none;
+}
+
+html #modal .loot-tabs button[aria-pressed="true"] {
+  background-color: #e4b658 !important;
+  background-image: linear-gradient(180deg, #fae2a3 0%, #dfb052 60%, #c48d30 100%) !important;
+  color: #1c1306 !important;
+  border-color: #fff0be !important;
+  font-weight: 700;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 253, 236, 0.85),
+    0 3px 12px rgba(220, 177, 89, 0.28);
+}
+
+/* ==========================================================================
+   3. 玄漆弹窗总壳 + 传统鎏金回纹四角装饰 + 暖宣纸焦点卡
+   ========================================================================== */
+html #modal-layer {
+  background: rgba(6, 9, 15, 0.74);
+  backdrop-filter: blur(5px);
+}
+
+html #modal-layer:has([data-mode="tactics"]) {
+  background: rgba(6, 9, 15, 0.48);
+  backdrop-filter: none;
+}
+
+html #modal-layer #modal,
+html #modal:is([data-mode="armory"], [data-mode^="abyss"], [data-mode^="rogue"], [data-mode="bounty"], [data-mode="homestead"], [data-mode="bounty-battle"]) {
+  background-color: var(--na-lacquer-deep);
+  background-image:
+    var(--na-corner-tl),
+    var(--na-corner-tr),
+    var(--na-corner-bl),
+    var(--na-corner-br),
+    radial-gradient(ellipse 72% 34% at 50% 0%, rgba(220, 177, 89, 0.11), transparent 68%),
+    var(--na-lacquer-cloud),
+    linear-gradient(180deg, #171d29 0%, #111620 55%, #0e121b 100%);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat;
+  background-position: 8px 8px, calc(100% - 8px) 8px, 8px calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), 50% 0, 0 0, 0 0;
+  background-size: 22px 22px, 22px 22px, 22px 22px, 22px 22px, 100% 240px, 180px 180px, 100% 100%;
+  border: 1px solid rgba(206, 168, 98, 0.48);
+  border-top: 2px solid #dfba6e;
+  border-radius: 10px;
+  color: var(--na-text);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 200, 0.16),
+    inset 0 0 0 1px rgba(10, 14, 22, 0.7),
+    0 24px 72px rgba(0, 0, 0, 0.72),
+    0 0 0 1px rgba(0, 0, 0, 0.55);
+}
+
+html #modal-layer #modal > .modal-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #2b3547, #161c28 78%);
+  border: 1px solid rgba(216, 178, 106, 0.56);
+  color: var(--na-gold-bright);
+  box-shadow: inset 0 1px 0 rgba(255, 242, 208, 0.16), 0 3px 10px rgba(0, 0, 0, 0.42);
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+
+html #modal-layer #modal > .modal-close:hover {
+  background: radial-gradient(circle at 35% 30%, #4b3828, #281d18 82%);
+  border-color: var(--na-gold-light);
+  color: #fff9e6;
+  transform: scale(1.06);
+}
+
+html #modal .loot-shell header {
+  border-bottom: 1px solid var(--na-gold-line-soft);
+  padding-bottom: 10px;
+  margin-bottom: 4px;
+}
+
+html #modal .loot-shell header h2 {
+  color: var(--na-gold-bright);
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 12px rgba(220, 177, 89, 0.18);
+}
+
+html #modal .loot-shell header small {
+  color: #c8b68f;
+  letter-spacing: 0.14em;
+}
+
+/* 暖宣纸焦点卡统一质感 */
+html .clarity-paper-card,
+html #modal .clarity-paper-card,
+html #play .clarity-paper-card,
+html #modal-layer #modal.ink-reader,
+html #modal-layer #modal.ink-reader .reader-layout,
+html #intro #background-detail {
+  background-color: var(--na-paper);
+  background-image:
+    var(--na-paper-grain),
+    radial-gradient(ellipse 90% 45% at 50% 0%, rgba(255, 252, 240, 0.65), transparent 72%),
+    linear-gradient(170deg, #faf3e2 0%, #f3e6cc 56%, #e7d5b2 100%);
+  color: var(--na-ink-on-paper);
+  border: 1px solid #c7ad7e;
+  border-top: 3px solid #b98c44;
+  box-shadow:
+    inset 0 0 24px rgba(140, 102, 48, 0.12),
+    0 6px 20px rgba(0, 0, 0, 0.28);
+}
+
+html #modal-layer #modal.ink-reader {
+  background-image:
+    var(--na-corner-tl),
+    var(--na-corner-tr),
+    var(--na-paper-grain),
+    linear-gradient(170deg, #faf3e2 0%, #f3e6cc 58%, #e8d7b5 100%);
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-position: 8px 8px, calc(100% - 8px) 8px, 0 0, 0 0;
+  background-size: 20px 20px, 20px 20px, 120px 120px, 100% 100%;
+  border: 1px solid #b9975a;
+  border-top: 3px solid #c4923e;
+}
+
+/* ==========================================================================
+   4. 创角标题页（#intro）首屏国风大作氛围升级
+   ========================================================================== */
+body:has(#intro:not([hidden])) .masthead {
+  background: linear-gradient(180deg, rgba(19, 25, 36, 0.96), rgba(13, 17, 25, 0.94));
+  border-bottom: 1px solid var(--na-gold-line-soft);
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+}
+
+.brand .seal {
+  background: linear-gradient(145deg, #c43d2d 0%, #8e2419 100%);
+  border: 1px solid #f0a18a;
+  box-shadow: inset 0 0 0 2px rgba(20, 12, 12, 0.65), 0 3px 12px rgba(196, 61, 45, 0.35);
+}
+
+.top-tools button {
+  border: 1px solid rgba(186, 154, 102, 0.24);
+  background: rgba(26, 34, 48, 0.68);
+  color: #e9dec8;
+}
+
+.top-tools button:hover {
+  border-color: rgba(226, 186, 108, 0.68);
+  background: rgba(40, 50, 68, 0.9);
+  color: var(--na-gold-bright);
+}
+
+html #intro {
+  background:
+    var(--na-corner-tl),
+    var(--na-corner-tr),
+    var(--na-corner-bl),
+    var(--na-corner-br),
+    radial-gradient(ellipse 68% 42% at 50% 0%, rgba(218, 174, 88, 0.08), transparent 65%),
+    linear-gradient(180deg, #151b26 0%, #10151e 100%);
+  background-repeat: no-repeat;
+  background-position: 8px 8px, calc(100% - 8px) 8px, 8px calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), 50% 0, 0 0;
+  background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 240px, 100% 100%;
+  border: 1px solid rgba(204, 166, 98, 0.38);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+#intro .intro-copy {
+  background: transparent;
+}
+
+#intro h1 {
+  color: #fae4a6;
+  text-shadow: 0 2px 14px rgba(220, 177, 89, 0.28), 0 1px 2px rgba(0, 0, 0, 0.65);
+  letter-spacing: 0.08em;
+}
+
+#intro .gender-tabs button {
+  background: linear-gradient(180deg, #212a3a 0%, #171e2b 100%);
+  border: 1px solid rgba(182, 152, 102, 0.3);
+  border-radius: 6px;
+  color: #d6deea;
+}
+
+#intro .gender-tabs button[aria-pressed="true"],
+#intro .gender-tabs button.active {
+  background: linear-gradient(180deg, #3c3222 0%, #272017 100%);
+  border-color: var(--na-gold);
+  color: var(--na-gold-bright);
+  box-shadow: inset 0 -2px 0 var(--na-gold), 0 3px 12px rgba(220, 177, 89, 0.16);
+}
+
+#intro .background-option {
+  background: linear-gradient(110deg, #1d2534 0%, #151b27 100%);
+  border: 1px solid rgba(168, 144, 100, 0.28);
+  border-radius: 7px;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 208, 0.06);
+}
+
+#intro .background-option:hover:not(.active) {
+  background: linear-gradient(110deg, #263144 0%, #1c2433 100%);
+  border-color: rgba(224, 184, 108, 0.62);
+  transform: translateX(3px);
+}
+
+#intro .background-option.active {
+  background: linear-gradient(110deg, #3d3221 0%, #262018 72%, #1d1a18 100%);
+  border-color: #e4ba64;
+  box-shadow:
+    inset 3px 0 0 #f4d284,
+    0 4px 16px rgba(220, 177, 89, 0.22);
+}
+
+#intro .background-option.active strong {
+  color: var(--na-gold-bright);
+}
+
+#intro .background-card-art {
+  border-right: 1px solid rgba(214, 174, 100, 0.28);
+}
+
+#intro #background-detail {
+  border-radius: 8px;
+  overflow-x: hidden;
+}
+
+#intro .background-selection-scene {
+  border-bottom: 2px solid #c59b52;
+}
+
+#intro .background-selection-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 32px rgba(15, 12, 8, 0.45);
+}
+
+/* 创角右上角主角圆窗：暖宣纸底 + multiply 彻底消除纯白底边 */
+#intro .creation-right .hero-portrait {
+  background:
+    var(--na-paper-grain),
+    radial-gradient(circle at 50% 35%, #f7edd8 0%, #e1d0b0 68%, #bfa882 100%) !important;
+  border: 2px solid #d8b468 !important;
+  outline: 0 !important;
+  box-shadow: 0 0 0 3px rgba(216, 180, 104, 0.16), 0 4px 14px rgba(0, 0, 0, 0.45);
+  isolation: isolate;
+}
+
+#intro .creation-right .hero-portrait img:not(.custom-player-avatar) {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  mix-blend-mode: multiply;
+  filter: contrast(1.04) saturate(1.04);
+}
+
+#intro .creation-right .hero-portrait img.custom-player-avatar {
+  mix-blend-mode: normal;
+}
+
+#intro #almanac-intro {
+  padding: 6px 12px !important;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+#intro .save-recovery {
+  gap: 10px;
+}
+
+#intro .save-recovery button {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-bottom: 1px dashed rgba(214, 174, 100, 0.36) !important;
+  border-radius: 0 !important;
+  padding: 2px 1px !important;
+  min-height: 24px !important;
+  font-size: 12.5px !important;
+  color: #d8c8a6 !important;
+  box-shadow: none !important;
+}
+
+#intro .save-recovery button:hover {
+  color: var(--na-gold-bright) !important;
+  border-bottom-color: var(--na-gold-bright) !important;
+}
+
+#intro .origin {
+  background: linear-gradient(125deg, #1d2534 0%, #151c28 100%);
+  border: 1px solid rgba(168, 144, 100, 0.28);
+  border-radius: 7px;
+}
+
+#intro .origin:hover:not([aria-pressed="true"]):not(.active) {
+  border-color: rgba(224, 184, 108, 0.58);
+  background: linear-gradient(125deg, #253044 0%, #1b2333 100%);
+}
+
+#intro .origin[aria-pressed="true"],
+#intro .origin.active,
+#intro .origin.selected {
+  background: linear-gradient(125deg, #3c3221 0%, #241f18 100%);
+  border-color: #e6bd68;
+  box-shadow: inset 3px 0 0 #f6da94, 0 4px 14px rgba(220, 177, 89, 0.18);
+}
+
+/* 创角左下「九霄无尽劫」入口精装星纹牌 */
+#intro #rogue-intro {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(112deg, #432338 0%, #2c1e3a 52%, #1e1a30 100%);
+  border: 1px solid rgba(232, 182, 104, 0.65);
+  border-radius: 7px;
+  padding: 7px 13px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 232, 186, 0.22),
+    0 4px 16px rgba(46, 18, 42, 0.48);
+}
+
+#intro #rogue-intro:hover {
+  background: linear-gradient(112deg, #562b46 0%, #3a264d 52%, #282240 100%);
+  border-color: #f6d48a;
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 200, 0.34),
+    0 6px 20px rgba(196, 118, 92, 0.28);
+}
+
+/* 玩法模式选择器告别发闷暗绿 */
+.mode-picker {
+  background: linear-gradient(135deg, #1d2534 0%, #151c27 100%);
+  border: 1px solid rgba(194, 158, 96, 0.36);
+  border-left: 3px solid var(--na-gold);
+  border-radius: 7px;
+  color: var(--na-text);
+  box-shadow: inset 0 1px 0 rgba(255, 240, 208, 0.06);
+}
+
+.mode-picker select {
+  background: #252f42;
+  color: var(--na-gold-bright);
+  border: 1px solid rgba(214, 174, 100, 0.5);
+  border-radius: 5px;
+}
+
+.mode-tags i {
+  background: rgba(220, 177, 89, 0.12);
+  border: 1px solid rgba(214, 174, 100, 0.42);
+  color: var(--na-gold-light);
+  border-radius: 4px;
+}
+
+/* 严格确保 1280×720 下创角右侧存档说明完整落入视口 */
+@media (min-width: 951px) and (max-height: 780px) {
+  #intro .creation-right { gap: 3px; }
+  #intro .creation-right .origins { gap: 3px; }
+  #intro .creation-right .origin { padding: 4px 10px; }
+  #intro .mode-picker { padding: 4px 8px; gap: 2px 8px; }
+  #intro .creation-start .begin-row { gap: 5px; }
+  #intro .creation-start .begin-row button { padding-block: 5px; min-height: 30px; }
+}
+
+/* ==========================================================================
+   5. 主界面 HUD：顶栏、血条缓冲白条、左栏全统一圆印章、右侧器物栏与手记
+   ========================================================================== */
+html #play .game-topline,
+html #play .ink-rail,
+html #play .actionbar,
+html #play .field-commands {
+  background-color: var(--na-lacquer-deep);
+  border-color: rgba(196, 160, 96, 0.32);
+}
+
+html #play .game-topline {
+  background: linear-gradient(180deg, #19202e 0%, #121722 100%);
+  border: 1px solid rgba(202, 166, 98, 0.38);
+  border-bottom-color: rgba(202, 166, 98, 0.52);
+  box-shadow: inset 0 1px 0 rgba(255, 240, 204, 0.1), 0 6px 20px rgba(0, 0, 0, 0.42);
+}
+
+/* 左上角头像圆窗：白底立绘柔润融底 */
+.portrait-window#portrait-edit {
+  background: radial-gradient(circle at 50% 35%, #f5ebd5 0%, #dccaa8 70%, #b59e78 100%);
+  border: 1.5px solid #e2bc70;
+  box-shadow: 0 0 0 3px rgba(226, 188, 112, 0.16), 0 3px 10px rgba(0, 0, 0, 0.45);
+}
+
+.portrait-window #player-image img:not(.custom-player-avatar) {
+  mix-blend-mode: multiply;
+}
+
+/* 气血 / 灵力条：漆槽质感 + 光泽高光 + 掉血缓冲尾迹 */
+#play .meter {
+  position: relative;
+  height: 8px;
+  border: 1px solid rgba(214, 174, 100, 0.46);
+  border-radius: 999px;
+  background: #0c1018;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+}
+
+#play .meter .meter-trail {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(255, 245, 224, 0.92), rgba(255, 226, 176, 0.85));
+  border-radius: inherit;
+  z-index: 1;
+  transition: width 0.56s cubic-bezier(0.22, 0.8, 0.3, 1) 0.14s;
+  pointer-events: none;
+}
+
+#play .meter .meter-trail.trail-instant {
+  transition: none;
+}
+
+#play .meter i {
+  position: relative;
+  z-index: 2;
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, transparent 50%),
+    linear-gradient(90deg, #9f2d23 0%, #d9523f 65%, #f0896b 100%);
+  box-shadow: 0 0 8px rgba(217, 82, 63, 0.45);
+}
+
+#play .meter-line.mana .meter i {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, transparent 50%),
+    linear-gradient(90deg, #226a68 0%, #42a69c 65%, #84decb 100%);
+  box-shadow: 0 0 8px rgba(96, 198, 178, 0.4);
+}
+
+#play.ink-danger .meter:has(#hp-bar) {
+  border-color: #f08772;
+}
+
+/* 顶栏三大试炼玉牌入口 */
+#play .trial-links {
+  gap: 9px;
+}
+
+#play .trial-links a {
+  padding: 5px 11px;
+  border-radius: 6px;
+  border: 1px solid rgba(214, 176, 104, 0.56);
+  background: linear-gradient(180deg, #293242 0%, #1b2230 100%);
+  color: #fff3d2;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 200, 0.14), 0 2px 8px rgba(0, 0, 0, 0.32);
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+#play .trial-links #armory-open {
+  background: linear-gradient(135deg, #322c22 0%, #201e1c 100%);
+  border-color: rgba(226, 184, 102, 0.62);
+}
+
+#play .trial-links #abyss-open {
+  background: linear-gradient(135deg, #35294a 0%, #211c33 100%);
+  border-color: rgba(176, 148, 224, 0.62);
+}
+
+#play .trial-links #rogue-open {
+  background: linear-gradient(135deg, #4a262c 0%, #2a1922 100%);
+  border-color: rgba(232, 162, 114, 0.68);
+  font-size: 13px;
+}
+
+#play .trial-links a:hover {
+  transform: translateY(-1px);
+  border-color: var(--na-gold-bright);
+  box-shadow: inset 0 1px 0 rgba(255, 246, 218, 0.25), 0 4px 14px rgba(220, 177, 89, 0.26);
+  color: #fffaf0;
+}
+
+/* 目标指令栏 */
+#play .field-commands {
+  background: linear-gradient(105deg, #1b2230 0%, #131823 72%);
+  border: 1px solid rgba(196, 160, 96, 0.34);
+  border-left: 3px solid var(--na-gold);
+  box-shadow: inset 0 1px 0 rgba(255, 240, 200, 0.07);
+}
+
+#play #storyline-stage {
+  background: linear-gradient(180deg, #322a1e 0%, #221d16 100%);
+  border: 1px solid rgba(214, 174, 100, 0.52);
+  color: var(--na-gold-light);
+}
+
+#play #tactics-open {
+  background: linear-gradient(180deg, #3a301f 0%, #272015 100%) !important;
+  border: 1.5px solid #e4bc68 !important;
+  color: #ffebc0 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 200, 0.2), 0 2px 8px rgba(0, 0, 0, 0.28);
+}
+
+#play #tactics-open:hover {
+  background: linear-gradient(180deg, #4b3d26 0%, #332a1b 100%) !important;
+  border-color: #fff0be !important;
+}
+
+/* ==========================================================================
+   硬伤 2 根治：主界面左栏全员统一古风圆印章（10 button + 3 a.rail-link）
+   ========================================================================== */
+html #play .ink-rail.journey-toolbar {
+  background: linear-gradient(180deg, #161c28 0%, #10151f 100%);
+  background-color: #131822;
+  border: 1px solid rgba(198, 162, 98, 0.36);
+  border-radius: 8px;
+  padding: 5px 3px;
+  gap: 2px;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 204, 0.08), 0 6px 20px rgba(0, 0, 0, 0.38);
+  max-height: calc(100dvh - 68px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* 统一 button 与 a.rail-link 的网格结构与尺寸 */
+html #play .ink-rail button,
+html #play .ink-rail a.rail-link {
+  position: relative;
+  display: grid;
+  grid-template-rows: 29px 15px;
+  align-content: center;
+  justify-items: center;
+  gap: 1px;
+  width: 100%;
+  min-height: 0;
+  height: 46px;
+  padding: 2px 1px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  text-decoration: none;
+  text-align: center;
+  flex: none;
+  box-sizing: border-box;
+  transition: background-color 0.16s ease, transform 0.16s ease;
+}
+
+/* a.rail-link 保持自身文字清晰可见（通过 contrast & font-size >= 11px 断言） */
+html #play .ink-rail a.rail-link {
+  font: 600 11px/14px "Microsoft YaHei", sans-serif;
+  color: #f3e8d2;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+  overflow: hidden;
+}
+
+html #play .ink-rail button {
+  font-size: 0;
+  color: transparent;
+}
+
+html #play .ink-rail button::after {
+  content: attr(data-label);
+  grid-row: 2;
+  font: 600 11.5px/14px "Microsoft YaHei", sans-serif;
+  color: #f3e8d2;
+  letter-spacing: 0.02em;
+}
+
+/* 全部 13 项共享同一套精雕双环玉印章 ::before */
+html #play .ink-rail button::before,
+html #play .ink-rail a.rail-link::before {
+  content: attr(data-seal);
+  grid-row: 1;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--module, #cda862);
+  background: radial-gradient(circle at 35% 24%, #2c3547 0%, #151b26 78%);
+  color: #fbf1da;
+  font: 700 16px/1 "STKaiti", "KaiTi", serif;
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 245, 218, 0.22),
+    inset 0 0 0 2px rgba(10, 14, 22, 0.72),
+    0 2px 6px rgba(0, 0, 0, 0.42);
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+/* 模块专属玉印色系（和谐东方矿物色） */
+#play #storyline-open { --module: #dc5b48; }
+#play #storyline-open::before {
+  background: radial-gradient(circle at 35% 24%, #a63a2c 0%, #611d16 80%);
+  border-radius: 8px;
+  color: #fff3db;
+  border-color: #f08972;
+}
+#play #rail-armory { --module: #e2b45a; }
+#play #cultivation-open { --module: #e4ba64; }
+#play #sects-open { --module: var(--house, #d87ea2); }
+#play #bag-rail-open,
+#play #relic-open { --module: #52b7a5; }
+#play #world-map-open { --module: #74ba72; }
+#play #case-open { --module: #7fa7db; }
+#play #bounty-open { --module: #de6b52; }
+#play #home-open { --module: #62be8e; }
+#play #journey-open { --module: #a688db; }
+#play #notes-open { --module: #c9a773; }
+#play #background-open { --module: #9aa7d4; }
+
+/* 优雅的分组金丝隔断 */
+html #play .ink-rail :is(#cultivation-open, #world-map-open, #journey-open) {
+  border-top: 1px solid rgba(206, 170, 102, 0.26);
+  border-radius: 0 0 6px 6px;
+  margin-top: 2px;
+  padding-top: 3px;
+}
+
+html #play .ink-rail :is(#bag-rail-open, #case-open, #background-open, #sects-open, #bounty-open, #home-open, #rail-armory) {
+  border-top: 0;
+}
+
+/* 悬停温润玉光与微移 + 激活态指示 */
+html #play .ink-rail :is(button, a.rail-link):hover,
+html #play .ink-rail :is(button, a.rail-link).is-current {
+  background: linear-gradient(90deg, rgba(220, 177, 89, 0.16), rgba(220, 177, 89, 0.05));
+}
+
+html #play .ink-rail :is(button, a.rail-link):hover::before,
+html #play .ink-rail :is(button, a.rail-link).is-current::before {
+  transform: translateY(-1px) scale(1.06);
+  border-color: var(--na-gold-bright);
+  color: var(--na-gold-bright);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 224, 0.35),
+    0 0 12px rgba(228, 186, 104, 0.42);
+}
+
+html #play .ink-rail :is(button, a.rail-link).is-current {
+  box-shadow: inset 3px 0 0 var(--na-gold);
+}
+
+/* 1280×720 矮屏自适应，保证 13 项全部一屏齐整不拥挤 */
+@media (min-width: 951px) and (max-height: 780px) {
+  html #play .ink-rail.journey-toolbar {
+    gap: 1px;
+    padding: 3px 2px;
+    max-height: calc(100dvh - 64px);
+  }
+  html #play .ink-rail button,
+  html #play .ink-rail a.rail-link {
+    height: 43px;
+    grid-template-rows: 26px 14px;
+    padding: 1px 0;
+  }
+  html #play .ink-rail button::before,
+  html #play .ink-rail a.rail-link::before {
+    width: 25px;
+    height: 25px;
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1600px) {
+  html #play .ink-rail button,
+  html #play .ink-rail a.rail-link {
+    height: 54px;
+    grid-template-rows: 34px 16px;
+  }
+  html #play .ink-rail button::before,
+  html #play .ink-rail a.rail-link::before {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+  html #play .ink-rail a.rail-link,
+  html #play .ink-rail button::after {
+    font-size: 12px;
+  }
+}
+
+/* 主视窗地图画框 */
+#play .world-wrap {
+  border: 1px solid rgba(206, 170, 102, 0.46);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55), inset 0 0 0 1px rgba(255, 240, 200, 0.08);
+}
+
+/* 右侧器物快捷栏与宣纸手记卡 */
+html #play .actionbar {
+  background: linear-gradient(180deg, #181f2c 0%, #121722 100%);
+  border: 1px solid rgba(196, 160, 96, 0.36);
+  box-shadow: inset 0 1px 0 rgba(255, 240, 204, 0.08), 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+html #play :is(.hotbar button, .weapon-slot, #bag) {
+  background: radial-gradient(ellipse at 50% 82%, rgba(214, 174, 100, 0.12), transparent 70%),
+    linear-gradient(180deg, #212938 0%, #161c27 100%);
+  border: 1px solid rgba(186, 154, 100, 0.34);
+  border-radius: 7px;
+  box-shadow: inset 0 1px 0 rgba(255, 242, 208, 0.08);
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+html #play :is(.hotbar button, .weapon-slot, #bag):hover:enabled {
+  transform: translateY(-2px);
+  border-color: rgba(235, 198, 122, 0.78);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.35), 0 0 10px rgba(220, 177, 89, 0.18);
+}
+
+html #play :is(.hotbar button.active, .weapon-slot.active) {
+  border-color: #ebc470;
+  box-shadow: inset 0 0 0 1px rgba(247, 223, 153, 0.4), 0 0 12px rgba(220, 177, 89, 0.24);
+}
+
+#play .journal > .eyebrow {
+  background: linear-gradient(135deg, #b83a2c 0%, #862319 100%);
+  border-radius: 3px;
+  box-shadow: 0 2px 6px rgba(134, 35, 25, 0.32);
+}
+
+/* ==========================================================================
+   6. 硬伤 1 根治：九霄幻境「择化身入劫」6 位人物统一国风精装画框与融底工艺
+   ========================================================================== */
+html #modal .rogue-shell .trial-gate {
+  border: 1px solid rgba(206, 168, 98, 0.44);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #161c28 0%, #10151e 100%);
+  overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 204, 0.1);
+}
+
+html #modal .rogue-shell .trial-intro {
+  position: relative;
+  padding: 18px 26px;
+  background:
+    linear-gradient(92deg, rgba(13, 17, 26, 0.94) 6%, rgba(16, 22, 32, 0.78) 46%, rgba(16, 22, 30, 0.22) 100%),
+    url("assets/art-v10/bamboo-court.webp") center 46% / cover;
+  border-bottom: 1px solid var(--na-gold-line-soft);
+}
+
+html #modal .trial-intro h3 {
+  color: var(--na-gold-bright);
+  letter-spacing: 0.12em;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
+}
+
+html #modal .trial-faces {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 11px;
+  padding: 14px 16px;
+  background: radial-gradient(ellipse 80% 70% at 50% 40%, rgba(214, 174, 100, 0.06), transparent 72%);
+}
+
+html #modal button.trial-face {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 5px 8px;
+  gap: 0;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #1e2636 0%, #141a25 100%);
+  border: 1px solid rgba(188, 156, 102, 0.36);
+  color: var(--na-text);
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 240, 204, 0.1),
+    0 5px 14px rgba(0, 0, 0, 0.36);
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+/* 统一人物画框容器：温暖宣纸绢帛底 + 内阴影晕染 + 细鎏金画框线 */
+html #modal .trial-portrait-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: clamp(104px, 17vh, 168px);
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(216, 178, 106, 0.38);
+  background: radial-gradient(ellipse at 50% 30%, #f5ebd4 0%, #dfd0b0 62%, #b9a27d 100%);
+  isolation: isolate;
+}
+
+/* 暖宣纸底（林墨、沈灵薇、凝霜）：白底立绘通过 multiply 无缝融入宣纸绢帛 */
+html #modal .trial-portrait-frame[data-tone="paper"] {
+  background:
+    var(--na-paper-grain),
+    radial-gradient(ellipse at 50% 26%, #f8f0dc 0%, #e4d4b4 60%, #bfa882 100%);
+}
+
+html #modal .trial-portrait-frame[data-tone="paper"] img {
+  mix-blend-mode: multiply;
+  filter: contrast(1.04) saturate(1.04);
+}
+
+/* 绯雾古宣底（魔渊林墨）：暗红残宣消融白底，妖冶尊贵 */
+html #modal .trial-portrait-frame[data-tone="crimson"] {
+  background:
+    var(--na-paper-grain),
+    radial-gradient(ellipse at 50% 28%, #eed9dd 0%, #c89ea7 58%, #774754 100%);
+}
+
+html #modal .trial-portrait-frame[data-tone="crimson"] img {
+  mix-blend-mode: multiply;
+  filter: sepia(0.32) hue-rotate(306deg) contrast(1.12) saturate(1.18);
+}
+
+/* 墨韵半身像（云照）与古画底（谢观澜）：保持实色但统一暖度与光影 */
+html #modal .trial-portrait-frame[data-tone="ink"] {
+  background: radial-gradient(ellipse at 50% 28%, #47505a 0%, #242b34 75%);
+}
+
+html #modal .trial-portrait-frame[data-tone="ink"] svg {
+  filter: brightness(1.08) contrast(1.04) sepia(0.1);
+}
+
+html #modal .trial-portrait-frame[data-tone="scroll"] {
+  background: radial-gradient(ellipse at 50% 28%, #e4d4b6 0%, #bfa987 80%);
+}
+
+html #modal .trial-portrait-frame[data-tone="scroll"] img {
+  filter: contrast(1.04) saturate(1.04);
+}
+
+html #modal .trial-portrait-frame :is(img, svg) {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 4%;
+  background: transparent;
+  transition: transform 0.32s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* 统一画框古风暗角、底部玄墨过渡与细鎏金内线，令 6 人如出一套精装人物志 */
+html #modal .trial-portrait-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background:
+    radial-gradient(ellipse 84% 78% at 50% 38%, transparent 52%, rgba(22, 18, 14, 0.42) 100%),
+    linear-gradient(180deg, rgba(16, 20, 28, 0.12) 0%, transparent 18%, transparent 66%, rgba(16, 21, 31, 0.86) 100%);
+  box-shadow: inset 0 0 0 1px rgba(242, 208, 134, 0.28);
+}
+
+/* 人物志底部铭牌 */
+html #modal .trial-face-meta {
+  display: grid;
+  gap: 2px;
+  padding: 7px 4px 1px;
+  text-align: center;
+}
+
+html #modal .trial-face-meta strong {
+  font: 700 17px/1.2 "STKaiti", "KaiTi", serif;
+  color: var(--na-gold-bright);
+  letter-spacing: 0.08em;
+}
+
+html #modal .trial-face-meta small {
+  font: 600 11.5px/1.3 "Microsoft YaHei", sans-serif;
+  color: #bfc9d8;
+  letter-spacing: 0.04em;
+}
+
+html #modal button.trial-face.is-locked .trial-portrait-frame :is(img, svg) {
+  opacity: 0.88;
+}
+
+html #modal button.trial-face:hover {
+  transform: translateY(-4px);
+  border-color: rgba(242, 205, 128, 0.78);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 245, 216, 0.2),
+    0 10px 24px rgba(0, 0, 0, 0.48),
+    0 0 16px rgba(220, 177, 89, 0.2);
+  outline: none;
+}
+
+html #modal button.trial-face:hover .trial-portrait-frame :is(img, svg) {
+  transform: scale(1.04);
+}
+
+/* 选中态：深玄金装卡 + 鎏金高光边框 + 顶部朱砂金印 */
+html #modal button.trial-face[aria-pressed="true"] {
+  background: linear-gradient(180deg, #3c311f 0%, #231e18 100%) !important;
+  border: 2px solid #f4d284 !important;
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 224, 0.32),
+    0 10px 26px rgba(0, 0, 0, 0.52),
+    0 0 22px rgba(232, 188, 96, 0.34);
+}
+
+html #modal button.trial-face[aria-pressed="true"] .trial-portrait-frame {
+  border-color: #f6da94;
+}
+
+html #modal button.trial-face[aria-pressed="true"] .trial-face-meta strong {
+  color: #fff6da;
+}
+
+html #modal button.trial-face[aria-pressed="true"] .trial-face-meta small {
+  color: #f6dc97;
+}
+
+html #modal .trial-hero {
+  background: linear-gradient(95deg, #1c2433 0%, #151b26 70%, #191d28 100%);
+  border-top: 1px solid var(--na-gold-line-soft);
+  padding: 13px 20px;
+}
+
+html #modal .trial-hero h3 {
+  color: var(--na-gold-bright);
+  font-size: 22px;
+  letter-spacing: 0.06em;
+}
+
+html #modal .trial-hero b {
+  color: #f6dc97;
+}
+
+/* ==========================================================================
+   7. 硬伤 3 根治：装备换装（玄漆展台 + 深漆器表 + 暖宣纸详情卡）、悬赏妖榜、洞府
+   ========================================================================== */
+html #modal .gear-columns {
+  gap: 14px;
+}
+
+html #modal .gear-columns > * {
+  border-radius: 8px;
+  border: 1px solid rgba(196, 160, 96, 0.34);
+  background: linear-gradient(180deg, #1a2130 0%, #131823 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 242, 206, 0.08), 0 6px 20px rgba(0, 0, 0, 0.32);
+}
+
+/* 左栏：玄漆青墨聚光展示台 */
+html #modal .gear-paper {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 68% 58% at 50% 48%, rgba(76, 118, 128, 0.28) 0%, rgba(26, 36, 52, 0.45) 56%, rgba(15, 20, 30, 0.96) 100%),
+    linear-gradient(180deg, #1b2434 0%, #121722 100%);
+  border-color: rgba(208, 172, 102, 0.44);
+}
+
+html #modal .gear-paper h3 {
+  color: var(--na-gold-bright);
+  border-bottom: 1px solid rgba(206, 168, 98, 0.22);
+  padding-bottom: 6px;
+}
+
+html #modal .gear-doll button {
+  background: linear-gradient(180deg, #212a3b 0%, #161c28 100%);
+  border: 1px solid rgba(182, 152, 100, 0.34);
+  border-radius: 7px;
+  color: var(--na-text);
+  box-shadow: inset 0 1px 0 rgba(255, 242, 208, 0.08);
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+html #modal .gear-doll button.is-worn {
+  border-color: color-mix(in srgb, var(--grade, #c9a66b) 72%, rgba(255, 255, 255, 0.18));
+  box-shadow: inset 0 0 12px color-mix(in srgb, var(--grade, #c9a66b) 18%, transparent), 0 3px 10px rgba(0, 0, 0, 0.34);
+}
+
+html #modal .gear-doll button.is-empty {
+  background: rgba(18, 23, 33, 0.72);
+  border-style: dashed;
+  border-color: rgba(140, 152, 172, 0.32);
+}
+
+html #modal .gear-doll button:hover {
+  transform: translateY(-2px);
+  border-color: var(--na-gold-light);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.4), 0 0 12px rgba(220, 177, 89, 0.22);
+  outline: none;
+}
+
+html #modal .gear-total {
+  border-top: 1px solid rgba(206, 168, 98, 0.26);
+  color: #d6deea;
+}
+
+html #modal .gear-total strong {
+  color: var(--na-gold-bright) !important;
+  text-shadow: 0 0 12px rgba(226, 184, 102, 0.3);
+}
+
+/* 中栏：深玄漆器物列表（告别暗绿） */
+html #modal .gear-bag {
+  background: linear-gradient(180deg, #181f2d 0%, #121722 100%);
+}
+
+html #modal .gear-bag h3 {
+  color: var(--na-gold-light);
+}
+
+html #modal .gear-list {
+  gap: 6px;
+}
+
+html #modal .gear-list button {
+  position: relative;
+  background: linear-gradient(110deg, #212a3a 0%, #181f2c 100%);
+  border: 1px solid rgba(174, 148, 102, 0.28);
+  border-left: 3px solid rgba(174, 148, 102, 0.5);
+  border-radius: 7px;
+  color: var(--na-text);
+  padding: 7px 10px;
+  transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+
+html #modal .gear-list button[data-grade="3"] { border-left-color: #7eaef5; }
+html #modal .gear-list button[data-grade="4"] { border-left-color: #c296f5; }
+html #modal .gear-list button[data-grade="5"] { border-left-color: #f4c56a; }
+
+html #modal .gear-list button:hover:not([aria-pressed="true"]) {
+  background: linear-gradient(110deg, #2a354a 0%, #20293a 100%);
+  border-color: rgba(226, 186, 108, 0.58);
+  transform: translateX(2px);
+  outline: none;
+}
+
+html #modal .gear-list button[aria-pressed="true"] {
+  background: linear-gradient(110deg, #423522 0%, #2b2319 100%) !important;
+  border-color: #eec874 !important;
+  border-left: 3px solid #fff0be !important;
+  color: #fff6df !important;
+  box-shadow: 0 4px 14px rgba(220, 177, 89, 0.2);
+}
+
+html #modal .gear-list button[aria-pressed="true"] small {
+  color: #f3d796 !important;
+}
+
+/* 右栏：重拾暖宣纸焦点器谱卡！（高对比深炭墨字） */
+html #modal .gear-detail {
+  background-color: var(--na-paper) !important;
+  background-image:
+    var(--na-paper-grain),
+    radial-gradient(ellipse 85% 40% at 50% 0%, rgba(255, 252, 240, 0.72), transparent 68%),
+    linear-gradient(170deg, #fbf4e4 0%, #f3e6cc 56%, #e7d5b2 100%) !important;
+  color: var(--na-ink-on-paper) !important;
+  border: 1px solid #c9af82 !important;
+  border-top: 3px solid #bc8c3e !important;
+  box-shadow:
+    inset 0 0 22px rgba(140, 102, 48, 0.14),
+    0 8px 24px rgba(0, 0, 0, 0.34);
+}
+
+html #modal .gear-detail :is(h3, h4, p, dt, dd, strong, em, b, label) {
+  color: var(--na-ink-on-paper) !important;
+}
+
+html #modal .gear-detail small {
+  color: var(--na-ink-muted-paper) !important;
+}
+
+html #modal .gear-detail .gear-score {
+  background: rgba(182, 144, 82, 0.15) !important;
+  color: #2b2011 !important;
+  border-block: 1px solid rgba(168, 132, 74, 0.45);
+  padding: 8px 10px;
+  border-radius: 5px;
+  margin: 8px 0;
+}
+
+html #modal .gear-detail .gear-score strong {
+  color: #6b430e !important;
+}
+
+html #modal .gear-detail .gear-delta {
+  color: #5c4e3d !important;
+}
+
+html #modal .gear-detail .gear-delta.up {
+  color: #0f623d !important;
+}
+
+html #modal .gear-detail .gear-delta.down {
+  color: #a62b22 !important;
+}
+
+html #modal .gear-detail .gear-stats div {
+  padding: 3px 0;
+  border-bottom: 1px dashed rgba(154, 124, 78, 0.28);
+}
+
+html #modal .gear-detail select {
+  background: #232c3b;
+  color: #fff3d4;
+  border-color: #9e8354;
+}
+
+/* 强化/穿戴高光仪式动效 */
+@keyframes na-forge-ring {
+  0% { box-shadow: inset 0 0 0 2px #fff2c4, 0 0 0 0 rgba(242, 194, 92, 0.72); }
+  55% { box-shadow: inset 0 0 26px rgba(245, 200, 104, 0.45), 0 0 28px 6px rgba(242, 194, 92, 0.34); }
+  100% { box-shadow: inset 0 0 0 0 transparent, 0 0 0 0 transparent; }
+}
+
+@keyframes na-immortal-halo {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.45); }
+  35% { opacity: 0.92; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.45); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.reduced-motion) .fx-forge-burst {
+    animation: na-forge-ring 0.65s ease-out;
+  }
+  html:not(.reduced-motion) .fx-forge-milestone {
+    animation: na-forge-ring 0.92s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  html:not(.reduced-motion) .gear-paper:is(.fx-equip-aura, .fx-immortal-aura)::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 56%;
+    width: 240px;
+    height: 110px;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 2px solid #f6dc97;
+    background: radial-gradient(ellipse, rgba(250, 224, 148, 0.38), rgba(114, 214, 186, 0.14) 55%, transparent 74%);
+    animation: na-immortal-halo 0.9s ease-out forwards;
+  }
+}
+
+/* 山河悬赏妖榜 & 药庐洞府：彻底清除内层旧 section 暗绿底框，呈现纯正玄漆厅堂 */
+html #modal section.hunt-board,
+html #modal section.home-shell {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 山河悬赏妖榜：玄漆厅堂 + 暖宣纸古卷悬赏帖 */
+html #modal .hunt-board > p {
+  color: var(--na-text-sub);
+  margin-bottom: 12px;
+}
+
+html #modal .hunt-grid {
+  gap: 14px;
+}
+
+html #modal .hunt-card {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid #c9ae80;
+  border-top: 3px solid #b84232;
+  background-color: var(--na-paper);
+  background-image:
+    var(--na-paper-grain),
+    linear-gradient(168deg, #faf3e2 0%, #f2e5cb 60%, #e7d5b3 100%);
+  padding: 14px 16px;
+  box-shadow: inset 0 0 18px rgba(140, 102, 48, 0.12), 0 6px 18px rgba(0, 0, 0, 0.34);
+  transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+html #modal .hunt-card:hover {
+  transform: translateY(-3px);
+  border-color: #e4bc68;
+  box-shadow: inset 0 0 18px rgba(140, 102, 48, 0.12), 0 12px 26px rgba(0, 0, 0, 0.44);
+}
+
+html #modal .hunt-card :is(h3, p) {
+  color: var(--na-ink-on-paper) !important;
+}
+
+html #modal .hunt-card small {
+  color: #7c3527 !important;
+  font-weight: 700;
+}
+
+html #modal .hunt-card .hunt-prize {
+  color: #6b440d !important;
+  font-weight: 700;
+  background: rgba(188, 146, 72, 0.16);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* 药庐洞府：沉木博古陈列架 + 灵圃玉田 */
+html #modal .home-shell h3 {
+  color: var(--na-gold-bright);
+  margin-top: 14px;
+  border-left: 3px solid var(--na-gold);
+  padding-left: 9px;
+}
+
+html #modal .home-shell > p {
+  color: #ced6e2;
+}
+
+html #modal .display-stand {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 24%, rgba(220, 177, 89, 0.1), transparent 70%),
+    linear-gradient(180deg, #212939 0%, #151b26 100%);
+  border: 1px solid rgba(196, 160, 96, 0.38);
+  border-radius: 8px;
+  padding: 12px 10px;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 204, 0.08), 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+html #modal .display-stand:hover {
+  transform: translateY(-2px);
+  border-color: rgba(235, 198, 122, 0.72);
+}
+
+html #modal .display-stand select {
+  background: #171e2b;
+  color: var(--na-gold-bright);
+  border: 1px solid rgba(206, 170, 102, 0.48);
+  border-radius: 5px;
+}
+
+html #modal .garden-bed {
+  background-color: var(--na-paper);
+  background-image:
+    var(--na-paper-grain),
+    linear-gradient(168deg, #faf3e2 0%, #f1e4c9 62%, #e6d4b2 100%);
+  border: 1px solid #c7ad80;
+  border-top: 3px solid #4c9c77;
+  border-radius: 8px;
+  padding: 12px 14px;
+  box-shadow: inset 0 0 16px rgba(140, 102, 48, 0.1), 0 5px 14px rgba(0, 0, 0, 0.28);
+}
+
+html #modal .garden-bed :is(h4, p) {
+  color: var(--na-ink-on-paper) !important;
+}
+
+html #modal .garden-bed small {
+  color: #1d6447 !important;
+  font-weight: 700;
+}
+
+html #modal .home-shell .harvest-actions {
+  background: linear-gradient(95deg, #1d2534 0%, #151b26 100%);
+  border: 1px solid rgba(196, 160, 96, 0.32);
+  border-radius: 8px;
+  color: var(--na-gold-light);
+}
+
+/* ==========================================================================
+   8. 硬伤 4 根治：九霄无尽劫立体玉简立卡、超武赤金流光、乐阁微胶囊、Boss 横幅
+   ========================================================================== */
+/* 乐阁一体化国风微胶囊 */
+.music-control {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2px;
+  padding: 3px 5px 3px 11px;
+  background: linear-gradient(180deg, rgba(28, 36, 52, 0.92), rgba(16, 21, 31, 0.94));
+  border: 1px solid rgba(214, 176, 104, 0.52);
+  border-radius: 999px;
+  color: var(--na-gold-bright);
+  box-shadow: inset 0 1px 0 rgba(255, 242, 208, 0.14), 0 4px 14px rgba(0, 0, 0, 0.38);
+  font: 600 12.5px/1.3 "Microsoft YaHei", sans-serif;
+}
+
+.music-control [data-track-name] {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-right: 7px;
+  color: #fceec7;
+  white-space: nowrap;
+  max-width: 11em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.music-control [data-track-name]::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff3c8 25%, #e2b254 75%);
+  box-shadow: 0 0 8px rgba(235, 192, 98, 0.72);
+  flex: none;
+}
+
+.music-control[data-muted="true"] [data-track-name]::before {
+  background: #6d788a;
+  box-shadow: none;
+}
+
+.music-control button,
+html #modal .loot-shell .music-control button {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-left: 1px solid rgba(214, 176, 104, 0.24) !important;
+  border-radius: 0 !important;
+  color: #dce2ec !important;
+  padding: 4px 8px !important;
+  min-height: 24px !important;
+  font-size: 12px !important;
+  box-shadow: none !important;
+  white-space: nowrap;
+}
+
+.music-control button:last-child,
+html #modal .loot-shell .music-control button:last-child {
+  border-radius: 0 999px 999px 0 !important;
+  padding-right: 10px !important;
+}
+
+.music-control button:hover,
+html #modal .loot-shell .music-control button:hover {
+  background: rgba(226, 184, 102, 0.18) !important;
+  color: var(--na-gold-bright) !important;
+  outline: none;
+}
+
+.music-control button[aria-pressed="true"],
+html #modal .loot-shell .music-control button[aria-pressed="true"] {
+  background: rgba(224, 176, 82, 0.24) !important;
+  color: #ffe8a8 !important;
+}
+
+/* 九霄战斗 HUD 与气血/灵气玉槽条 */
+.rogue-hud {
+  padding: 6px 2px;
+  color: #e6ecf5;
+}
+
+.rogue-meters {
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.rogue-meters progress {
+  height: 8px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(206, 168, 98, 0.36);
+  background: #0e131c;
+}
+
+.rogue-meters progress::-webkit-progress-bar {
+  background: #0e131c;
+}
+
+#rogue-hp::-webkit-progress-value {
+  background: linear-gradient(90deg, #b83d2e 0%, #e56d53 68%, #ffaa8c 100%);
+  border-radius: 999px;
+}
+
+#rogue-xp::-webkit-progress-value {
+  background: linear-gradient(90deg, #27786f 0%, #52bca6 68%, #9ef2d7 100%);
+  border-radius: 999px;
+}
+
+/* 九霄 Boss 血条横幅：赤金玄漆战旗 + 阶段刻度纹 */
+#rogue-boss:not([hidden]) {
+  top: 10px;
+  left: 18%;
+  right: 18%;
+  background: linear-gradient(180deg, rgba(36, 18, 26, 0.94), rgba(20, 12, 18, 0.95));
+  border: 1px solid rgba(235, 182, 102, 0.72);
+  border-top: 2px solid #f4cf80;
+  border-radius: 7px;
+  padding: 6px 14px 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 232, 184, 0.2);
+}
+
+#rogue-boss b {
+  font: 700 16px/1.2 "STKaiti", "KaiTi", serif;
+  letter-spacing: 0.1em;
+  color: #ffefc8;
+}
+
+#rogue-boss progress {
+  height: 11px;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(235, 182, 102, 0.56);
+  background: #140c11;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 calc(25% - 1px),
+    rgba(255, 240, 200, 0.28) calc(25% - 1px) 25%
+  );
+}
+
+/* 九霄弹窗对话框（悟道 / 百宝铺 / 奇遇） */
+#rogue-overlay:not([hidden]) {
+  background: rgba(8, 11, 18, 0.74);
+  backdrop-filter: blur(4px);
+}
+
+html #modal .rogue-dialog {
+  background:
+    var(--na-corner-tl),
+    var(--na-corner-tr),
+    var(--na-corner-bl),
+    var(--na-corner-br),
+    radial-gradient(ellipse 75% 42% at 50% 0%, rgba(220, 177, 89, 0.14), transparent 70%),
+    linear-gradient(180deg, #19202e 0%, #111621 100%);
+  background-repeat: no-repeat;
+  background-position: 8px 8px, calc(100% - 8px) 8px, 8px calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), 50% 0, 0 0;
+  background-size: 20px 20px, 20px 20px, 20px 20px, 20px 20px, 100% 200px, 100% 100%;
+  border: 1px solid rgba(220, 179, 104, 0.64);
+  border-top: 2px solid #f0cc7c;
+  border-radius: 10px;
+  padding: clamp(14px, 2vh, 24px) clamp(16px, 2.2vw, 28px);
+  box-shadow: 0 22px 64px rgba(0, 0, 0, 0.76), inset 0 1px 0 rgba(255, 242, 204, 0.16);
+}
+
+html #modal .rogue-dialog h3 {
+  color: var(--na-gold-bright);
+  letter-spacing: 0.12em;
+  text-shadow: 0 2px 12px rgba(220, 177, 89, 0.25);
+}
+
+/* 立体国风灵符 / 玉简立卡（.rogue-offer） */
+html #modal .rogue-shell button.rogue-offer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 13px 13px 11px;
+  border-radius: 9px;
+  border: 1px solid rgba(204, 168, 102, 0.52);
+  border-top: 3px solid #72c4b2;
+  background:
+    radial-gradient(ellipse 85% 42% at 50% 0%, rgba(114, 196, 178, 0.18), transparent 72%),
+    linear-gradient(175deg, #212b3b 0%, #151c28 62%, #111621 100%);
+  color: #f6eedc;
+  overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 245, 218, 0.14),
+    inset 0 0 0 1px rgba(10, 14, 22, 0.62),
+    0 8px 20px rgba(0, 0, 0, 0.45);
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+/* 恢复卡片流光扫过伪元素（覆盖 armory-rogue.css 的 content:none） */
+html #modal .rogue-shell button.rogue-offer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, transparent 36%, rgba(255, 244, 208, 0.22) 49%, transparent 62%);
+  background-size: 240% 100%;
+  background-position: 145% 0;
+  transition: background-position 0.58s ease;
+}
+
+html #modal .rogue-shell button.rogue-offer:hover:enabled {
+  transform: translateY(-5px) scale(1.015);
+  border-color: #f6dc97;
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 224, 0.28),
+    0 14px 30px rgba(0, 0, 0, 0.58),
+    0 0 20px rgba(226, 184, 102, 0.28);
+}
+
+html #modal .rogue-shell button.rogue-offer:hover:enabled::after {
+  background-position: -45% 0;
+}
+
+/* 不同品阶截然不同的视觉分层 */
+html #modal .rogue-shell button.rogue-offer[data-tier="weapon"] {
+  border-top-color: #6bc7b4;
+  background:
+    radial-gradient(ellipse 90% 42% at 50% 0%, rgba(107, 199, 180, 0.2), transparent 72%),
+    linear-gradient(175deg, #1f2d38 0%, #151e28 64%, #101620 100%);
+}
+
+html #modal .rogue-shell button.rogue-offer[data-tier="relic"] {
+  border-color: rgba(176, 146, 228, 0.56);
+  border-top-color: #c29cf8;
+  background:
+    radial-gradient(ellipse 90% 42% at 50% 0%, rgba(176, 138, 240, 0.22), transparent 72%),
+    linear-gradient(175deg, #27223d 0%, #19182b 64%, #121321 100%);
+}
+
+html #modal .rogue-shell button.rogue-offer[data-tier="mod"] {
+  border-color: rgba(232, 188, 98, 0.64);
+  border-top-color: #f6cf78;
+  background:
+    radial-gradient(ellipse 90% 44% at 50% 0%, rgba(236, 188, 92, 0.22), transparent 72%),
+    linear-gradient(175deg, #322a1e 0%, #1d1c22 66%, #14161f 100%);
+}
+
+html #modal .rogue-shell button.rogue-offer[data-tier="boost"] {
+  border-color: rgba(120, 198, 158, 0.56);
+  border-top-color: #7ee0ae;
+  background:
+    radial-gradient(ellipse 90% 42% at 50% 0%, rgba(114, 212, 162, 0.18), transparent 72%),
+    linear-gradient(175deg, #1d2e2b 0%, #152124 64%, #10181d 100%);
+}
+
+html #modal .rogue-shell button.rogue-offer[data-tier="event"] {
+  border-color: rgba(218, 170, 108, 0.58);
+  border-top-color: #e6ab64;
+  background:
+    radial-gradient(ellipse 90% 44% at 50% 0%, rgba(226, 162, 86, 0.2), transparent 72%),
+    linear-gradient(175deg, #2b2420 0%, #1a1a24 64%, #13151e 100%);
+}
+
+/* 仙品 · 超武进化卡：赤金仙简 + 鎏金持续流光 */
+html #modal .rogue-shell button.rogue-offer.evolution {
+  border: 1.5px solid #f4c16e !important;
+  border-top: 3px solid #ffe8a6 !important;
+  background:
+    radial-gradient(ellipse 95% 48% at 50% 0%, rgba(248, 192, 92, 0.34), transparent 74%),
+    linear-gradient(168deg, #5a2730 0%, #331927 56%, #20121e 100%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 242, 198, 0.38),
+    inset 0 0 18px rgba(242, 164, 82, 0.18),
+    0 10px 28px rgba(0, 0, 0, 0.55),
+    0 0 22px rgba(242, 178, 86, 0.34);
+}
+
+html #modal .rogue-shell button.rogue-offer.evolution > small {
+  color: #ffe8a8 !important;
+  font-weight: 700;
+}
+
+html #modal .rogue-shell button.rogue-offer > small {
+  color: #d6c8a6;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+}
+
+html #modal .rogue-shell button.rogue-offer strong {
+  color: var(--na-gold-bright);
+  letter-spacing: 0.04em;
+}
+
+/* 悟道/商店/奇遇卡底部 CTA 独立按钮化（彻底告别干巴巴纯文字！） */
+html #modal .rogue-shell button.rogue-offer > em {
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font: 700 13px/1.25 "Microsoft YaHei", sans-serif;
+  letter-spacing: 0.08em;
+  background-color: #e2b354;
+  background-image: linear-gradient(180deg, #fae3a8 0%, #dfb052 54%, #bf882d 100%);
+  color: #1c1306 !important;
+  border: 1px solid #ffe9b0;
+  box-shadow: inset 0 1px 0 rgba(255, 252, 232, 0.72), 0 2px 8px rgba(0, 0, 0, 0.34);
+}
+
+html #modal .rogue-shell button.rogue-offer.evolution > em {
+  background-color: #ecae48;
+  background-image: linear-gradient(180deg, #fff0ba 0%, #f0b24a 52%, #c96828 100%);
+  color: #1f0d04 !important;
+  border-color: #fff2c2;
+  box-shadow: inset 0 1px 0 rgba(255, 252, 234, 0.85), 0 0 12px rgba(245, 184, 86, 0.45);
+}
+
+html #modal .rogue-shell button.rogue-offer:disabled > em {
+  background: #2b323e !important;
+  color: #a6b0bf !important;
+  border-color: #465062 !important;
+  box-shadow: none !important;
+}
+
+html #modal .trial-market {
+  grid-template-columns: minmax(0, 1fr) 136px;
+  gap: 12px;
+}
+
+html #modal .trial-market .shop {
+  display: flex !important;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+html #modal .trial-market .shop button.rogue-offer {
+  flex: 1 1 0;
+  width: clamp(114px, 11vw, 158px);
+  min-width: 112px;
+  padding: 9px 8px 8px;
+}
+
+html #modal .trial-market .shop button.rogue-offer > em {
+  padding: 5px 4px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+html #modal .trial-market aside {
+  background: rgba(16, 22, 33, 0.72);
+  border: 1px solid rgba(196, 160, 96, 0.28);
+  border-radius: 7px;
+  padding: 8px;
+  color: #e4ebf4;
+}
+
+/* 九霄灵台 / 仙玉珍宝阁 / 超武图鉴 / 器忆外传升级 */
+html #modal .rogue-paper {
+  background: linear-gradient(145deg, #212a3a 0%, #161c28 68%, #121722 100%) !important;
+  border: 1px solid rgba(196, 160, 96, 0.42) !important;
+  border-top: 2px solid #d6b267 !important;
+  border-radius: 8px;
+  color: var(--na-text) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 240, 204, 0.1), 0 6px 16px rgba(0, 0, 0, 0.34);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+html #modal .rogue-paper:hover {
+  transform: translateY(-2px);
+  border-color: rgba(235, 198, 122, 0.75) !important;
+}
+
+html #modal .rogue-paper.evolution {
+  background: linear-gradient(145deg, #4b2430 0%, #2b1824 65%, #1d121d 100%) !important;
+  border-color: rgba(244, 193, 110, 0.74) !important;
+  border-top-color: #ffe8a8 !important;
+}
+
+/* 器忆外传阅读页：古籍暖宣纸质感 */
+html #modal .trial-archive article {
+  background-color: var(--na-paper) !important;
+  background-image:
+    var(--na-paper-grain),
+    linear-gradient(170deg, #faf3e2 0%, #f3e6cc 58%, #e8d7b5 100%) !important;
+  color: var(--na-ink-on-paper) !important;
+  border: 1px solid #c5aa7c !important;
+  border-top: 3px solid #b5843c !important;
+  border-radius: 8px;
+  box-shadow: inset 0 0 24px rgba(140, 102, 48, 0.14), 0 8px 24px rgba(0, 0, 0, 0.34);
+}
+
+html #modal .trial-archive article :is(h3, p) {
+  color: var(--na-ink-on-paper) !important;
+}
+
+html #modal .trial-archive article small {
+  color: #7c3b28 !important;
+}
+
+/* 九霄底部操作条与大招按钮 */
+html #modal .rogue-shell footer {
+  background: linear-gradient(180deg, #181f2c 0%, #121722 100%);
+  border-top: 1px solid rgba(196, 160, 96, 0.28);
+  border-radius: 0 0 6px 6px;
+  padding: 7px 10px;
+}
+
+html #modal #rogue-ult.charged {
+  background: linear-gradient(180deg, #62461f 0%, #3c2912 100%);
+  border-color: #f6d584;
+  color: #fff6dc;
+}
+
+/* 超武破劫光华 */
+@keyframes na-evolve-burst {
+  0% { box-shadow: inset 0 0 0 2px #fff2be, 0 0 0 0 rgba(244, 184, 82, 0.85); }
+  45% { box-shadow: inset 0 0 42px rgba(244, 184, 82, 0.55), 0 0 36px 8px rgba(226, 114, 62, 0.45); }
+  100% { box-shadow: inset 0 0 0 0 transparent, 0 0 0 0 transparent; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.reduced-motion) .rogue-arena.fx-evolve-flash {
+    animation: na-evolve-burst 0.9s ease-out;
+  }
+}
+
+/* ==========================================================================
+   9. 万象天渊入口与机缘之门精雕
+   ========================================================================== */
+/* 万象天渊画布底座：统一深玄墨，消除暗青灰侧边 */
+html #modal .abyss-field {
+  background: #0b0f17 !important;
+  border: 1px solid rgba(196, 160, 96, 0.36);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+html #modal .abyss-entry {
+  border-radius: 8px;
+  border: 1px solid rgba(198, 162, 98, 0.42);
+  overflow: hidden;
+  box-shadow: inset 0 0 48px rgba(8, 10, 18, 0.6);
+}
+
+html #modal .abyss-entry > div {
+  background: linear-gradient(155deg, rgba(22, 28, 42, 0.94), rgba(14, 19, 29, 0.96));
+  border: 1px solid rgba(214, 174, 100, 0.48);
+  border-top: 2px solid #e2bc70;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+html #modal .fate-door {
+  background: linear-gradient(135deg, #212d3d 0%, #151d2a 100%) !important;
+  border: 1px solid rgba(206, 170, 102, 0.58) !important;
+  border-top: 2px solid #dfc07b !important;
+  border-radius: 8px;
+  padding: 8px 13px;
+  color: #fff3d6 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 242, 208, 0.14), 0 4px 14px rgba(0, 0, 0, 0.36);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+html #modal .fate-door[data-door="double"] {
+  background: linear-gradient(135deg, #4b242e 0%, #2a1520 100%) !important;
+  border-color: rgba(242, 162, 114, 0.72) !important;
+  border-top-color: #ffd394 !important;
+}
+
+html #modal .fate-door:hover:enabled {
+  transform: translateY(-2px);
+  border-color: #fff0be !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.48), 0 0 14px rgba(226, 184, 102, 0.28);
+  outline: none;
+}
+
+/* ==========================================================================
+   10. 对话人物立绘融底、命运剧情线、修行境界、宗门与案卷统一精修
+   ========================================================================== */
+/* 沈灵薇等剧情对话立绘窗：暖宣纸底 + multiply 柔和消除白边 */
+html #modal.ink-reader figure {
+  background:
+    var(--na-paper-grain),
+    radial-gradient(ellipse at 50% 28%, #f8f0dc 0%, #e1d0b0 68%, #bfa882 100%);
+  border: 1.5px solid #c39a54;
+  border-radius: 9px;
+  box-shadow: inset 0 0 16px rgba(120, 86, 40, 0.22), 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+html #modal.ink-reader figure img {
+  mix-blend-mode: multiply;
+}
+
+html #modal.ink-reader figure figcaption {
+  background: linear-gradient(180deg, #25201b 0%, #171412 100%);
+  color: var(--na-gold-bright);
+  border-top: 1px solid rgba(214, 174, 100, 0.45);
+}
+
+/* 命运剧情线：节点层次与当前节点鎏金书卷气 */
+#modal[data-mode="storyline"] .thread-volumes button[aria-pressed="true"],
+#modal[data-mode="storyline"] .thread-tools button[aria-pressed="true"] {
+  background: linear-gradient(180deg, #3f3320 0%, #282016 100%);
+  border-color: #e4bc68;
+  color: var(--na-gold-bright);
+}
+
+#modal .thread-node.current {
+  border: 2px solid #c7933b;
+  box-shadow: inset 0 0 0 3px rgba(216, 170, 86, 0.24), 0 6px 20px rgba(190, 140, 56, 0.22);
+}
+
+#modal .thread-node.fog {
+  background: linear-gradient(135deg, #1b2332 0%, #141a26 100%);
+  border: 1px solid rgba(154, 172, 198, 0.34);
+}
+
+/* 修行境界与跨章行程：肃清暗绿残留，统一玄漆鎏金体系 */
+#modal:has(.cultivation-view) > .modal-close {
+  position: sticky;
+  top: 4px;
+  float: right;
+  margin: 0 0 -36px 8px;
+}
+
+#modal #cultivation-tabs:not([hidden]) {
+  padding-right: 48px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--na-gold-line-soft);
+  padding-bottom: 8px;
+}
+
+#modal .cultivation-view {
+  background: transparent !important;
+}
+
+#modal .cultivation-figure {
+  border: 1px solid rgba(204, 168, 98, 0.34);
+  border-radius: 8px;
+  background: radial-gradient(ellipse at 50% 44%, #313d52 0%, #171d29 74%);
+}
+
+#modal .cultivation-overview button:not(.primary):not(:disabled) {
+  background: linear-gradient(180deg, #273144 0%, #1a2230 100%) !important;
+  color: #f5ecd8 !important;
+  border: 1px solid rgba(196, 160, 96, 0.45) !important;
+}
+
+#modal .cultivation-overview button:not(.primary):not(:disabled):hover {
+  background: linear-gradient(180deg, #334058 0%, #232d40 100%) !important;
+  border-color: var(--na-gold-light) !important;
+}
+
+#modal :is(.campaign-growth, .campaign-trial, .campaign-task, .campaign-evidence-card, .campaign-person, .campaign-action, .campaign-note, .campaign-ending, .campaign-empty, .campaign-confirm) {
+  background: linear-gradient(165deg, #1b2231 0%, #131823 100%) !important;
+  border: 1px solid rgba(196, 160, 96, 0.32) !important;
+  border-radius: 8px;
+}
+
+#modal .campaign-footer {
+  background: linear-gradient(180deg, rgba(22, 28, 41, 0.96), rgba(14, 19, 28, 0.98)) !important;
+  border-top: 1px solid rgba(204, 168, 98, 0.4) !important;
+}
+
+#modal :is(.campaign-metrics > div, .campaign-trial-stage, .campaign-timeline li, .campaign-stock span) {
+  background: #1b2333 !important;
+  border-color: rgba(186, 152, 98, 0.28) !important;
+  border-radius: 6px;
+}
+
+#modal .realm-ladder li {
+  background: linear-gradient(180deg, #202838 0%, #161c28 100%);
+  border-color: rgba(164, 146, 112, 0.34);
+}
+
+#modal .realm-ladder .now {
+  background: linear-gradient(180deg, #473822 0%, #2c2316 100%);
+  border-color: #ecc46e;
+  box-shadow: 0 0 12px rgba(226, 184, 102, 0.26);
+}
+
+/* ==========================================================================
+   11. 丝滑物理感微交互动效（纯 GPU 合成 + 零坐标偏移 + 严格无障碍回退）
+   ========================================================================== */
+@keyframes na-modal-in {
+  from { opacity: 0.68; clip-path: inset(0 0 6% 0 round 10px); }
+  to { opacity: 1; clip-path: inset(0 0 0 0 round 10px); }
+}
+
+@keyframes na-card-rise {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes na-sheen {
+  0%, 62% { background-position: 145% 0; }
+  96%, 100% { background-position: -45% 0; }
+}
+
+@keyframes na-music-pulse {
+  0%, 100% { transform: scale(0.9); opacity: 0.72; }
+  50% { transform: scale(1.18); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.reduced-motion) #modal-layer:not([hidden]) #modal {
+    animation: na-modal-in 0.2s cubic-bezier(0.2, 0.85, 0.25, 1);
+  }
+  html:not(.reduced-motion) .rogue-offers .rogue-offer {
+    animation: na-card-rise 0.26s cubic-bezier(0.2, 0.85, 0.25, 1) both;
+  }
+  html:not(.reduced-motion) .rogue-offers .rogue-offer:nth-child(2) { animation-delay: 45ms; }
+  html:not(.reduced-motion) .rogue-offers .rogue-offer:nth-child(3) { animation-delay: 90ms; }
+  html:not(.reduced-motion) .rogue-offers .rogue-offer:nth-child(4) { animation-delay: 120ms; }
+  html:not(.reduced-motion) .rogue-offers .rogue-offer:nth-child(5) { animation-delay: 150ms; }
+
+  /* 超武进化卡全卡持续鎏金流光 */
+  html:not(.reduced-motion) #modal .rogue-shell button.rogue-offer.evolution::after {
+    background: linear-gradient(112deg, transparent 34%, rgba(255, 236, 172, 0.34) 49%, transparent 64%);
+    background-size: 240% 100%;
+    animation: na-sheen 3.6s ease-in-out infinite;
+  }
+
+  /* 鎏金主按钮（含九霄/装备/悬赏/洞府主 CTA）丝滑流光扫过 */
+  html:not(.reduced-motion) #modal .rogue-shell button.rogue-gold:enabled::after,
+  html:not(.reduced-motion) #intro #rogue-intro::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(112deg, transparent 40%, rgba(255, 248, 224, 0.36) 50%, transparent 60%);
+    background-size: 240% 100%;
+    animation: na-sheen 4.8s ease-in-out infinite;
+  }
+
+  /* 乐阁微胶囊音律微动 */
+  html:not(.reduced-motion) .music-control:not([data-muted="true"]) [data-track-name]::before {
+    animation: na-music-pulse 2.2s ease-in-out infinite;
+  }
+}
+
+/* 无障碍回退：彻底关闭全部动画与过渡，保留全部清晰静态质感 */
+html.reduced-motion *,
+html.reduced-motion *::before,
+html.reduced-motion *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

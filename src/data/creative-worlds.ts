@@ -51,5 +51,6 @@ export const creativeWorlds: CreativeWorld[] = [
 export const creativeGame = {
 	title: "修仙命运录",
 	subtitle: "一念之差，仙魔殊途",
-	url: "/games/xiuxian/",
+	interactiveUrl: "/games/xiuxian-interactive/",
+	originalUrl: "/games/xiuxian/",
 };

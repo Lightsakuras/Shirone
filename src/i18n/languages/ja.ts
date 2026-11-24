@@ -58,8 +58,9 @@ export const ja: Translation = {
 	[Key.creativeOpen]: "Open the story",
 	[Key.creativeGameIntro]:
 		"My cultivation game. Leave the everyday behind for a little while.",
-	[Key.creativeGameEnter]: "Begin · Open the game",
-	[Key.creativeGameNote]: "新しいタブでオリジナルのテキストゲームを遊ぶ",
+	[Key.creativeGameEnter]: "マップ探索と戦闘",
+	[Key.creativeGameOriginal]: "オリジナルのテキスト版",
+	[Key.creativeGameNote]: "マップ探索と戦闘にはキーボードとマウスがおすすめです。",
 	[Key.creativeGameLabel]: "PLAYABLE WORLD",
 	[Key.creativeBack]: "Back to the worlds",
 	[Key.creativeChapters]: "Follow the story",

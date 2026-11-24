@@ -1,0 +1,38 @@
+#coach[hidden], #coach [hidden] {display:none!important}
+#coach {position:fixed;inset:0;z-index:10000;pointer-events:none;color:#24352b;font-family:var(--body)}
+.coach-ring {position:absolute;box-sizing:border-box;border:2px solid #f7db91;border-radius:6px;box-shadow:0 0 0 200vmax rgba(6,16,14,.76)}
+.coach-ring::after {content:"";position:absolute;inset:-3px;border:1px solid #e7bd69;border-radius:inherit;animation:coach-breathe 2.4s ease-in-out infinite}
+@keyframes coach-breathe {0%,100%{opacity:.38}50%{opacity:1;box-shadow:0 0 9px #f4d790}}
+@layer coachMotion {
+html.coaching :is(#play,#modal-layer,#intro) *,html.coaching :is(#play,#modal-layer,#intro) *::before,html.coaching :is(#play,#modal-layer,#intro) *::after {animation:none!important}
+}
+html.coaching .tactics-actions:has([data-coach-order]) button:not([data-coach-order]) {opacity:.55}
+html.reduced-motion .coach-ring::after {animation:none}
+@media(prefers-reduced-motion:reduce){.coach-ring::after{animation:none}}
+.coach-arrow {position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.coach-arrow path {stroke:#f5d591;fill:#77582e;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px #071611)}
+.coach-card {position:absolute;width:min(302px,calc(100vw - 20px));box-sizing:border-box;max-height:calc(100dvh - 20px);overflow:auto;pointer-events:auto;padding:16px 18px 14px;background:#f3ebd5;color:#26392f;border:1px solid #a28d65;border-left:4px solid #8f784b;border-radius:4px;box-shadow:0 6px 24px #04130e77;text-align:left}
+.coach-card header {font:600 13px/1.5 var(--body);color:#53604d;letter-spacing:.06em}
+.coach-card h2 {margin:5px 0;font:normal 26px/1.2 var(--display);color:#253f30}
+.coach-card p {margin:6px 0 14px;font:16px/1.55 var(--body);color:#27392e;overflow-wrap:anywhere}
+#coach-keys {display:block;margin:0 0 12px;white-space:normal;overflow-wrap:anywhere;font:14px/1.5 var(--body);color:#24392c;background:#e9dfc5}
+.coach-actions,.coach-settings>div {display:flex;flex-wrap:wrap;gap:8px}
+.coach-card button {transition:none;min-height:34px;padding:5px 8px;background:#eee6cf;color:#344839;border:1px solid #998f73;border-radius:3px;font:14px/1.25 var(--body)}
+.coach-card button:enabled:hover {background:#e0d7bd}
+.coach-card button:disabled {color:#6e7268;opacity:.6}
+.coach-card :is([data-coach="next"],[data-coach="accept"],[data-coach="stay"]) {background:#294b3a;color:#fff5d9}
+.coach-card button:is([data-coach="next"],[data-coach="accept"],[data-coach="stay"]):is(:hover,:focus-visible) {background:#365b45;color:#fff5d9}
+.coach-card [data-coach="next"] {width:100%}
+html.coaching :focus-visible {outline:3px solid #d49832!important;outline-offset:2px!important}
+.coach-card:focus {outline:none}
+#coach[data-light="true"] .coach-ring {border:0;box-shadow:none}
+#coach[data-light="true"] .coach-ring::after {display:none}
+#coach[data-light="true"] .coach-card {width:min(300px,calc(100vw - 20px));padding:10px 13px}
+#coach[data-dialog="true"] {background:#071812ba;pointer-events:auto}
+#coach[data-dialog="true"] :is(.coach-arrow,.coach-ring) {display:none}
+#coach[data-dialog="true"] .coach-card {left:50%!important;top:50%!important;transform:translate(-50%,-50%);width:min(360px,calc(100vw - 20px))}
+html.coach-encounter #modal-layer {visibility:hidden}
+#coach-top,#coach-save {display:none}
+#play :is(#coach-top,#coach-save) {display:block}
+.coach-settings>div button {min-height:36px}
+

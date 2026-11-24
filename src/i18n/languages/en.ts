@@ -59,8 +59,9 @@ export const en: Translation = {
 	[Key.creativeOpen]: "Open the story",
 	[Key.creativeGameIntro]:
 		"My cultivation game. Leave the everyday behind for a little while.",
-	[Key.creativeGameEnter]: "Begin · Open the game",
-	[Key.creativeGameNote]: "Play the original text adventure in a new tab",
+	[Key.creativeGameEnter]: "Map and combat adventure",
+	[Key.creativeGameOriginal]: "Original text adventure",
+	[Key.creativeGameNote]: "A keyboard and mouse are recommended for map exploration and combat.",
 	[Key.creativeGameLabel]: "PLAYABLE WORLD",
 	[Key.creativeBack]: "Back to the worlds",
 	[Key.creativeChapters]: "Follow the story",

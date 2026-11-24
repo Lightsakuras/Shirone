@@ -1,0 +1,2098 @@
+/* ==========================================================================
+   《修仙命运录》全屏网游化视觉精雕与多栏大殿排版（mmo-fullscreen.css · Phase 2）
+   美学体系：玄墨磨砂 · 玉璧鎏金 · 朱砂印章 · 宣纸画卷
+   严守：#world 1280/760 等比零裁切 | HUD 空白穿透 | Alt+Z 沉浸 | 对比度 >= 4.5:1
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. 全屏大世界画布与视口护栏（严格保持 View.point 1280×760 坐标零误差）
+   -------------------------------------------------------------------------- */
+html:has(#play:not([hidden])),
+body:has(#play:not([hidden])) {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+body:has(#play:not([hidden])) > :is(.masthead, footer) {
+  display: none;
+}
+body:has(#play:not([hidden])) main {
+  margin: 0;
+  padding: 0;
+}
+
+#play:not([hidden]) {
+  --hud-bg: linear-gradient(148deg, rgba(16, 28, 31, 0.92) 0%, rgba(11, 18, 24, 0.94) 100%);
+  --hud-bg-solid: #111c21;
+  --hud-edge: rgba(214, 178, 108, 0.52);
+  --hud-edge-soft: rgba(214, 178, 108, 0.28);
+  --hud-gold: #f0d28b;
+  --hud-gold-bright: #fff0c2;
+  --hud-ivory: #f4ecda;
+  --hud-cinnabar: #b93828;
+  --hud-shadow: 0 10px 28px rgba(4, 8, 12, 0.56), inset 0 1px 0 rgba(255, 244, 210, 0.14);
+  position: fixed;
+  inset: 0;
+  display: block;
+  width: 100vw;
+  height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background-color: #141922;
+  background-image:
+    radial-gradient(ellipse 80% 90% at 50% 50%, rgba(28, 48, 44, 0.34), rgba(10, 14, 20, 0.85) 78%),
+    linear-gradient(90deg, #0b1016 0%, transparent 9%, transparent 91%, #0b1016 100%);
+}
+
+#play .world-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: min(100vw, calc(100dvh * 1280 / 760));
+  height: auto;
+  aspect-ratio: 1280 / 760;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 0 64px rgba(6, 12, 15, 0.92), 0 0 1px rgba(214, 178, 108, 0.32);
+}
+
+#play .world-wrap #world {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  max-width: none;
+  padding: 0;
+  border: 0;
+}
+
+/* 悬浮 HUD 外壳一律穿透大世界点击，仅具体控件响应 */
+#play .mmo-hud {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+}
+#play .mmo-hud :is(button, a, summary, input, select, details[open] > .journal, #scroll-entries),
+#play [data-coach-anchor] {
+  pointer-events: auto;
+}
+
+/* Alt+Z 纯净沉浸态 */
+#play.hud-hidden .mmo-hud,
+#play.hud-hidden :is(#interact, #toast, .guide-overlay),
+body:has(#play.hud-hidden) .guidance-overlay {
+  visibility: hidden;
+}
+#hud-restore {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  z-index: 4;
+  color: #efe5cc;
+  background: rgba(15, 24, 28, 0.88);
+  border: 1px solid rgba(214, 178, 108, 0.42);
+  border-radius: 999px;
+  padding: 5px 14px;
+  pointer-events: none;
+  font: 500 12.5px/1.3 var(--body);
+  letter-spacing: 0.04em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(8px);
+}
+
+/* --------------------------------------------------------------------------
+   1. 左上 · 玉璧鎏金角色区 (#vitals-hud)
+   -------------------------------------------------------------------------- */
+#play .mmo-vitals {
+  top: 12px !important;
+  left: 14px !important;
+  margin: 0 !important;
+  transform: none !important;
+  padding: 9px 14px 8px 11px;
+  border: 1px solid var(--hud-edge);
+  border-radius: 30px 10px 18px 10px;
+  background-color: var(--hud-bg-solid);
+  background-image: var(--na-lacquer-cloud), var(--hud-bg);
+  box-shadow: var(--hud-shadow);
+  backdrop-filter: blur(10px) saturate(1.12);
+}
+
+#play .mmo-vitals .player-status {
+  min-width: 0;
+  display: flex;
+  gap: 11px !important;
+  align-items: center;
+}
+
+/* 玉璧鎏金圆形头像框（暖象牙绢帛底配合 multiply 融底，绝不发黑） */
+#play .mmo-vitals #portrait-edit.portrait-window {
+  position: relative;
+  flex: none !important;
+  width: 54px !important;
+  height: 54px !important;
+  margin: 0 !important;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid #e1c078;
+  background: radial-gradient(circle at 46% 32%, #faf1dc 0%, #e5d2ab 68%, #c3a97d 100%) !important;
+  box-shadow:
+    0 0 0 2px rgba(12, 20, 24, 0.92),
+    0 0 0 3.5px rgba(214, 178, 108, 0.48),
+    0 6px 14px rgba(0, 0, 0, 0.48);
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+}
+#play .mmo-vitals #portrait-edit.portrait-window:hover {
+  border-color: #fff0be;
+  box-shadow:
+    0 0 0 2px rgba(12, 20, 24, 0.92),
+    0 0 0 4px rgba(244, 212, 134, 0.72),
+    0 6px 18px rgba(218, 174, 84, 0.28);
+}
+
+#play .mmo-vitals .player-status > div {
+  display: block;
+  min-width: 162px;
+}
+
+#play .mmo-vitals .player-status p {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin: 0 0 1px;
+}
+#play .mmo-vitals #player-name {
+  font: 700 15.5px/1.25 var(--serif, "STKaiti", "KaiTi", serif);
+  color: #fff3d6;
+  letter-spacing: 0.04em;
+}
+#play .mmo-vitals #origin-label {
+  font-size: 11.5px;
+  color: #c5d3c6;
+}
+#play .mmo-vitals #realm-label {
+  display: block;
+  margin: 0 0 4px;
+  border: 0;
+  padding: 0;
+  color: var(--hud-gold);
+  font: 600 12px/1.25 var(--body);
+  letter-spacing: 0.03em;
+}
+
+/* 气血 / 灵力微光双条 */
+#play .mmo-vitals .meter-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0;
+  font-size: 11.5px;
+  color: #e6dfd0;
+}
+#play .mmo-vitals .meter-line > b {
+  min-width: 24px;
+  text-align: right;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: #f6eedc;
+}
+#play .mmo-vitals .meter {
+  position: relative;
+  width: 108px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(7, 11, 15, 0.92);
+  border: 1px solid rgba(214, 178, 108, 0.34);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.72);
+  overflow: hidden;
+}
+#play .mmo-vitals #hp-bar {
+  background: linear-gradient(90deg, #982921 0%, #d44b3a 62%, #f18368 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 224, 210, 0.45), 0 0 8px rgba(218, 78, 58, 0.45);
+  border-radius: 999px;
+}
+#play .mmo-vitals #mp-bar {
+  background: linear-gradient(90deg, #1a6660 0%, #3aa394 62%, #7ee3ca 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(218, 255, 246, 0.45), 0 0 8px rgba(68, 186, 166, 0.42);
+  border-radius: 999px;
+}
+
+/* 紧凑修习资源排（灵蕴 / 心得 / 灵锻石） */
+#play .mmo-vitals .ink-resources {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 6px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(214, 178, 108, 0.24);
+  font-size: 11.5px;
+  color: #d9d6c5;
+}
+#play .mmo-vitals .ink-resources span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+#play .mmo-vitals .ink-resources b {
+  font: 700 14px/1.1 var(--body);
+  font-variant-numeric: tabular-nums;
+  color: #f6dc99;
+}
+#play .mmo-vitals #buffs {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 248px;
+  margin-top: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   2. 右上 · 地名牌、直达工具栏（含收纳保存徽章）与可折叠此刻目标卷轴
+   -------------------------------------------------------------------------- */
+#play .mmo-tracker {
+  top: 12px;
+  right: 14px;
+  width: max-content;
+  max-width: calc(100vw - 320px);
+  display: grid;
+  justify-items: end;
+  gap: 6px;
+}
+
+#play .mmo-tracker .location,
+#play .mmo-field-tools,
+#play .mmo-quest {
+  background-color: var(--hud-bg-solid);
+  background-image: var(--hud-bg);
+  border: 1px solid var(--hud-edge);
+  border-radius: 8px;
+  box-shadow: var(--hud-shadow);
+  backdrop-filter: blur(10px) saturate(1.12);
+}
+
+/* 地名与卷章胶囊（与右侧功能栏等高 36px 对齐） */
+#play .mmo-tracker .location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 3px 10px 3px 12px;
+  text-align: right;
+  box-sizing: border-box;
+}
+#play .mmo-tracker #map-name,
+#play .mmo-tracker .location h1 {
+  margin: 0;
+  font: 700 17px/1.2 var(--serif, "STKaiti", "KaiTi", serif);
+  color: #f7e6bd;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+#play .mmo-tracker #storyline-stage {
+  white-space: nowrap;
+  padding: 2px 9px;
+  min-height: 24px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #f7e4b6;
+  background: rgba(34, 48, 45, 0.92);
+  border: 1px solid rgba(214, 178, 108, 0.48);
+}
+#play .mmo-tracker #storyline-stage:hover {
+  border-color: #f4d68c;
+  background: rgba(48, 66, 60, 0.95);
+  color: #fff6de;
+}
+
+@media (min-width: 1200px) {
+  #play .mmo-tracker .location {
+    position: absolute;
+    right: calc(100% + 6px);
+    top: 0;
+    white-space: nowrap;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1480px) {
+  #play .mmo-tracker .location {
+    padding: 2px 8px 2px 9px;
+    gap: 6px;
+  }
+  #play .mmo-tracker #map-name,
+  #play .mmo-tracker .location h1 {
+    font-size: 15.5px;
+    letter-spacing: 0.04em;
+  }
+  #play .mmo-tracker #storyline-stage {
+    padding: 2px 7px;
+    font-size: 11.5px;
+  }
+  #play .mmo-field-tools {
+    padding: 2px 4px;
+    gap: 3px;
+  }
+  #play .mmo-tracker :is(.mmo-field-tools > button, #scroll-menu, #pause) {
+    padding: 2px 6px;
+    font-size: 12px;
+  }
+  #play .mmo-tracker #save-status {
+    padding: 1px 5px;
+    font-size: 10.5px;
+  }
+}
+
+/* 右上直达功能栏（z-index 高于下方卷轴，确保「卷」下拉菜单永不被遮挡） */
+#play .mmo-field-tools {
+  position: relative;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 36px;
+  padding: 3px 5px;
+  box-sizing: border-box;
+}
+#play .mmo-tracker .game-actions {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 4px;
+  margin-left: 2px;
+  padding-left: 5px;
+  border-left: 1px solid var(--hud-edge-soft);
+}
+
+/* 彻底收纳「已保存于本机」，绝不悬浮遮挡清微等 NPC */
+#play .mmo-tracker #save-status {
+  position: static !important;
+  inset: auto !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(18, 32, 32, 0.94);
+  border: 1px solid rgba(132, 176, 154, 0.36);
+  font: 500 11px/1.3 var(--body);
+  color: #d6e4d8;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+#play .mmo-tracker #save-status::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #67c9a6;
+  flex: none;
+}
+
+#play .mmo-tracker :is(.mmo-field-tools > button, #scroll-menu, #pause) {
+  min-width: 0;
+  min-height: 28px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font: 600 12.5px/1.35 var(--body);
+  color: #f3ead5;
+  background: linear-gradient(180deg, rgba(31, 47, 51, 0.95) 0%, rgba(20, 31, 36, 0.96) 100%);
+  border: 1px solid rgba(196, 166, 108, 0.38);
+  white-space: nowrap;
+  transition: border-color 0.14s ease, background 0.14s ease, color 0.14s ease;
+}
+#play .mmo-tracker :is(.mmo-field-tools > button, #scroll-menu, #pause):hover {
+  border-color: #f0cf82;
+  color: #fff8e4;
+  background: linear-gradient(180deg, rgba(44, 65, 68, 0.96) 0%, rgba(28, 43, 48, 0.98) 100%);
+}
+#play .mmo-tracker #abyss-open {
+  border-color: rgba(114, 186, 168, 0.48);
+}
+#play .mmo-tracker #rogue-open {
+  border-color: rgba(176, 144, 214, 0.48);
+}
+
+/* 可折叠「此刻目标」水墨卷轴卡 */
+#play .mmo-quest {
+  position: relative;
+  z-index: 2;
+  width: min(378px, 100%);
+  padding: 7px 10px 6px;
+  box-sizing: border-box;
+  border-top: 2px solid var(--hud-cinnabar);
+  transition: transform 0.22s ease;
+}
+#play .mmo-quest #guide {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 3px 6px;
+  height: auto;
+  width: auto;
+  margin: 0;
+  align-items: center;
+}
+#play .mmo-quest #guide .guide-title {
+  grid-column: 1;
+  width: max-content;
+  font-size: 13px !important;
+  padding: 1px 7px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+}
+#play .mmo-quest #guide-text {
+  grid-column: 1;
+  grid-row: 2;
+  max-width: none;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #f4ecd9;
+}
+#play .mmo-quest #guide-action,
+#play .mmo-quest #storyline-guide {
+  grid-row: 1 / 3;
+  align-self: center;
+  padding: 4px 9px;
+  min-height: 30px;
+  font-size: 12.5px;
+}
+#play .mmo-quest #guide-key {
+  grid-row: 3;
+  width: fit-content;
+}
+#task-tracker {
+  text-align: right;
+  color: #e8dab6;
+  font-size: 12.5px;
+  margin-top: 3px;
+  padding-top: 3px;
+  border-top: 1px solid rgba(214, 178, 108, 0.2);
+}
+#task-tracker > summary {
+  width: fit-content;
+  margin-left: auto;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #eedeb9;
+}
+#task-tracker > summary:hover {
+  color: #fff6dc;
+  background: rgba(214, 178, 108, 0.14);
+}
+#task-tracker > .journal {
+  text-align: left;
+  max-height: 46dvh;
+  overflow: auto;
+  margin-top: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   3. 底部居中 · 莲台阵盘热键栏 (#command-hud) & 右下 · 六印主菜单 (#system-hubs)
+   -------------------------------------------------------------------------- */
+#play .mmo-command {
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#play .mmo-command .actionbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 62px;
+  padding: 5px 8px;
+  border: 1px solid var(--hud-edge);
+  border-top: 1.5px solid rgba(235, 200, 128, 0.72);
+  border-radius: 12px 12px 4px 4px;
+  background-color: var(--hud-bg-solid);
+  background-image: linear-gradient(180deg, rgba(22, 35, 40, 0.95) 0%, rgba(11, 18, 23, 0.97) 100%);
+  box-shadow: var(--hud-shadow);
+  backdrop-filter: blur(10px) saturate(1.1);
+}
+
+#play .mmo-command #hotbar {
+  display: flex;
+  gap: 4px;
+}
+#play .mmo-command :is(.weapon-slot, #hotbar button) {
+  flex: none;
+  width: 46px;
+  height: 52px;
+  min-height: 0;
+  border-radius: 6px;
+  border: 1px solid rgba(196, 166, 108, 0.42);
+  background: linear-gradient(180deg, rgba(26, 40, 44, 0.94) 0%, rgba(14, 23, 27, 0.96) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 244, 212, 0.1);
+  transition: border-color 0.14s ease, transform 0.12s ease, box-shadow 0.14s ease;
+}
+#play .mmo-command :is(.weapon-slot, #hotbar button):hover {
+  border-color: #f3d285;
+  box-shadow: inset 0 1px 0 rgba(255, 248, 224, 0.22), 0 0 10px rgba(232, 188, 92, 0.28);
+}
+#play .mmo-command :is(.weapon-slot.active, #hotbar button.active) {
+  border-color: #f5d68a;
+  box-shadow: inset 0 0 0 1px rgba(255, 236, 174, 0.55), 0 0 12px rgba(235, 190, 92, 0.34);
+}
+#play .mmo-command #hotbar button {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  justify-items: center;
+  padding: 2px 0;
+}
+#play .mmo-command #hotbar .art-icon {
+  width: 26px;
+  height: 26px;
+}
+#play .mmo-command #hotbar small {
+  font: 11.5px/1.15 var(--body);
+  white-space: nowrap;
+  margin: 0;
+  color: #efe6d1;
+}
+#play .mmo-command #hotbar kbd {
+  background: #141e22;
+  color: #ffeeb8;
+  border: 1px solid rgba(206, 174, 110, 0.6);
+  border-radius: 3px;
+  z-index: 1;
+}
+
+#play .mmo-command #sword-slot.weapon-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  gap: 1px;
+}
+#play .mmo-command #sword-slot.weapon-slot .art-icon {
+  width: 24px;
+  height: 24px;
+}
+#play .mmo-command #sword-slot.weapon-slot small {
+  font: 10.5px/1.15 var(--body);
+  white-space: nowrap;
+  color: #e8dfc8;
+}
+
+#play .mmo-command .chapter-tools {
+  display: contents;
+}
+#play .mmo-command .chapter-tools[hidden],
+#play.child-chapter .mmo-command .chapter-tools {
+  display: none;
+}
+#play .mmo-command .chapter-tools button {
+  width: 66px;
+  height: 52px;
+  padding: 3px 4px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  line-height: 1.28;
+  border: 1px solid rgba(196, 166, 108, 0.38);
+  background: linear-gradient(180deg, rgba(25, 39, 43, 0.94) 0%, rgba(14, 23, 27, 0.96) 100%);
+  color: #efe7d5;
+}
+#play .mmo-command .chapter-tools button:enabled:hover {
+  border-color: #f3d285;
+  color: #fff8e2;
+}
+
+#play .mmo-order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding-left: 5px;
+  margin-left: 1px;
+  border-left: 1px solid var(--hud-edge-soft);
+  text-align: center;
+}
+#play .mmo-command #tactics-open {
+  padding: 3px 8px;
+  min-height: 29px;
+  border-radius: 5px;
+  border: 1px solid rgba(220, 184, 110, 0.56);
+  background: linear-gradient(180deg, rgba(44, 52, 42, 0.95) 0%, rgba(24, 32, 30, 0.96) 100%);
+  color: #f8e7be;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+#play .mmo-command #tactics-open:hover {
+  border-color: #fae09a;
+  color: #fff9e5;
+}
+#play .mmo-order #tactics-state {
+  display: block;
+  max-width: 96px;
+  font-size: 11px;
+  line-height: 1.2;
+  color: #d7d5c2;
+  white-space: normal;
+}
+
+/* 底部极细淡色键位提示条 */
+#play .mmo-command .control-line {
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 2px 10px 3px;
+  gap: 9px;
+  color: #ddd6c4;
+  background: rgba(11, 18, 22, 0.9);
+  border: 1px solid rgba(214, 178, 108, 0.3);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  font-size: 11px;
+  line-height: 1.3;
+}
+#play .mmo-command .control-line kbd {
+  font-size: 10px;
+  padding: 0 4px;
+  background: rgba(28, 40, 44, 0.95);
+  border: 1px solid rgba(196, 166, 108, 0.42);
+  color: #f6e1ae;
+  border-radius: 3px;
+}
+
+/* 右下 · 6 枚国风印章主菜单（与热键栏底部基线齐平） */
+#play .mmo-menu {
+  bottom: 12px;
+  right: 14px;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+}
+#play .mmo-menu > button {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  width: 45px;
+  height: 62px;
+  gap: 1px;
+  padding: 5px 2px 4px;
+  line-height: 1.15;
+  border: 1px solid var(--hud-edge);
+  border-top: 2px solid rgba(235, 200, 128, 0.72);
+  border-radius: 10px 4px 8px 4px;
+  background-color: var(--hud-bg-solid);
+  background-image: linear-gradient(180deg, rgba(24, 38, 42, 0.94) 0%, rgba(12, 20, 25, 0.97) 100%);
+  color: #f6e6c1;
+  box-shadow: var(--hud-shadow);
+  backdrop-filter: blur(8px);
+  transition: transform 0.14s ease, border-color 0.14s ease, background 0.14s ease, box-shadow 0.14s ease;
+}
+#play .mmo-menu > button:hover {
+  transform: translateY(-2px);
+  border-color: #f6d98f;
+  background-image: linear-gradient(180deg, rgba(44, 62, 56, 0.96) 0%, rgba(22, 35, 34, 0.98) 100%);
+  color: #fff7df;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.52), 0 0 12px rgba(235, 194, 104, 0.25);
+}
+#play .mmo-menu > button b {
+  font: 700 12px/1.2 var(--serif, "STKaiti", "KaiTi", serif);
+  letter-spacing: 0.04em;
+  color: inherit;
+}
+#play .mmo-menu [data-icon] {
+  display: block;
+  height: 20px;
+  color: #edd08c;
+}
+#play .mmo-menu svg {
+  width: 22px;
+  height: 20px;
+}
+#play .mmo-menu kbd {
+  font: 600 10px/1.15 monospace;
+  color: #e9d9a8;
+  opacity: 0.92;
+}
+
+/* 红点徽标 */
+.mmo-ready::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ef6d5a;
+  box-shadow: 0 0 0 1.5px #241111, 0 0 6px rgba(239, 109, 90, 0.72);
+  pointer-events: none;
+}
+
+/* 交互浮标 & 顶部飘字 */
+#play #interact {
+  bottom: clamp(142px, 20dvh, 214px);
+}
+#play #toast {
+  top: 12px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: min(30vw, 400px);
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+@media (min-width: 1200px) and (max-width: 1480px) {
+  #play #toast {
+    left: 294px;
+    transform: none;
+    max-width: 205px;
+  }
+  #play #toast > div {
+    padding: 5px 9px;
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. 六大全屏系统大殿 (#modal[data-shell="hub"]) 与实战舞台 ([data-shell="stage"])
+   -------------------------------------------------------------------------- */
+#modal-layer:has(#modal:is([data-shell="hub"], [data-shell="stage"])) {
+  padding: 0;
+  background: rgba(7, 10, 15, 0.76);
+  backdrop-filter: blur(6px);
+}
+
+html body #modal-layer #modal:is([data-shell="hub"], [data-shell="stage"]) {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: calc(100vw - 20px);
+  max-width: none;
+  height: calc(100dvh - 20px);
+  max-height: none !important;
+  margin: 0;
+  padding: 10px 18px 12px;
+  overflow: hidden;
+  scrollbar-gutter: auto;
+  border: 1px solid rgba(214, 178, 108, 0.48);
+  border-radius: 10px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 242, 206, 0.14);
+}
+/* 保持 clarity-storyline-browser 断言的精准底色：非 reader #141922，reader #f4ebd6 */
+html body #modal-layer #modal[data-shell="hub"]:not(.ink-reader) {
+  background-color: #141922;
+  background-image:
+    var(--na-corner-tl),
+    var(--na-corner-tr),
+    var(--na-corner-bl),
+    var(--na-corner-br),
+    var(--na-lacquer-cloud),
+    radial-gradient(ellipse 75% 42% at 50% 0%, rgba(214, 176, 102, 0.09), transparent 68%);
+  background-position: top 6px left 6px, top 6px right 6px, bottom 6px left 6px, bottom 6px right 6px, 0 0, 0 0;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat;
+}
+html body #modal-layer #modal[data-shell="hub"].ink-reader {
+  background-color: #f4ebd6;
+  background-image:
+    var(--na-paper-grain),
+    linear-gradient(180deg, #faf4e5 0%, #f4ebd6 45%, #ecdcc0 100%);
+  border-color: #c2a062;
+}
+
+html body #modal-layer #modal[data-shell="stage"] {
+  width: 100vw;
+  height: 100dvh;
+  max-height: 100dvh !important;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 0;
+}
+
+/* 统一全屏大殿顶栏 */
+#modal-layer #modal[data-shell="hub"] > #hub-header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 42px;
+  margin: 0 0 8px;
+  padding: 0 92px 7px 0;
+  border-bottom: 1px solid rgba(196, 164, 104, 0.44);
+}
+#hub-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: 700 23px/1.15 var(--display, "STKaiti", "KaiTi", serif);
+  color: #f2d594;
+  letter-spacing: 0.1em;
+}
+#hub-title::before {
+  content: "";
+  width: 4px;
+  height: 20px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #df5c44 0%, #a52d20 100%);
+  box-shadow: 0 0 0 1px rgba(235, 194, 118, 0.45);
+}
+#modal.ink-reader #hub-title {
+  color: #362511;
+}
+
+#hub-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+#hub-tabs button {
+  position: relative;
+  min-height: 31px;
+  padding: 4px 13px;
+  border-radius: 5px;
+  font: 600 13.5px/1.3 var(--body);
+  color: #ebe4d1;
+  background: linear-gradient(180deg, #213033 0%, #162225 100%);
+  border: 1px solid rgba(164, 152, 118, 0.44);
+  white-space: nowrap;
+  transition: border-color 0.14s ease, background 0.14s ease, color 0.14s ease;
+}
+#hub-tabs button:enabled:hover {
+  border-color: #e9c97e;
+  color: #fff6dc;
+  background: linear-gradient(180deg, #2c4140 0%, #1c2c2d 100%);
+}
+#hub-tabs button[aria-pressed="true"] {
+  color: #ffefb8;
+  border-color: #f0cf80;
+  background: linear-gradient(180deg, #394d42 0%, #24352f 100%);
+  box-shadow: inset 0 -2px 0 #f0cf80, 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+#modal.ink-reader #hub-tabs button:enabled:not([aria-pressed="true"]) {
+  color: #2c2114;
+  background: linear-gradient(180deg, #fbf5e6 0%, #ebdcc0 100%);
+  border-color: #bfa574;
+}
+#modal.ink-reader #hub-tabs button:enabled:not([aria-pressed="true"]):hover {
+  border-color: #a97a2d;
+  background: linear-gradient(180deg, #fffaf0 0%, #f2e1be 100%);
+}
+#modal.ink-reader #hub-tabs button[aria-pressed="true"] {
+  color: #fff3cf;
+  background: linear-gradient(180deg, #34473e 0%, #21302a 100%);
+  border-color: #c89d4c;
+  box-shadow: inset 0 -2px 0 #f0cf80;
+}
+
+#hub-wallet {
+  margin-left: auto;
+  white-space: nowrap;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font: 600 12.5px/1.3 var(--body);
+  font-variant-numeric: tabular-nums;
+  color: #f3e0ae;
+  background: rgba(20, 31, 35, 0.88);
+  border: 1px solid rgba(206, 174, 110, 0.36);
+}
+#modal.ink-reader #hub-wallet {
+  color: #3a2a14;
+  background: rgba(235, 219, 185, 0.92);
+  border-color: #bfa36c;
+}
+
+html #modal-layer #modal[data-shell="hub"] > #modal-close {
+  position: absolute;
+  top: 11px;
+  right: 16px;
+  margin: 0;
+  width: auto;
+  height: 32px;
+  min-height: 30px;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font: 600 13px/1.3 var(--body);
+}
+
+#modal-layer #modal:is([data-shell="hub"], [data-shell="stage"]) > #modal-content {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  max-height: none;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+/* 收敛 Hub 内页重复标题与多余留白，放大核心内容视窗 */
+#modal[data-shell="hub"] #modal-content > .eyebrow {
+  margin: 0 0 2px;
+  font-size: 11px;
+  opacity: 0.88;
+}
+#modal[data-shell="hub"] #modal-content > #modal-title {
+  margin: 0 0 6px;
+  padding-bottom: 4px;
+  font-size: clamp(20px, 1.8vw, 26px);
+  line-height: 1.25;
+}
+#modal[data-shell="hub"] #modal-content > .modal-subtitle {
+  margin: 0 0 8px;
+  font-size: 12.5px;
+}
+
+/* --------------------------------------------------------------------------
+   5. 重点重构 · 修行 → 身世与立场 端游双栏大殿 (#modal[data-mode="background"])
+   -------------------------------------------------------------------------- */
+/* 5A. 有待选抉择（成年身世 / 委托抉择：.reader-layout）→ 真正双栏端游格局 */
+html #modal[data-shell="hub"][data-mode="background"]:has(.reader-layout) > #modal-content.reader-layout {
+  display: grid !important;
+  grid-template-columns: minmax(380px, 1.02fr) minmax(420px, 0.98fr);
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  column-gap: 22px;
+  row-gap: 10px;
+  width: min(1560px, 100%);
+  margin-inline: auto;
+  height: 100%;
+  min-height: 0;
+  padding: 6px 4px 4px;
+  overflow: hidden !important;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* 左栏：身世大场景原画 + 阵营/来处/凭物档案 */
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout .reader-intro {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 9px;
+  height: 100%;
+  min-height: 0;
+  max-height: none !important;
+  margin-right: 0 !important;
+  overflow: auto;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fbf5e7 0%, #efe1c2 100%) !important;
+  border: 1px solid #caa96d !important;
+  box-shadow: inset 0 1px 0 rgba(255, 252, 240, 0.85), 0 6px 20px rgba(64, 44, 18, 0.12);
+}
+
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro > .eyebrow {
+  margin: 0;
+  padding: 0;
+  background: none !important;
+  border: 0 !important;
+  font-size: 11px;
+  color: #8c2d20 !important;
+  letter-spacing: 0.08em;
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro > #modal-title {
+  margin: 0;
+  padding: 0 0 6px;
+  font: 700 clamp(20px, 1.8vw, 26px)/1.2 var(--serif, "STKaiti", "KaiTi", serif);
+  color: #21160d;
+  border-bottom: 1px solid rgba(164, 130, 74, 0.35);
+}
+
+/* 左栏大场景原画（覆写 clarity.css 128px 宽与 neon-aesthetic multiply 融底，完整呈现全彩五路原画） */
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro figure.background-scene {
+  position: relative;
+  flex: none;
+  width: 100% !important;
+  max-width: none !important;
+  align-self: stretch !important;
+  height: clamp(180px, 34dvh, 360px) !important;
+  min-height: 170px !important;
+  margin: 2px 0 !important;
+  padding: 0 !important;
+  border-radius: 8px;
+  border: 1.5px solid #bfa066 !important;
+  overflow: hidden;
+  background: #10241e !important;
+  box-shadow: 0 6px 18px rgba(32, 22, 10, 0.24);
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro figure.background-scene img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 48% !important;
+  mix-blend-mode: normal !important;
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro figure.background-scene figcaption {
+  position: absolute !important;
+  inset: auto 0 0 !important;
+  padding: 7px 14px !important;
+  background: linear-gradient(0deg, rgba(14, 21, 24, 0.92) 0%, rgba(14, 21, 24, 0.72) 100%) !important;
+  border-top: 1px solid rgba(214, 178, 108, 0.36) !important;
+  color: #f6ecd4 !important;
+  text-align: left !important;
+  font-size: 12.5px;
+  line-height: 1.45;
+  letter-spacing: 0.04em;
+}
+
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro .background-panel-head {
+  margin: 0;
+  padding: 9px 13px;
+  border-radius: 7px;
+  background: rgba(255, 251, 242, 0.86);
+  border: 1px solid rgba(182, 152, 98, 0.46);
+  align-items: center;
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro .background-panel-head h3 {
+  margin: 0 0 2px;
+  font: 700 18px/1.25 var(--serif, "STKaiti", "KaiTi", serif);
+  color: #21160d;
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro .background-panel-head p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #4a3c2a;
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro .background-badge {
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: #23332d;
+  color: #f7e3b0;
+  border: 1px solid #c9a259;
+  font-weight: 600;
+}
+
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro .background-event {
+  margin: 0;
+  padding: 11px 13px;
+  border-radius: 7px;
+  background: rgba(255, 252, 244, 0.9);
+  border: 1px solid rgba(184, 152, 96, 0.44);
+  border-left: 3px solid #a93224;
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro .background-event-status {
+  display: inline-block;
+  margin: 0 0 4px;
+  padding: 1px 8px;
+  border-radius: 3px;
+  background: #a93224;
+  color: #fff6e6;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro .background-event h3 {
+  margin: 0 0 5px;
+  font: 700 19px/1.3 var(--serif, "STKaiti", "KaiTi", serif);
+  color: #1f160d;
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro .background-event > p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.68;
+  color: #2b2218;
+}
+
+html #modal[data-shell="hub"][data-mode="background"] .reader-intro .background-record {
+  margin: 0;
+  padding: 8px 11px;
+  border-radius: 7px;
+}
+
+/* 右栏：紧凑清晰的抉择卡片区 + 底部固定操作栏 */
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout > .choice-index {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+  padding: 9px 14px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f3e4c3 0%, #ead6ab 100%) !important;
+  border: 1px solid #c5a468 !important;
+  border-left: 4px solid #a93224 !important;
+  color: #24180b !important;
+  font: 700 13.5px/1.35 var(--body);
+  letter-spacing: 0.02em;
+}
+
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout > .reading-options {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0;
+  padding: 2px 2px 6px;
+  overflow: auto;
+  align-content: start;
+  background: transparent !important;
+  background-image: none !important;
+}
+
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout .reading-options .background-action {
+  padding: 13px 16px 13px 48px !important;
+  border-radius: 9px;
+  border: 1px solid #c3a46d;
+  border-left: 4px solid #a17936;
+  background: linear-gradient(180deg, #fffcf3 0%, #f4e6c9 100%);
+  box-shadow: 0 3px 12px rgba(56, 38, 16, 0.1);
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout .reading-options .background-action:enabled:hover,
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout .reading-options .background-action[aria-current="true"]:enabled {
+  transform: translateY(-1px);
+  border-color: #c88f2e !important;
+  border-left-color: #a93224 !important;
+  box-shadow: 0 7px 18px rgba(154, 108, 36, 0.22);
+}
+
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout > .reader-footer {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 14px;
+  margin: 0;
+  border-radius: 8px;
+  background: rgba(236, 222, 192, 0.78);
+  border: 1px solid rgba(182, 152, 98, 0.45);
+}
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout > .reader-footer .buttons {
+  margin: 0;
+}
+
+/* 5B. 身世档案归档态（无 .reader-layout，如 legacy/已完成）→ 紧凑均衡排版，严守 .background-scene <= 130px */
+html #modal[data-shell="hub"][data-mode="background"]:not(:has(.reader-layout)) #modal-content {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.92fr) minmax(0, 1.08fr);
+  column-gap: 20px;
+  row-gap: 8px;
+  align-content: start;
+  align-items: start;
+}
+html #modal[data-shell="hub"][data-mode="background"]:not(:has(.reader-layout)) #modal-content > :is(.eyebrow, #modal-title) {
+  grid-column: 1 / -1;
+}
+html #modal[data-shell="hub"][data-mode="background"]:not(:has(.reader-layout)) #modal-content > :is(.background-scene, .background-panel-head, .background-note) {
+  grid-column: 1;
+}
+html #modal[data-shell="hub"][data-mode="background"]:not(:has(.reader-layout)) #modal-content > :is(.background-record, .background-event, .buttons, #inline-message) {
+  grid-column: 2;
+}
+html #modal[data-shell="hub"][data-mode="background"]:not(:has(.reader-layout)) figure.background-scene {
+  width: 100% !important;
+  max-width: none !important;
+  height: 124px !important;
+  max-height: 128px !important;
+  margin: 2px 0 !important;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #10241e !important;
+}
+html #modal[data-shell="hub"][data-mode="background"]:not(:has(.reader-layout)) figure.background-scene img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: 50% 48% !important;
+  mix-blend-mode: normal !important;
+}
+html #modal[data-shell="hub"][data-mode="background"]:not(:has(.reader-layout)) figure.background-scene figcaption {
+  position: absolute !important;
+  inset: auto 0 0 !important;
+  padding: 4px 10px !important;
+  line-height: 1.35;
+}
+
+/* --------------------------------------------------------------------------
+   6. 其余五大系统大殿 宽画幅 2–3 栏精排
+   -------------------------------------------------------------------------- */
+
+/* --- 6.1 器藏殿（装备换装 / 法宝藏阁 / 配装方案）--- */
+#modal[data-shell="hub"] .loot-shell > header {
+  padding: 2px 0 6px;
+  margin-bottom: 4px;
+  gap: 10px;
+}
+#modal[data-shell="hub"] .loot-shell > header small {
+  display: none;
+}
+#modal[data-shell="hub"] .loot-shell > header h2 {
+  font-size: clamp(19px, 1.6vw, 24px);
+  margin: 0;
+}
+#modal[data-shell="hub"] .loot-tabs {
+  margin: 5px 0 8px;
+  gap: 6px;
+}
+#modal[data-shell="hub"] .gear-columns {
+  grid-template-columns: minmax(330px, 1.05fr) minmax(240px, 0.85fr) minmax(320px, 1.1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+#modal[data-shell="hub"] .gear-list {
+  max-height: clamp(260px, calc(100dvh - 235px), 680px);
+}
+html #modal[data-shell="hub"] .gear-detail {
+  max-height: clamp(320px, calc(100dvh - 188px), 780px);
+}
+@media (max-height: 760px) {
+  #modal[data-shell="hub"] .gear-columns > * {
+    padding: 8px 11px !important;
+  }
+  #modal[data-shell="hub"] .gear-paper h3 {
+    font-size: 16px;
+    margin: 0 0 4px !important;
+  }
+  html #modal[data-shell="hub"] .gear-doll canvas {
+    height: 222px !important;
+  }
+  #modal[data-shell="hub"] .gear-doll button {
+    padding: 2px 3px !important;
+  }
+  #modal[data-shell="hub"] .gear-doll button .item-illustration {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  #modal[data-shell="hub"] .gear-shortcut {
+    margin: 3px 0 4px !important;
+  }
+  #modal[data-shell="hub"] .gear-presets {
+    margin: 3px 0 !important;
+  }
+  #modal[data-shell="hub"] .gear-total {
+    margin-top: 3px !important;
+    padding-top: 4px !important;
+    font-size: 12.5px;
+  }
+  #modal[data-shell="hub"] .gear-total strong {
+    font-size: 18px !important;
+  }
+  #modal[data-shell="hub"] .gear-sets-line {
+    margin: 1px 0 0 !important;
+    font-size: 11.5px;
+  }
+}
+
+/* 法宝藏阁 / 配装方案 */
+#modal[data-shell="hub"] .loadout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+#modal[data-shell="hub"][data-mode="gear"] .collection-tabs {
+  margin-bottom: 6px;
+}
+#modal[data-shell="hub"][data-mode="gear"] .collection-heading {
+  margin-bottom: 8px;
+}
+#modal[data-shell="hub"][data-mode="gear"] .relic-layout,
+#modal[data-shell="hub"][data-mode="gear"] .bag-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.35fr);
+  gap: 16px;
+  align-items: start;
+}
+
+/* --- 6.2 修行殿（境界与功法 / 首章行程 / 药庐洞府）--- */
+#modal[data-shell="hub"] .cultivation-view {
+  gap: 10px 18px;
+}
+#modal[data-shell="hub"] .realm-ladder {
+  margin: 0 0 6px;
+}
+#modal[data-shell="hub"] .focus-brief.clarity-paper-card {
+  margin: 0 0 8px !important;
+  padding: 7px 12px !important;
+}
+@media (max-height: 760px) {
+  #modal[data-shell="hub"]:has(.cultivation-view) #modal-content > .eyebrow {
+    display: none;
+  }
+  #modal[data-shell="hub"]:has(.cultivation-view) #modal-content > #modal-title {
+    font-size: 20px;
+    margin: 0 0 4px;
+    padding-bottom: 2px;
+  }
+  #modal[data-shell="hub"] .cultivation-figure {
+    min-height: 130px !important;
+    max-height: 210px !important;
+  }
+  #modal[data-shell="hub"] .cultivation-overview {
+    padding: 7px 12px !important;
+  }
+  #modal[data-shell="hub"] .cultivation-overview h3 {
+    margin: 2px 0 4px;
+    font-size: 20px;
+  }
+}
+
+/* 药庐洞府宽屏均衡排布 */
+#modal[data-shell="hub"][data-mode="homestead"] .home-grid,
+#modal[data-shell="hub"][data-mode="homestead"] .home-plots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+/* --- 6.3 乾坤殿（随身行囊 / 丹符炼制 / 行前备物 / 器物试录）--- */
+#modal[data-shell="hub"][data-mode="bag"] .collection-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 8px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(196, 164, 104, 0.24);
+}
+#modal[data-shell="hub"][data-mode="bag"] .bag-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.38fr);
+  gap: 16px;
+  align-items: start;
+}
+#modal[data-shell="hub"][data-mode="bag"] .inventory-grid {
+  max-height: calc(100dvh - 210px);
+  overflow: auto;
+  padding-right: 4px;
+}
+@media (min-width: 1480px) {
+  #modal[data-shell="hub"][data-mode="bag"] .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    align-content: start;
+  }
+}
+#modal[data-shell="hub"][data-mode="bag"] .item-detail {
+  min-height: clamp(260px, 44dvh, 440px);
+  padding: 18px 22px;
+}
+
+/* 丹符炼制 / 行前备物 / 器物试录 多栏铺展 */
+#modal[data-shell="hub"][data-mode="craft"] .recipe-list,
+#modal[data-shell="hub"][data-mode="craft"] .workshop-grid,
+#modal[data-shell="hub"][data-mode="research"] .research-grid,
+#modal[data-shell="hub"][data-mode="provisions"] .provision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 12px;
+}
+
+/* --- 6.4 江湖殿（命运剧情线 / 青阳案卷 / 远行案簿 / 宗门与两脉）--- */
+#modal[data-shell="hub"][data-mode="storyline"] .scroll-heading {
+  padding: 2px 0 6px;
+  margin-bottom: 6px;
+}
+#modal[data-shell="hub"][data-mode="storyline"] .scroll-heading h2 {
+  font-size: clamp(20px, 1.7vw, 25px);
+}
+#modal[data-shell="hub"][data-mode="storyline"] .thread-scroll {
+  padding-right: 6px;
+}
+#modal[data-shell="hub"][data-mode="storyline"] .thread-node {
+  max-width: 1120px;
+}
+
+/* 远行案簿 / 青阳案卷 / 宗门两栏舒展 */
+#modal[data-shell="hub"][data-mode="campaign"] .campaign-tasks,
+#modal[data-shell="hub"][data-mode="story"] .clue-list,
+#modal[data-shell="hub"][data-mode="caseboard"] .clue-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 12px;
+}
+#modal[data-shell="hub"][data-mode="sects"] .sect-grid,
+#modal[data-shell="hub"][data-mode="sectWorld"] .sect-world-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 14px;
+}
+
+/* --- 6.5 历练殿（山河舆图 / 万象天渊 / 九霄无尽劫 / 悬赏妖榜 / 旧阵寻宝）--- */
+#modal[data-shell="hub"][data-mode="worldAtlas"] .world-atlas {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+#modal[data-shell="hub"][data-mode="worldAtlas"] .world-atlas-heading {
+  margin-bottom: 4px;
+}
+#modal[data-shell="hub"][data-mode="worldAtlas"] .world-atlas-heading h2 {
+  font-size: clamp(20px, 1.7vw, 25px);
+  margin: 0;
+}
+#modal[data-shell="hub"][data-mode="worldAtlas"] .world-atlas-layout {
+  flex: 1;
+  min-height: 0;
+  grid-template-columns: minmax(0, 1fr) clamp(300px, 26vw, 410px);
+  gap: 16px;
+  align-items: stretch;
+}
+#modal[data-shell="hub"][data-mode="worldAtlas"] .world-atlas-map-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+#modal[data-shell="hub"][data-mode="worldAtlas"] .world-atlas-scroll {
+  flex: 1;
+  min-height: 360px;
+  height: calc(100dvh - 208px);
+  background: radial-gradient(ellipse at 50% 50%, #2b3e33 0%, #162120 100%);
+  border-color: rgba(206, 174, 110, 0.48);
+}
+#modal[data-shell="hub"][data-mode="worldAtlas"] .world-atlas-aside {
+  max-height: calc(100dvh - 180px);
+}
+#modal[data-shell="hub"][data-mode="worldAtlas"] .world-atlas-footer {
+  margin-top: 8px;
+}
+
+/* 悬赏妖榜：宽屏双栏 */
+@media (min-width: 1360px) {
+  #modal[data-shell="hub"][data-mode="bounty"] .hunt-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px !important;
+  }
+}
+
+/* 万象天渊 / 九霄无尽劫 全屏大殿英雄区铺展 */
+#modal[data-shell="hub"][data-mode="abyss"] .abyss-entry {
+  min-height: clamp(360px, calc(100dvh - 220px), 680px);
+  border-radius: 8px;
+  border: 1px solid rgba(206, 174, 110, 0.42);
+}
+#modal[data-shell="hub"][data-mode="rogue"] .rogue-gate {
+  min-height: clamp(340px, calc(100dvh - 250px), 620px);
+  border-radius: 8px;
+}
+#modal[data-mode="rogue-battle"] .rogue-field {
+  width: min(100%, calc((100dvh - 170px) * 1120 / 600 + 210px));
+  margin-inline: auto;
+}
+
+/* --- 6.6 典籍殿（山行闻见录 / 器物图鉴 / 图谱与札记 / 玩家设置与改键）--- */
+#modal[data-shell="hub"] :is(.almanac-reading, .catalog-columns) {
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.85fr);
+  gap: 16px;
+}
+#modal[data-shell="hub"][data-mode="almanac"] .almanac-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+#modal[data-shell="hub"][data-mode="almanac"] .almanac-head {
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+#modal[data-shell="hub"][data-mode="almanac"] .almanac-head h2 {
+  font-size: clamp(20px, 1.7vw, 25px);
+  margin: 0;
+}
+#modal[data-shell="hub"][data-mode="almanac"] .almanac-reading {
+  flex: 1;
+  min-height: 0;
+}
+@media (max-height: 760px) {
+  #modal[data-shell="hub"][data-mode="almanac"] .almanac-head,
+  #modal[data-shell="hub"][data-mode="almanac"] .almanac-heading {
+    margin: 0 0 4px;
+    padding-bottom: 3px;
+  }
+  #modal[data-shell="hub"][data-mode="almanac"] .almanac-heading .eyebrow,
+  #modal[data-shell="hub"][data-mode="almanac"] .almanac-subtitle {
+    display: none;
+  }
+  #modal[data-shell="hub"][data-mode="almanac"] .almanac-controls {
+    padding: 6px 10px;
+    margin-bottom: 6px;
+  }
+  #modal[data-shell="hub"][data-mode="almanac"] :is(#almanac-article, #almanac-list) {
+    max-height: calc(100dvh - 235px);
+  }
+}
+#modal[data-shell="hub"][data-mode="notes"] .note-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 12px;
+}
+#modal[data-shell="hub"][data-mode="notes"] .note-list > :is(.eyebrow, #modal-title, .modal-subtitle) {
+  grid-column: 1 / -1;
+}
+#modal[data-shell="hub"] .settings-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: max-content !important;
+  gap: 14px;
+  align-items: stretch;
+  align-content: start;
+}
+#modal[data-shell="hub"] .settings-groups > section {
+  overflow: visible !important;
+  height: auto;
+  min-height: min-content;
+}
+
+/* --------------------------------------------------------------------------
+   7. 底部电影级立绘对话条 (.cinema-dialogue)
+      深玄墨水墨渐层剧场底板 + 细鎏金顶边 + 破框绢帛半身立绘 + 朱砂名牌 + 利落直点选项
+   -------------------------------------------------------------------------- */
+#modal-layer:has(#modal[data-shell="dialogue"]) {
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+  background: linear-gradient(0deg, rgba(7, 11, 16, 0.74) 0%, rgba(7, 11, 16, 0.28) 38%, transparent 64%);
+  backdrop-filter: none;
+}
+
+body:has(#modal[data-shell="dialogue"]) #play :is(#toast, .mmo-command, .mmo-menu) {
+  visibility: hidden;
+}
+
+html body #modal-layer #modal[data-shell="dialogue"] {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1160px, 94vw);
+  max-width: none;
+  height: auto;
+  max-height: 37.5dvh !important;
+  padding: 0 !important;
+  margin: 0;
+  overflow: visible !important;
+  border-radius: 16px 16px 0 0;
+  border: 1px solid rgba(218, 182, 108, 0.56) !important;
+  border-bottom: 0 !important;
+  border-top: 2px solid #e2be70 !important;
+  background-color: #131c23 !important;
+  background-image:
+    var(--na-lacquer-cloud),
+    linear-gradient(100deg, rgba(16, 25, 31, 0.97) 0%, rgba(22, 33, 40, 0.95) 52%, rgba(14, 21, 28, 0.97) 100%) !important;
+  color: #f3ecdc !important;
+  box-shadow:
+    0 -14px 44px rgba(4, 8, 12, 0.72),
+    inset 0 1px 0 rgba(255, 244, 206, 0.34) !important;
+}
+
+#modal-layer #modal[data-shell="dialogue"] > #modal-content {
+  height: auto;
+  max-height: 37.5dvh;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+}
+
+html #modal-layer #modal[data-shell="dialogue"] > #modal-close {
+  position: absolute;
+  z-index: 4;
+  top: 10px;
+  right: 12px;
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(24, 36, 42, 0.96) !important;
+  color: #f5e2b0 !important;
+  border: 1px solid rgba(218, 182, 108, 0.62) !important;
+  font: 700 16px/1 var(--body);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.42);
+}
+html #modal-layer #modal[data-shell="dialogue"] > #modal-close:hover {
+  background: #364b46 !important;
+  border-color: #fff0be !important;
+  color: #fff9e5 !important;
+}
+
+html #modal-layer #modal[data-shell="dialogue"] .cinema-dialogue {
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  height: clamp(192px, 34.5dvh, 268px);
+  max-height: calc(37.5dvh - 4px);
+  padding: 12px 52px 12px 20px;
+  overflow: visible;
+}
+
+/* 左侧绢帛破框半身立绘（利用 multiply 消除立绘白底，头肩优雅破出鎏金顶边） */
+html #modal-layer #modal[data-shell="dialogue"] .portrait-folio {
+  position: relative;
+  flex: 0 0 clamp(128px, 13vw, 178px);
+  align-self: stretch;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end;
+  margin: -36px 0 0 !important;
+  padding: 5px 5px 0 !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 140px;
+  max-height: none;
+  border-radius: 14px 14px 8px 8px !important;
+  background: radial-gradient(ellipse at 50% 38%, #fcf6e6 0%, #efe0be 74%, #e2cca0 100%) !important;
+  border: 1.5px solid #dab66b !important;
+  box-shadow:
+    0 -10px 26px rgba(0, 0, 0, 0.52),
+    inset 0 0 0 2px rgba(255, 250, 236, 0.72) !important;
+  overflow: hidden !important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .portrait-folio img {
+  position: static !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  object-position: 50% 10% !important;
+  border-radius: 9px 9px 0 0;
+  mix-blend-mode: multiply !important;
+  filter: contrast(1.03) saturate(1.04);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 84%, rgba(0, 0, 0, 0.45) 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 84%, rgba(0, 0, 0, 0.45) 100%);
+}
+html #modal-layer #modal[data-shell="dialogue"] .portrait-folio figcaption {
+  position: static !important;
+  flex: none;
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+  margin: 0 -5px !important;
+  padding: 4px 8px 5px !important;
+  background: #f0e1c0 !important;
+  border-top: 1px solid rgba(164, 130, 74, 0.48) !important;
+  color: #21160d !important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .portrait-seal {
+  width: 20px;
+  height: 20px;
+  font-size: 11.5px;
+}
+html #modal-layer #modal[data-shell="dialogue"] .portrait-meta strong {
+  font-size: 13.5px;
+  color: #21160d !important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .portrait-meta em {
+  font-size: 11.5px;
+  color: #3a2a19 !important;
+}
+
+/* 右侧：说话人名牌 + 高可读玄墨对白正文 + 利落直点选项 */
+html #modal-layer #modal[data-shell="dialogue"] .cinema-copy {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #f3ecdc !important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .cinema-copy #modal-title {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 6px !important;
+  padding: 0 36px 5px 0 !important;
+  font: 700 clamp(19px, 1.85vw, 25px)/1.2 var(--serif, "STKaiti", "KaiTi", serif) !important;
+  color: #fae6b3 !important;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid rgba(218, 182, 108, 0.32) !important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .cinema-copy #modal-title[data-seal]::before {
+  content: attr(data-seal);
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  border-radius: 4px;
+  background: #a93224;
+  color: #fff6e6;
+  border: 1px solid #e4ad70;
+  font: 700 13px/1 var(--serif, "STKaiti", "KaiTi", serif);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+html #modal-layer #modal[data-shell="dialogue"] .cinema-lines {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(214, 178, 108, 0.55) rgba(14, 21, 28, 0.6);
+}
+html #modal-layer #modal[data-shell="dialogue"] .cinema-lines .eyebrow {
+  display: none;
+}
+html #modal-layer #modal[data-shell="dialogue"] .cinema-lines :is(p, .dialogue-text, .background-note) {
+  max-width: 68ch !important;
+  margin: 0 0 4px;
+  font-size: 14.5px !important;
+  line-height: 1.56 !important;
+  color: #f3ecdc !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .cinema-lines :is(p, .dialogue-text, .background-note):focus,
+html #modal-layer #modal[data-shell="dialogue"] .cinema-lines :is(p, .dialogue-text, .background-note):focus-visible {
+  outline: none !important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .cinema-lines .reader-line {
+  margin: 0 0 0.2em;
+  color: #f3ecdc !important;
+}
+
+/* 对话条深玄墨底上的关键词高亮（全部 >= 8:1 对比度） */
+html #modal-layer #modal[data-shell="dialogue"] .prose-kw.kw-person {
+  color: #8ed6f0 !important;
+  border-bottom-color: rgba(142, 214, 240, 0.42);
+}
+html #modal-layer #modal[data-shell="dialogue"] .prose-kw.kw-place {
+  color: #82e3be !important;
+  border-bottom-color: rgba(130, 227, 190, 0.42);
+}
+html #modal-layer #modal[data-shell="dialogue"] .prose-kw.kw-relic {
+  color: #f8d486 !important;
+  background: rgba(248, 212, 134, 0.14);
+}
+html #modal-layer #modal[data-shell="dialogue"] .prose-kw.kw-realm {
+  color: #ffa591 !important;
+  background: rgba(255, 165, 145, 0.14);
+}
+
+/* 利落直点选项按钮（自然宽度横向排列，告别 950px 拉伸长条） */
+html #modal-layer #modal[data-shell="dialogue"] .reading-options {
+  flex: none;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  gap: 8px;
+  max-height: 11.5dvh;
+  margin: 6px 0 0 !important;
+  padding: 2px 0 0 !important;
+  overflow: auto;
+}
+html #modal-layer #modal[data-shell="dialogue"] .reading-options button[data-read-choice] {
+  width: auto !important;
+  min-width: 176px;
+  max-width: 100%;
+  min-height: 34px;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 16px 6px 38px !important;
+  border-radius: 7px;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+html #modal-layer #modal[data-shell="dialogue"] .reading-options button[data-read-choice]::before {
+  left: 9px;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+}
+html #modal-layer #modal[data-shell="dialogue"] .reading-options button[data-read-choice]:not(.primary):enabled {
+  background: linear-gradient(180deg, #25363d 0%, #19262c 100%) !important;
+  color: #f6edd8 !important;
+  border: 1px solid rgba(214, 178, 108, 0.54) !important;
+  border-left: 3px solid #d9b261 !important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .reading-options button[data-read-choice]:not(.primary):enabled:hover,
+html #modal-layer #modal[data-shell="dialogue"] .reading-options button[data-read-choice][aria-current="true"]:not(.primary) {
+  background: linear-gradient(180deg, #32494d 0%, #22353a 100%) !important;
+  color: #fff9e6 !important;
+  border-color: #f3d285 !important;
+  border-left-color: #f3d285 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.36);
+}
+html #modal-layer #modal[data-shell="dialogue"] .reading-options button[data-read-choice].primary:enabled {
+  background-color: #dfba66 !important;
+  background-image: linear-gradient(180deg, #f7df99 0%, #e4b556 48%, #c0872c 100%) !important;
+  color: #1a1206 !important;
+  border: 1px solid #d49f42 !important;
+  border-left: 4px solid #a83426 !important;
+}
+
+/* --------------------------------------------------------------------------
+   8. 克制展卷微动效（严格尊重 reduced-motion 与系统减弱动态偏好）
+   -------------------------------------------------------------------------- */
+@keyframes mmoHubUnfold {
+  from {
+    opacity: 0.96;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes mmoCinemaRise {
+  from {
+    opacity: 0.96;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes mmoBadgePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.82;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.reduced-motion) #modal-layer:not([hidden]) #modal[data-shell="hub"] {
+    animation: mmoHubUnfold 0.17s ease-out both;
+  }
+  html:not(.reduced-motion) #modal-layer:not([hidden]) #modal[data-shell="dialogue"] {
+    animation: mmoCinemaRise 0.19s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  html:not(.reduced-motion) .mmo-ready::after {
+    animation: mmoBadgePulse 2.4s ease-in-out infinite;
+  }
+}
+
+html.reduced-motion #play .mmo-quest,
+html.reduced-motion #play .mmo-menu > button,
+html.reduced-motion #play .mmo-vitals #portrait-edit.portrait-window {
+  transition: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. 响应式窄屏安全退让
+   -------------------------------------------------------------------------- */
+@media (max-width: 1150px) {
+  #play .mmo-menu {
+    bottom: 98px;
+  }
+  html #modal[data-shell="hub"][data-mode="background"]:has(.reader-layout) > #modal-content.reader-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+  }
+  html #modal[data-shell="hub"][data-mode="background"] .reader-layout .reader-intro {
+    grid-column: 1;
+    grid-row: 1;
+    max-height: 36dvh !important;
+  }
+  html #modal[data-shell="hub"][data-mode="background"] .reader-layout > .choice-index {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  html #modal[data-shell="hub"][data-mode="background"] .reader-layout > .reading-options {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  html #modal[data-shell="hub"][data-mode="background"] .reader-layout > .reader-footer {
+    grid-column: 1;
+    grid-row: 4;
+  }
+}
+
+@media (max-width: 760px) {
+  #play .mmo-tracker {
+    width: 48vw;
+  }
+  #hub-tabs {
+    overflow-x: auto;
+  }
+  #hub-wallet {
+    display: none;
+  }
+  #modal[data-shell="hub"] .settings-groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 山门共用的云山、玉纸与金饰在本地图片解码后逐项显现。 */
+html body #modal-layer #modal[data-shell="hub"]:not(.ink-reader) {
+  background-image: var(--ui-panel-corner, none), linear-gradient(115deg, #101c28a6, #12212d68 62%, #12202985), var(--ui-hub-bg, var(--na-lacquer-cloud));
+  background-size: 60px, cover, cover;
+  background-position: left 4px top 4px, center, center;
+  background-repeat: no-repeat;
+}
+html body #modal-layer #modal[data-shell="hub"].ink-reader {
+  background-image: linear-gradient(110deg, #efe6d3df, #ece3cfd6), var(--ui-hub-bg, var(--na-paper-grain));
+  background-size: cover;
+}
+html body #modal[data-shell="hub"] .clarity-paper-card,
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout .reader-intro {
+  background-image: var(--ui-parchment-tex, var(--na-paper-grain)) !important;
+  background-size: cover !important;
+}
+#play .mmo-vitals #portrait-edit { position:relative; }
+#play .mmo-vitals #portrait-edit::after {
+  content:""; position:absolute; inset:-4px; background:var(--ui-avatar-frame, none) center/contain no-repeat; pointer-events:none;
+}
+#modal .armory-toolbar, #modal .gear-head-links, #hub-wallet:has(.gear-wallet) {
+  display:flex; align-items:center; flex-wrap:wrap; gap:8px;
+}
+#modal .armory-toolbar { justify-content:space-between; margin-bottom:10px; }
+#modal .armory-toolbar .loot-tabs { margin:0; }
+#modal .gear-head-links button { min-height:26px; padding:3px 10px; border-radius:20px; font-size:12px; }
+#hub-wallet:has(.gear-wallet) { background:#1c2c33; padding:3px 8px; }
+#modal #hub-wallet .gear-wallet { margin:0; gap:5px; padding:0; }
+#modal #hub-wallet .wallet-chip { padding:2px 5px; font-size:12px; }
+#modal[data-shell="hub"] :is(.hub-page-heading, .almanac-heading > h2, .almanac-heading > .almanac-eyebrow),
+#modal[data-shell="hub"]:is([data-mode="bag"], :has(.cultivation-view)) #modal-content > :is(.eyebrow,#modal-title,.modal-subtitle),
+#modal[data-shell="hub"] .almanac-head :is(.eyebrow,.almanac-subtitle),
+#modal[data-shell="hub"][data-mode="storyline"] .scroll-heading { display:none; }
+#modal[data-shell="hub"] .almanac-head { margin:0; padding:0; }
+
+/* 行囊以器物为焦点，两个尺寸的方格都留足题签与数量角标。 */
+#modal[data-shell="hub"][data-mode="bag"] .bag-layout {
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start; gap:clamp(16px,2.4vw,44px);
+  max-width:1610px; margin:clamp(10px,2.5vh,32px) auto 14px;
+}
+#modal[data-shell="hub"][data-mode="bag"] .inventory-grid {
+  display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:9px;
+  max-height:calc(100dvh - 195px); padding:4px;
+}
+@media(min-width:1500px) {
+  #modal[data-shell="hub"][data-mode="bag"] .inventory-grid {grid-template-columns:repeat(5,minmax(0,1fr));}
+}
+#modal[data-mode="bag"] .inventory-grid button.item-card {
+  position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  width:100%; min-height:0; aspect-ratio:1; padding:8px 5px 20px; gap:4px;
+  border:1px solid #83917e; border-radius:5px;
+  background:linear-gradient(145deg,#304b4df5,#172b32ec); color:#f6edcf;
+}
+#modal[data-mode="bag"] .inventory-grid button.selected {
+  border-color:#f1ca72; box-shadow:inset 0 0 0 2px #c69b53, inset 0 0 28px #d4ad4c36;
+}
+#modal[data-mode="bag"] .item-card .item-mark {width:56%;height:auto;aspect-ratio:1;margin:0;max-height:72%;}
+#modal[data-mode="bag"] .item-card svg {width:100%;height:100%;}
+#modal[data-mode="bag"] .item-card .item-name {font:600 clamp(13px,1.05vw,17px)/1.3 var(--serif);color:#f6edcf;}
+#modal[data-mode="bag"] .inventory-grid .item-count {position:absolute;inset:auto 7px 4px auto;color:#f7dfae;font:600 12px/1.2 var(--body);}
+#modal[data-shell="hub"][data-mode="bag"] .item-detail {padding:clamp(18px,2vw,36px);min-height:0;}
+#modal[data-mode="bag"] .item-heading .large-mark {width:clamp(94px,9vw,156px);height:clamp(94px,9vw,156px);flex:none;}
+#modal[data-mode="bag"] .item-heading .large-mark > svg {width:100%;height:100%;}
+#modal[data-mode="bag"] .item-detail h4 {margin:clamp(10px,1.6vh,22px) 0 3px;}
+#modal .bag-totals {display:flex;align-items:center;gap:clamp(14px,3vw,54px);max-width:1610px;margin:0 auto;padding:12px 20px;background:#172a32e8;color:#f6e8c5;border-block:1px solid #a89970;}
+#modal .bag-totals strong {color:#ffde92;}
+
+/* 卷目、可滚动的节点流与独立的焦点卷页。 */
+#modal[data-mode="storyline"] .thread-layout {grid-template-columns:clamp(124px,12vw,202px) minmax(0,1.3fr) minmax(320px,1fr); gap:clamp(10px,1.5vw,28px);}
+#modal[data-shell="hub"] .thread-layout .storyline-brief {
+  display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;align-self:start;
+  max-height:100%;overflow:auto;gap:24px;margin:0!important;padding:clamp(18px,2.2vw,40px)!important;
+  border-top:3px solid #aa873f;
+}
+#modal .storyline-brief .focus-brief-main {display:block;}
+#modal .storyline-brief h3 {font:700 clamp(23px,2vw,36px)/1.4 var(--serif);color:#382b1a;margin:18px 0 20px;}
+#modal .storyline-brief h4 {font-size:13px;color:#68422a;margin:16px 0 4px;}
+#modal .storyline-brief .thread-objective,#modal .storyline-brief .focus-summary {color:#332e24;font-size:clamp(15px,1.1vw,19px);line-height:1.7;}
+#modal .storyline-brief progress {width:100%;height:7px;accent-color:#336459;}
+#modal .storyline-brief .focus-chips {margin:8px 0 0;}
+
+/* 带原画的凭物札压在选择下方，与按钮一起滚动。 */
+#modal .background-route {margin:12px 0 0;padding:14px 18px 16px;background:#eee4cc var(--ui-parchment-tex,none) center/cover;border:1px solid #b79e69;border-left:3px solid #927947;color:#352e23;}
+#modal .background-route h3 {font:700 18px var(--serif);margin:0 0 9px;color:#3f3522;}
+#modal .background-route p {margin:5px 0;color:#342c21;font-size:14px;line-height:1.6;}
+#modal .background-route b {display:inline-block;margin-right:10px;color:#79442b;}
+#play .mmo-command .control-line {display:block;position:absolute;left:0;bottom:100%;width:max-content;padding:0;margin:0 0 5px;border:0;background:transparent;pointer-events:auto;}
+#control-badge {display:block;min-height:24px;padding:2px 9px;border:1px solid #988457;border-radius:12px;background:#182c31;color:#f5e0b3;font-size:12px;}
+#control-keys {display:none;position:absolute;bottom:100%;left:0;min-width:210px;padding:9px 12px;background:#172a31;border:1px solid #a5946b;border-radius:5px;color:#f4edda;}
+#control-badge[aria-expanded="true"] + #control-keys {display:grid;gap:6px;}
+#play .mmo-menu > button {width:clamp(46px,3.7vw,67px);height:clamp(71px,6vw,98px);padding:4px 2px;}
+#play .mmo-menu [data-icon] {width:100%;height:clamp(35px,3.3vw,58px);background:var(--dock-image,none) center/contain no-repeat;}
+#play .mmo-menu [data-icon] > svg {display:var(--dock-fallback,block);margin:auto;}
+#play [data-hub="hub-armory"] {--dock-image:var(--ui-dock-armory);--dock-fallback:var(--ui-dock-armory-fallback);}
+#play [data-hub="hub-cultivation"] {--dock-image:var(--ui-dock-cultivation);--dock-fallback:var(--ui-dock-cultivation-fallback);}
+#play [data-hub="hub-bag"] {--dock-image:var(--ui-dock-bag);--dock-fallback:var(--ui-dock-bag-fallback);}
+#play [data-hub="hub-jianghu"] {--dock-image:var(--ui-dock-jianghu);--dock-fallback:var(--ui-dock-jianghu-fallback);}
+#play [data-hub="hub-trial"] {--dock-image:var(--ui-dock-trial);--dock-fallback:var(--ui-dock-trial-fallback);}
+#play [data-hub="hub-codex"] {--dock-image:var(--ui-dock-codex);--dock-fallback:var(--ui-dock-codex-fallback);}
+.onboarding-layer .onboarding-header [data-tutorial-action="skip"] {padding:9px 22px;background:#f0d49a;color:#302515;border:1px solid #fff1c7;}
+@media(max-width:900px) {
+  #modal[data-mode="storyline"] .thread-layout {grid-template-columns:110px minmax(0,1fr);}
+  #modal[data-mode="storyline"] .storyline-brief {grid-column:1/-1;max-height:28vh;}
+  #modal[data-shell="hub"][data-mode="bag"] .bag-layout {grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+}
+@media(max-width:650px) {
+  #modal[data-shell="hub"][data-mode="bag"] .bag-layout {grid-template-columns:1fr;}
+  #modal .bag-totals {gap:8px;flex-wrap:wrap;}
+}
+
+/* 焦点卷页的题头取自云山画芯，下方保留纸面看目标。 */
+#modal[data-shell="hub"] .thread-layout .storyline-brief::before {
+  content:""; display:block; flex:none; width:100%;height:clamp(44px,10vh,112px);
+  background:var(--ui-hub-bg,linear-gradient(110deg,#20393d,#4d635d)) 50% 68%/cover;
+  border-bottom:2px solid #a78a51;
+}
+#modal .thread-layout .storyline-brief {gap:12px;}
+html #modal[data-shell="hub"][data-mode="background"] .reader-layout > .reading-options:has(.background-route) {
+  background:linear-gradient(to bottom,#ecdfc9eb 8%,#efe5d4ae 42%,#b9c7b736),var(--ui-hub-bg,none) center/cover !important;
+  border-radius:7px;
+}
+#modal .background-route {margin:0;box-shadow:0 2px 8px #17262c24;}
+html #modal[data-mode="almanac"] .almanac-controls {
+  display:flex;align-items:end;flex-wrap:wrap;gap:8px 16px;
+  background:#1d3339d9;border-block:1px solid #988355;padding:9px 14px;
+}
+#modal .almanac-controls .almanac-search-label {flex:0 1 28em;}
+#modal .almanac-controls .almanac-category-label {min-width:10em;}
+html #modal .almanac-controls :is(#almanac-search,#almanac-category) {
+  background-color:#f0e5cb!important;background-image:var(--ui-parchment-tex,none)!important;
+  color:#312a21!important;border:1px solid #aa905e!important;border-radius:4px;
+}
+#modal .almanac-controls #almanac-search::placeholder {color:#5d5140;}
+#modal .almanac-controls .almanac-spoiler-label {align-self:center;}
+#play #field-tools > button {background:linear-gradient(155deg,#315149,#203538);border-color:#a99463;border-radius:3px 9px;color:#faedcd;}
+html body #modal-layer #modal[data-shell="dialogue"]:has(.portrait-folio) {
+  background-image:linear-gradient(90deg,#ece1cba6 0%,#dfd2b99c 10%,#1d3039ed 24%,#14252eeb 78%,#1a2c34f2),var(--ui-parchment-tex,none)!important;
+  background-size:cover!important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .portrait-folio {
+  margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+  background:transparent!important;
+}
+html #modal-layer #modal[data-shell="dialogue"] .portrait-folio img {
+  border-radius:0;mask-image:radial-gradient(ellipse 68% 69% at 50% 45%,black 48%,transparent 92%);
+}
+html #modal-layer #modal[data-shell="dialogue"] .portrait-folio figcaption {
+  align-self:center;margin:0!important;padding:3px 10px!important;border:1px solid #ad9164!important;
+  border-radius:2px;background:#efe0c1!important;
+}
+
+#modal .inventory-grid .bag-empty {aspect-ratio:1;border:1px solid #a9955b59;border-radius:5px;background:linear-gradient(135deg,#263d4194,#15282e73);box-shadow:inset 0 0 24px #16272b55;}
+@media(max-width:1499px) {#modal .inventory-grid .bag-empty:nth-child(n+13) {display:none;}}
+#modal[data-mode="gear"] .gear-toolbar small,#modal[data-mode="research"] .research-index {color:#e1e8cf!important;}
+
+#original-story-link {
+  padding: 7px 10px;
+  color: var(--na-gold-bright, #efd9a3);
+  font-size: 13px;
+  white-space: nowrap;
+  text-underline-offset: 3px;
+}
+#original-story-link:focus-visible { outline: 2px solid currentColor; outline-offset: 1px; }

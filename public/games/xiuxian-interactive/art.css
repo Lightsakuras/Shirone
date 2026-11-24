@@ -1,0 +1,34 @@
+/* Painted asset presentation. Interface stays quiet so the landscape leads. */
+.intro-scenery{background:linear-gradient(90deg,#152d26f5 0%,#19372beb 39%,#20392b66 100%),url("assets/art-v2/garden.webp") center/cover;opacity:1}
+.intro{box-shadow:0 18px 60px #071b1726;border-color:#b4a87640}
+.hero-portrait{right:1%;top:7%;height:87%;width:38%}
+.hero-portrait img{opacity:.85;filter:sepia(.1) brightness(.9);mix-blend-mode:screen;mask-image:linear-gradient(transparent,#000 12%,#000 65%,transparent)}
+.intro h1{color:#eee4c5}.intro-description{color:#d1d4ba}.origin{background:#172f26c7}.origin p{color:#becbb0}
+.masthead{height:82px}.brand{font-size:26px}.edition{color:#c7c7ad}
+.game-topline{padding-bottom:19px}.location h1{font-size:28px;color:#eaddb5;letter-spacing:6px}.location p{color:#b2b99d}
+.portrait-window{display:block;position:relative;width:56px;height:62px;overflow:hidden;border:1px solid #c4b98b66;background:#d6d1ba;flex-shrink:0;border-radius:2px}
+.player-status .portrait-window img{position:absolute;width:148px;height:196px;max-width:none;left:-47px;top:-14px;border:0;object-fit:cover;object-position:top;filter:sepia(.12)}
+.portrait-window #player-image{display:block;width:100%;height:100%}.portrait-window #player-image[hidden]{display:none}.portrait-window svg{display:block;width:100%;height:100%}
+.tactics-profile>.current-portrait{display:block;width:88px;height:110px;flex-shrink:0;overflow:hidden;border:1px solid #a99556;background:#d6d1ba}.current-portrait>svg,.current-portrait>img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 24%}
+.player-status p{color:#e8dfbe}.meter{background:#445341}.meter i{background:linear-gradient(90deg,#8e7256,#c3a17a)}.mana .meter i{background:linear-gradient(90deg,#658f8a,#acbca0)}
+.world-wrap{border:1px solid #b2ae8270;box-shadow:0 12px 42px #051a1844}.world-wrap:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 55px #122e1929;pointer-events:none}
+.toast{background:#263d2eeb;border-color:#e0cca66b;color:#f4e6bd;box-shadow:0 5px 20px #16281d44;z-index:1}
+.interact-prompt{background:#253a2df5;border-color:#dfc994;color:#f4eac8;z-index:2;border-radius:2px}
+.actionbar{gap:14px;padding:14px 12px 10px;background:linear-gradient(#24382c,#1a2c23);border:1px solid #a6b28a26;border-top:0}
+.weapon-slot,.hotbar button{width:70px;height:78px;background:radial-gradient(ellipse,#8a885625,#172d23 80%);border-color:#acb18b52;border-radius:3px;box-shadow:inset 0 1px #d4c9a912}
+.hotbar{gap:9px}.weapon-slot.active,.hotbar button.active{border-color:#dec68b;box-shadow:0 0 13px #d0b87012,inset 0 0 25px #c1b78617}
+.art-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;flex-shrink:0;vertical-align:middle;pointer-events:none}
+.art-icon svg{width:100%;height:100%;overflow:hidden;filter:drop-shadow(0 2px 2px #07140e55)}
+.hotbar button>.art-icon{width:44px;height:48px}.weapon-slot>.art-icon{width:47px;height:48px}
+.hotbar small{font-size:10px;letter-spacing:.5px;color:#c7caae;margin-top:3px}.weapon-slot small{font-size:10px;color:#c7caae;margin-top:3px}
+.hotbar b{right:5px;bottom:20px;font-size:10px;color:#fff0c0;background:#253a2bcc;border-radius:2px;padding:1px 3px}
+.hotbar kbd{top:4px;left:4px;font-size:9px;color:#dcd4b0;border-color:#a6b18b55;background:#20372bd9}
+.bag-button{height:78px;width:72px;background:#263c2b;border-radius:3px}.bag-button span{font-size:19px;letter-spacing:3px}
+.control-line{color:#b1b99b;gap:18px;padding-top:14px;font-size:10px}.control-line kbd{font-size:10px}
+.journal{background:linear-gradient(110deg,#21382a4d,transparent);border-color:#aab68c3b;padding-top:15px}.journal .eyebrow{color:#cdb78a}.journal h2{font-size:26px;color:#e9dfbc}.quest-desc{color:#bdc7ab;font-size:12px;line-height:1.95}.journal li{color:#94a68b}.journal li.done{color:#d9d8b1}.event-log p{color:#a3b497}.event-log p:first-child{color:#d0d3b4}.journal-rule{margin:22px 0}
+.item-card{min-height:115px;text-align:center;background:radial-gradient(ellipse at center,#abb6810c,#112b2270);border-radius:3px;padding:12px 8px}.item-card .art-icon{width:69px;height:69px;margin:0 auto 7px;display:block}.item-card .item-name{display:block;font-size:11px;letter-spacing:1px;color:#d5d7ba}.item-card .item-count{top:9px;right:8px;color:#d8d0ad}.item-card.selected{border-color:#c4ac76;box-shadow:inset 0 0 28px #b7a8770c}
+.item-detail{background:linear-gradient(145deg,#284232,#1b3027);border-radius:3px}.item-detail .art-icon.large-mark{display:flex;width:150px;height:150px;margin:8px auto 23px}.item-detail p{color:#c2ccaf}.item-detail h3{font-size:26px;color:#e8deba}.modal-layer section{border-color:#c0b58577;background:linear-gradient(120deg,#2a4032,#20362c);box-shadow:0 25px 100px #0008}.modal-layer h2{color:#eee1b9}.modal-subtitle{color:#bac6ac}
+.dialogue-layout img{mask-image:linear-gradient(#000 75%,transparent);filter:sepia(.09)}
+@media(max-width:1150px){.weapon-slot,.hotbar button{width:58px;height:74px}.hotbar{gap:7px}.actionbar{gap:10px}.bag-button{height:74px;width:58px}.control-line{gap:10px;font-size:9px}.hero-portrait{width:42%;right:-5%}}
+@media(max-width:850px){.masthead{height:75px}.hero-portrait{width:73%;right:-30%;opacity:.3}.weapon-slot,.hotbar button{width:55px;height:70px}.hotbar button>.art-icon{width:40px;height:42px}.actionbar{gap:9px}.bag-button{height:70px}.portrait-window{width:44px;height:52px}.player-status .portrait-window img{width:124px;height:165px;left:-41px;top:-11px}.location h1{font-size:19px}.control-line{gap:9px}}
+@media(max-width:550px){.weapon-slot,.hotbar button{width:41px;height:60px}.hotbar{gap:4px}.actionbar{gap:5px;padding:10px 4px}.hotbar button>.art-icon,.weapon-slot>.art-icon{width:33px;height:34px}.hotbar small,.weapon-slot small{font-size:8px;letter-spacing:0}.hotbar kbd{font-size:8px;left:2px;top:2px}.hotbar b{bottom:17px;font-size:8px}.bag-button{height:60px;width:42px}.bag-button span{font-size:15px;letter-spacing:1px}.inventory-grid{grid-template-columns:repeat(3,1fr)}.item-card .art-icon{width:55px;height:55px}.item-detail .art-icon.large-mark{width:90px;height:90px;margin:5px auto 15px}}

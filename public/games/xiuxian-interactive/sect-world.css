@@ -1,0 +1,38 @@
+.sect-world-page{color:#d7ddcb;line-height:1.8}
+.modal-layer .sect-world-page section,.modal-layer .sect-world-page article{max-height:none;overflow:visible}
+.sect-world-page h3{font-size:18px;color:#ead6b6;font-weight:400;line-height:1.6;margin:0 0 8px}
+.sect-world-page p{font-size:13px;line-height:1.85}
+.sect-world-scene{margin:20px 0 14px;border:1px solid #9f96736b;background:#14271f}
+.sect-world-scene img{display:block;width:100%;height:245px;object-fit:cover;object-position:center 54%}
+.sect-world-scene figcaption{padding:10px 14px;font-size:12px;color:#e2d3b9}
+.sect-world-intro{margin:14px 0}.sect-world-route,.sect-world-boundary{padding:12px 15px;border-left:2px solid #b2a276;background:#14271f}
+.sect-world-boundary{font-size:12px!important;color:#c5ccb9;margin-top:20px}
+.sect-world-quests{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
+.sect-world-quest{display:flex;flex-direction:column;min-width:0;padding:15px;border:1px solid #a4aa7c4d;background:#14271fc4}
+.sect-world-quest p{margin:8px 0 12px}.sect-world-quest button{margin-top:auto;white-space:normal}
+.sect-world-tag{font-size:11px!important;letter-spacing:1px;color:#c4ba8e;margin:0 0 7px!important}
+.sect-world-person{display:grid;grid-template-columns:125px 1fr;gap:20px;align-items:center;padding:14px 16px;background:#152a22;border:1px solid #9eaa7d3f;margin:18px 0}
+.sect-world-person .sect-world-person-art{display:block;width:125px;height:175px;margin:0}
+.sect-world-person-art svg{width:100%;height:100%}
+.sect-world-person-name{color:#efdcb8;font-size:17px!important;margin:0 0 10px}
+.sect-world-small{font-size:12px!important;color:#bfc9b5}
+.sect-world-progress{padding:11px 14px;color:#e8d4ad;border:1px solid #ab9b6552;background:#1c3025;margin:16px 0}
+.sect-world-copy{font-size:13px;line-height:1.95;margin:18px 0;color:#d3dcc7}
+.sect-world-actions{display:grid;gap:12px;margin:20px 0}
+.sect-world-action{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px;border:1px solid #a3aa7947;background:#13281fc9}
+.sect-world-action>div{min-width:0;flex:1}.sect-world-action h3{font-size:16px}.sect-world-action p{margin:5px 0}
+.sect-world-action button{flex:0 0 auto;max-width:230px;white-space:normal}
+.sect-world-reason{color:#e0b7a1;font-size:12px!important}
+.sect-world-enemies{background:#14261f;border-left:2px solid #b59375;padding:14px 16px;margin:16px 0}
+.sect-world-enemies p{margin:8px 0}.sect-world-enemies ul{margin:8px 0 8px 20px;padding:0;font-size:13px;color:#dbcbb0}
+.sect-world-materials{border-top:1px solid #a7ad8240;padding-top:16px;margin-top:20px}
+.sect-world-materials h3{font-size:15px}.sect-world-stock{display:flex;flex-wrap:wrap;gap:8px}
+.sect-world-stock span{font-size:12px;padding:5px 9px;border:1px solid #a4ad7840;background:#152a20}
+.sect-world-stock b{font-weight:400;color:#ead3a3;margin-left:6px}
+.sect-world-footer{position:sticky;bottom:-26px;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;margin:20px 0 0;background:#172e24;border-top:1px solid #b49b61;box-shadow:0 -7px 16px #13271fd9}
+.sect-world-footer>p{margin:0;white-space:nowrap}.sect-world-footer b{font-size:18px;color:#efd5a8;font-weight:400}
+.sect-world-footer small{display:block;font-size:11px;color:#bcc8af}.sect-world-footer .buttons{margin:0;display:flex;gap:8px}
+.sect-world-footer button{white-space:nowrap}
+.sect-world-feedback{padding:12px 15px;background:#29402c;border:1px solid #b9b68566;color:#e4d9b9}
+.sect-world-confirm{margin:20px 0;padding:20px;background:#26382a;border:1px solid #b4a47483}.sect-world-confirm p{margin:12px 0}
+@media(max-width:760px){.sect-world-quests{grid-template-columns:1fr}.sect-world-quest{display:block}.sect-world-quest button{margin-top:8px}.sect-world-scene img{height:200px}.sect-world-action{display:block}.sect-world-action button{margin-top:10px;max-width:100%}.sect-world-footer{flex-wrap:wrap}.sect-world-footer .buttons{flex-wrap:wrap}.sect-world-person{grid-template-columns:90px 1fr;gap:12px}.sect-world-person .sect-world-person-art{width:90px;height:140px}}

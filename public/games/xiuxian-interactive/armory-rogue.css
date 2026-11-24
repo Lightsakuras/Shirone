@@ -1,0 +1,105 @@
+/* Equipment and the arena use the same ink, paper and solid brass as the journey UI. */
+#play .loot-rail{display:flex;flex:0 0 auto;justify-content:center;align-items:center;gap:2px;border-bottom:1px solid #74644a;padding:0 0 4px}
+#play .loot-rail a{position:relative;display:grid;justify-items:center;align-content:center;gap:2px;color:#f5e6be;background:#19282b;text-decoration:none;font:600 12px/1.15 "Microsoft YaHei",sans-serif;min-width:27px;border-radius:4px}
+#play .loot-rail a b{display:grid;place-items:center;color:#fff2c5;border:2px double #d4b679;background:#34453c;border-radius:50%;width:25px;height:25px;font:700 16px/1 serif}
+#play #abyss-open b{background:#483957;border-color:#bca0d6}
+#play #armory-open.available b:after{content:"";position:absolute;top:0;right:0;background:#ffce62;border:1px solid #742f1b;width:6px;height:6px;border-radius:50%}
+#play .loot-rail a:focus-visible{outline:2px solid #ffdc94}
+html #modal:is([data-mode="armory"],[data-mode^="abyss"],[data-mode^="rogue"]){width:min(1220px,95vw);max-width:95vw;max-height:94dvh;padding:17px 20px 12px;background:#17272c;color:#faf1da;border:1px solid #b59a68;overflow:auto}
+html #modal:is([data-mode="armory"],[data-mode^="abyss"],[data-mode^="rogue"]) #modal-content{padding:0;max-height:none;overflow:visible}
+html #modal .loot-shell{color:#f7edd4;font:15px/1.45 "Microsoft YaHei",sans-serif;text-align:left}
+html #modal .loot-shell header{display:flex;align-items:center;justify-content:space-between;padding:0 52px 9px 0;border-bottom:1px solid #6c7063}
+html #modal .loot-shell :is(h2,h3,h4,p,small,b,dt,dd,strong,span,label,em){color:inherit;text-shadow:none}
+html #modal .loot-shell h2{font:700 clamp(23px,2vw,34px)/1.2 "STKaiti","KaiTi",serif;padding:0;margin:2px 0;border:0;color:#fff0ca}
+html #modal .loot-shell h3{font:700 20px/1.3 "STKaiti","KaiTi",serif;margin:0 0 9px}
+html #modal .loot-shell h4{font-size:15px;margin:12px 0 4px}
+html #modal .loot-shell small{font-size:12px;letter-spacing:.06em}
+html #modal .loot-shell p{font-size:14px;line-height:1.5;margin:6px 0}
+html #modal .loot-shell :is(button,select,input){font:600 14px/1.32 "Microsoft YaHei",sans-serif;color:#fff2d4;background:#2b4144;border:1px solid #81918a;border-radius:4px;box-shadow:none;text-shadow:none;padding:6px 10px;min-height:30px;white-space:normal;height:auto;max-width:100%}
+html #modal .loot-shell button:is(:hover,:focus-visible){color:white;background:#415959;outline:2px solid #efc680;outline-offset:-2px}
+html #modal .loot-shell button[aria-pressed=true],html #modal .loot-shell :is([data-act=equip],[data-act=enhance],[data-act=apply],#abyss-enter,#abyss-collect){color:#302619;background:#edc984;border-color:#ffe3b2}
+html #modal .loot-shell button:disabled{background:#3e474a;color:#d3d6d6;border-color:#70787c;opacity:1}
+html #modal .loot-shell button:before,html #modal .loot-shell button:after{content:none}
+.loot-tabs,.loot-actions,.gear-filters,.abyss-toolbar,#abyss-choices{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.loot-tabs{margin:9px 0}.gear-wallet b{color:#ffe7ad!important}
+.gear-columns{display:grid;grid-template-columns:minmax(340px,1.13fr) minmax(200px,.75fr) minmax(290px,1fr);gap:12px;align-items:stretch}
+.gear-columns>*,.abyss-entry>div{padding:13px 15px;border:1px solid #667873;border-radius:5px;background:#24363a}
+html #modal .gear-paper{background:radial-gradient(ellipse at 50% 52%,#436160 0%,#24393c 58%,#1f3036 95%);text-align:center}
+html #modal .gear-paper h3{text-align:left}.gear-paper h3 small{font-family:sans-serif;font-weight:400}
+.gear-doll{display:grid;grid-template-columns:minmax(48px,1fr) minmax(180px,2.6fr) minmax(48px,1fr);grid-template-rows:repeat(4,1fr);gap:3px;align-items:center;position:relative}
+.gear-doll canvas{grid-area:1/2/5/3;width:100%;height:clamp(222px,29dvh,302px);object-fit:contain;display:block}
+html #modal .gear-doll button{display:grid;justify-items:center;align-content:center;font-size:12px;padding:2px 4px;background:#203338;border-color:#687d79}
+.gear-doll button b,.gear-icon{font:700 19px/1.25 "STKaiti","KaiTi",serif;color:var(--grade)!important}
+.gear-doll small{font-size:11px!important}.gear-total{border-top:1px solid #6a7c77;padding-top:7px;margin-top:8px}.gear-total strong{font:700 23px serif;margin:0 8px;color:#ffe3a1!important}
+.gear-bag,.gear-detail{min-width:0}.gear-filters{margin-bottom:8px}
+.gear-list{display:grid;align-content:start;gap:5px;max-height:clamp(215px,43dvh,440px);overflow-y:auto;scrollbar-color:#9eae9f #283c3e}
+html #modal .gear-list button{display:flex;align-items:center;justify-content:space-between;text-align:left;gap:8px}
+html #modal .gear-list .gear-row{justify-content:flex-start}.gear-row small,.gear-list button small{display:block;font-size:12px}
+html #modal .gear-row[aria-pressed=true] .gear-icon{background:#25383d}
+.gear-icon{display:grid;place-items:center;width:31px;height:34px;border:1px solid var(--grade);border-radius:3px;flex-shrink:0}
+html #modal .gear-detail{color:#332c23;background:#f4e7cb;border-color:#dfc397;overflow:auto;max-height:min(68dvh,670px)}
+html #modal .gear-detail h3{font-size:24px}.gear-detail h3 em{font:normal 16px sans-serif}
+.gear-score{padding:7px 0;border-block:1px solid #a69572}.gear-score strong{font-size:22px}
+html #modal .gear-delta.up{color:#145437}html #modal .gear-delta.down{color:#912c27}.gear-delta{font-size:13px;font-weight:700}
+.gear-stats{margin:8px 0;display:grid;gap:3px}.gear-stats div{display:flex;justify-content:space-between}.gear-stats dd{margin:0}
+.gear-locks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px;margin:5px 0}
+#gear-note{min-height:21px;padding-top:4px}.gear-shortcut{margin:3px 0 7px}
+.abyss-entry{display:flex;align-items:end;min-height:min(440px,59dvh);background:linear-gradient(90deg,#122029dd,transparent 95%),url("assets/art-v2/ruins.webp") center/cover}
+.abyss-entry>div{max-width:480px;margin:24px;background:#1a2e33}.abyss-entry label{margin-right:8px}
+.abyss-toolbar{padding:7px 0}.abyss-toolbar span{margin-right:auto}
+.abyss-field{display:grid;justify-content:center;background:#17252a}
+#abyss-canvas{display:block;aspect-ratio:1280/760;width:auto;max-width:100%;height:min(66dvh,740px);object-fit:contain}
+#abyss-choices{min-height:38px;padding-top:4px}
+@media(max-height:780px){html #modal .loot-shell p{font-size:13px;margin:4px 0}.gear-columns>*{padding:9px 12px}.gear-list{max-height:265px}html #modal .gear-detail{max-height:66dvh}
+#play .ink-rail{gap:1px}#play .loot-rail{padding-bottom:1px}}
+@media(max-width:900px){.gear-columns{grid-template-columns:1fr 1fr}.gear-detail{grid-column:1/-1}.gear-doll{grid-template-columns:42px minmax(180px,1fr) 42px}}
+@media(max-width:640px){.gear-columns{grid-template-columns:1fr}.gear-wallet{font-size:12px}.gear-doll{max-width:360px;margin:auto}}
+
+#intro #rogue-intro{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;min-height:34px;padding:5px 12px;color:#ffebba;background:#392c48;border:1px solid #c5a46f;border-radius:4px;text-shadow:none}
+#rogue-intro b{font:700 18px/1.3 "KaiTi",serif}#rogue-intro small{color:#f2dfbf;font-size:12px}
+#play #rogue-open b{color:#ffe9ac;background:#48314c}
+#play #rogue-open{font-size:11px}
+html #modal[data-mode^="rogue"]{width:min(1190px,94vw);background:#18282e}
+html #modal .rogue-shell header h2{letter-spacing:.06em}
+.rogue-shell header b{color:#ffe4aa!important;font-variant-numeric:tabular-nums}
+.rogue-gate{min-height:min(52vh,450px);display:flex;align-items:end;background:linear-gradient(90deg,#161c30f2 0%,#19233588 56%,#191a2a22),url("assets/art-v13/sanctum-moon.webp") center 42%/cover;border:1px solid #8e826a;border-radius:4px}
+.rogue-gate-copy{padding:clamp(24px,4vw,64px);color:#fff3d6}
+html #modal .rogue-gate-copy h3{font:700 clamp(36px,4.6vw,76px)/1.18 "STKaiti","KaiTi",serif;margin:.16em 0 .24em;letter-spacing:.1em}
+.rogue-record{margin-top:18px;color:#f9e3ae}
+html #modal .rogue-shell button.rogue-gold{background:#e8c584;color:#30271b;border-color:#ffdf9c;padding:9px 18px}
+.rogue-gate-copy button{margin-top:15px}
+.rogue-note{min-height:1.5em;color:#ffe4ae}
+.rogue-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0}
+html #modal .rogue-paper{display:grid;grid-template-columns:38px 1fr;align-items:center;gap:5px 11px;background:#f3e7ce;color:#352d27;padding:14px;border:1px solid #c4a87e;border-radius:5px}
+html #modal .rogue-paper h3{margin:0}
+.rogue-paper>button,.rogue-paper>small{grid-column:2;justify-self:start}
+html #modal .rogue-shell .rogue-mark{display:grid;place-items:center;width:36px;height:40px;border:1px solid #bca175;background:#343648;color:#ffdfa0;font:700 23px/1 "KaiTi",serif;border-radius:12px 2px}
+.rogue-hud,.rogue-shell footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:5px 0;font-variant-numeric:tabular-nums}
+.rogue-shell footer{font-size:13px}.rogue-shell footer strong{flex:1}
+.rogue-meters{display:flex;gap:4px;margin-bottom:5px}.rogue-meters progress{height:5px;border:0;background:#364749;width:50%;appearance:none}
+.rogue-meters progress::-webkit-progress-bar{background:#374749}
+#rogue-hp::-webkit-progress-value{background:#f0a38e}#rogue-xp::-webkit-progress-value{background:#85dbc3}
+.rogue-arena{margin:auto;position:relative;width:min(100%,calc(66dvh * 1.866667));aspect-ratio:1120/600;isolation:isolate;border:1px solid #9c8c6f;overflow:hidden;border-radius:4px}
+#rogue-canvas{display:block;width:100%;height:100%;touch-action:none}
+#rogue-overlay:not([hidden]){position:absolute;inset:0;display:grid;place-items:center;background:#111b29a8;padding:14px}
+.rogue-dialog{max-width:100%;width:max-content;text-align:center;background:#192c32;color:#fff1d2;border:1px solid #c9ac77;border-radius:5px;padding:clamp(12px,1.8vh,24px);box-shadow:0 12px 40px #10151bbb}
+html #modal .rogue-dialog h3{font-size:clamp(23px,2.15vw,33px);margin:0 0 8px}
+.rogue-dialog>button{margin:6px}
+.rogue-offers{display:flex;align-items:stretch;justify-content:center;gap:10px;margin:12px 0}
+html #modal .rogue-shell button.rogue-offer{width:clamp(132px,14vw,192px);display:grid;align-content:start;justify-items:start;gap:7px;text-align:left;padding:14px;background:#f4e7cc;color:#332b23;border:1px solid #b59a6a;border-top:4px solid #629d8c}
+html #modal .rogue-shell .rogue-offer:focus-visible,html #modal .rogue-shell .rogue-offer:hover{outline:3px solid #a55d28;outline-offset:-4px}
+html #modal .rogue-shell .rogue-offer.evolution{border-color:#b45b3d;background:#ffe6b4}
+html #modal .rogue-shell .rogue-offer strong{font:700 21px/1.2 "KaiTi",serif}
+html #modal .rogue-shell .rogue-offer em{font-style:normal;font-weight:700;color:#72441e}
+html #modal .rogue-shell .rogue-offer:disabled{background:#41494b;color:#eff0e9;border-color:#818782}
+html #modal .rogue-shell .rogue-offer:disabled em{color:#efeadb}
+.rogue-offers.shop{gap:6px}html #modal .rogue-shell .rogue-offers.shop .rogue-offer{width:clamp(105px,10vw,165px);padding:10px}
+.rogue-payout{display:flex;justify-content:center;gap:20px;color:#ffdf99;font-size:20px;margin:15px}
+@media(max-height:780px){html #modal .rogue-paper{padding:9px}.rogue-grid{gap:7px}.rogue-arena{width:min(100%,calc(65dvh * 1.866667))}}
+@media(max-width:850px){.rogue-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.rogue-offers.shop{flex-wrap:wrap}.rogue-shell footer{flex-wrap:wrap}}
+
+html #modal .rogue-shell footer{background:#18282e;color:#f4e8ca;font-size:14px}
+#play .loot-rail{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;gap:0}
+#play .loot-rail a{min-width:0;white-space:nowrap;font-size:10px}
+#play .loot-rail a b{width:21px;height:21px;font-size:14px}
+#play #rogue-open{font-size:10px}

@@ -1,0 +1,693 @@
+/* Phase 3: Xianxia Combat Presentation, Spirit Cauldron, Cursed Relics, Pact Scroll & Live Telemetry */
+html #modal .gear-detail select[id^="craft-"] {
+  max-width: 100%;
+}
+html #modal .gear-detail #craft-inputs {
+  display: block;
+  width: 100%;
+  box-sizing: content-box;
+  max-width: calc(100% - 18px);
+  height: 5.5rem;
+  padding-block: 0;
+}
+html #modal #craft-inputs option {
+  padding-inline: 4px;
+  line-height: 1.35rem;
+  min-height: 1.35rem;
+}
+html #modal #craft-inputs option:checked {
+  color: #21170b;
+  background: linear-gradient(#f2d59b, #f2d59b);
+}
+html #modal .gear-detail [role="status"]:not(:empty) {
+  margin-block: 5px;
+  padding: 5px 9px;
+  background-color: #26201a;
+  color: #ffe8b0;
+  border-left: 3px solid #e6be6c;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+/* ══ 1. 传奇器魂鎏金特区 & 双刃剑诅咒魔器对照卡 ══ */
+html #modal .gear-detail .legend-soul {
+  position: relative;
+  margin: 8px 0;
+  padding: 9px 11px;
+  background-color: #221b15;
+  background-image: linear-gradient(135deg, rgba(255, 214, 122, 0.14), rgba(255, 214, 122, 0) 58%);
+  border: 1px solid #d9b15f;
+  border-left: 4px solid #ffd877;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgba(255, 228, 158, 0.18), 0 4px 12px rgba(20, 14, 10, 0.24);
+  color: #fff3d6 !important;
+}
+html #modal .gear-detail .legend-soul-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 5px 0;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(240, 200, 114, 0.35);
+}
+html #modal .gear-detail .legend-tag {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background-color: #463218;
+  border: 1px solid #f2c86e;
+  color: #ffe9a8 !important;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+html #modal .gear-detail .legend-soul-head b {
+  font: 700 16px/1.2 "STKaiti", "KaiTi", serif;
+  color: #ffe498 !important;
+}
+html #modal .gear-detail .legend-soul p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #fff4da !important;
+}
+
+html #modal .gear-detail .cursed-relic {
+  position: relative;
+  margin: 8px 0;
+  padding: 9px 10px;
+  background-color: #231016;
+  background-image:
+    repeating-linear-gradient(-38deg, rgba(212, 62, 62, 0.09) 0 2px, transparent 2px 15px),
+    radial-gradient(circle at 92% 14%, rgba(235, 84, 74, 0.2), transparent 52%);
+  border: 1px solid #c94d4d;
+  border-left: 4px solid #ff7669;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 1px rgba(255, 134, 122, 0.2), 0 4px 14px rgba(34, 8, 14, 0.35);
+  color: #ffece4 !important;
+}
+html #modal .gear-detail .cursed-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 5px 0;
+  margin-bottom: 6px;
+  border-bottom: 1px solid rgba(235, 108, 102, 0.38);
+}
+html #modal .gear-detail .cursed-head b {
+  font: 700 15px/1.2 "STKaiti", "KaiTi", serif;
+  color: #ffcbc2 !important;
+  letter-spacing: 0.04em;
+}
+html #modal .gear-detail .cursed-badge {
+  padding: 1px 6px;
+  border-radius: 3px;
+  background-color: #4f161f;
+  border: 1px solid #eb7a72;
+  color: #ffe2d8 !important;
+  font-size: 11px;
+  font-weight: 700;
+}
+html #modal .gear-detail .cursed-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+html #modal .gear-detail .cursed-pro,
+html #modal .gear-detail .cursed-con {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 6px;
+  padding: 6px 7px;
+  border-radius: 4px;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+html #modal .gear-detail .cursed-pro {
+  background-color: #2c2013;
+  border: 1px solid #b88d42;
+  color: #ffefc8 !important;
+}
+html #modal .gear-detail .cursed-con {
+  background-color: #36131c;
+  border: 1px solid #b84b4b;
+  color: #ffe0da !important;
+}
+html #modal .gear-detail .cursed-pro em,
+html #modal .gear-detail .cursed-con em {
+  display: grid;
+  place-items: center;
+  width: 21px;
+  height: 21px;
+  border-radius: 3px;
+  font: 700 13px/1 "STKaiti", "KaiTi", serif;
+  font-style: normal;
+}
+html #modal .gear-detail .cursed-pro em {
+  background-color: #543d18;
+  border: 1px solid #f2c96c;
+  color: #ffe8a2 !important;
+}
+html #modal .gear-detail .cursed-con em {
+  background-color: #5e1924;
+  border: 1px solid #f08278;
+  color: #ffe0d8 !important;
+}
+
+/* ══ 2. 品字形青铜器灵熔炉 + 开炉火焰 & 炉火大成暴击 ══ */
+.forge-cauldron-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 6px 8px;
+  padding: 10px 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  background-color: #161f27;
+  background-image: radial-gradient(circle at 50% 58%, rgba(255, 166, 66, 0.16), transparent 64%);
+  border: 1px solid #8c744c;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.45);
+}
+.forge-cauldron-stage[data-filled="3"] {
+  border-color: #f0c46c;
+  box-shadow: inset 0 0 22px rgba(255, 152, 54, 0.24), 0 0 12px rgba(242, 190, 92, 0.22);
+}
+.cauldron-links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  stroke: rgba(196, 162, 102, 0.34);
+  stroke-width: 1.5;
+}
+.forge-cauldron-stage[data-filled="3"] .cauldron-links {
+  stroke: rgba(255, 212, 114, 0.72);
+}
+.forge-cauldron-stage > :not(.cauldron-links) { position: relative; z-index: 1; }
+.forge-cauldron-stage .slot-top { grid-column: 2; grid-row: 1; }
+.forge-cauldron-stage .slot-left { grid-column: 1; grid-row: 2; justify-self: end; }
+.forge-cauldron-stage .cauldron-core { grid-column: 2; grid-row: 2; display: grid; justify-items: center; gap: 2px; }
+.forge-cauldron-stage .slot-right { grid-column: 3; grid-row: 2; justify-self: start; }
+
+.cauldron-slot {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 84px;
+  max-width: 112px;
+  min-height: 36px;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background-color: #202d35;
+  border: 1px dashed #7f908e;
+  color: #e6dcc2 !important;
+  font-size: 11.5px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.cauldron-slot:hover { border-color: #f0c97a; transform: translateY(-1px); }
+html #modal .gear-detail .cauldron-slot span { color: #f6ebd0 !important; }
+html #modal .gear-detail .cauldron-slot small { color: #d5e0dc !important; font-size: 10.5px; }
+.cauldron-slot.is-filled {
+  background-color: #26313a;
+  border: 1px solid var(--grade, #f0c874);
+  box-shadow: 0 0 10px rgba(242, 200, 114, 0.25);
+  color: #fff3d2 !important;
+}
+.cauldron-slot .item-illustration { width: 26px; height: 26px; flex-shrink: 0; }
+.cauldron-slot span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+
+.cauldron-svg { display: block; width: 68px; height: 68px; transition: transform 0.25s; }
+.cauldron-svg .cauldron-flames { transform-origin: 42px 36px; opacity: 0.35; transition: opacity 0.25s, transform 0.25s; }
+.forge-cauldron-stage[data-filled="1"] .cauldron-flames { opacity: 0.58; }
+.forge-cauldron-stage[data-filled="2"] .cauldron-flames { opacity: 0.78; }
+.forge-cauldron-stage[data-filled="3"] .cauldron-flames { opacity: 1; animation: cauldronBurn 1.1s ease-in-out infinite alternate; }
+html #modal .gear-detail .cauldron-label {
+  font: 700 11.5px/1 "STKaiti", "KaiTi", serif;
+  color: #f6dc9c !important;
+  letter-spacing: 0.08em;
+}
+
+.forge-outcome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 9px;
+  margin: 6px 0;
+  border-radius: 5px;
+  background-color: #1e2d31;
+  border: 1px solid #88bca8;
+  color: #eef7e8 !important;
+}
+.forge-outcome .item-illustration { width: 34px; height: 34px; flex-shrink: 0; }
+html #modal .gear-detail .forge-outcome b { display: block; font-size: 13px; color: #ffe7a8 !important; }
+html #modal .gear-detail .forge-outcome span { display: block; font-size: 12.5px; color: #f6efe0 !important; }
+.forge-outcome.is-masterwork {
+  background-color: #2f1f14;
+  border: 1.5px solid #ffd56e;
+  box-shadow: 0 0 16px rgba(255, 204, 88, 0.38);
+}
+html #modal .gear-detail .forge-outcome.is-masterwork b { color: #ffe485 !important; letter-spacing: 0.04em; }
+
+.ancient-anvil {
+  margin-top: 8px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  background-color: #1b222c;
+  border: 1px solid #8c7752;
+  color: #f4ead2 !important;
+}
+html #modal .gear-detail .ancient-anvil :is(h4, p, b, label, span, small) { color: #f4ead2 !important; }
+html #modal .gear-detail .ancient-anvil h4 { margin: 0 0 4px; color: #ffe39e !important; }
+html #modal .gear-detail .ancient-anvil b { color: #ffe49c !important; }
+
+/* 开炉升腾 & 炉火大成暴击动效 & 金丝铭刻光效 */
+.fx-furnace-ignite .cauldron-svg { animation: furnaceIgnite 0.56s ease-out; }
+.fx-furnace-masterwork .forge-cauldron-stage { animation: masterworkBurst 0.85s ease-out; }
+.fx-furnace-masterwork .cauldron-svg { animation: furnaceIgnite 0.65s ease-out; }
+.fx-imprint-sweep { position: relative; overflow: hidden; }
+.fx-imprint-sweep::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(112deg, transparent 22%, rgba(255, 224, 130, 0.58) 49%, rgba(255, 248, 212, 0.82) 52%, transparent 74%);
+  animation: imprintSweep 0.68s ease-out forwards;
+}
+
+@keyframes cauldronBurn {
+  from { transform: scaleY(0.92) scaleX(0.98); }
+  to { transform: scaleY(1.12) scaleX(1.04); }
+}
+@keyframes furnaceIgnite {
+  0% { transform: scale(0.95); filter: brightness(1); }
+  45% { transform: scale(1.13); filter: brightness(1.45); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+@keyframes masterworkBurst {
+  0% { box-shadow: 0 0 0 0 rgba(255, 215, 102, 0.85), inset 0 0 28px rgba(255, 215, 102, 0.6); }
+  60% { box-shadow: 0 0 28px 6px rgba(255, 198, 72, 0.45), inset 0 0 20px rgba(255, 215, 102, 0.35); }
+  100% { box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.45); }
+}
+@keyframes imprintSweep {
+  from { transform: translateX(-120%); opacity: 1; }
+  to { transform: translateX(120%); opacity: 0; }
+}
+
+/* ══ 3. 灵纹珠玉珠卡片 ══ */
+.orb-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  margin: 4px 0 5px;
+  max-height: 92px;
+  overflow-y: auto;
+}
+html #modal .gear-detail .orb-card { min-height: 0; }
+html #modal .gear-detail p:has(> label > select[id^="craft-"]) { margin: 3px 0; }
+html #modal .gear-detail #extract-index p,
+html #modal .gear-detail #imprint-index p { margin: 3px 0; }
+html #modal .gear-detail button.orb-card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 7px;
+  text-align: left;
+  background-color: #18272e;
+  border: 1px solid #59877e;
+  border-radius: 5px;
+  color: #edf7f2 !important;
+  min-height: 0;
+}
+html #modal .gear-detail button.orb-card.is-legend {
+  background-color: #2b1820;
+  border-color: #e4b55c;
+  color: #fff0cb !important;
+}
+html #modal .gear-detail button.orb-card[aria-pressed="true"] {
+  background-color: #293e44;
+  border-color: #ffe094;
+  color: #fff6dc !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 224, 148, 0.4);
+}
+html #modal .gear-detail button.orb-card.is-legend[aria-pressed="true"] {
+  background-color: #3c1f29;
+  border-color: #ffe08a;
+  color: #fff6da !important;
+}
+.orb-card .orb-gem { flex-shrink: 0; }
+html #modal .gear-detail .orb-card strong { display: block; font-size: 12px; line-height: 1.25; color: #f4faf7 !important; }
+html #modal .gear-detail .orb-card.is-legend strong { color: #fff2ce !important; }
+html #modal .gear-detail .orb-card small { display: block; font-size: 10.5px; color: #d4e8df !important; }
+html #modal .gear-detail .orb-card.is-legend small { color: #ffd98a !important; }
+.orb-empty { font-size: 12.5px; opacity: 0.9; }
+
+/* ══ 4. 本命剑四阶形态预览 ══ */
+.soul-roadmap {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+  margin: 6px 0 7px;
+}
+.soul-step {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 6px 3px;
+  border-radius: 5px;
+  background-color: #1b252d;
+  border: 1px solid #51666c;
+  text-align: center;
+  color: #dfe9e6 !important;
+}
+.soul-step.is-done {
+  background-color: #192e2b;
+  border-color: #6ab89d;
+  color: #e2faef !important;
+}
+.soul-step.is-current {
+  background-color: #2a2036;
+  border: 1.5px solid #f0c975;
+  box-shadow: 0 0 12px rgba(214, 168, 255, 0.25);
+  color: #fff2ce !important;
+}
+html #modal .gear-detail .soul-step b { font-size: 11px; line-height: 1.2; color: #ebf4f1 !important; }
+html #modal .gear-detail .soul-step.is-current b { color: #fff3cf !important; }
+html #modal .gear-detail .soul-step small { font-size: 10px; color: #cfe0dc !important; }
+html #modal .gear-detail .soul-step.is-current small { color: #ffe39d !important; }
+.soul-blade-svg { width: 32px; height: 32px; }
+
+.soul-xp-bar {
+  position: relative;
+  height: 20px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  background-color: #19222a;
+  border: 1px solid #7f6d4c;
+  overflow: hidden;
+}
+.soul-xp-bar > div {
+  position: absolute;
+  inset: 0 auto 0 0;
+  background-color: #543d7a;
+}
+html #modal .gear-detail .soul-xp-bar > span {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fff3d2 !important;
+}
+
+/* ══ 5. 暗金红印劫难契约火焰热度卷轴 ══ */
+html #modal .abyss-entry > div {
+  max-width: 820px;
+  margin: 12px;
+  background-color: #151c24;
+  border-color: #9e8353;
+}
+.abyss-meta-line b,
+.abyss-meta-line strong { color: #ffe5a2 !important; }
+
+.pact-wall {
+  margin: 8px 0 10px;
+  padding: 8px 12px 10px;
+  background-color: #1a1621;
+  border: 1.5px solid #a8864f;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(242, 202, 120, 0.16);
+  color: #fff0cf;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.pact-wall[data-heat="3"],
+.pact-wall[data-heat="4"] {
+  border-color: #d97c4a;
+  box-shadow: inset 0 0 0 1px rgba(255, 166, 98, 0.22), 0 0 14px rgba(212, 86, 46, 0.22);
+}
+.pact-wall[data-heat="5"] {
+  border-color: #ef6a54;
+  box-shadow: inset 0 0 0 1px rgba(255, 152, 120, 0.28), 0 0 20px rgba(226, 68, 48, 0.34);
+}
+.pact-wall legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 2px 10px;
+  background-color: #241926;
+  border: 1px solid #c9a15d;
+  border-radius: 4px;
+}
+.pact-title {
+  font: 700 15px/1.2 "STKaiti", "KaiTi", serif;
+  color: #ffe7a8 !important;
+  letter-spacing: 0.08em;
+}
+.pact-flames {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+.pact-heat-tag {
+  margin-right: 4px;
+  font-size: 11px;
+  color: #ffd79e !important;
+}
+.pact-flame.is-lit {
+  filter: drop-shadow(0 0 4px rgba(255, 134, 59, 0.75));
+  animation: flameFlicker 1.1s ease-in-out infinite alternate;
+}
+.pact-list {
+  display: grid;
+  gap: 5px;
+  margin-top: 4px;
+}
+.pact-wall label.pact-slip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #211c29;
+  border: 1px solid #4c4257;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.pact-wall label.pact-slip.is-active {
+  background-color: #301a24;
+  border-color: #d67658;
+}
+.pact-seal {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 3px;
+  background-color: #2d2534;
+  border: 1px solid #6b5e76;
+  color: #d9cfe2 !important;
+  font: 700 12px/1 "STKaiti", "KaiTi", serif;
+  font-style: normal;
+}
+.pact-slip.is-active .pact-seal {
+  background-color: #8f2326;
+  border-color: #ffbd80;
+  color: #fff2cc !important;
+}
+.pact-wall output {
+  display: block;
+  margin-top: 7px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: #26161d;
+  border: 1px solid #bd874e;
+  color: #ffe8a8 !important;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.pact-wall output.is-pulsing { animation: heatBump 0.38s ease-out; }
+
+.abyss-launch-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+html #modal .loot-shell button.demon-seal-btn:not(:disabled) {
+  background-color: #44214d;
+  border-color: #e6c074;
+  color: #fff0c8;
+  box-shadow: 0 0 12px rgba(186, 126, 240, 0.35);
+}
+.demon-title-badge { color: #ffe49c !important; }
+.forge-box-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  background-color: #251d1a;
+  border: 1px solid #c99d54;
+}
+
+@keyframes flameFlicker {
+  from { transform: scaleY(0.95); }
+  to { transform: scaleY(1.08); }
+}
+@keyframes heatBump {
+  0% { transform: scale(1); border-color: #ffe694; }
+  45% { transform: scale(1.015); border-color: #fff0b8; }
+  100% { transform: scale(1); }
+}
+
+html #modal .secret-door {
+  background-color: #34223e !important;
+  border-color: #e2bc77 !important;
+  box-shadow: 0 0 12px rgba(206, 152, 245, 0.3);
+}
+
+/* ══ 6. 药庐试剑录 · 实时秒伤仪 ══ */
+.abyss-field { position: relative; }
+.sword-meter {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  min-width: 268px;
+  background-color: rgba(15, 24, 32, 0.92);
+  border: 1.5px solid #d4b26e;
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(255, 228, 166, 0.16), 0 8px 24px rgba(0, 0, 0, 0.45);
+  color: #fff1cf;
+  padding: 8px 10px;
+  font-variant-numeric: tabular-nums;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.sword-meter.is-record {
+  border-color: #ffe285;
+  box-shadow: inset 0 0 0 1px rgba(255, 234, 152, 0.35), 0 0 18px rgba(255, 206, 86, 0.42);
+}
+.meter-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(218, 184, 118, 0.35);
+}
+.meter-head b {
+  font: 700 14px/1.2 "STKaiti", "KaiTi", serif;
+  color: #ffe8ad !important;
+}
+.meter-record-tag {
+  padding: 1px 6px;
+  border-radius: 3px;
+  background-color: #513816;
+  border: 1px solid #ffd872;
+  color: #fff0b5 !important;
+  font-size: 11px;
+  font-weight: 700;
+}
+#meter-reading { margin: 6px 0 8px; }
+.meter-hero {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+  background-color: #1c2c38;
+  border: 1px solid rgba(226, 192, 122, 0.38);
+}
+.meter-hero span { font-size: 12px; color: #dbe7e2 !important; }
+.meter-hero strong { font-size: 22px; line-height: 1.1; color: #ffe38e !important; }
+.meter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 8px;
+}
+.meter-grid > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  background-color: #16222c;
+}
+.meter-grid span { color: #cad8d6 !important; }
+.meter-grid b { color: #fff0c6 !important; }
+.meter-actions { display: flex; gap: 6px; }
+.meter-actions button { flex: 1; font-size: 12.5px !important; padding: 4px 8px !important; white-space: nowrap !important; }
+
+/* ══ 7. 九霄无尽劫双层 Boss 巨幅槽 ══ */
+#rogue-boss:not([hidden]) {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(640px, 76%);
+  padding: 7px 12px 8px;
+  border-radius: 6px;
+  background-color: rgba(18, 22, 32, 0.92);
+  border: 1.5px solid #cda968;
+  box-shadow: inset 0 0 0 1px rgba(255, 228, 170, 0.2), 0 6px 18px rgba(0, 0, 0, 0.45);
+  display: grid;
+  gap: 4px;
+  pointer-events: none;
+}
+#rogue-boss.is-broken {
+  border-color: #d8adff;
+  box-shadow: 0 0 16px rgba(216, 173, 255, 0.45);
+}
+#rogue-boss b {
+  font: 700 14px/1.2 "STKaiti", "KaiTi", serif;
+  color: #fff0c6 !important;
+  text-align: center;
+}
+#rogue-boss progress {
+  width: 100%;
+  appearance: none;
+  border: 1px solid #6c5b40;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #0e131a;
+}
+#rogue-boss-hp { height: 10px; }
+#rogue-boss-hp::-webkit-progress-bar { background-color: #0e131a; }
+#rogue-boss-hp::-webkit-progress-value { background: linear-gradient(90deg, #b8322c, #f07454); }
+#rogue-boss-poise { height: 7px; }
+#rogue-boss-poise::-webkit-progress-bar { background-color: #14101c; }
+#rogue-boss-poise::-webkit-progress-value { background: linear-gradient(90deg, #d69834, #ffe280); }
+#rogue-boss.is-broken #rogue-boss-poise::-webkit-progress-value { background: linear-gradient(90deg, #b982ff, #ffe49c); }
+
+@media (prefers-reduced-motion: reduce) {
+  .forge-cauldron-stage[data-filled="3"] .cauldron-flames,
+  .fx-furnace-ignite .cauldron-svg,
+  .fx-furnace-masterwork .forge-cauldron-stage,
+  .fx-furnace-masterwork .cauldron-svg,
+  .fx-imprint-sweep::after,
+  .pact-flame.is-lit,
+  .pact-wall output.is-pulsing {
+    animation: none !important;
+  }
+}
+html.reduced-motion .forge-cauldron-stage[data-filled="3"] .cauldron-flames,
+html.reduced-motion .fx-furnace-ignite .cauldron-svg,
+html.reduced-motion .fx-furnace-masterwork .forge-cauldron-stage,
+html.reduced-motion .fx-furnace-masterwork .cauldron-svg,
+html.reduced-motion .fx-imprint-sweep::after,
+html.reduced-motion .pact-flame.is-lit,
+html.reduced-motion .pact-wall output.is-pulsing {
+  animation: none !important;
+}

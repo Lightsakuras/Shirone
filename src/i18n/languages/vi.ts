@@ -59,8 +59,9 @@ export const vi: Translation = {
 	[Key.creativeOpen]: "Open the story",
 	[Key.creativeGameIntro]:
 		"My cultivation game. Leave the everyday behind for a little while.",
-	[Key.creativeGameEnter]: "Begin · Open the game",
-	[Key.creativeGameNote]: "Chơi bản phiêu lưu văn bản gốc trong thẻ mới",
+	[Key.creativeGameEnter]: "Khám phá và chiến đấu",
+	[Key.creativeGameOriginal]: "Phiêu lưu văn bản gốc",
+	[Key.creativeGameNote]: "Nên dùng bàn phím và chuột để khám phá bản đồ và chiến đấu.",
 	[Key.creativeGameLabel]: "PLAYABLE WORLD",
 	[Key.creativeBack]: "Back to the worlds",
 	[Key.creativeChapters]: "Follow the story",

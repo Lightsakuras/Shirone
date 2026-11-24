@@ -1,0 +1,43 @@
+/* Keep tactical choices ahead of the map, including on short desktop windows. */
+.field-commands{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 14px;margin:0 0 12px;background:#1b3229;border:1px solid #a9945655}
+.field-commands .tactics-bar{margin:0;padding:0;border:0;background:none;gap:12px;flex-wrap:wrap}
+.field-commands .tactics-bar button{padding:9px 14px;font-size:12px}
+.field-commands .chapter-tools{margin:0;gap:8px}
+.field-commands .chapter-tools button{padding:9px 12px}
+.field-commands:has(.chapter-tools[hidden]) .tactics-bar span{font-size:12px}
+.save-recovery{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;align-items:center}
+.save-recovery button{font-size:12px;padding:8px 12px;background:#1b3329c9}
+#save-recovery-note{font-size:12px;line-height:1.8;color:#cbd1b7;max-width:640px;margin-top:8px}
+.toast.visible{transition:none}
+.intro-note{font-size:11px;color:#b7c3a7;line-height:1.8}
+.field-sidebar{min-width:0;border-left:1px solid #aab68c3b;padding-left:16px}
+.field-sidebar .actionbar{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:8px;border:1px solid #a6b28a26}
+.field-sidebar .hotbar{display:contents}
+.field-sidebar .hotbar button,.field-sidebar .weapon-slot{width:100%;min-width:0;height:74px;padding:4px 2px}
+.field-sidebar .hotbar button>.art-icon,.field-sidebar .weapon-slot>.art-icon{width:38px;height:40px}
+.field-sidebar .hotbar small,.field-sidebar .weapon-slot small{font-size:11px;letter-spacing:0;white-space:nowrap;margin-top:3px}
+.field-sidebar .weapon-slot small{font-size:10px}
+.field-sidebar .hotbar kbd{font-size:10px;left:3px;top:3px}
+.field-sidebar .hotbar b{font-size:11px;right:3px;bottom:20px}
+.field-sidebar .bag-button{grid-column:1/-1;width:100%;height:36px;margin:0;flex-direction:row;gap:10px}
+.field-sidebar .bag-button span{font-size:15px;letter-spacing:2px}
+.field-sidebar .journal{border:0;padding-left:0;padding-top:18px}
+.field-sidebar .actionbar.child-mode:before{grid-column:1/-1;padding:8px;line-height:1.8}
+@media(min-width:1000px){
+  body:has(#play:not([hidden])) .masthead{height:58px}
+  body:has(#play:not([hidden])) main{margin-top:14px}
+  #play .game-topline{padding-bottom:12px}
+  #play .player-status .meter-line,#play .player-status .meter-line>b{font-size:11px}
+}
+@media(min-width:1000px) and (min-height:800px){
+  #play .game-layout{max-width:min(100%,calc((100dvh - 350px) * 1.684211 + 248px));margin-inline:auto}
+}
+@media(max-width:760px){.field-commands{padding:9px;gap:8px}.field-commands .tactics-bar{gap:8px}.field-commands .tactics-bar button{padding:8px 10px}.field-commands .tactics-bar span{flex-basis:100%;order:4}}
+@media(max-width:850px){
+  .field-sidebar{grid-row:1;border:0;padding-left:0}
+  .field-sidebar .actionbar{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+  .field-sidebar .hotbar button,.field-sidebar .weapon-slot{height:72px}
+}
+@media(max-width:550px){
+  .field-sidebar .actionbar{grid-template-columns:repeat(3,minmax(0,1fr))}
+}

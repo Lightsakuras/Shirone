@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#192c28">
+  <meta name="game-version" content="1.9.1">
+  <meta name="description" content="修仙命运录：四卷与五长线的单人离线修仙交互作。自动普攻、V键暂停下令、法宝功法搭配、五路身世抉择，内置山行闻见录。">
+  <title>修仙命运录 · 器物留痕</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232b4940'/%3E%3Ctext x='32' y='45' font-size='43' text-anchor='middle' fill='%23dac698'%3E命%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="art.css">
+  <link rel="stylesheet" href="journey.css">
+  <link rel="stylesheet" href="story.css">
+  <link rel="stylesheet" href="chapter.css">
+  <link rel="stylesheet" href="presentation.css">
+  <link rel="stylesheet" href="delve.css">
+  <link rel="stylesheet" href="tactics.css">
+  <link rel="stylesheet" href="catalog.css">
+  <link rel="stylesheet" href="loadouts.css">
+  <link rel="stylesheet" href="preparation.css">
+  <link rel="stylesheet" href="research.css">
+  <link rel="stylesheet" href="workshop.css">
+  <link rel="stylesheet" href="provisions.css">
+  <link rel="stylesheet" href="release.css">
+  <link rel="stylesheet" href="background.css">
+  <link rel="stylesheet" href="sects.css">
+  <link rel="stylesheet" href="sect-world.css">
+  <link rel="stylesheet" href="campaign.css">
+  <link rel="stylesheet" href="almanac.css">
+  <link rel="stylesheet" href="player-settings.css">
+  <link rel="stylesheet" href="onboarding.css">
+  <link rel="stylesheet" href="world-atlas.css">
+  <link rel="stylesheet" href="cultivation-view.css">
+  <link rel="stylesheet" href="term-help.css">
+  <link rel="stylesheet" href="experience.css">
+  <link rel="stylesheet" href="ink-theme.css">
+  <link rel="stylesheet" href="ink-shell.css">
+  <link rel="stylesheet" href="ink-panels.css">
+  <link rel="stylesheet" href="ink-opus.css">
+  <link rel="stylesheet" href="coach.css">
+  <link rel="stylesheet" href="vfx.css">
+  <link rel="stylesheet" href="clarity.css">
+  <script defer src="src/data.js"></script>
+  <script defer src="src/combat.js"></script>
+  <script defer src="src/stage.js"></script>
+  <script defer src="src/expedition-data.js"></script>
+  <script defer src="src/run-records.js"></script>
+  <script defer src="src/story-data.js"></script>
+  <script defer src="src/chapter-data.js"></script>
+  <script defer src="src/game.js"></script>
+  <script defer src="src/expedition.js"></script>
+  <script defer src="src/story.js"></script>
+  <script defer src="src/chapter-state.js"></script>
+  <script defer src="src/chapter.js"></script>
+  <script defer src="src/tomb.js"></script>
+  <script defer src="src/feedback.js"></script>
+  <script defer src="src/feel.js"></script>
+  <script defer src="src/delve.js"></script>
+  <script defer src="src/tactics.js"></script>
+  <script defer src="src/encounter-data.js"></script>
+  <script defer src="src/encounters.js"></script>
+  <script defer src="src/loadouts.js"></script>
+  <script defer src="src/research-data.js"></script>
+  <script defer src="src/research.js"></script>
+  <script defer src="src/workshop.js"></script>
+  <script defer src="src/provisions-data.js"></script>
+  <script defer src="src/provisions.js"></script>
+  <script defer src="src/backgrounds-data.js"></script>
+  <script defer src="src/backgrounds.js"></script>
+  <script defer src="src/sects-data.js"></script>
+  <script defer src="src/sects.js"></script>
+  <script defer src="src/sect-world-data.js"></script>
+  <script defer src="src/sect-world.js"></script>
+  <script defer src="src/campaign-branches-data.js"></script>
+  <script defer src="src/campaign-m6-data.js"></script>
+  <script defer src="src/campaign-m6-combat-data.js"></script>
+  <script defer src="src/campaign-m6-story-data.js"></script>
+  <script defer src="src/campaign-data.js"></script>
+  <script defer src="src/campaign-schema-v1.js"></script>
+  <script defer src="src/campaign-schema-v2.js"></script>
+  <script defer src="src/campaign-schema-v3.js"></script>
+  <script defer src="src/campaign-schema-v4.js"></script>
+  <script defer src="src/campaign-schema-v5.js"></script>
+  <script defer src="src/campaign-schema-v6.js"></script>
+  <script defer src="src/campaign-state.js"></script>
+  <script defer src="src/campaign.js"></script>
+  <script defer src="src/sect-career-data.js"></script>
+  <script defer src="src/sect-career.js"></script>
+  <script defer src="src/sect-trial-data.js"></script>
+  <script defer src="src/sect-trial.js"></script>
+  <script defer src="src/sect-meet-data.js"></script>
+  <script defer src="src/sect-meet.js"></script>
+  <script defer src="src/sect-office-data.js"></script>
+  <script defer src="src/sect-office.js"></script>
+  <script defer src="src/sect-trip-data.js"></script>
+  <script defer src="src/sect-trip.js"></script>
+  <script defer src="src/sect-bond-data.js"></script>
+  <script defer src="src/sect-bond.js"></script>
+  <script defer src="src/sect-event-data.js"></script>
+  <script defer src="src/sect-event.js"></script>
+  <script defer src="src/sect-exit-data.js"></script>
+  <script defer src="src/sect-exit.js"></script>
+  <script defer src="src/sect-intro-data.js"></script>
+  <script defer src="src/sect-intro.js"></script>
+  <script defer src="src/sect-secret-data.js"></script>
+  <script defer src="src/sect-secret.js"></script>
+  <script defer src="src/sect-manage-data.js"></script>
+  <script defer src="src/sect-manage.js"></script>
+  <script defer src="src/sect-grand-data.js"></script>
+  <script defer src="src/sect-grand.js"></script>
+  <script defer src="src/sect-summit-data.js"></script>
+  <script defer src="src/sect-summit.js"></script>
+  <script defer src="src/sect-factions-data.js"></script>
+  <script defer src="src/sect-factions.js"></script>
+  <script defer src="src/sect-tianji-data.js"></script>
+  <script defer src="src/sect-tianji.js"></script>
+  <script defer src="src/sect-story-data.js"></script>
+  <script defer src="src/sect-story.js"></script>
+  <script defer src="src/sect-tianji-deep-data.js"></script>
+  <script defer src="src/sect-tianji-deep.js"></script>
+  <script defer src="src/sect-order-data.js"></script>
+  <script defer src="src/sect-order.js"></script>
+  <script defer src="src/preparation.js"></script>
+  <script defer src="src/catalog.js"></script>
+  <script defer src="src/almanac-play.js"></script>
+  <script defer src="src/almanac-world.js"></script>
+  <script defer src="src/almanac-experience.js"></script>
+  <script defer src="src/almanac.js"></script>
+  <script defer src="src/art.js"></script>
+  <script defer src="src/vfx-events.js"></script>
+  <script defer src="src/render-vfx.js"></script>
+  <script defer src="src/render.js"></script>
+  <script defer src="src/render-chapter.js"></script>
+  <script defer src="src/render-feedback.js"></script>
+  <script defer src="src/render-battle.js"></script>
+  <script defer src="src/render-feel.js"></script>
+  <script defer src="src/render-tactics.js"></script>
+  <script defer src="src/render-sect-world.js"></script>
+  <script defer src="src/render-campaign.js"></script>
+  <script defer src="src/audio-tracks.js"></script>
+  <script defer src="src/audio-playlist-extra.js"></script>
+  <script defer src="src/audio-score.js"></script>
+  <script defer src="src/audio.js"></script>
+  <script defer src="src/puzzle-assist.js"></script>
+  <script defer src="src/guide.js"></script>
+  <script defer src="src/controls.js"></script>
+  <script defer src="src/player-profile.js"></script>
+  <script defer src="src/player-settings-ui.js"></script>
+  <script defer src="src/term-help.js"></script>
+  <script defer src="src/ui-hints.js"></script>
+  <script defer src="src/world-atlas.js"></script>
+  <script defer src="src/world-atlas-ui.js"></script>
+  <script defer src="src/cultivation-view.js"></script>
+  <script defer src="src/onboarding.js"></script>
+  <script defer src="src/preferences.js"></script>
+  <script defer src="src/preparation-ui.js"></script>
+  <script defer src="src/expedition-ui.js"></script>
+  <script defer src="src/story-ui.js"></script>
+  <script defer src="src/chapter-ui.js"></script>
+  <script defer src="src/tactics-ui.js"></script>
+  <script defer src="src/catalog-ui.js"></script>
+  <script defer src="src/almanac-ui.js"></script>
+  <script defer src="src/loadouts-ui.js"></script>
+  <script defer src="src/research-ui.js"></script>
+  <script defer src="src/workshop-ui.js"></script>
+  <script defer src="src/provisions-ui.js"></script>
+  <script defer src="src/background-ui.js"></script>
+  <script defer src="src/sects-ui.js"></script>
+  <script defer src="src/sect-world-ui.js"></script>
+  <script defer src="src/campaign-ui.js"></script>
+  <script defer src="src/journey-records.js"></script>
+  <script defer src="src/hub-shell.js"></script>
+  <script defer src="src/ink-ui.js"></script>
+  <script defer src="src/coach-data.js"></script>
+  <script defer src="src/coach.js"></script>
+  <script defer src="src/storyline.js"></script>
+  <script defer src="src/storyline-ui.js"></script>
+  <script defer src="src/bounty-data.js"></script>
+  <script defer src="src/homestead.js"></script>
+  <script defer src="src/legendary-data.js"></script>
+  <script defer src="src/armory-data.js"></script>
+  <script defer src="src/rogue-data.js"></script>
+  <script defer src="src/trial-legacy.js"></script>
+  <script defer src="src/hazard-geo.js"></script>
+  <script defer src="src/enemy-poise.js"></script>
+  <script defer src="src/rogue-foes.js"></script>
+  <script defer src="src/armory-crafting.js"></script>
+  <script defer src="src/combat-rhythm.js"></script>
+  <script defer src="src/achievements-data.js"></script>
+  <script defer src="src/achievements.js"></script>
+  <script defer src="src/armory.js"></script>
+  <script defer src="src/journey-armory.js"></script>
+  <script defer src="src/avatar-samples.js"></script>
+  <script defer src="src/render-avatar.js"></script>
+  <script defer src="src/weapon-combat.js"></script>
+  <script defer src="src/item-icons.js"></script>
+  <script defer src="src/armory-ui.js"></script>
+  <script defer src="src/abyss.js"></script>
+  <script defer src="src/bounty.js"></script>
+  <script defer src="src/bounty-ui.js"></script>
+  <script defer src="src/homestead-ui.js"></script>
+  <script defer src="src/abyss-ui.js"></script>
+  <script defer src="src/rogue.js"></script>
+  <script defer src="src/rogue-render.js"></script>
+  <script defer src="src/rogue-ui.js"></script>
+  <link rel="stylesheet" href="armory-rogue.css">
+  <script defer src="src/prose-highlight.js"></script>
+  <script defer src="src/app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="./index.html" aria-label="修仙命运录首页"><span class="seal">命</span><span>修仙命运录<small>山河有迹 · 万物有用</small></span></a>
+    <div class="edition"><span class="dot"></span> 2D 单人 · 四卷与五长线 <span class="edition-divider">/</span> 器物留痕</div>
+    <div class="top-tools" id="system-tools">
+      <a id="original-story-link" href="https://lightsakura-blog.pages.dev/games/xiuxian/" target="_blank" rel="noopener noreferrer" title="在浏览器新标签页打开">游玩文字原版 <span aria-hidden="true">↗</span></a>
+      <button class="quiet" id="almanac-top">山行闻见录 <kbd>F1</kbd></button><button class="quiet" id="catalog-top">器物图鉴 <kbd>G</kbd></button><button class="quiet" id="settings-top">玩家设置</button><button class="quiet" id="tutorial-top">入山第一课</button><button class="quiet" id="fullscreen-toggle" title="切换全屏">全屏 <kbd data-action="fullscreen">F11</kbd></button><button class="quiet" id="help-top">操作指南 <kbd>?</kbd></button>
+    </div>
+  </header>
+  <main>
+    <section id="intro" class="intro" aria-labelledby="intro-title">
+      <div class="intro-scenery" aria-hidden="true"></div>
+      <div class="intro-copy">
+        <section class="creation-left">
+          <h1 id="intro-title">来处不同，道由你行<span>。</span></h1>
+          <div class="gender-tabs" role="group" aria-label="选择主角">
+          <button data-gender="female" aria-pressed="true" class="active">女修 · 林墨</button>
+          <button data-gender="male" aria-pressed="false">男修 · 林墨</button>
+        </div>
+          <section class="background-choice" aria-labelledby="background-caption">
+            <h2 id="background-caption" class="choice-caption">一 · 选择身世开局</h2>
+            <div id="backgrounds" class="background-options" role="group" aria-label="选择身世开局"></div>
+          </section>
+          <details class="creation-lore"><summary>五路身世</summary><p>出身与阵营只定来路，正邪善恶全凭行事</p><p class="background-parallel">五条平行身世皆保留林墨的双亲、灭村旧案与十岁那枚长命锁；分野在于是谁救下了你，以及二十岁那年你因何踏上蜀山。</p><p class="eyebrow">身世开局 · 修习成长 · 阵营抉择</p><p class="intro-description">一枚长命锁，五段不同的成长。<br>自何处来、替何人行、守何种道，皆由你亲手写下。</p><p class="intro-note">五路身世原画 · 成年合欢宗两脉 · 自动普攻 · V 暂停下令 · 单人离线</p></details>
+          <button id="rogue-intro"><b>九霄无尽劫</b><small>肉鸽割草小游戏　↗</small></button>
+          <button id="almanac-intro" class="quiet">第一次游玩？翻开山行闻见录</button>
+        </section>
+        <section id="background-detail" class="background-detail" aria-live="polite" aria-atomic="true"></section>
+        <section class="creation-right">
+          <figure class="hero-portrait"><button type="button" id="title-avatar-edit">更换本地头像</button><img id="hero-image" src="assets/portraits/lin_mo_f.webp" alt="白衣持剑的女修林墨"><figcaption><span>林墨</span><small>成年修习画像 · 性别可选</small></figcaption></figure>
+          <details class="creation-training"><summary>二 · 选择入山后的修习经历</summary><p>性别、身世与入门专长各自独立；筑基后三门功法皆可跨修</p></details>
+          <div class="origins" id="origins" role="group" aria-label="选择修习经历"></div>
+        <p id="character-choice-summary" class="character-choice-summary" aria-live="polite"></p>
+          <div class="creation-start"><div class="begin-row"><button id="start-prologue" class="primary" disabled>展开山卷…</button><button id="start" class="secondary" disabled>跳过序章</button><button id="continue" class="secondary" hidden disabled>继续历练</button></div></div>
+        </section>
+      </div>
+      <div class="intro-bottom"><span>探索开路</span><i>／</i><span>道具搭配</span><i>／</i><span>采药炼丹</span><i>／</i><span>同门委托</span></div>
+    </section>
+    <section id="play" class="play" hidden aria-label="修仙命运录游戏区域">
+      <div class="world-wrap"><canvas id="world" width="1280" height="760" tabindex="0" aria-label="游戏地图：WASD 移动，E 交互，自动普攻，V 暂停下令"></canvas><button id="interact" class="interact-prompt" hidden><kbd>E</kbd> <span></span></button><div id="toast" class="toast" role="status" aria-live="polite"></div></div>
+      <section id="vitals-hud" class="mmo-vitals mmo-hud" aria-label="角色状态">
+        <div class="player-status"><button type="button" id="portrait-edit" class="portrait-window" aria-label="更换主角头像，选择本地图片" title="点击更换本地头像"><span id="player-image"><img alt="主角头像"></span></button><div><p><b id="player-name">林墨</b><span id="origin-label"></span></p><span id="realm-label"></span><div class="meter-line"><span>气血</span><div class="meter"><u class="meter-trail" id="hp-trail" aria-hidden="true"></u><i id="hp-bar"></i></div><b id="hp-text">100</b></div><div class="meter-line mana"><span>灵力</span><div class="meter"><u class="meter-trail" id="mp-trail" aria-hidden="true"></u><i id="mp-bar"></i></div><b id="mp-text">100</b></div></div></div>
+        <div class="ink-resources" aria-label="当前修习资源"><span>灵蕴<b id="hud-spirit">0</b></span><span>心得<b id="hud-insight">0</b></span><span>灵锻石<b id="hud-stone">0</b></span></div>
+        <div id="buffs" class="buffs"></div>
+      </section>
+      <section class="mmo-tracker mmo-hud" aria-label="山行与委托">
+        <div class="location"><h1 id="map-name">蜀山 · 药庐</h1><button id="storyline-stage" aria-label="查看当前卷目与命运剧情线">首章 · 山河留证 ▸</button><span id="sect-location" hidden></span><p id="map-sub"></p></div>
+        <div id="field-tools" class="mmo-field-tools">
+          <button id="world-map-open">山河舆图 <kbd data-action="worldMap">N</kbd></button><button id="abyss-open">万象天渊</button><button id="rogue-open">九霄无尽劫</button>
+          <div class="game-actions"><span id="save-status" aria-live="polite">尚未保存</span><div class="scroll-system"><button id="scroll-menu" class="quiet" aria-expanded="false" aria-controls="system-tools">卷</button><div id="scroll-entries" hidden></div></div><button id="pause" class="quiet">暂停 <kbd>Esc</kbd></button></div>
+        </div>
+        <div id="quest-scroll" class="mmo-quest">
+          <div id="guide" class="path-guide"><span class="guide-title">此刻目标</span><span id="guide-text"></span><kbd id="guide-key"></kbd><button id="guide-action" hidden>查看</button><button class="primary" id="storyline-guide">去哪</button><button id="guide-cancel" class="guide-cancel" hidden>取消追踪</button></div>
+          <details id="task-tracker"><summary>委托与札记</summary><div class="journal clarity-paper-card"><p class="eyebrow">当前目标</p><h2 id="quest-title"></h2><ol id="quest-steps"></ol><p id="quest-next"></p><div class="quest-links"><button class="primary" id="storyline-journal">命运剧情线</button><button id="campaign-open"><kbd>T</kbd> 远行案簿</button></div><details><summary>委托详情</summary><p id="quest-desc" class="quest-desc"></p></details><details><summary>历练札记</summary><div id="event-log" class="event-log" aria-label="最近的历练记录"></div><div class="sister-note"><img src="assets/portraits/shen_ling_wei.webp" alt="沈灵薇"><p>“遇事未必都要硬闯。”<small>—— 沈灵薇</small></p></div></details></div></details>
+        </div>
+      </section>
+      <section id="command-hud" class="mmo-command mmo-hud" aria-label="战斗快捷栏">
+        <div class="actionbar" role="group" aria-label="随身器物">
+          <button class="weapon-slot active" id="sword-slot" aria-label="使用普通剑击"><span>剑</span><small>左键</small></button>
+          <div class="chapter-tools"><button id="skill-use">Q 功法</button></div><div class="hotbar" id="hotbar"></div><div class="chapter-tools"><button id="quick-cleanse">6 清心散</button></div>
+          <div class="mmo-order"><button id="tactics-open"><kbd>V</kbd> 暂停下令</button><span id="tactics-state"></span></div>
+        </div>
+        <div class="control-line"><button id="control-badge" type="button" aria-expanded="false" aria-controls="control-keys">键位</button><div id="control-keys"><span><kbd>W A S D</kbd> 移动</span><span><kbd>V</kbd> 暂停下令</span><span><kbd>鼠标左键</kbd> 点地行走 / 战斗出剑</span><span><kbd>右键 / 空格</kbd> 可选格挡 / 闪避</span><span><kbd>1–5</kbd> 用道具</span></div></div>
+      </section>
+      <nav id="system-hubs" class="mmo-menu mmo-hud" aria-label="系统中心">
+          <button id="armory-open" data-hub="hub-armory"><span data-icon="sword" aria-hidden="true"></span><b>器藏</b><kbd>K</kbd></button>
+          <button id="cultivation-open" data-hub="hub-cultivation"><span data-icon="orb" aria-hidden="true"></span><b>修行</b><kbd>U</kbd></button>
+          <button id="bag-rail-open" data-hub="hub-bag"><span data-icon="pouch" aria-hidden="true"></span><b>乾坤</b><kbd data-action="bag">B</kbd></button>
+          <button id="storyline-open" data-hub="hub-jianghu"><span data-icon="fan" aria-hidden="true"></span><b>江湖</b><kbd>P</kbd></button>
+          <button id="trial-open" data-hub="hub-trial"><span data-icon="wings" aria-hidden="true"></span><b>历练</b><kbd data-action="worldMap">N</kbd></button>
+          <button id="codex-open" data-hub="hub-codex"><span data-icon="scroll" aria-hidden="true"></span><b>典籍</b><kbd data-action="almanac">F1</kbd></button>
+      </nav>
+      <div id="hud-restore" hidden>按 Alt+Z 恢复界面</div>
+      <div id="legacy-entries" hidden>
+        <button id="background-open"></button><button id="sects-open"></button><button id="case-open"></button><button id="journey-open"></button><button id="relic-open"></button><button id="notes-open"></button><button id="bounty-open"></button><button id="home-open"></button><button id="loadouts-open"></button><button id="research-open"></button><button id="bag"></button><button id="rail-armory"></button>
+      </div>
+    </section>
+  </main>
+  <footer><span>修仙命运录 <i>·</i> 器物留痕</span><span>七宗试玩 S25 <b id="build-version">v1.9.8</b> <i>·</i> 本地存档</span></footer>
+  <div id="modal-layer" class="modal-layer" hidden><section id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"><button id="modal-close" class="modal-close" aria-label="关闭弹窗">×</button><header id="hub-header" hidden><strong id="hub-title"></strong><nav id="hub-tabs" aria-label="系统分栏"></nav><div id="hub-wallet"></div></header><nav id="cultivation-tabs" hidden aria-label="修行与行程"><button id="practice-tab">修行与功法</button><button id="chapter-open">首章行程</button></nav><div id="modal-content"></div></section></div>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+  <noscript>本游戏需启用浏览器 JavaScript 方可运行。全部脚本与画卷素材均存于本地，无需联网登录。</noscript>
+  <link rel="stylesheet" href="master-polish.css">
+  <link rel="stylesheet" href="neon-aesthetic.css">
+  <link rel="stylesheet" href="reborn-combat.css">
+  <link rel="stylesheet" href="polish-final.css">
+  <link rel="stylesheet" href="mmo-fullscreen.css">
+</body>
+</html>

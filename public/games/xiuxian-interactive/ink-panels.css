@@ -1,0 +1,70 @@
+/* The twenty prototype views map to existing full-content panels, not demo pages. */
+.modal-layer{z-index:40;background:#03110de0;backdrop-filter:blur(8px);padding:24px}
+.modal-layer>#modal{width:min(1220px,100%);max-height:calc(100dvh - 48px);padding:28px 32px;border:1px solid var(--gold-500);border-radius:14px;background:radial-gradient(ellipse at 90% 0,#24544866,transparent 48%),var(--ink-900);box-shadow:0 30px 120px #0009;scrollbar-gutter:stable;scroll-padding-block:60px}
+#modal-title{padding:0 48px 16px 0;margin:8px 0 16px;font:36px/1.35 var(--display);letter-spacing:.08em;color:var(--gold-100);border-bottom:1px solid var(--line);text-shadow:none}
+#modal>.modal-close,#modal:has(.cultivation-view)>.modal-close{position:sticky;top:0;float:right;right:auto;margin:-12px -14px -30px 10px;z-index:12;width:40px;height:40px;border:1px solid var(--gold-500);border-radius:50%;background:var(--ink-950);color:var(--gold-100);font:28px/1 var(--body);box-shadow:0 2px 12px #0005}
+#modal :is(p,li,label,small,kbd,td,th){font-size:14px;line-height:1.75}
+#modal :is(input,select,textarea){font-size:14px;min-height:38px;border-color:var(--line);color:var(--paper-100);background:var(--ink-950);border-radius:5px}
+#modal input[type="checkbox"]{min-height:20px;accent-color:var(--gold-500)}
+#modal :is(.modal-subtitle,.campaign-note,.pause-note,.inline-message,.background-note){color:var(--text-muted);font-size:14px;line-height:1.8}
+#modal :is(.collection-tabs,.campaign-tabs,.sect-tabs,.background-tabs,.catalog-tabs){gap:8px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid var(--line)}
+#modal :is(.collection-tabs,.campaign-tabs,.sect-tabs,.catalog-tabs) button{font-size:14px;min-height:40px;padding:8px 15px;border-radius:6px}
+#modal button:is(.selected,.active,[aria-pressed="true"]){border-color:var(--gold-300);color:var(--gold-100);background:#bd975125}
+#modal :is(.item-card,.relic-card,.campaign-task,.loadout-card,.research-card,.skill-grid>button,.chapter-progress>div,.sect-card,.background-card){border:1px solid var(--line);border-radius:9px;background:linear-gradient(145deg,#24544880,#0c2420);box-shadow:inset 0 1px #d8eee00a}
+#modal :is(.item-card,.relic-card):hover{border-color:var(--gold-300);background:linear-gradient(145deg,#39736380,#0c2420);box-shadow:0 6px 16px #0004}
+#modal :is(.item-detail,.relic-detail,.catalog-detail,.case-detail){border:1px solid #bd975188;border-radius:10px;padding:22px;background:linear-gradient(135deg,#153a32,#071713);color:var(--paper-100)}
+#modal :is(.relic-detail,.catalog-detail)>h3{font:32px/1.5 var(--display);color:var(--gold-100)}
+#modal .relic-display{border-radius:50%;background:radial-gradient(circle,#39736370,transparent 68%);border-color:var(--line)}
+#modal .campaign-task{padding:18px}#modal .campaign-task h3{font:27px/1.45 var(--display);color:var(--gold-100)}
+#modal .campaign-state{font-size:13px;padding:3px 9px;border:1px solid #9ccdb54d;border-radius:16px;background:#9ccdb510;color:var(--jade-100)}
+#modal .campaign-task.is-tracked{border-color:var(--gold-300);box-shadow:inset 3px 0 var(--gold-300)}
+#modal .campaign-task-signals{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#modal .task-unread{color:var(--gold-300);font-size:13px}#modal [data-task-deliverable]{color:var(--jade-100);font-size:13px;border-color:var(--jade-500);background:#62a88f22}
+#modal .task-untrack{color:var(--text-muted);background:transparent;border-color:var(--line);box-shadow:none}
+@keyframes ink-task-arrival{from{opacity:.55;transform:translateY(6px)}to{opacity:1;transform:none}}
+#modal .campaign-task.is-new{animation:ink-task-arrival .6s ease-out both}
+#modal .campaign-confirm{border:1px solid var(--gold-500);border-radius:10px;padding:24px;background:#153a32}
+#modal .campaign-footer{background:#0c2420f5;border-top:1px solid var(--line);z-index:10}
+#modal .settings-grid{padding:20px;border:1px solid var(--line);border-radius:10px;background:#07171355}
+#modal .setting-toggle{font-size:15px;padding-bottom:14px;border-color:var(--line)}
+#modal .setting-range input{accent-color:var(--gold-500)}
+/* Paper is reserved for reading; cards and original item art stay on dark stands. */
+#modal #almanac-article{background:linear-gradient(135deg,var(--paper-50),var(--paper-200));color:var(--text-on-paper);border:1px solid var(--gold-500);border-radius:10px;box-shadow:inset 8px 0 14px #76552c12}
+#modal #almanac-article :is(h3,h4){color:var(--ink-800)}
+#modal #almanac-article :is(p,li,td,th,.almanac-summary){color:var(--text-on-paper);font-size:15px;line-height:1.9}
+#modal #almanac-article :is(.almanac-article-category,.almanac-article-end){color:var(--text-paper-muted);font-size:13px}
+#modal #almanac-article button{color:var(--ink-800);background:#fff8;border-color:#76552c55}
+#modal #almanac-article table{background:#fff5}#modal #almanac-article :is(th,td){border-color:#76552c3a}
+#modal .almanac-directory{background:#07171388;border-color:var(--line);border-radius:8px}
+#modal #almanac-list button{padding:12px;font-size:14px;line-height:1.65;border-radius:5px}
+#modal #almanac-list button.selected{border-color:var(--gold-500);background:#bd975126}
+#modal .almanac-heading #modal-title{font-size:40px}
+#modal .almanac-controls{background:#07171366;border:1px solid var(--line);border-radius:8px}
+#modal .almanac-footer{background:#0c2420f5;border-color:var(--line)}
+#modal .world-atlas-scroll{border:1px solid var(--gold-500);border-radius:10px;background:var(--ink-950)}
+#modal .world-atlas-detail{border-color:var(--gold-500);border-radius:9px;background:#153a32}
+.world-atlas-camera-tools{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin:0 0 12px}
+.world-atlas-camera-tools button{min-width:40px;min-height:38px;padding:5px 12px}.world-atlas-camera-tools output{min-width:52px;text-align:center;font-variant-numeric:tabular-nums;color:var(--gold-100)}
+.world-atlas-camera-tools>span{font-size:13px;color:var(--text-muted);margin-left:auto}
+#modal .world-atlas-scroll{position:relative;height:clamp(330px,45dvh,540px);overflow:clip;touch-action:none;user-select:none;cursor:grab;isolation:isolate}
+#modal .world-atlas-scroll.is-dragging{cursor:grabbing}
+#modal .world-atlas-map{position:absolute;left:0;top:0;width:1000px;height:680px;min-width:0;min-height:0;max-width:none;aspect-ratio:auto;transform-origin:0 0}
+#modal .world-atlas-point{transform:scale(var(--atlas-label-scale,1)) translate(-50%,-50%);transform-origin:0 0;font-size:13px}
+#modal .world-atlas-aside{max-height:calc(45dvh + 30px)}
+@media(max-width:1040px){#modal .world-atlas-aside{max-height:none}.world-atlas-camera-tools>span{margin-left:0;width:100%}}
+#modal .player-avatar-preview{border-radius:50%;overflow:hidden;aspect-ratio:1;object-fit:cover}
+#modal :is(.buttons,.help-actions){gap:10px;flex-wrap:wrap}#modal .buttons>button{min-height:42px}
+#modal .dialogue-text{font-size:17px;line-height:1.92;letter-spacing:.02em;max-width:68ch}
+#modal section{width:100%;max-height:none;box-shadow:none}
+#modal .tactics-paused{margin-right:48px;border-radius:4px}
+#modal .background-scene,#modal .background-record,#modal .background-event,#modal .background-events{width:100%;box-sizing:border-box;margin-inline:0}
+#modal .background-event{padding:20px 22px;border-radius:10px;border:1px solid #bd975155;background:linear-gradient(155deg,#153a32cc,#0c2420f0)}
+#modal .background-event>p{font-size:14.5px;line-height:1.88;max-width:74ch;color:var(--paper-100)}
+#modal .background-actions{gap:12px;margin-top:16px}
+#modal .background-action{padding:14px 18px;border-radius:8px;border:1px solid #bd975159;background:linear-gradient(145deg,#1c423999,#0a201ce6)}
+#modal .background-action strong{font-size:15.5px;font-weight:600;color:var(--gold-100);margin-bottom:4px}
+#modal .background-action small{font-size:13.5px;line-height:1.78;color:var(--paper-100);margin-top:5px}
+#modal .tactics-targets button{padding:14px 16px;border-radius:8px;line-height:1.65}
+#modal .enemy-armor-note{font-size:13px;line-height:1.75;border-radius:0 6px 6px 0}
+@media(min-width:1600px){.modal-layer>#modal{width:min(1440px,94vw);padding:32px 40px;max-height:calc(100dvh - 64px)}#modal-title{font-size:42px}}
+@media(max-width:850px){.modal-layer{padding:12px}.modal-layer>#modal{padding:22px 18px;max-height:calc(100dvh - 24px)}#modal-title{font-size:30px}#modal>.modal-close,#modal:has(.cultivation-view)>.modal-close{margin:-8px -5px -30px 10px}#modal .campaign-footer{position:static}}

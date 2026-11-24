@@ -56,8 +56,9 @@ export const th: Translation = {
 	[Key.creativeOpen]: "Open the story",
 	[Key.creativeGameIntro]:
 		"My cultivation game. Leave the everyday behind for a little while.",
-	[Key.creativeGameEnter]: "Begin · Open the game",
-	[Key.creativeGameNote]: "เล่นเกมผจญภัยแบบข้อความต้นฉบับในแท็บใหม่",
+	[Key.creativeGameEnter]: "สำรวจแผนที่และต่อสู้",
+	[Key.creativeGameOriginal]: "เกมผจญภัยแบบข้อความต้นฉบับ",
+	[Key.creativeGameNote]: "แนะนำให้ใช้คีย์บอร์ดและเมาส์ในการสำรวจแผนที่และต่อสู้",
 	[Key.creativeGameLabel]: "PLAYABLE WORLD",
 	[Key.creativeBack]: "Back to the worlds",
 	[Key.creativeChapters]: "Follow the story",

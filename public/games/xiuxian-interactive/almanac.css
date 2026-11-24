@@ -1,0 +1,61 @@
+#modal:has(.almanac-shell){width:min(1160px,100%);height:min(860px,calc(100dvh - 40px));max-height:calc(100dvh - 40px);padding:22px 25px 18px;overflow:hidden}
+#modal:has(.almanac-shell)>#modal-content{height:100%;min-height:0}
+.almanac-shell{height:100%;min-height:0;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:15px;color:#d9dbbd}
+.almanac-heading{padding-right:35px}
+.almanac-eyebrow{margin:0;color:#b9c4a6;font:12px/1.5 var(--sans);letter-spacing:3px}
+.modal-layer .almanac-heading h2{margin:5px 0 7px;font:29px/1.3 var(--serif);letter-spacing:4px;color:#efd6a1}
+.almanac-subtitle{margin:0;font:12px/1.7 var(--sans);color:#bac8b0}
+.almanac-controls{display:grid;grid-template-columns:minmax(180px,1fr) 155px auto;gap:12px 16px;padding:13px 0;border-top:1px solid #a9b08040;border-bottom:1px solid #a9b08040}
+.almanac-controls>label{font:12px/1.5 var(--sans);color:#c8d0b7;display:flex;flex-direction:column;gap:6px;min-width:0}
+.almanac-controls input[type=search],.almanac-controls select{width:100%;min-width:0;border:1px solid #8d9b7180;background:#132b22;color:#f0e3c4;padding:9px 12px;font:14px/1.4 var(--sans);border-radius:0}
+.almanac-controls input::placeholder{color:#a3b399;opacity:1}
+.almanac-quick{display:flex;align-items:flex-end;gap:8px}
+.almanac-quick button{min-height:40px;white-space:nowrap;padding:8px 12px;border:1px solid #94a07570;color:#e5d5ae;font:12px/1.5 var(--sans);background:#2a4030}
+.almanac-controls>.almanac-spoiler-label{grid-column:1/-1;flex-direction:row;align-items:center;gap:8px;font-size:12px}
+.almanac-spoiler-label input{width:15px;height:15px;margin:0;accent-color:#d1b77e;flex-shrink:0}
+.almanac-reading{min-height:0;display:grid;grid-template-columns:242px minmax(0,1fr);gap:19px}
+.almanac-directory{display:flex;flex-direction:column;min-width:0;min-height:0}
+.almanac-count{margin:0;color:#cbd2b6;font:12px/1.7 var(--sans)}
+.almanac-keyboard-hint{margin:3px 0 8px;color:#aebfa4;font:12px/1.6 var(--sans)}
+#almanac-list{min-height:0;overflow:auto;scrollbar-gutter:stable;scrollbar-color:#87956c #1b3026;display:flex;flex-direction:column;gap:7px;padding:3px 5px 4px 3px;overscroll-behavior:contain}
+#almanac-list button{flex-shrink:0;display:flex;flex-direction:column;gap:5px;width:100%;min-width:0;text-align:left;padding:12px 12px;border:1px solid #89976550;background:#1b3127;overflow-wrap:anywhere}
+#almanac-list button.selected{border-color:#ceb071;background:#394b35;box-shadow:inset 3px 0 #d8bb80}
+#almanac-list button span{color:#ecdbb3;font:17px/1.4 var(--serif)}
+#almanac-list button small{color:#b6c5a9;font:12px/1.5 var(--sans)}
+.almanac-list-empty{padding:14px 12px;margin:0;color:#c9d0b6;font:13px/1.8 var(--sans)}
+#almanac-article{min-height:0;min-width:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;scrollbar-color:#9d946b #ddd0ac;padding:24px 29px 19px;border:1px solid #b6a06b;background:#e0d1a9 linear-gradient(120deg,#efe2bf,#e0d1a9 70%,#e7d8b4);color:#263d30;box-shadow:inset 0 0 42px #927b3412;overflow-wrap:anywhere;color-scheme:light}
+.almanac-article-head{padding-bottom:16px;border-bottom:1px solid #6677494d}
+.almanac-article-category{margin:0 0 7px;color:#506249;font:12px/1.7 var(--sans);letter-spacing:1px}
+#almanac-article h3{margin:0;font:28px/1.45 var(--serif);letter-spacing:1px;color:#284333}
+.almanac-summary{font:13px/1.9 var(--sans);margin:12px 0 0;color:#45593f}
+.almanac-section{margin-top:21px}
+#almanac-article h4{margin:0 0 9px;font:19px/1.6 var(--serif);letter-spacing:1px;color:#294b36}
+.almanac-section p,.almanac-section li{font:14px/1.95 var(--sans);color:#293f30}
+.almanac-section p{margin:0 0 12px;white-space:pre-line}
+.almanac-section ul{margin:0 0 12px;padding-left:21px}
+.almanac-section li+li{margin-top:7px}
+.almanac-table-wrap{overflow:auto;max-width:100%;margin:14px 0 18px;scrollbar-color:#91885f #dfd1ac}
+.almanac-table-wrap table{width:100%;min-width:270px;border-collapse:collapse;font:12px/1.8 var(--sans);text-align:left;color:#2e4433}
+.almanac-table-wrap th,.almanac-table-wrap td{border:1px solid #84916b66;padding:9px 12px;vertical-align:top;min-width:85px;white-space:pre-line}
+.almanac-table-wrap th{font-weight:600;background:#60724c1f;color:#2c4430}
+.almanac-related{padding-top:18px;margin-top:23px;border-top:1px solid #6677494d}
+.almanac-related>div{display:flex;flex-wrap:wrap;gap:8px}
+.almanac-related button{border:1px solid #657c5770;background:#667d4910;padding:9px 12px;color:#2f513a;font:12px/1.6 var(--sans);text-align:left;overflow-wrap:anywhere}
+.almanac-related button:hover{background:#667d4920;border-color:#4c683e}
+.almanac-article-end{margin:23px 0 0;padding-top:12px;border-top:1px solid #66774933;color:#52634a;font:12px/1.8 var(--sans)}
+.almanac-empty{padding:8px 0}
+.almanac-empty p{font:14px/1.95 var(--sans);color:#45593f}
+.almanac-footer{display:flex;justify-content:space-between;align-items:center;gap:13px;padding-top:13px;border-top:1px solid #a9b08040}
+.almanac-download-note{min-width:0;max-width:36%}
+.almanac-download-note p{margin:0;font:12px/1.7 var(--sans);color:#b9c8ad}
+#almanac-download-status:empty{display:none}
+#almanac-download-status:not(:empty){margin-top:4px;color:#eed6a5}
+.almanac-footer-buttons{display:flex;gap:8px;flex-shrink:0;align-items:center}
+.almanac-footer-buttons button{padding:12px 12px;white-space:nowrap;border:1px solid #97a37575;color:#e9dcba;font:12px/1.6 var(--sans);background:#2a4030}
+.almanac-footer-buttons #almanac-close{background:#c6b07b;color:#19382a;border-color:#d4c18d}
+.almanac-shell button:focus-visible,.almanac-shell input:focus-visible,.almanac-shell select:focus-visible{outline:2px solid #efd38c;outline-offset:2px}
+#almanac-article:focus-visible,.almanac-table-wrap:focus-visible,.almanac-related button:focus-visible{outline:2px solid #3d6546;outline-offset:-4px}
+@media(max-width:1000px){#modal:has(.almanac-shell){padding:20px 20px 16px}.almanac-controls{grid-template-columns:minmax(170px,1fr) 140px auto;gap:12px}.almanac-quick button{padding:8px}.almanac-reading{grid-template-columns:205px minmax(0,1fr);gap:14px}#almanac-article{padding:21px 22px}.almanac-footer{flex-wrap:wrap}.almanac-download-note{max-width:none;width:100%}.almanac-footer-buttons{margin-left:auto}.almanac-shell{gap:12px}}
+@media(max-width:760px){#modal:has(.almanac-shell){height:calc(100dvh - 24px);max-height:calc(100dvh - 24px);width:calc(100vw - 24px);padding:18px 15px 14px}.modal-layer:has(.almanac-shell){padding:12px}.almanac-controls{grid-template-columns:minmax(0,1fr) 145px;padding:12px 0}.almanac-quick{grid-column:1/-1;grid-row:3;justify-content:flex-end}.almanac-quick button{min-height:33px;padding:5px 12px}.almanac-controls>.almanac-spoiler-label{font-size:12px}.almanac-reading{grid-template-columns:174px minmax(0,1fr);gap:12px}#almanac-list button{padding:9px}#almanac-list button span{font-size:16px}#almanac-article{padding:18px}#almanac-article h3{font-size:25px}.almanac-section p,.almanac-section li{font-size:13px}.almanac-footer-buttons{flex-wrap:wrap;justify-content:flex-end}.almanac-footer-buttons button{font-size:12px;padding:8px 9px}.almanac-subtitle{font-size:12px}.almanac-download-note p{font-size:12px}}
+@media(max-width:540px){.almanac-reading{grid-template-columns:1fr;grid-template-rows:100px minmax(0,1fr)}.almanac-directory{display:grid;grid-template-rows:auto minmax(0,1fr)}.almanac-keyboard-hint{display:none}#almanac-list{flex-direction:row;overflow-x:auto}#almanac-list button{width:160px;min-width:160px;gap:3px}#almanac-list button span{font-size:15px}.almanac-count{font-size:12px}#almanac-article{padding:17px}.almanac-footer-buttons{gap:5px;width:100%;margin-left:0}.almanac-footer-buttons button{flex:1;font-size:12px;padding:8px 5px}.almanac-download-note p{font-size:12px}.almanac-footer{gap:7px;padding-top:9px}.almanac-shell{gap:12px}.almanac-eyebrow{font-size:12px}.modal-layer .almanac-heading h2{font-size:25px}.almanac-controls{grid-template-columns:minmax(0,1fr) 120px}.almanac-controls input[type=search],.almanac-controls select{font-size:12px}}
+@media(max-height:680px) and (min-width:761px){#modal:has(.almanac-shell){padding-top:16px;padding-bottom:13px}.almanac-shell{gap:12px}.almanac-controls{padding:9px 0;gap:7px 12px}.almanac-eyebrow{display:none}.almanac-footer{padding-top:12px}.almanac-download-note p{font-size:12px}}

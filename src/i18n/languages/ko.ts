@@ -57,8 +57,9 @@ export const ko: Translation = {
 	[Key.creativeOpen]: "Open the story",
 	[Key.creativeGameIntro]:
 		"My cultivation game. Leave the everyday behind for a little while.",
-	[Key.creativeGameEnter]: "Begin · Open the game",
-	[Key.creativeGameNote]: "새 탭에서 원작 텍스트 게임 플레이",
+	[Key.creativeGameEnter]: "지도 탐험과 전투",
+	[Key.creativeGameOriginal]: "텍스트 어드벤처 원작",
+	[Key.creativeGameNote]: "지도 탐험과 전투에는 키보드와 마우스를 권장합니다.",
 	[Key.creativeGameLabel]: "PLAYABLE WORLD",
 	[Key.creativeBack]: "Back to the worlds",
 	[Key.creativeChapters]: "Follow the story",

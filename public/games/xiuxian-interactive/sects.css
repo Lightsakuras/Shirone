@@ -1,0 +1,90 @@
+#sects-open{border-color:#b6969d85;color:#edcdd5;white-space:nowrap}
+.sect-scene{margin:18px 0 18px;border:1px solid #b9a2a366;background:#18291f}
+.sect-scene img{display:block;width:100%;height:245px;object-fit:cover;object-position:50% 58%}
+.sect-scene figcaption{padding:10px 14px;color:#e2d3bc;font-size:13px;letter-spacing:2px}
+.sect-introduction,.sect-section p,.sect-agreement-layout p{font-size:13px;line-height:1.85;color:#d3dbc7}
+.sect-identity{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}
+.sect-identity div{padding:12px;background:#12271edb;border:1px solid #a8ac883f}
+.sect-identity dt{font-size:11px;color:#bdae88;margin-bottom:7px}
+.sect-identity dd{font-size:15px;margin:0;color:#eee0c4;line-height:1.7}
+.sect-boundary{font-size:12px!important;line-height:1.85;color:#c1c8b1!important;padding:12px 14px;background:#14251fe8;border-left:2px solid #baa68a}
+.sect-section{margin:22px 0;padding-top:18px;border-top:1px solid #a5ae8b40}
+.sect-duties{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0 4px}
+.sect-duty{min-width:0;padding:14px 15px;background:#12251fe8;border:1px solid #a6ae8a48;border-radius:9px}
+.sect-duty h4{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px;font-size:17px;line-height:1.6;color:#ead6bd;font-weight:400;margin-bottom:4px}
+.sect-duty h4 small{font-size:11px;line-height:1.6;color:#c8b492;border:1px solid #a6ae8a45;border-radius:11px;padding:2px 8px;white-space:nowrap}
+.sect-duty p{margin:6px 0;font-size:13px;line-height:1.8}
+.sect-duty .sect-path-cost{border-top:1px solid #a6ae8a3d;padding-top:8px;margin-top:10px!important}
+.sect-duty button{margin-top:10px;max-width:100%}
+.sect-promote{margin-top:16px;padding:12px 14px;background:#12271f;border-left:2px solid #baa68a}
+.sect-promote p{font-size:13px;line-height:1.8;margin:0 0 8px}
+.modal-layer .sect-section,.modal-layer .sect-completed,.modal-layer .tactics-columns>section{max-height:none;overflow:visible}
+.sect-section h3{font-size:19px;line-height:1.6;color:#e6d3b2;font-weight:400;margin-bottom:10px}
+.sect-conditions{padding:12px 14px;margin:12px 0;background:#12271f;font-size:12px!important}
+.sect-agreement{display:flex;align-items:flex-start;gap:10px;font-size:13px;line-height:1.85;color:#efe1c4;cursor:pointer;margin:15px 0}
+.sect-agreement input{appearance:auto;flex:none;width:18px;height:18px;margin-top:4px;accent-color:#b5a37a}
+.sect-numbers{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.sect-numbers span{padding:8px 14px;border:1px solid #acb38c45;font-size:13px;color:#d8ddc8}
+.sect-numbers b{margin-left:8px;color:#f0ddb3;font-size:19px;font-weight:400}
+.sect-donation{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.sect-donation button{flex-shrink:0}
+.sect-paths,.sect-tianji-paths{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.sect-path{min-width:0;background:#12251fe8;border:1px solid #a6ae8a48;padding:16px}
+.sect-path-art{display:block;object-fit:contain;width:150px;height:140px;margin:0 auto 14px}
+.sect-path h4,.sect-skill-list h4{font-size:19px;color:#ead6bd;font-weight:400;margin-bottom:6px;line-height:1.65}
+.sect-level{display:block;font-size:12px;color:#c8b492;margin-bottom:9px}
+.sect-path p{margin:8px 0}
+.sect-path-cost{color:#ead5b3!important;border-top:1px solid #a6ae8a3d;padding-top:10px;margin-top:12px!important}
+.sect-reason{color:#e4b7a6!important;font-size:12px!important}
+.sect-path button{margin-top:10px;max-width:100%}
+.sect-skill-list{display:grid;gap:12px}
+.sect-skill-list article{padding:12px 15px;background:#14271fe8;border:1px solid #a6ae8a30}
+.sect-skill-list h4{font-size:16px}.sect-skill-list small{font-size:11px;color:#b8c5af}
+.sect-agreement-layout{display:grid;grid-template-columns:160px 1fr;gap:22px;margin:22px 0}
+.sect-partner{color:#f0ddc0!important;font-size:16px!important}
+.sect-consent-copy{background:#12271e;padding:12px 14px;border-left:2px solid #bda282;margin:12px 0}
+.sect-return{position:sticky;bottom:-26px;z-index:3;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;background:#142b24;border-top:1px solid #b59b60;box-shadow:0 -8px 16px #14271e88;margin-top:20px}
+.sect-return p{margin:0;flex:1;font-size:13px;line-height:1.7;color:#d9d9ba}.sect-return b{font-size:18px;color:#f1d6a8}.sect-return span{font-size:11px;white-space:nowrap;color:#c3ccb5}.sect-return button{flex:none}
+.sect-completed{padding:16px 18px;margin:18px 0;background:#263d2f;border:1px solid #c5b58880}.sect-completed h3{font-size:17px;color:#eddbb7;font-weight:400;margin-bottom:8px}.sect-completed p{font-size:13px;line-height:1.85;color:#d8dfc7}
+.tactics-sect-title{margin-top:20px!important}.tactics-sect-note{font-size:12px;color:#cbbba0;line-height:1.75}
+.tactics-sect-actions button{display:block;text-align:left;width:100%;margin-top:8px;padding:12px;background:#14271f;border:1px solid #b49aa45c}
+.tactics-sect-actions button.selected{background:#3c4437;border-color:#d7bb91}
+.tactics-sect-actions b,.tactics-sect-actions small{display:block;line-height:1.75}.tactics-sect-actions small{font-size:11px;color:#c6cfb9}
+.tactics-sect-actions .sect-reason{margin-top:4px}
+@media(max-width:900px){.sect-duties{grid-template-columns:1fr}}
+@media(max-width:650px){.sect-identity{grid-template-columns:1fr;gap:8px}.sect-identity div{display:flex;justify-content:space-between;gap:14px;padding:9px 12px}.sect-identity dt{margin:4px 0}.sect-identity dd{font-size:13px}.sect-scene img{height:190px}.sect-paths{grid-template-columns:1fr}.sect-donation{display:block}.sect-donation button{margin-top:12px}.sect-agreement-layout{grid-template-columns:1fr;gap:6px}.sect-path-art{height:125px}.sect-numbers span{padding:7px 10px}.sect-numbers b{font-size:17px}}
+.sect-trial-foes{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:10px 0;padding:0}
+.sect-trial-foes li{display:flex;gap:8px;align-items:baseline;border:1px solid #a6ae8a48;border-radius:9px;padding:8px 12px;background:#12271f}
+.sect-trial-foes li span{font-size:13px;color:#cfd8c2}
+.sect-trial-foes li b{font-family:var(--font-display,serif);color:#f5e6b8}
+
+.sect-bond-topics{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.sect-bond-topics button{font-size:13px}
+#sect-bond .sect-duty p{font-size:13px;line-height:1.7}
+
+/* S9 入门前置三步：与门内事务卡同族，但不复用其数据属性。 */
+.sect-intro-steps,.sect-tianji-steps{list-style:none;margin:14px 0;padding:0;display:grid;gap:10px}
+.sect-intro-step,.sect-tianji-step{padding:13px 15px;background:#12271edb;border:1px solid #a8ac883f;border-left:2px solid #a8ac88a0;border-radius:8px}
+.sect-intro-step[data-done="true"]{border-left-color:#c9b27a}
+.sect-intro-step h4{display:flex;align-items:baseline;gap:9px;margin:0 0 6px;font-size:16px;color:#efe1c4}
+.sect-intro-step h4 small{font-size:11px;font-weight:400;padding:2px 8px;border:1px solid #a8ac8845;border-radius:11px;color:#bdae88}
+.sect-intro-step[data-done="true"] h4 small{color:#e8d9a8;border-color:#c9b27a66}
+.sect-intro-step p{margin:4px 0}
+.sect-intro-step .sect-reason{margin-top:8px}
+.sect-intro-step button{margin-top:10px}
+@media (max-width:900px){.sect-intro-steps{grid-template-columns:1fr}}
+
+.sect-illustration{display:block;max-width:100%;height:auto;border-radius:6px}
+.sect-place-art{width:100%;height:clamp(130px,22vw,250px);object-fit:cover;object-position:center 48%;margin:.65rem 0 1rem}
+.sect-emblem{display:inline-block;width:40px;vertical-align:middle;margin-right:.4rem}
+.sect-roster-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:1rem;margin:.6rem 0}
+.sect-profile{display:flex;align-items:flex-start;gap:.8rem;min-width:0}
+.sect-profile>div{min-width:0}
+.sect-profile small,.sect-profile strong{display:block}
+.sect-profile small{color:#c6b998}
+.sect-headshot{width:clamp(68px,8vw,108px);flex-shrink:0;aspect-ratio:1}
+.sect-profile p{margin:.25rem 0}
+.sect-prop-detail{margin:.5rem 0;max-width:100%}
+.sect-prop-detail summary{cursor:pointer;color:#e1cfaa;text-decoration:underline;text-underline-offset:3px}
+.sect-inset{width:min(100%,230px);margin:.6rem 0}
+.sect-tianji-step h4 small,.sect-order-steps h4 small{margin-left:8px}

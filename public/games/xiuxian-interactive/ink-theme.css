@@ -1,0 +1,36 @@
+/* KIMI approved palette, adapted to the real game. No prototype state or scene. */
+@font-face{font-family:"Ma Shan Zheng";src:url("assets/fonts/MaShanZheng-Regular.ttf") format("truetype");font-display:swap}
+@font-face{font-family:"Noto Sans SC";src:url("assets/fonts/NotoSansSC-Variable.ttf") format("truetype");font-weight:100 900;font-display:swap}
+:root{
+  --ink-950:#071713;--ink-900:#0c2420;--ink-800:#153a32;--ink-700:#245448;--ink-600:#397363;
+  --paper-50:#fbf4df;--paper-100:#f1e7ca;--paper-200:#ddcda5;--paper-300:#b9a67c;
+  --jade-100:#d8eee0;--jade-300:#9ccdb5;--jade-500:#62a88f;--jade-700:#326e5d;
+  --gold-100:#f5e6b8;--gold-300:#e4c77f;--gold-500:#bd9751;--gold-700:#76552c;
+  --cinnabar-300:#e59a78;--cinnabar-500:#a84e39;--cinnabar-700:#7d3027;
+  --text-on-dark:#f3ecd8;--text-muted:#aec4b5;--text-on-paper:#203a31;--text-paper-muted:#586552;
+  --focus:#ffe09a;--danger:#c8644d;--success:#79b99a;
+  --display:"Ma Shan Zheng","STKaiti","KaiTi",serif;--body:"Noto Sans SC","Microsoft YaHei",sans-serif;
+  --serif:var(--display);--sans:var(--body);--bg:var(--ink-950);--panel:var(--ink-900);--paper:var(--paper-100);--muted:var(--text-muted);--gold:var(--gold-300);--line:#bd975143;
+  --ease-out:cubic-bezier(.16,1,.3,1);--fast:160ms;--base:340ms;--slow:720ms;
+}
+html{background:var(--ink-950);scrollbar-color:var(--ink-600) var(--ink-950)}
+body{background:radial-gradient(ellipse at 72% 0,#2454484d,transparent 52%),var(--ink-950);font:14px/1.65 var(--body);color:var(--text-on-dark);font-variant-numeric:tabular-nums}
+button,input,select,textarea{font-family:var(--body);font-size:14px}
+button{min-height:36px;transition:background var(--fast),border-color var(--fast),box-shadow var(--fast);border-color:var(--line)}
+button:hover{background:#9ccdb515;border-color:var(--gold-300)}
+button:disabled{opacity:.58;box-shadow:none!important;animation:none!important}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+button.primary{background:linear-gradient(145deg,var(--gold-100),var(--gold-500));color:var(--ink-950);border:1px solid var(--gold-300);border-radius:5px;box-shadow:inset 0 1px #fff7,0 4px 14px #0004}
+button.primary:hover{background:linear-gradient(145deg,#fff5d4,var(--gold-300))}
+button.secondary{background:linear-gradient(145deg,#24544870,#0c2420c7);color:var(--paper-100);border-radius:5px}
+kbd{font:13px/1.3 var(--body);color:var(--gold-100);background:var(--ink-900);border-color:#bd975166;min-width:20px;text-align:center}
+.eyebrow{font-size:13px;letter-spacing:.14em;color:var(--gold-300)}
+::selection{color:var(--ink-950);background:var(--gold-300)}
+@keyframes ink-resource-gain{0%,100%{color:var(--gold-100);text-shadow:none}40%{color:#fff8d9;text-shadow:0 0 16px #e4c77f99}}
+.ink-gained{animation:ink-resource-gain .65s ease-out}
+@keyframes ink-meter-restore{0%,100%{border-color:#bd975155;box-shadow:none}35%{border-color:var(--jade-100);box-shadow:0 0 10px #9ccdb588}}
+.meter.ink-restored{animation:ink-meter-restore .7s ease-out}
+/* Motion is decoration, never a settlement or timer for a game command. */
+html.page-hidden *,html.page-hidden *::before,html.page-hidden *::after{animation-play-state:paused!important}
+html.reduced-motion *,html.reduced-motion *::before,html.reduced-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

@@ -1,0 +1,88 @@
+/* Ordinary keepsakes are paper, cloth and tools: no magical glow. */
+.intro-copy{width:100%;padding:32px 36px 76px}
+.intro h1{font-size:48px;line-height:1.15;letter-spacing:3px;margin:14px 0}
+.intro-description{max-width:620px;font-size:13px;line-height:1.9}
+.intro .gender-tabs{margin:18px 0 0}
+.intro .hero-portrait{top:0;right:0;width:27%;height:310px;bottom:auto;pointer-events:none;opacity:.8}
+.intro .hero-portrait img{height:100%;object-position:50% 15%;mask-image:linear-gradient(#000 65%,transparent)}
+.intro .hero-portrait figcaption{bottom:28px;right:26px;font-size:20px;writing-mode:horizontal-tb;text-align:right}
+.intro .hero-portrait figcaption small{font-size:11px;letter-spacing:1px}
+.background-choice{position:relative;margin-top:28px}
+.intro .choice-caption{font-size:16px;font-weight:400;letter-spacing:1px;line-height:1.7;margin:0 0 10px}
+.intro .choice-caption span{font-size:11px;letter-spacing:0;margin-left:14px;color:#b5c0ab}
+.background-parallel{max-width:980px;color:#afbaa6;font-size:12px;line-height:1.8;margin-bottom:14px}
+.background-options{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px}
+.background-option{position:relative;text-align:left;padding:15px 14px;background:#162c25dd;min-height:88px;border:1px solid #99a88745}
+.background-option strong{display:block;font-family:var(--serif);font-size:22px;font-weight:400;letter-spacing:1px;margin-bottom:6px}
+.background-option small{display:block;font-size:11px;color:#bcc4af;line-height:1.5}
+.background-option.active{background:#3b4c3d;border-color:#ccb881}
+.background-option.active:after{content:'已选';position:absolute;right:9px;top:7px;font-size:10px;color:#e7d6a8}
+.background-option[data-background="demon"]{border-color:#b7a1a65c}
+.background-option[data-background="demon"].active{border-color:#d2a9b0;background:#433e3a}
+.background-options .background-option{padding:0;overflow:hidden;min-height:220px;background:#13271f}
+.background-card-art{display:block;width:100%;height:144px;object-fit:cover;object-position:50% 62%;border-bottom:1px solid #a9b18d45}
+.background-card-copy{display:block;padding:13px 12px 15px}
+.background-options .background-option.active:after{padding:3px 7px;right:7px;top:7px;background:#16291fee;border:1px solid #d9c58b}
+.background-scene{margin:16px 0 20px;border:1px solid #a5ae8b59;background:#10241e}
+.background-scene img{display:block;width:100%;height:240px;object-fit:cover;object-position:50% 62%}
+.background-scene figcaption{padding:9px 13px;color:#d7d6bd;font-size:12px;line-height:1.7;letter-spacing:.5px}
+.background-detail .background-selection-scene{grid-column:1/-1;margin:0}
+.background-selection-scene img{height:350px}
+.background-option[data-background="poor"] img,.background-scene[data-scene="poor"] img{object-position:50% 57%}
+.background-scene[data-scene="poor"] img{object-position:50% 30%}
+.background-option[data-background="beggar"] img,.background-scene[data-scene="beggar"] img{object-position:50% 58%}
+.background-option[data-background="caravan"] img,.background-scene[data-scene="caravan"] img{object-position:50% 52%}
+.background-option[data-background="demon"] img,.background-scene[data-scene="demon"] img{object-position:50% 53%}
+.background-detail{margin-top:12px;border:1px solid #b0b79542;background:#172c26ed;padding:20px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:22px}
+.background-detail h3{font-family:var(--serif);font-size:27px;font-weight:400;margin-bottom:8px}
+.background-detail p{font-size:12px;line-height:1.85;color:#c6cfb8}
+.background-motive{margin-top:10px}
+.background-detail .background-preview-note{margin-top:13px;color:#b0bda4;font-size:11px;border-top:1px solid #afbb9340;padding-top:10px}
+.background-start-options{display:grid;gap:14px}
+.background-start-choice{border-bottom:1px solid #afbb9333;padding-bottom:12px}
+.background-start-choice:last-child{border-bottom:0;padding-bottom:0}
+.background-start-choice h4{font-size:14px;font-weight:400;line-height:1.7;margin:0 0 5px;color:#e1d4b5}
+.background-start-choice .background-facts{margin-top:9px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:14px}
+.background-faction{display:inline-block;font-size:11px;line-height:1.6;color:#e4d4ac;border-bottom:1px solid #a2926d66;padding-bottom:4px;margin-bottom:10px}
+.background-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin:0}
+.background-facts div{min-width:0}
+.background-facts dt{font-size:11px;color:#cbb47e;margin-bottom:5px;letter-spacing:1px}
+.background-facts dd{margin:0;color:#d9dfcc;font-size:12px;line-height:1.75;overflow-wrap:anywhere}
+.background-facts .background-cost{grid-column:1/-1;border-top:1px solid #afbb9340;padding-top:10px}
+.intro .training-caption{margin-top:24px}
+.intro .origins{max-width:none;margin-top:0;gap:10px}
+.intro .origin{padding:14px 16px;min-height:118px}
+.intro .origin strong{font-size:21px}
+.intro .origin p{font-size:12px;line-height:1.7;margin-top:7px}
+.intro .origin small{font-size:11px}
+.character-choice-summary{margin-top:16px;color:#d0d8c2;font-size:12px;line-height:1.8}
+.intro .begin-row{margin-top:12px;flex-wrap:wrap}
+.intro .intro-note{margin-top:12px}
+#background-open{border-color:#b5a57970;color:#e0cf9e;white-space:nowrap}
+#background-open[data-ready="true"]{background:#424c36;border-color:#d0bd85}
+.background-panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin:15px 0}
+.background-panel-head p,.background-note{font-size:13px;line-height:1.85;color:#c2cbb7}
+.background-badge{flex-shrink:0;padding:6px 10px;border:1px solid #afa37a70;font-size:12px;color:#decfa4}
+.background-record{background:#14271f9c;border:1px solid #acb68f38;padding:16px;margin:16px 0}
+.background-record h3{font-size:17px;font-weight:400;margin:0 0 9px;color:#e2d2a8}
+.background-record summary{font-size:16px;color:#e2d2a8;cursor:pointer;line-height:1.7}
+.background-record summary small{font-size:12px;color:#b8c6ac}
+.background-record[open] summary{margin-bottom:9px}
+.background-record p{font-size:13px;line-height:1.85;color:#c4cfb8}
+.background-record .background-facts{margin-top:12px}
+.background-events{display:grid;gap:14px;margin-top:18px}
+.background-event{padding:18px;border:1px solid #a4b38a40;background:#193127}
+.background-event h3{font-family:var(--serif);font-size:23px;font-weight:400;margin:0 0 8px}
+.background-event>p{font-size:13px;line-height:1.85;color:#c6d0bb}
+.background-event-status{display:block;font-size:11px;color:#bcb48f;margin-bottom:9px}
+.background-actions{display:grid;gap:9px;margin-top:14px}
+.background-action{padding:12px 14px;text-align:left;background:#10251d7a;border:1px solid #9eae8d55}
+.background-action strong{display:block;font-size:14px;font-weight:400;color:#e5d8b9;line-height:1.7}
+.background-action small{display:block;font-size:12px;color:#b8c5ae;line-height:1.75;margin-top:4px}
+.background-action:disabled{opacity:.65}
+.background-outcome{padding:10px 12px;margin-top:12px!important;background:#10251d99;border-left:2px solid #b8ac7e}
+@media(min-width:1600px){.intro-copy{padding:38px 44px 80px}.intro .origins{max-width:none}}
+@media(max-width:1150px){.intro-copy{width:100%;padding:28px 26px 76px}.intro .hero-portrait{width:30%;height:300px;opacity:.55}.background-option{padding:16px 10px}.background-option strong{font-size:20px}}
+@media(max-width:850px){.intro .hero-portrait{width:40%;opacity:.3}.intro-description{max-width:70%}.background-options{grid-template-columns:repeat(3,minmax(0,1fr))}.background-detail{grid-template-columns:1fr;gap:16px}.intro .choice-caption span{display:block;margin:4px 0 0}.background-detail h3{font-size:25px}.intro .origin{padding:12px}.intro h1{font-size:44px}.background-panel-head{flex-wrap:wrap}}
+@media(max-width:550px){.intro-copy{padding:24px 18px 75px}.intro .hero-portrait{width:48%;right:-12%;opacity:.24}.intro .hero-portrait figcaption{display:none}.intro-description{max-width:95%}.intro h1{font-size:40px}.background-options{grid-template-columns:repeat(2,minmax(0,1fr))}.background-option{min-height:82px}.background-option strong{font-size:20px}.background-facts{grid-template-columns:1fr;gap:12px}.background-facts .background-cost{grid-column:auto}.intro .origins{grid-template-columns:1fr}.intro .origin{min-height:0}.background-detail{padding:16px}.background-event{padding:14px}.background-action{padding:10px}.background-parallel{font-size:12px}}
+@media(max-width:550px){.background-options .background-option{min-height:200px}.background-card-art{height:125px}.background-card-copy{padding:12px 10px}.background-scene img,.background-selection-scene img{height:200px}.background-scene figcaption{font-size:11px;padding:8px 10px}}

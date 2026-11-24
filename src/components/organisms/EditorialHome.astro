@@ -21,7 +21,7 @@ const introduction = Array.isArray(siteConfig.banner.homeText.subtitle)
 ---
 <!-- Real author/configuration content, not a fabricated project or portfolio.
      This entire component is conditional on visualStyle.enable at the page. -->
-<section class="editorial-home" aria-labelledby="editorial-home-title">
+<section class="editorial-home" aria-label={`${i18n(Key.about)} · ${siteConfig.title}`}>
 	<div class="editorial-home__identity">
 		<p class="editorial-home__eyebrow"><span aria-hidden="true"></span>{profileConfig.name}</p>
 		<h1 id="editorial-home-title">{siteConfig.title}</h1>

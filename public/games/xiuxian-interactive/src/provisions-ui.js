@@ -1,0 +1,33 @@
+(function(root){
+  'use strict';
+  const A=root.XiuxianArt,D=root.XiuxianData;
+  const pictures={sword:'ward',medicine:'tea',scholar:'paper'};
+  root.XiuxianProvisionsUI=function({game,openModal,closeModal,save,drain,esc}){
+    const $=id=>document.getElementById(id);let selected=null,laid=[],story=false,firstMade=false;
+    function scene(s){
+      const close=s.collection.companionship==='close',women=s.gender==='female'&&s.collection.shared.includes('women');
+      return `<p>沈灵薇在案上铺开一方素净垫布，将记满批注的药簿推到你们中间。<br>“上回约好出门前一道整备。先想清楚这一趟怎么打，再挑趁手的东西带上。”</p><p>${s.origin==='sword'?'你试了试符匣绳结的松紧，特意留出单手一扯即开的活扣。她在一旁替你按稳符纸，安静听你讲起交手时哪一拍最忌分神。':s.origin==='medicine'?'你先凑近辨过草叶干湿，又将泉水挪到避潮的一侧。她并未越俎代庖替你配伍，只笑着问这份温养药包打算留在哪一关用。':'你摊开旧阵带回的残碑拓记，将几处极易看岔的刻痕逐一核清。她取来一页素笺，提笔将你的推演脉络端正录下。'}</p>${women&&close?'<p>翻过那页《女修的行药笺》时，她声音放轻了些：“照顾身子的事，想聊便聊；若不想提，咱们就专心归置行囊。”你的手停在案沿，她的指尖轻轻挨过来，谁也没有急着挪开。</p>':`<p>${close?'你将最后一道活扣递到她掌中。她抬眼与你对视，唇角微弯：“不急，慢慢备，前头的山路还长着呢。”':'你们将器物用法与忌讳并排写在同一页纸上。她合拢药簿：“同门互相照应，临阵便少一分慌乱。下一程怎么走，仍由你拿主意。”'}</p>`}`;
+    }
+    function show(keep=false){
+      const g=game();if(!g)return;if(!keep){selected=null;laid=[];story=false;firstMade=false;}
+      const status=g.provisionStatus(),active=g.activeProvision(),kits=status.kits;
+      if(!kits.some(k=>k.id===selected))selected=kits.find(k=>k.available)?.id||kits[0]?.id;
+      const kit=kits.find(k=>k.id===selected),prepared=kits.find(k=>k.id===status.prepared);
+      const complete=kit&&Object.keys(kit.cost).every(id=>laid.includes(id));
+      const cards=kits.map(k=>`<button class="provision-choice ${selected===k.id?'selected':''}" data-provision-kit="${k.id}" aria-pressed="${selected===k.id}">${A.icon(pictures[k.id])}<span><b>${esc(k.name)}</b><small>${esc(D.origins[k.id].name)}</small></span><span class="provision-choice-effect">${esc(k.desc)}</span><span class="provision-choice-cost">${Object.entries(k.cost).map(([id,n])=>esc(D.items[id].name)+' ×'+n).join(' ＋ ')}</span>${!k.available?`<span class="provision-choice-reason">${esc(k.reason)}</span>`:''}</button>`).join('');
+      const ingredients=kit?Object.entries(kit.cost).map(([id,n])=>`<button class="provision-ingredient ${laid.includes(id)?'is-laid':''}" data-provision-material="${id}" aria-pressed="${laid.includes(id)}" ${prepared||!kit.available?'disabled':''}>${A.icon(id)}<b>${esc(D.items[id].name)} ×${n}</b><small>行囊 ${g.state.inventory[id]} · ${laid.includes(id)?'已放上案':'点击放上案'}</small></button>`).join(''):'';
+      const tray=kit?Object.entries(kit.cost).map(([id,n])=>`<div class="provision-tray-slot ${laid.includes(id)?'filled':''}" data-provision-slot="${id}">${laid.includes(id)?A.icon(id):'<span class="provision-empty-mark" aria-hidden="true">＋</span>'}<span>${laid.includes(id)?esc(D.items[id].name)+' ×'+n:'待放 '+esc(D.items[id].name)}</span></div>`).join(''):'';
+      const packed=prepared?`<section class="provision-packed"><div>${A.icon(pictures[prepared.id])}<div><p class="eyebrow">已合备 · 留待下一程</p><h3>${esc(prepared.name)}</h3></div></div><p>${esc(prepared.desc)}</p>${firstMade?'<p class="provision-first">她收紧最后一道绳结：“这一份，我们一起备好了。”</p>':''}<p>下次成功进入旧阵时带入。若想改备另一份，可先拆还原料。</p><button id="provision-unpack" class="secondary" ${status.unpackReason?'disabled':''}>拆还原料</button>${status.unpackReason?`<small role="status">${esc(status.unpackReason)}</small>`:''}</section>`:'';
+      openModal('provisions',`<header class="provision-banner"><img src="assets/portraits/shen_ling_wei.webp" alt="沈灵薇在药庐与你整理行囊"><div><p class="eyebrow">同门相照 · 行前有备</p><h2 id="modal-title">药庐合备</h2><p>一张符、一味草，先想好怎么用。<br>这次走哪条山路，由你拿主意。</p><button id="provision-story" class="quiet" aria-expanded="${story}" ${status.unlocked?'':'disabled'}>${story?'收起灯下话':status.seen?'重看灯下合备':'听她说说合备'}</button></div></header>${story&&status.unlocked?`<section class="provision-story" aria-label="灯下合备">${scene(g.state)}</section>`:''}<p class="provision-location" role="status">${esc(status.reason||'药庐安宁，可以取出材料，合备下一程的行囊。')}</p>${active?`<section class="provision-active"><b>本局携带 · ${esc(active.name)}</b><span>${active.used?'这一份已经用过':esc(active.desc)}</span><small>本局结束后余效散去；已取得的器物与见闻照常保留。</small></section>`:''}<div class="provision-choices" role="group" aria-label="选择合备方式">${cards}</div>${packed||`<section class="provision-workbench"><div class="provision-workbench-heading"><h3>${esc(kit?.name||'行前合备')}</h3><span>选备方 → 放材料 → 收好</span></div><div class="provision-materials">${ingredients}</div><div class="provision-tray" aria-label="合备材料案盘">${tray}</div><p class="provision-tray-status" role="status">${complete?'材料已摆齐，确认后即合备入囊。':'点选上方两味材料摆上案盘。'}</p><div class="provision-confirm-row"><button id="provision-clear" class="secondary" ${laid.length?'':'disabled'}>拿回案上材料</button><button id="provision-pack" class="primary" ${!complete||!kit?.available?'disabled':''}>确认合备 · ${esc(kit?.name||'')}</button></div>${kit?.reason?`<p class="provision-reason">${esc(kit.reason)}</p>`:''}</section>`}<p class="provision-footnote">入阵前可合备一份随行，未入阵前随时可拆还原料。</p><p id="inline-message" class="inline-message" role="status"></p><div class="buttons"><button id="provisions-close" class="secondary">收好案面，继续山行</button></div>`);
+      function redraw(focus){const top=$('modal').scrollTop;show(true);$(focus)?.focus({preventScroll:true});$('modal').scrollTop=top;}
+      $('provision-story').onclick=()=>{story=!story;redraw('provision-story');};
+      document.querySelectorAll('[data-provision-kit]').forEach(b=>b.onclick=()=>{selected=b.dataset.provisionKit;laid=[];firstMade=false;redraw();document.querySelector(`[data-provision-kit="${selected}"]`)?.focus({preventScroll:true});});
+      document.querySelectorAll('[data-provision-material]').forEach(b=>b.onclick=()=>{const id=b.dataset.provisionMaterial;laid=laid.includes(id)?laid.filter(x=>x!==id):[...laid,id];redraw();document.querySelector(`[data-provision-material="${id}"]`)?.focus({preventScroll:true});});
+      if($('provision-clear'))$('provision-clear').onclick=()=>{laid=[];redraw('provision-clear');};
+      if($('provision-pack'))$('provision-pack').onclick=()=>{const before=g.provisionStatus().seen;if(g.prepareProvision(selected)){firstMade=!before;laid=[];save(true);}show(true);drain();$('provision-unpack')?.focus({preventScroll:true});$('provision-unpack')?.scrollIntoView({block:'nearest'});};
+      if($('provision-unpack'))$('provision-unpack').onclick=()=>{if(g.unpackProvision()){firstMade=false;laid=[];save(true);}show(true);drain();const choice=document.querySelector(`[data-provision-kit="${selected}"]`);choice?.focus({preventScroll:true});choice?.scrollIntoView({block:'nearest'});};
+      $('provisions-close').onclick=closeModal;
+    }
+    return {show};
+  };
+})(globalThis);
