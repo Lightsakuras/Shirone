@@ -181,16 +181,44 @@
     art.dimensions[key] = [256,384];
     art[key] = [[0,0,256,384]];
   }
-  art.ready = Promise.all(Object.entries(art.sources).map(([name, url]) => new Promise(resolve => {
-    const image = new Image(); art.images[name] = image;
-    image.onload = () => {
-      const expected = art.dimensions[name];
-      if (expected && (image.naturalWidth !== expected[0] || image.naturalHeight !== expected[1])) art.failed.push(name);
-      resolve();
-    };
-    image.onerror = () => { art.failed.push(name); resolve(); };
-    image.src = url;
-  }))).then(() => { art.status = art.failed.length ? 'error' : 'ready'; return art.status; });
+  const streamArt = root.document?.documentElement?.hasAttribute?.('data-stream-art');
+  const openingArt = new Set(['garden', 'temple', 'characters', 'chapterPeople', 'props']);
+  const initialLoads = [];
+  function loadAtlas(name, url) {
+    const image = new Image();
+    Object.defineProperty(art.images, name, {value:image, enumerable:true, configurable:true, writable:true});
+    return new Promise(resolve => {
+      image.onload = () => {
+        const expected = art.dimensions[name];
+        const valid = !expected || (image.naturalWidth === expected[0] && image.naturalHeight === expected[1]);
+        if (!valid) art.failed.push(name);
+        resolve(valid);
+      };
+      image.onerror = () => {
+        art.failed.push(name);
+        if (streamArt && !openingArt.has(name)) {
+          image.onload = image.onerror = null;
+          image.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        }
+        resolve(false);
+      };
+      image.src = url;
+    });
+  }
+  for (const [name, url] of Object.entries(art.sources)) {
+    if (!streamArt || openingArt.has(name)) {
+      initialLoads.push(loadAtlas(name, url));
+    } else {
+      Object.defineProperty(art.images, name, {enumerable:true, configurable:true, get() {
+        loadAtlas(name, url);
+        return art.images[name];
+      }});
+    }
+  }
+  art.ready = Promise.all(initialLoads).then(results => {
+    art.status = results.every(Boolean) ? 'ready' : 'error';
+    return art.status;
+  });
   // Each decoded painting becomes usable independently of the startup atlas promise.
   art.arenas = ['bamboo','tower','tomb','cloud','star'].map(id => 'arena-' + id);
   art.reborn = Object.create(null);

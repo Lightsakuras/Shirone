@@ -3,6 +3,7 @@ Usage: python scripts/creative/export-xiuxian-web.py PATH_TO_GAME_CHECKOUT
 """
 import argparse
 from concurrent.futures import ThreadPoolExecutor
+from hashlib import sha256
 import json
 from pathlib import Path
 import re
@@ -12,6 +13,25 @@ import subprocess
 from PIL import Image
 from fontTools import subset
 from fontTools.ttLib import TTFont
+
+
+def bundle_entry(output):
+    entry = output / "index.html"
+    html = entry.read_text(encoding="utf-8").replace("<html ", "<html data-stream-art ", 1)
+    for pattern, name, tag, separator in [
+        (r'<script defer src="(src/[^"]+\.js)"></script>', "runtime.js",
+         '<script defer src="{}"></script>', b"\n;\n"),
+        (r'<link rel="stylesheet" href="([^"]+\.css)">', "game.css",
+         '<link rel="stylesheet" href="{}">', b"\n"),
+    ]:
+        matches = list(re.finditer(pattern, html))
+        if not matches:
+            raise ValueError(f"No inputs for {name}")
+        data = separator.join((output / match[1]).read_bytes() for match in matches)
+        (output / name).write_bytes(data)
+        url = f"{name}?v={sha256(data).hexdigest()[:16]}"
+        html = re.sub(pattern, lambda m: tag.format(url) if m.start() == matches[0].start() else "", html)
+    entry.write_bytes(html.encode("utf-8"))
 
 
 def main():
@@ -50,7 +70,7 @@ def main():
             with Image.open(src) as image:
                 image.save(dest.with_suffix(".webp"), format="WEBP", quality=90, method=4, exact=True)
         elif file in fonts:
-            with TTFont(src) as font:
+            with TTFont(src, recalcTimestamp=False) as font:
                 subsetter = subset.Subsetter()
                 subsetter.populate(text="".join(sorted(characters)))
                 subsetter.subset(font)
@@ -69,7 +89,8 @@ def main():
 
     with ThreadPoolExecutor(max_workers=4) as executor:
         list(executor.map(export, files))
-    print(f"Exported {len(files)} player files including {len(images)} converted PNGs")
+    bundle_entry(output)
+    print(f"Exported {len(files) + 2} player files including two startup bundles")
 
 
 if __name__ == "__main__":
